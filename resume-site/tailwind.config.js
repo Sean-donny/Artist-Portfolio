@@ -18,6 +18,14 @@ export default {
       lineHeight: {
         massive1: "72px",
       },
+      minHeight: {
+        slide1: "28.5rem",
+        slide2: "21.375rem",
+      },
+      minWidth: {
+        slide1: "20rem",
+        slide2: "15rem",
+      },
     },
   },
   plugins: [],

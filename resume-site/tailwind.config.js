@@ -13,10 +13,10 @@ export default {
         zima: "#000cfc",
       },
       fontSize: {
-        massive1: "64px",
+        massive1: "4rem",
       },
       lineHeight: {
-        massive1: "72px",
+        massive1: "4.5rem",
       },
       minHeight: {
         slide1: "28.5rem",

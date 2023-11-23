@@ -6,7 +6,7 @@ const Navbar = () => {
       <ul className="flex justify-between">
         <li>
           <motion.h1
-            className="font-custom font-semibold text-aquatic tracking-tight cursor-crosshair"
+            className="font-custom font-semibold text-aquatic tracking-tight cursor-crosshair text-lg"
             whileHover={{ scale: 1.2618 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -15,7 +15,7 @@ const Navbar = () => {
         </li>
         <li>
           <motion.button
-            className="font-custom font-semibold text-aquatic tracking-tight cursor-crosshair"
+            className="font-custom font-semibold text-aquatic tracking-tight cursor-crosshair text-lg"
             whileHover={{ scale: 1.2618 }}
             whileTap={{ scale: 0.9 }}
           >

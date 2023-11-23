@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 
 interface SlideshowProps {
@@ -6,38 +6,64 @@ interface SlideshowProps {
 }
 
 const Slideshow = ({ images }: SlideshowProps) => {
-  const [width, setWidth] = useState(0);
-  const slideshow = useRef();
+  const [leftConstraint, setLeftConstraint] = useState(0);
+  const [containerKey, setContainerKey] = useState(0);
+
+  const slideshowId = "slideshow-container";
+  const slideshowRef = useRef<HTMLDivElement>(null);
+
+  const handleLeftConstraint = useCallback(() => {
+    if (slideshowRef.current) {
+      const innerCarouselWidth =
+        slideshowRef.current.querySelector(".inner-carousel")?.scrollWidth || 0;
+
+      setLeftConstraint(innerCarouselWidth - slideshowRef.current.offsetWidth);
+    }
+  }, []);
 
   useEffect(() => {
-    setWidth(slideshow.current.scrollWidth - slideshow.current.offsetWidth);
-  }, []);
+    handleLeftConstraint();
+  }, [handleLeftConstraint]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setContainerKey((prev) => prev + 1);
+      handleLeftConstraint();
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleLeftConstraint]);
+
   return (
-    <div className="w-96">
+    <div className="w-auto bg-orangutan h-full">
       <motion.div
-        ref={slideshow}
+        key={containerKey}
+        id={slideshowId}
+        ref={slideshowRef}
         className="carousel cursor-grab overflow-hidden"
       >
         <motion.div
           drag="x"
-          dragConstraints={{ right: 0, left: -width }}
-          className="inner-carousel flex"
+          dragConstraints={{ right: 0, left: -leftConstraint }}
+          className="inner-carousel flex h-full w-auto"
         >
-          {images.map((image) => {
-            return (
-              <motion.div
-                className="min-h-slide2 min-w-slide2 p-1"
-                key={image}
-                whileHover={{ scale: 1.2 }}
-              >
-                <motion.img
-                  src={image}
-                  alt=""
-                  className="w-full h-full pointer-events-none"
-                />
-              </motion.div>
-            );
-          })}
+          {images.map((image) => (
+            <motion.div
+              className="min-h-slide2 min-w-slide2 p-1 h-full w-auto"
+              key={image}
+              whileHover={{ scale: 1.1 }}
+            >
+              <motion.img
+                src={image}
+                alt=""
+                className="w-auto h-full pointer-events-none"
+              />
+            </motion.div>
+          ))}
         </motion.div>
       </motion.div>
     </div>

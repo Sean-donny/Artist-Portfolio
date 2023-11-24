@@ -39,7 +39,7 @@ const Slideshow = ({ images }: SlideshowProps) => {
   }, [handleLeftConstraint]);
 
   return (
-    <div className="w-auto bg-orangutan h-full">
+    <div className="w-auto h-full">
       <motion.div
         key={containerKey}
         id={slideshowId}

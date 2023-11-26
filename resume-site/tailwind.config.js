@@ -11,6 +11,8 @@ export default {
         aquatic: "#7fffd4",
         aubergine: "#8100d1",
         zima: "#000cfc",
+        bloody: "#800b15",
+        clover: "#0f3314",
       },
       fontSize: {
         massive1: "4rem",
@@ -25,6 +27,13 @@ export default {
       minWidth: {
         slide1: "20rem",
         slide2: "15rem",
+      },
+      height: {
+        works: "33.675rem",
+        works2: "67.35rem",
+      },
+      screens: {
+        xl: { raw: "(min-width: 3800px)" },
       },
     },
   },

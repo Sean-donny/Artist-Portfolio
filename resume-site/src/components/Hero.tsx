@@ -6,7 +6,14 @@ import Images from "../HeroImages";
 const Hero = () => {
   const [bgColorIndex, setBgColorIndex] = useState(0);
 
-  const bgColors = ["bg-zima", "bg-orangutan", "bg-aubergine", "bg-black"];
+  const bgColors = [
+    "bg-zima",
+    "bg-orangutan",
+    "bg-aubergine",
+    "bg-black",
+    "bg-bloody",
+    "bg-clover",
+  ];
 
   const bgShuffle = () => {
     setBgColorIndex((prevIndex) => (prevIndex + 1) % bgColors.length);
@@ -14,15 +21,15 @@ const Hero = () => {
   return (
     <div className="bg-orangutan box-border">
       <div
-        className={`${bgColors[bgColorIndex]} w-full h-auto lg:h-full p-5 flex flex-col md:flex-row overflow-clip`}
+        className={`${bgColors[bgColorIndex]} w-full h-auto lg:h-full p-7 flex flex-col md:flex-row overflow-clip`}
       >
-        <div className=" flex-grow md:w-3/5 md:flex-none">
+        <div className="flex-grow md:w-3/5 md:flex-none">
           <div className="flex flex-col h-auto md:h-full p-2">
             <div className=" w-full h-1/2">
               <Slideshow images={Images} />
             </div>
-            <div className=" w-full h-auto md:h-full">
-              <article className=" h-full w-auto flex items-end overflow-clip">
+            <div className="w-full h-auto md:h-full">
+              <article className="h-full w-auto flex items-end overflow-clip">
                 <h1 className="font-custom font-semibold italic tracking-tight text-aquatic p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1">
                   Sean Donny is a<br />
                   multidisciplinary artist

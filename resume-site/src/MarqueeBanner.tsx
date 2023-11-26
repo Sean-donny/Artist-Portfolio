@@ -13,7 +13,7 @@ const MarqueeBanner = () => {
   ));
 
   return (
-    <div className="bg-neutral-950 p-5">
+    <div className="bg-neutral-950 py-5">
       <Marquee className="overflow-hidden" pauseOnHover>
         {marqueeContent}
       </Marquee>

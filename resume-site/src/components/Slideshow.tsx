@@ -53,9 +53,9 @@ const Slideshow = ({ images }: SlideshowProps) => {
         >
           {images.map((image) => (
             <motion.div
-              className="min-h-slide2 min-w-slide2 p-1 h-full w-auto"
+              className="min-h-slide2 min-w-slide2 px-2 h-full w-auto"
               key={image}
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ translateY: 10 }}
             >
               <motion.img
                 src={image}

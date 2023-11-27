@@ -1,4 +1,4 @@
-import Footer from "./Footer";
+import Footer from "./components/Footer";
 import Marquee from "./MarqueeBanner";
 import Works from "./Works";
 import Hero from "./components/Hero";

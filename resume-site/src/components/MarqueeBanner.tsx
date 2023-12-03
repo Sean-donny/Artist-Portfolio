@@ -1,5 +1,5 @@
-import Marquee from "react-fast-marquee";
-import funFacts from "./funFacts";
+import Marquee from 'react-fast-marquee';
+import funFacts from '../funFacts';
 
 const MarqueeBanner = () => {
   const repeatCount = 20;

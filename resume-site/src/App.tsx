@@ -1,16 +1,23 @@
-import Footer from "./components/Footer";
-import Marquee from "./MarqueeBanner";
-import Works from "./Works";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import MenuOverlay from './components/MenuOverlay';
+import Content from './components/Content';
+
+import { useState } from 'react';
 
 function App() {
+  const [menuOverlayOpen, setMenuOverlayOpen] = useState(false);
   return (
     <div>
-      <Navbar />
-      <Hero />
-      <Marquee />
-      <Works />
+      <Navbar
+        menuOverlayOpen={menuOverlayOpen}
+        setMenuOverlayOpen={setMenuOverlayOpen}
+      />
+      <MenuOverlay
+        menuOverlayOpen={menuOverlayOpen}
+        setMenuOverlayOpen={setMenuOverlayOpen}
+      />
+      <Content />
       <Footer />
     </div>
   );

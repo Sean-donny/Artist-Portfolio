@@ -1,26 +1,31 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import { MenuOverlayProps } from '../components/MenuOverlayProps';
 
-const Navbar = () => {
+const Navbar = ({ menuOverlayOpen, setMenuOverlayOpen }: MenuOverlayProps) => {
   return (
-    <nav className="w-full fixed px-5 py-2 z-10">
+    <nav className="w-full fixed px-5 py-2 z-50">
       <ul className="flex justify-between">
         <li>
-          <motion.h1
-            className="font-custom font-semibold text-aquatic tracking-tight cursor-crosshair text-lg"
-            whileHover={{ scale: 1.2618 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            Sean Donny
-          </motion.h1>
+          <a href="https://www.dominos.co.uk">
+            <motion.h1
+              className="font-custom font-semibold text-aquatic tracking-tight text-lg"
+              whileHover={{ scale: 1.2618 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Sean Donny
+            </motion.h1>
+          </a>
         </li>
         <li>
-          <motion.button
-            className="font-custom font-semibold text-aquatic tracking-tight cursor-crosshair text-lg"
-            whileHover={{ scale: 1.2618 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            Menu
-          </motion.button>
+          <div onClick={() => setMenuOverlayOpen(!menuOverlayOpen)}>
+            <motion.button
+              className="font-custom font-semibold text-aquatic tracking-tight text-lg"
+              whileHover={{ scale: 1.2618 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Menu
+            </motion.button>
+          </div>
         </li>
       </ul>
     </nav>

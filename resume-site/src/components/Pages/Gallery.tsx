@@ -1,6 +1,7 @@
 import AshelyObsession from './Gallery Sections/AshelyObsession';
 import SeanXTife from './Gallery Sections/SeanXTife';
 import IdluamXMars from './Gallery Sections/IdluamXMars';
+import GuitarGurlxLoveStory from './Gallery Sections/GuitarGurlxLoveStory';
 
 const Gallery = () => {
   return (
@@ -9,6 +10,7 @@ const Gallery = () => {
         <AshelyObsession />
         <SeanXTife />
         <IdluamXMars />
+        <GuitarGurlxLoveStory />
         <div>Guitar Gurl</div>
         <div>Runway Gurl</div>
         <div>Read Heads</div>

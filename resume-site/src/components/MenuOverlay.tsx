@@ -20,14 +20,14 @@ const MenuOverlay = ({
 
   return (
     <nav
-      className={`w-full min-h-screen fixed inset-0 z-20 ${
+      className={`w-full min-h-screen fixed inset-0 z-40 ${
         menuOverlayOpen ? 'block' : 'hidden'
       }`}
     >
       <div className="w-full min-h-screen bg-black">
         <div className="w-full min-h-screen flex items-center justify-center p-2">
           <div>
-            <ul className="font-custom font-semibold tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 text-aquatic">
+            <ul className="font-custom font-semibold tracking-tight lg:text-massive1 text-2xl lg:leading-massive1 text-aquatic">
               <a
                 href="https://www.dominos.co.uk"
                 onClick={() => setMenuOverlayOpen(!menuOverlayOpen)}

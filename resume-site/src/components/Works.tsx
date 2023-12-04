@@ -1,15 +1,15 @@
-import { useState } from "react";
-import RULESTHEWORLD from "/optimised/crtz_spread.jpg";
-import SubaruBoy from "/optimised/cruel_santino_subaru_boy_wide.jpg";
-import MenaceTalk from "/optimised/trill_tega_menace_talk_video_still_1.jpg";
-import SeanDonny from "/optimised/sean_donny_animated_photo.jpg";
+import { useState } from 'react';
+import RulesTheWorld from '/optimised/crtz_spread.jpg';
+import SubaruBoy from '/optimised/cruel_santino_subaru_boy_wide.jpg';
+import MenaceTalk from '/optimised/trill_tega_menace_talk_video_still_1.jpg';
+import SeanDonny from '/optimised/sean_donny_animated_photo.jpg';
 
 const Works = () => {
   const [bgColorIndex, setBgColorIndex] = useState(0);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState<number | null>(null);
 
-  const bgColors = ["bg-aubergine", "bg-black"];
+  const bgColors = ['bg-aubergine', 'bg-black'];
 
   const eggPlant = () => {
     setIsModalVisible(false);
@@ -32,16 +32,16 @@ const Works = () => {
           <div
             className={`works-gallery-container mb-4 flex-grow md:w-5/12 md:flex-none ${
               isModalVisible && highlightedIndex !== 0
-                ? "opacity-20"
-                : "opacity-100"
+                ? 'opacity-20'
+                : 'opacity-100'
             }`}
             onMouseEnter={() => blackOut(0)}
             onMouseLeave={eggPlant}
           >
             <div className="works-gallery-image-container h-auto lg:h-works xl:h-auto overflow-hidden flex items-center justify-center">
               <img
-                src={RULESTHEWORLD}
-                alt="RULESTHEWORLD"
+                src={RulesTheWorld}
+                alt="RulesTheWorld"
                 className="works-gallery-image object-cover object-center h-full w-auto cursor-pointer"
               />
             </div>
@@ -54,8 +54,8 @@ const Works = () => {
           <div
             className={`works-personal-projects-container mb-1 flex-grow md:w-6/12 md:flex-none ${
               isModalVisible && highlightedIndex !== 1
-                ? "opacity-20"
-                : "opacity-100"
+                ? 'opacity-20'
+                : 'opacity-100'
             }`}
             onMouseEnter={() => blackOut(1)}
             onMouseLeave={eggPlant}
@@ -78,8 +78,8 @@ const Works = () => {
           <div
             className={`works-client-projects-container mb-4 flex-grow md:w-8/12 md:flex-none ${
               isModalVisible && highlightedIndex !== 2
-                ? "opacity-20"
-                : "opacity-100"
+                ? 'opacity-20'
+                : 'opacity-100'
             }`}
             onMouseEnter={() => blackOut(2)}
             onMouseLeave={eggPlant}
@@ -100,8 +100,8 @@ const Works = () => {
           <div
             className={`works-about-container mb-4 flex-grow md:w-3/12 md:flex-none ${
               isModalVisible && highlightedIndex !== 3
-                ? "opacity-20"
-                : "opacity-100"
+                ? 'opacity-20'
+                : 'opacity-100'
             }`}
             onMouseEnter={() => blackOut(3)}
             onMouseLeave={eggPlant}

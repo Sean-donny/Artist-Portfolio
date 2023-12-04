@@ -1,22 +1,22 @@
-import { useState } from "react";
-import SeanPortrait from "/optimised/sean_donny_portrait.jpg";
-import Slideshow from "../components/Slideshow";
-import Images from "../HeroImages";
+import { useState } from 'react';
+import SeanPortrait from '/optimised/sean_donny_portrait.jpg';
+import Slideshow from '../components/Slideshow';
+import Images from '../HeroImages';
 
 const Hero = () => {
   const [bgColorIndex, setBgColorIndex] = useState(0);
 
   const bgColors = [
-    "bg-zima",
-    "bg-orangutan",
-    "bg-aubergine",
-    "bg-black",
-    "bg-bloody",
-    "bg-clover",
+    'bg-zima',
+    'bg-orangutan',
+    'bg-aubergine',
+    'bg-black',
+    'bg-bloody',
+    'bg-clover',
   ];
 
   const bgShuffle = () => {
-    setBgColorIndex((prevIndex) => (prevIndex + 1) % bgColors.length);
+    setBgColorIndex(prevIndex => (prevIndex + 1) % bgColors.length);
   };
   return (
     <div className="bg-orangutan box-border">
@@ -25,7 +25,7 @@ const Hero = () => {
       >
         <div className="flex-grow md:w-3/5 md:flex-none">
           <div className="flex flex-col h-auto md:h-full p-2">
-            <div className=" w-full h-1/2">
+            <div className="w-full h-1/2">
               <Slideshow images={Images} />
             </div>
             <div className="w-full h-auto md:h-full">

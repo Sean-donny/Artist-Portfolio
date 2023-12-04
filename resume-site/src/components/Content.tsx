@@ -1,9 +1,11 @@
-import Home from './Pages/Home';
+// import Home from './Pages/Home';
+import Gallery from './Pages/Gallery';
 
 const Content = () => {
   return (
     <div className="content-container">
-      <Home />
+      {/* <Home /> */}
+      <Gallery />
     </div>
   );
 };

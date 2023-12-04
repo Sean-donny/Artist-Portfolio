@@ -8,13 +8,11 @@ import Aitl from '/optimised/ashley_into_the_light.jpg';
 const AshelyObsession = () => {
   //Refs used for tracking items on the page
   const ashTitleRef = useRef(null);
-  const ashImage1Ref = useRef(null);
-  const ashImage2Ref = useRef(null);
+  const ashContentRef = useRef(null);
 
   //Used to check if tracked items are in view
   const ashTitleInView = useInView(ashTitleRef, { once: true });
-  const ashImage1InView = useInView(ashImage1Ref, { once: true });
-  const ashImage2InView = useInView(ashImage2Ref, { once: true });
+  const ashContentInView = useInView(ashContentRef, { once: true });
 
   //Used to change the X positions of the left and right images
   const [ashley1Position, setAshley1Position] = useState(600);
@@ -28,35 +26,35 @@ const AshelyObsession = () => {
   //Used to set the opacity of the content div
   const [contentOpacity, setContentOpacity] = useState(0);
 
-  //Used to trigger the position and opacity effects when left image is in view
+  //Used to trigger the position and opacity effects when the content div is in view
   useEffect(() => {
-    if (ashImage1InView) {
+    if (ashContentInView) {
       setTimeout(() => {
         setAshley1Position(0);
         setAshley1Opacity(1);
         setContentOpacity(1);
       }, 1000); // 1000 milliseconds = 1 second
     }
-  }, [ashImage1InView, ashley1Position, contentOpacity]);
+  }, [ashContentInView, ashley1Position, contentOpacity]);
 
-  //Used to trigger the position and opacity effects when right image is in view
+  //Used to trigger the position and opacity effects when the content div is in view
   useEffect(() => {
-    if (ashImage2InView) {
+    if (ashContentInView) {
       setTimeout(() => {
         setAshley2Position(0);
         setAshley2Opacity(1);
       }, 1500); // 1500 milliseconds = 1.5 seconds
     }
-  }, [ashImage2InView, ashley2Position]);
+  }, [ashContentInView, ashley2Position]);
 
-  //Used to trigger the position and opacity effects of middle image when left image is in view
+  //Used to trigger the position and opacity effects of middle image when the content div is in view
   useEffect(() => {
-    if (ashImage1InView) {
+    if (ashContentInView) {
       setTimeout(() => {
         setAshley3Opacity(1);
       }, 2000); // 2000 milliseconds = 2 seconds
     }
-  }, [ashImage1InView]);
+  }, [ashContentInView]);
 
   return (
     <div className="ashley-obsession-container w-full h-auto hd:h-screen">
@@ -75,12 +73,12 @@ const AshelyObsession = () => {
         </div>
         <motion.div
           className="ashley-obsession-content w-full h-auto flex flex-col p-2 hd:h-3/4"
+          ref={ashContentRef}
           style={{ opacity: contentOpacity }}
         >
           <div className="ashley-obsession-content-images w-full h-full flex flex-col items-center justify-center hd:flex-row">
             <motion.div
               className="ashley-obsession-image-container-1 h-full w-full p-2 flex flex-col items-center justify-center hd:w-1/3 mb-10 hd:mb-2"
-              ref={ashImage1Ref}
               animate={{
                 translateX: ashley1Position,
                 opacity: ashley1Opacity,
@@ -126,7 +124,6 @@ const AshelyObsession = () => {
             </motion.div>
             <motion.div
               className="ashley-obsession-image-container-3 h-full w-full p-2 flex flex-col items-center justify-center hd:w-1/3 mb-10 hd:mb-2"
-              ref={ashImage2Ref}
               animate={{
                 translateX: ashley2Position,
                 opacity: ashley2Opacity,

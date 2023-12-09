@@ -4,6 +4,7 @@ import MenuOverlay from './components/MenuOverlay';
 import Content from './components/Content';
 
 import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
   const [menuOverlayOpen, setMenuOverlayOpen] = useState(false);
@@ -13,10 +14,14 @@ function App() {
         menuOverlayOpen={menuOverlayOpen}
         setMenuOverlayOpen={setMenuOverlayOpen}
       />
-      <MenuOverlay
-        menuOverlayOpen={menuOverlayOpen}
-        setMenuOverlayOpen={setMenuOverlayOpen}
-      />
+      <AnimatePresence initial={false} mode="wait">
+        {menuOverlayOpen && (
+          <MenuOverlay
+            menuOverlayOpen={menuOverlayOpen}
+            setMenuOverlayOpen={setMenuOverlayOpen}
+          />
+        )}
+      </AnimatePresence>
       <Content />
       <Footer />
     </div>

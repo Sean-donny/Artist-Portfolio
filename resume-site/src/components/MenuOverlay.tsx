@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { anticipate, motion } from 'framer-motion';
 import { MenuOverlayProps } from './MenuOverlayProps';
 
 const MenuOverlay = ({
@@ -19,12 +20,14 @@ const MenuOverlay = ({
   };
 
   return (
-    <nav
-      className={`w-full min-h-screen fixed inset-0 z-40 ${
-        menuOverlayOpen ? 'block' : 'hidden'
-      }`}
-    >
-      <div className="w-full min-h-screen bg-black">
+    <nav className={`w-full min-h-screen fixed inset-0 z-40 block`}>
+      <motion.div
+        className="w-full min-h-screen bg-black"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.2, ease: anticipate }}
+      >
         <div className="w-full min-h-screen flex items-center justify-center p-2">
           <div>
             <ul className="font-custom font-semibold tracking-tight lg:text-massive1 text-2xl lg:leading-massive1 text-aquatic">
@@ -88,7 +91,7 @@ const MenuOverlay = ({
             </ul>
           </div>
         </div>
-      </div>
+      </motion.div>
     </nav>
   );
 };

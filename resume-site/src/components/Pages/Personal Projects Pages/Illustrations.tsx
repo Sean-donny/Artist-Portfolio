@@ -1,11 +1,7 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { motion, useInView, AnimatePresence, anticipate } from 'framer-motion';
 
-import GuitarGurl from '/optimised/guitar_girl_x.jpg';
-import ALoveStory from '/optimised/two_alt_girls.jpg';
-import RedHeadGirls from '/optimised/red_heads_illustration.jpg';
-import AmalaEwedu from '/optimised/amala_ewedu_poster.jpg';
-import RulesTheWorld from '/optimised/crtz_spread.jpg';
+import imageData, { ImageData } from '../../../IllustrationsData';
 
 const Illustrations = () => {
   const componentTitleRef = useRef(null);
@@ -14,18 +10,125 @@ const Illustrations = () => {
 
   const bgColor = 'zima';
   const componentTitle = 'Illustrations';
-  const componentImageAlt1 = 'A portrait of a girl holding a guitar';
-  const componentImageTitle1 = 'Guitar Gurl';
-  const componentImageDescription1 = {
-    line1: 'Guitar Gurl',
-    line2: '(2022)',
+
+  interface ModalContent {
+    src: string | undefined;
+    alt: string | undefined;
+    title: string | undefined;
+    year: string | undefined;
+  }
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState<ModalContent>({
+    src: undefined,
+    alt: undefined,
+    title: undefined,
+    year: undefined,
+  });
+
+  const handleImageFocus = ({ data }: { data: ModalContent }) => {
+    setModalContent({
+      src: data.src,
+      alt: data.alt,
+      title: data.title,
+      year: data.year,
+    });
+    setModalOpen(true);
   };
-  const componentImageAlt2 = 'A portrait of two people in love';
-  const componentImageTitle2 = 'A Love Story';
-  const componentImageDescription2 = {
-    line1: 'A Love Story',
-    line2: '(2021)',
+
+  const handleImageExit = () => {
+    setModalOpen(false);
+    setModalContent({
+      src: undefined,
+      alt: undefined,
+      title: undefined,
+      year: undefined,
+    });
   };
+
+  interface ImageGalleryProps {
+    imageData: ImageData;
+  }
+
+  const GalleryModal = ({ modalContent }: { modalContent: ModalContent }) => (
+    <div
+      className="component-modal w-full h-full fixed inset-0 z-30 block bg-orangutan overflow-hidden p-5"
+      onClick={() => handleImageExit()}
+    >
+      <div className="component-modal-container flex items-center justify-center w-full h-full bg-aquatic">
+        <div className="component-modal-content bg-zima h-full w-full flex items-center justify-center">
+          <motion.div className="component-modal-image-container h-full w-full hd:p-2 flex flex-col items-center justify-center mb-10 hd:mb-2">
+            <motion.img
+              src={modalContent.src}
+              alt={modalContent.alt}
+              title={modalContent.title}
+              className="component-modal-image"
+              style={{
+                objectFit: 'cover',
+                objectPosition: 'center',
+                zIndex: 10,
+                margin: '0px',
+                maxHeight: '85%',
+                // minWidth: '100%',
+                overflowClipMargin: 'content-box',
+                overflow: 'clip',
+              }}
+              drag
+              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+              dragElastic={0.8}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 1.5 }}
+              initial={{ scale: 0.2 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.8 }}
+              transition={{ duration: 0.2, ease: anticipate }}
+              onClick={e => e.stopPropagation()}
+            />
+            <motion.div className="component-content-images-description-2 w-full">
+              <p className="font-custom text-base text-center text-zinc-200 mt-5">
+                {modalContent.title}
+                <br />
+                {modalContent.year}
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const ImageGallery = ({ imageData }: ImageGalleryProps) => (
+    <div className="component-content-images w-full h-full flex flex-col items-center justify-center hd:flex-row">
+      {Object.keys(imageData).map(key => {
+        const data = imageData[key];
+
+        return (
+          <motion.div
+            key={key}
+            className="component-image-container h-full w-full hd:p-2 flex flex-col items-center justify-center mb-10 hd:mb-2"
+            drag
+            dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+            dragElastic={0.8}
+            onClick={() => handleImageFocus({ data })}
+          >
+            <img
+              src={data.src}
+              alt={data.alt}
+              title={data.title}
+              className="component-image object-cover object-center h-5/6 w-auto z-20 pointer-events-none"
+            />
+            <motion.div className="component-content-images-description w-full h-1/6">
+              <p className="font-custom text-base text-center text-zinc-200">
+                {data.title}
+                <br />
+                {data.year}
+              </p>
+            </motion.div>
+          </motion.div>
+        );
+      })}
+    </div>
+  );
 
   return (
     <div className="component-container w-full h-auto hd:h-screen">
@@ -48,134 +151,10 @@ const Illustrations = () => {
           </motion.h2>
         </div>
         <div className="component-content w-full h-auto flex flex-col p-2">
-          <div className="component-content-images w-full h-full flex flex-col items-center justify-center hd:flex-row">
-            <motion.div
-              className="component-image-container-1 h-full w-full hd:p-2 flex flex-col items-center justify-center mb-10 hd:mb-2"
-              drag
-              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-              dragElastic={0.8}
-            >
-              <img
-                src={GuitarGurl}
-                alt={componentImageAlt1}
-                title={componentImageTitle1}
-                className="component-image-1 object-cover object-center h-5/6 w-auto z-20 pointer-events-none"
-              />
-              <motion.div className="component-content-images-description-1 w-full h-1/6">
-                <p className="font-custom text-base text-center text-zinc-200">
-                  {componentImageDescription1.line1}
-                  <br />
-                  {componentImageDescription1.line2}
-                </p>
-              </motion.div>
-            </motion.div>
-            <motion.div
-              className="component-image-container-2 h-full w-full hd:p-2 flex flex-col items-center justify-center mb-10 hd:mb-2"
-              drag
-              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-              dragElastic={0.8}
-            >
-              <img
-                src={ALoveStory}
-                alt={componentImageAlt2}
-                title={componentImageTitle2}
-                className="component-image-2 object-cover object-center h-5/6 w-auto z-10 pointer-events-none"
-              />
-              <motion.div className="component-content-images-description-2 w-full h-1/6">
-                <p className="font-custom text-base text-center text-zinc-200">
-                  {componentImageDescription2.line1}
-                  <br />
-                  {componentImageDescription2.line2}
-                </p>
-              </motion.div>
-            </motion.div>
-            <motion.div
-              className="component-image-container-3 h-full w-full hd:p-2 flex flex-col items-center justify-center mb-10 hd:mb-2"
-              drag
-              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-              dragElastic={0.8}
-            >
-              <img
-                src={RedHeadGirls}
-                alt={componentImageAlt2}
-                title={componentImageTitle2}
-                className="component-image-3 object-cover object-center h-5/6 w-auto z-10 pointer-events-none"
-              />
-              <motion.div className="component-content-images-description-2 w-full h-1/6">
-                <p className="font-custom text-base text-center text-zinc-200">
-                  {componentImageDescription2.line1}
-                  <br />
-                  {componentImageDescription2.line2}
-                </p>
-              </motion.div>
-            </motion.div>
-            <motion.div
-              className="component-image-container-4 h-full w-full hd:p-2 flex flex-col items-center justify-center mb-10 hd:mb-2"
-              drag
-              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-              dragElastic={0.8}
-            >
-              <img
-                src={AmalaEwedu}
-                alt={componentImageAlt2}
-                title={componentImageTitle2}
-                className="component-image-4 object-cover object-center h-5/6 w-auto z-10 pointer-events-none"
-              />
-              <motion.div className="component-content-images-description-2 w-full h-1/6">
-                <p className="font-custom text-base text-center text-zinc-200">
-                  {componentImageDescription2.line1}
-                  <br />
-                  {componentImageDescription2.line2}
-                </p>
-              </motion.div>
-            </motion.div>
-            <motion.div
-              className="component-image-container-5 h-full w-full hd:p-2 flex flex-col items-center justify-center mb-10 hd:mb-2"
-              drag
-              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-              dragElastic={0.8}
-            >
-              <img
-                src={RulesTheWorld}
-                alt={componentImageAlt2}
-                title={componentImageTitle2}
-                className="component-image-5 object-cover object-center h-5/6 w-auto z-10 pointer-events-none"
-              />
-              <motion.div className="component-content-images-description-2 w-full h-1/6">
-                <p className="font-custom text-base text-center text-zinc-200">
-                  {componentImageDescription2.line1}
-                  <br />
-                  {componentImageDescription2.line2}
-                </p>
-              </motion.div>
-            </motion.div>
-            <div className="component-modal w-full h-full fixed inset-0 z-30 block bg-orangutan overflow-hidden p-10">
-              <div className="component-modal-container flex items-center justify-center w-full h-full bg-aquatic">
-                <div className="component-modal-content bg-zima h-full w-full bg-aq flex items-center justify-center">
-                  <motion.div
-                    className="component-modal-image-container h-full w-full hd:p-2 flex flex-col items-center justify-center mb-10 hd:mb-2"
-                    drag
-                    dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                    dragElastic={0.8}
-                  >
-                    <img
-                      src={AmalaEwedu}
-                      alt={componentImageAlt2}
-                      title={componentImageTitle2}
-                      className="component-modal-image object-cover object-center min-w-full z-10 pointer-events-none"
-                    />
-                    <motion.div className="component-content-images-description-2 w-full">
-                      <p className="font-custom text-base text-center text-zinc-200">
-                        {componentImageDescription2.line1}
-                        <br />
-                        {componentImageDescription2.line2}
-                      </p>
-                    </motion.div>
-                  </motion.div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ImageGallery imageData={imageData} />
+          <AnimatePresence initial={false} mode="wait">
+            {modalOpen && <GalleryModal modalContent={modalContent} />}
+          </AnimatePresence>
         </div>
       </div>
     </div>

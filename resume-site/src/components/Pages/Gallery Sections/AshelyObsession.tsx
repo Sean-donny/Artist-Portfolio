@@ -1,11 +1,15 @@
 import { motion, useInView } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
-import Wdylmh from '/optimised/ashley_okoli_portrait.jpg';
-import Agiag from '/optimised/ashley_okoli_with_a_gun.jpg';
-import Aitl from '/optimised/ashley_into_the_light.jpg';
+import imageData from '../../../AshleyObsessionData';
 
-const AshelyObsession = () => {
+import { ModalContent } from '../../../ModalContent';
+
+interface Props {
+  onOpen: (data: ModalContent) => () => void;
+}
+
+const AshelyObsession = ({ onOpen }: Props) => {
   //Refs used for tracking items on the page
   const ashTitleRef = useRef(null);
   const ashContentRef = useRef(null);
@@ -15,8 +19,8 @@ const AshelyObsession = () => {
   const ashContentInView = useInView(ashContentRef, { once: true });
 
   //Used to change the X positions of the left and right images
-  const [ashley1Position, setAshley1Position] = useState(600);
-  const [ashley2Position, setAshley2Position] = useState(-600);
+  const [ashley1Position, setAshley1Position] = useState(30);
+  const [ashley2Position, setAshley2Position] = useState(-30);
 
   //Used to change the opacity of the left, middle and right images
   const [ashley1Opacity, setAshley1Opacity] = useState(0);
@@ -56,9 +60,14 @@ const AshelyObsession = () => {
     }
   }, [ashContentInView]);
 
+  const bgColor = 'black';
+  const componentTitle = 'The Ashley Obsession';
+
   return (
     <div className="ashley-obsession-container w-full h-auto hd:h-screen">
-      <div className="ashley-obsession-items w-full h-auto hd:h-screen bg-black p-10 flex flex-col hd:items-center hd:justify-center">
+      <div
+        className={`ashley-obsession-items w-full h-auto hd:h-screen bg-${bgColor} p-10 flex flex-col hd:items-center hd:justify-center`}
+      >
         <div
           className="ashley-obsession-title w-full h-24 hd:h-1/4 flex items-center justify-center"
           ref={ashTitleRef}
@@ -68,7 +77,7 @@ const AshelyObsession = () => {
             animate={{ scale: ashTitleInView ? 2 : 0.5 }}
             transition={{ delay: 0.2, ease: 'anticipate' }}
           >
-            The Ashley Obsession
+            {componentTitle}
           </motion.h2>
         </div>
         <motion.div
@@ -76,73 +85,132 @@ const AshelyObsession = () => {
           ref={ashContentRef}
           style={{ opacity: contentOpacity }}
         >
-          <div className="ashley-obsession-content-images w-full h-full flex flex-col items-center justify-center hd:flex-row">
+          {/* <div className="ashley-obsession-content-images w-full h-full flex flex-col items-center justify-center hd:flex-row">
             <motion.div
-              className="ashley-obsession-image-container-1 h-full w-full p-2 flex flex-col items-center justify-center hd:w-1/3 mb-10 hd:mb-2"
+              className={`ashley-obsession-image-container-1 h-full w-full p-2 flex flex-col items-center justify-center ${imageData.illustration1.style} mb-10 hd:mb-2`}
+              onClick={onOpen(imageData.illustration1)}
               animate={{
                 translateX: ashley1Position,
                 opacity: ashley1Opacity,
               }}
-              drag
-              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-              dragElastic={0.8}
             >
               <img
-                src={Wdylmh}
-                alt="A Portrait of Ashley Okoli"
-                title="Why Did You Leave Me Here?"
+                src={imageData.illustration1.src}
+                alt={imageData.illustration1.alt}
+                title={imageData.illustration1.title}
                 className="ashley-obsession-image-1 object-cover object-center h-5/6 w-auto my-auto z-30 pointer-events-none"
               />
               <motion.div className="ashley-obsession-content-images-description-1 w-full h-1/6">
                 <p className="font-custom text-base text-center text-zinc-200">
-                  Why Did You Leave Me Here?
+                  {imageData.illustration1.title}
                   <br />
-                  &#40;2023&#41;
+                  {imageData.illustration1.year}
                 </p>
               </motion.div>
             </motion.div>
             <motion.div
-              className="ashley-obsession-image-container-2 h-full w-full p-2 flex flex-col items-center justify-center hd:w-1/3 mb-10 hd:mb-2"
-              drag
-              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-              dragElastic={0.8}
+              className={`ashley-obsession-image-container-2 h-full w-full p-2 flex flex-col items-center justify-center ${imageData.illustration2.style} mb-10 hd:mb-2`}
+              onClick={onOpen(imageData.illustration2)}
               animate={{ opacity: ashley3Opacity }}
             >
               <img
-                src={Agiag}
-                alt="A Portrait of Ashley Okoli"
-                title="A Girl Is A Gun"
+                src={imageData.illustration2.src}
+                alt={imageData.illustration2.alt}
+                title={imageData.illustration2.title}
                 className="ashley-obsession-image-2 object-cover object-center h-5/6 w-auto my-auto z-20 pointer-events-none"
               />
               <motion.div className="ashley-obsession-content-images-description-2 w-full h-1/6">
                 <p className="font-custom text-base text-center text-zinc-200">
-                  A Girl Is A Gun
+                  {imageData.illustration2.title}
                   <br />
-                  &#40;2021&#41;
+                  {imageData.illustration2.year}
                 </p>
               </motion.div>
             </motion.div>
             <motion.div
-              className="ashley-obsession-image-container-3 h-full w-full p-2 flex flex-col items-center justify-center hd:w-1/3 mb-10 hd:mb-2"
+              className={`ashley-obsession-image-container-3 h-full w-full p-2 flex flex-col items-center justify-center ${imageData.illustration3.style} mb-10 hd:mb-2`}
+              onClick={onOpen(imageData.illustration3)}
               animate={{
                 translateX: ashley2Position,
                 opacity: ashley2Opacity,
               }}
-              drag
-              dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-              dragElastic={0.8}
             >
               <img
-                src={Aitl}
-                alt="A Portrait of Ashley Okoli"
-                title="Into The Light"
+                src={imageData.illustration3.src}
+                alt={imageData.illustration3.alt}
+                title={imageData.illustration3.title}
                 className="ashley-obsession-image-3 object-cover object-center h-5/6 w-auto my-auto z-10 pointer-events-none"
               />
               <motion.div className="ashley-obsession-content-images-description-3 w-full h-1/6">
                 <p className="font-custom text-base text-center text-zinc-200">
-                  Into The light
+                  {imageData.illustration3.title}
                   <br />
-                  &#40;2022&#41;
+                  {imageData.illustration3.year}
+                </p>
+              </motion.div>
+            </motion.div>
+          </div> */}
+          <div className="ashley-obsession-content-images w-full h-full flex flex-col items-center justify-center hd:flex-row">
+            <motion.div
+              className={`ashley-obsession-image-container-1 h-full w-full p-2 flex flex-col items-center justify-center ${imageData.illustration1.style} mb-10 hd:mb-2`}
+              onClick={onOpen(imageData.illustration1)}
+              animate={{
+                translateX: ashley1Position,
+                opacity: ashley1Opacity,
+              }}
+            >
+              <img
+                src={imageData.illustration1.src}
+                alt={imageData.illustration1.alt}
+                title={imageData.illustration1.title}
+                className="ashley-obsession-image-1 object-cover object-center h-5/6 w-auto my-auto z-30 pointer-events-none"
+              />
+              <motion.div className="ashley-obsession-content-images-description-1 w-full h-1/6">
+                <p className="font-custom text-base text-center text-zinc-200">
+                  {imageData.illustration1.title}
+                  <br />
+                  {imageData.illustration1.year}
+                </p>
+              </motion.div>
+            </motion.div>
+            <motion.div
+              className={`ashley-obsession-image-container-2 h-full w-full p-2 flex flex-col items-center justify-center ${imageData.illustration2.style} mb-10 hd:mb-2`}
+              onClick={onOpen(imageData.illustration2)}
+              animate={{ opacity: ashley3Opacity }}
+            >
+              <img
+                src={imageData.illustration2.src}
+                alt={imageData.illustration2.alt}
+                title={imageData.illustration2.title}
+                className="ashley-obsession-image-2 object-cover object-center h-5/6 w-auto my-auto z-20 pointer-events-none"
+              />
+              <motion.div className="ashley-obsession-content-images-description-2 w-full h-1/6">
+                <p className="font-custom text-base text-center text-zinc-200">
+                  {imageData.illustration2.title}
+                  <br />
+                  {imageData.illustration2.year}
+                </p>
+              </motion.div>
+            </motion.div>
+            <motion.div
+              className={`ashley-obsession-image-container-3 h-full w-full p-2 flex flex-col items-center justify-center ${imageData.illustration3.style} mb-10 hd:mb-2`}
+              onClick={onOpen(imageData.illustration3)}
+              animate={{
+                translateX: ashley2Position,
+                opacity: ashley2Opacity,
+              }}
+            >
+              <img
+                src={imageData.illustration3.src}
+                alt={imageData.illustration3.alt}
+                title={imageData.illustration3.title}
+                className="ashley-obsession-image-3 object-cover object-center h-5/6 w-auto my-auto z-10 pointer-events-none"
+              />
+              <motion.div className="ashley-obsession-content-images-description-3 w-full h-1/6">
+                <p className="font-custom text-base text-center text-zinc-200">
+                  {imageData.illustration3.title}
+                  <br />
+                  {imageData.illustration3.year}
                 </p>
               </motion.div>
             </motion.div>

@@ -41,7 +41,7 @@ const Gallery = () => {
   return (
     <div className="gallery-container bg-black flex flex-col justify-start">
       <div className="gallery-items">
-        <AshelyObsession />
+        <AshelyObsession onOpen={handleImageFocus} />
         <SeanXTife onOpen={handleImageFocus} />
         <Illustrations onOpen={handleImageFocus} />
         <IdluamXMars onOpen={handleImageFocus} />

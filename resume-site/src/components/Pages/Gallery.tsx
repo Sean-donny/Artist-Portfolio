@@ -5,15 +5,9 @@ import Illustrations from './Gallery Sections/Illustrations';
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import GalleryModal from '../GalleryModal';
+import { ModalContent } from '../../ModalContent';
 
 const Gallery = () => {
-  interface ModalContent {
-    src: string | undefined;
-    alt: string | undefined;
-    title: string | undefined;
-    year: string | undefined;
-  }
-
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<ModalContent>({
     src: undefined,
@@ -48,9 +42,9 @@ const Gallery = () => {
     <div className="gallery-container bg-black flex flex-col justify-start">
       <div className="gallery-items">
         <AshelyObsession />
-        <SeanXTife />
+        <SeanXTife onOpen={handleImageFocus} />
         <Illustrations onOpen={handleImageFocus} />
-        <IdluamXMars />
+        <IdluamXMars onOpen={handleImageFocus} />
         <AnimatePresence initial={false} mode="wait">
           {modalOpen && (
             <GalleryModal

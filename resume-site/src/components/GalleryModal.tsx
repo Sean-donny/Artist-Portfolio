@@ -1,7 +1,7 @@
 import { anticipate, motion } from 'framer-motion';
 import { useEffect } from 'react';
 
-import { ModalContent } from './Pages/Gallery Sections/ModalContent';
+import { ModalContent } from '../ModalContent';
 
 interface GalleryModalProps {
   modalContent: ModalContent;
@@ -44,7 +44,7 @@ const GalleryModal = ({ modalContent, onClose }: GalleryModalProps) => {
               drag
               dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
               dragElastic={0.8}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.006 }}
               whileTap={{ scale: 1.5 }}
               initial={{ scale: 0.2 }}
               animate={{ scale: 1 }}
@@ -52,7 +52,12 @@ const GalleryModal = ({ modalContent, onClose }: GalleryModalProps) => {
               transition={{ duration: 0.2, ease: anticipate }}
               onClick={e => e.stopPropagation()}
             />
-            <motion.div className="component-content-images-description-2 w-full">
+            <motion.div
+              className="component-content-images-description-2 w-full"
+              initial={{ opacity: 0.1 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, ease: anticipate }}
+            >
               <p className="font-custom text-base text-center text-zinc-200 mt-5">
                 {modalContent.title}
                 <br />

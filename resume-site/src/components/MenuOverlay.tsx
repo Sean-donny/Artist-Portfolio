@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { anticipate, motion } from 'framer-motion';
 import { MenuOverlayProps } from './MenuOverlayProps';
 
@@ -19,6 +19,16 @@ const MenuOverlay = ({
     setHighlightedIndex(null);
   };
 
+  // Add an effect to handle the body class when the modal opens and closes
+  useEffect(() => {
+    // Add the 'menu-overlay-open' class to the body when the modal is open
+    document.body.classList.add('menu-overlay-open');
+
+    // Remove the 'menu-overlay-open' class from the body when the modal is closed
+    return () => {
+      document.body.classList.remove('menu-overlay-open');
+    };
+  }, []);
   return (
     <nav className={`w-full min-h-screen fixed inset-0 z-40 block`}>
       <motion.div

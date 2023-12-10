@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body.modal-open, body.menu-overlay-open {
+    overflow: hidden;
+  }

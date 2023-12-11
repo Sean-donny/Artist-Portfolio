@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        custom: ['Urbanist'],
+        custom: ['Urbanist', 'sans-serif'],
       },
       colors: {
         orangutan: '#fc7200',

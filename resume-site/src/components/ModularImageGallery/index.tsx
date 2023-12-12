@@ -30,10 +30,12 @@ const ModularImageGallery = ({
         const data = imageData[key];
 
         return (
-          <div
+          <motion.div
             key={key}
             className={`component-image-container h-full w-full hd:p-2 flex flex-col items-center justify-center mb-10 hd:mb-2 ${data.style}`}
             onClick={onOpen(data)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
           >
             <img
               src={data.src}
@@ -53,7 +55,7 @@ const ModularImageGallery = ({
                 {data.year}
               </p>
             </motion.div>
-          </div>
+          </motion.div>
         );
       })}
     </div>

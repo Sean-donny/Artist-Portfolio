@@ -46,7 +46,6 @@ const Works = () => {
             onMouseEnter={() => blackOut(0)}
             onMouseLeave={eggPlant}
             onClick={() => {
-              window.scrollTo(0, 0);
               handleNavigate('gallery');
               //TODO: Approve functionality with FDOG
             }}

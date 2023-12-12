@@ -89,6 +89,8 @@ const AshelyObsession = ({ onOpen }: Props) => {
             <motion.div
               className={`ashley-obsession-image-container-1 h-full w-full p-2 flex flex-col items-center justify-center ${imageData.illustration1.style} mb-10 hd:mb-2`}
               onClick={onOpen(imageData.illustration1)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
               animate={{
                 translateX: ashley1Position,
                 opacity: ashley1Opacity,
@@ -111,6 +113,8 @@ const AshelyObsession = ({ onOpen }: Props) => {
             <motion.div
               className={`ashley-obsession-image-container-2 h-full w-full p-2 flex flex-col items-center justify-center ${imageData.illustration2.style} mb-10 hd:mb-2`}
               onClick={onOpen(imageData.illustration2)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
               animate={{ opacity: ashley3Opacity }}
             >
               <img
@@ -130,6 +134,8 @@ const AshelyObsession = ({ onOpen }: Props) => {
             <motion.div
               className={`ashley-obsession-image-container-3 h-full w-full p-2 flex flex-col items-center justify-center ${imageData.illustration3.style} mb-10 hd:mb-2`}
               onClick={onOpen(imageData.illustration3)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
               animate={{
                 translateX: ashley2Position,
                 opacity: ashley2Opacity,

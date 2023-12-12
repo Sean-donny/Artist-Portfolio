@@ -10,7 +10,7 @@ import PersonalProjects from './pages/Personal Projects';
 import AnimationProject from './pages/Personal Projects/AnimationProject';
 import SubaruBoy from './pages/Personal Projects/SubaruBoy';
 import Music from './pages/Personal Projects/Music';
-import MemoriesVol2 from './pages/Personal Projects/MemoriesVol2';
+import Mowalola from './pages/Personal Projects/Mowalola';
 
 import ClientProjects from './pages/Client Projects';
 // Client Projects sub pages
@@ -18,8 +18,7 @@ import MenaceTalk from './pages/Client Projects/MenaceTalk';
 import YeAnthem from './pages/Client Projects/YeAnthem';
 import Nuniverse from './pages/Client Projects/Nuniverse';
 import Family from './pages/Client Projects/Family';
-import StarLogo from './pages/Client Projects/StarLogo';
-import Paoos from './pages/Client Projects/Paoos';
+import Popwave from './pages/Client Projects/Popwave';
 import MikesWrld from './pages/Client Projects/MikesWorld';
 
 import About from './pages/About';
@@ -43,61 +42,53 @@ const router = createBrowserRouter([
       {
         path: '/personal-projects',
         element: <PersonalProjects />,
-        children: [
-          {
-            path: '/personal-projects/animation-project',
-            element: <AnimationProject />,
-          },
-          {
-            path: '/personal-projects/subaru-boy',
-            element: <SubaruBoy />,
-          },
-          {
-            path: '/personal-projects/music',
-            element: <Music />,
-          },
-          {
-            path: '/personal-projects/memories-vol-2',
-            element: <MemoriesVol2 />,
-          },
-        ],
+      },
+      {
+        path: '/personal-projects/animation-project',
+        element: <AnimationProject />,
+      },
+      {
+        path: '/personal-projects/subaru-boy',
+        element: <SubaruBoy />,
+      },
+      {
+        path: '/personal-projects/music',
+        element: <Music />,
+      },
+      {
+        path: '/personal-projects/mowalola',
+        element: <Mowalola />,
       },
       {
         path: '/client-projects',
         element: <ClientProjects />,
-        children: [
-          {
-            path: '/client-projects/menace-talk',
-            element: <MenaceTalk />,
-          },
-          {
-            path: '/client-projects/ye-anthem',
-            element: <YeAnthem />,
-          },
-          {
-            path: '/client-projects/nuniverse',
-            element: <Nuniverse />,
-          },
-          {
-            path: '/client-projects/family',
-            element: <Family />,
-          },
-          {
-            path: '/client-projects/starLogo',
-            element: <StarLogo />,
-          },
-          {
-            path: '/client-projects/paoos',
-            element: <Paoos />,
-          },
-          {
-            path: '/client-projects/mikes-wrld',
-            element: <MikesWrld />,
-          },
-        ],
       },
       {
-        path: '/about',
+        path: '/client-projects/menace-talk',
+        element: <MenaceTalk />,
+      },
+      {
+        path: '/client-projects/ye-anthem',
+        element: <YeAnthem />,
+      },
+      {
+        path: '/client-projects/nuniverse',
+        element: <Nuniverse />,
+      },
+      {
+        path: '/client-projects/family',
+        element: <Family />,
+      },
+      {
+        path: '/client-projects/popwave',
+        element: <Popwave />,
+      },
+      {
+        path: '/client-projects/mikes-wrld',
+        element: <MikesWrld />,
+      },
+      {
+        path: '/client-projects/about',
         element: <About />,
       },
     ],

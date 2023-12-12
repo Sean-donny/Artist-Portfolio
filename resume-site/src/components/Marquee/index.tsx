@@ -15,7 +15,15 @@ const MarqueeBanner = () => {
 
   return (
     <div className="bg-neutral-950 py-5">
-      <Marquee className="overflow-hidden" pauseOnHover speed={150}>
+      <Marquee
+        className="overflow-hidden"
+        // pauseOnHover
+        speed={150}
+        delay={0.5}
+        gradient
+        gradientWidth={50}
+        gradientColor="black"
+      >
         {marqueeContent}
       </Marquee>
     </div>

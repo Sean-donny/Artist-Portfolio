@@ -40,7 +40,7 @@ const ClientProjects = () => {
               src={data.src}
               alt={data.alt}
               title={data.title}
-              className="client-projects-image w-[1080] h-[1080] pointer-events-none"
+              className="client-projects-image pointer-events-none"
             />
             <motion.div className="client-projects-content-images-description w-full h-auto">
               <p className="font-custom text-base text-center text-zinc-200">

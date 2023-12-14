@@ -53,7 +53,7 @@ const GalleryModal = ({ modalContent, onClose }: GalleryModalProps) => {
               onClick={e => e.stopPropagation()}
             />
             <motion.div
-              className="component-content-images-description-2 w-full"
+              className="component-content-images-description w-full"
               initial={{ opacity: 0.1 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, ease: anticipate }}

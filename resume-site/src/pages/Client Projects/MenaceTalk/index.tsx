@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import mtHeroBanner from '/optimised/trill_tega_menace_talk_video_still_1.jpg';
 import hoodedTrill from '/optimised/trill_tega_menace_talk_hero.png';
+import mtAlbumConceptArt1 from '/optimised/trill_tega_menace_talk_draft.jpg';
+import mtSingleConceptArt1 from '/optimised/trill_tega_menace_talk_abstract.jpg';
 
 const MenaceTalk = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -120,11 +122,147 @@ const MenaceTalk = () => {
     }
   }, [hoodedTrillP3InView, scrollY]);
 
+  const trillAlbumDraft1Ref = useRef(null);
+  const trillAlbumDraft1InView = useInView(trillAlbumDraft1Ref, {
+    once: true,
+  });
+  const [trillAlbumDraft1Opacity, setTrillAlbumDraft1Opacity] = useState(0);
+  const [trillAlbumDraft1Position, setTrillAlbumDraft1Position] = useState(20);
+
+  useEffect(() => {
+    if (trillAlbumDraft1InView && scrollY > parallaxValue) {
+      setTimeout(() => {
+        setTrillAlbumDraft1Opacity(1);
+        setTrillAlbumDraft1Position(0);
+      }, 50);
+    }
+  }, [trillAlbumDraft1InView, scrollY]);
+
+  const trillAlbumDraft1DescriptionHeaderRef = useRef(null);
+  const trillAlbumDraft1DescriptionHeaderInView = useInView(
+    trillAlbumDraft1DescriptionHeaderRef,
+    {
+      once: true,
+    },
+  );
+  const [
+    trillAlbumDraft1DescriptionHeaderOpacity,
+    setTrillAlbumDraft1DescriptionHeaderOpacity,
+  ] = useState(0);
+  const [
+    trillAlbumDraft1DescriptionHeaderPosition,
+    setTrillAlbumDraft1DescriptionHeaderPosition,
+  ] = useState(20);
+
+  useEffect(() => {
+    if (trillAlbumDraft1DescriptionHeaderInView && scrollY > parallaxValue) {
+      setTimeout(() => {
+        setTrillAlbumDraft1DescriptionHeaderOpacity(1);
+        setTrillAlbumDraft1DescriptionHeaderPosition(0);
+      }, 50);
+    }
+  }, [trillAlbumDraft1DescriptionHeaderInView, scrollY]);
+
+  const trillAlbumDraft1DescriptionParagraphRef = useRef(null);
+  const trillAlbumDraft1DescriptionParagraphInView = useInView(
+    trillAlbumDraft1DescriptionParagraphRef,
+    {
+      once: true,
+    },
+  );
+  const [
+    trillAlbumDraft1DescriptionParagraphOpacity,
+    setTrillAlbumDraft1DescriptionParagraphOpacity,
+  ] = useState(0);
+  const [
+    trillAlbumDraft1DescriptionParagraphPosition,
+    setTrillAlbumDraft1DescriptionParagraphPosition,
+  ] = useState(20);
+
+  useEffect(() => {
+    if (trillAlbumDraft1DescriptionParagraphInView && scrollY > parallaxValue) {
+      setTimeout(() => {
+        setTrillAlbumDraft1DescriptionParagraphOpacity(1);
+        setTrillAlbumDraft1DescriptionParagraphPosition(0);
+      }, 50);
+    }
+  }, [trillAlbumDraft1DescriptionParagraphInView, scrollY]);
+
+  const trillSingleDraft1Ref = useRef(null);
+  const trillSingleDraft1InView = useInView(trillSingleDraft1Ref, {
+    once: true,
+  });
+  const [trillSingleDraft1Opacity, setTrillSingleDraft1Opacity] = useState(0);
+  const [trillSingleDraft1Position, setTrillSingleDraft1Position] =
+    useState(20);
+
+  useEffect(() => {
+    if (trillSingleDraft1InView && scrollY > parallaxValue) {
+      setTimeout(() => {
+        setTrillSingleDraft1Opacity(1);
+        setTrillSingleDraft1Position(0);
+      }, 50);
+    }
+  }, [trillSingleDraft1InView, scrollY]);
+
+  const trillSingleDraft1DescriptionHeaderRef = useRef(null);
+  const trillSingleDraft1DescriptionHeaderInView = useInView(
+    trillSingleDraft1DescriptionHeaderRef,
+    {
+      once: true,
+    },
+  );
+  const [
+    trillSingleDraft1DescriptionHeaderOpacity,
+    setTrillSingleDraft1DescriptionHeaderOpacity,
+  ] = useState(0);
+  const [
+    trillSingleDraft1DescriptionHeaderPosition,
+    setTrillSingleDraft1DescriptionHeaderPosition,
+  ] = useState(20);
+
+  useEffect(() => {
+    if (trillSingleDraft1DescriptionHeaderInView && scrollY > parallaxValue) {
+      setTimeout(() => {
+        setTrillSingleDraft1DescriptionHeaderOpacity(1);
+        setTrillSingleDraft1DescriptionHeaderPosition(0);
+      }, 50);
+    }
+  }, [trillSingleDraft1DescriptionHeaderInView, scrollY]);
+
+  const trillSingleDraft1DescriptionParagraphRef = useRef(null);
+  const trillSingleDraft1DescriptionParagraphInView = useInView(
+    trillSingleDraft1DescriptionParagraphRef,
+    {
+      once: true,
+    },
+  );
+  const [
+    trillSingleDraft1DescriptionParagraphOpacity,
+    setTrillSingleDraft1DescriptionParagraphOpacity,
+  ] = useState(0);
+  const [
+    trillSingleDraft1DescriptionParagraphPosition,
+    setTrillSingleDraft1DescriptionParagraphPosition,
+  ] = useState(20);
+
+  useEffect(() => {
+    if (
+      trillSingleDraft1DescriptionParagraphInView &&
+      scrollY > parallaxValue
+    ) {
+      setTimeout(() => {
+        setTrillSingleDraft1DescriptionParagraphOpacity(1);
+        setTrillSingleDraft1DescriptionParagraphPosition(0);
+      }, 50);
+    }
+  }, [trillSingleDraft1DescriptionParagraphInView, scrollY]);
+
   return (
-    <div className="client-project-container bg-black w-full h-auto p-5">
+    <div className="client-project-container bg-black w-full h-auto">
       <div className="client-project-sections w-full h-auto flex flex-col items-center justify-center">
         <div
-          className="client-project-hero w-full h-[1080] overflow-hidden sticky top-5"
+          className="client-project-hero w-full h-[1080] overflow-hidden sticky top-0"
           style={{
             transform: `translate(0px, ${-heroTranslate}px)`,
             zIndex: 1,
@@ -138,11 +276,12 @@ const MenaceTalk = () => {
             animate={controls}
           />
         </div>
-        <div className={`h-[${parallaxValue.toString()}px] w-full mb-10`}>
-          {/* safe space */}
+        {/* height of safe space is set to the same as parallaxValue */}
+        <div className={`client-project-hero-safe-space h-[400px] w-full`}>
+          &nbsp;
         </div>
-        <div className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row">
-          <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] py-5">
+        <div className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5">
+          <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px]">
             <motion.h2
               ref={hoodedTrillHeaderRef}
               className="client-project-design-goal-description-header text-zinc-200 font-custom font-semibold italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mb-5"
@@ -229,8 +368,98 @@ const MenaceTalk = () => {
             />
           </div>
         </div>
-        <div className="h-[1080px] w-full bg-slate-700">
-          initial concepts & inspiration
+        <div className="client-project-initial-concepts-container h-auto w-full flex flex-col hd:flex-row p-5">
+          <div className="client-project-initial-concepts-album-cover h-full w-full hd:w-1/2">
+            <div className="client-project-initial-concepts-album-cover-concept-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+              <div className="client-project-initial-concepts-album-cover-concept-artwork h-3/5 w-full">
+                <motion.img
+                  src={mtAlbumConceptArt1}
+                  alt="An abstract drawing of trill tega shooting laser beams from his eyes with bat wings"
+                  className="mb-2"
+                  ref={trillAlbumDraft1Ref}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: trillAlbumDraft1Position,
+                    opacity: trillAlbumDraft1Opacity,
+                  }}
+                />
+              </div>
+              <div className="client-project-initial-concepts-album-cover-concept-description h-2/5 w-full flex flex-col items-center justify-center">
+                <motion.h4
+                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold"
+                  ref={trillAlbumDraft1DescriptionHeaderRef}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: trillAlbumDraft1DescriptionHeaderPosition,
+                    opacity: trillAlbumDraft1DescriptionHeaderOpacity,
+                  }}
+                >
+                  Album Cover Draft
+                </motion.h4>
+                <motion.p
+                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium"
+                  ref={trillAlbumDraft1DescriptionParagraphRef}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: trillAlbumDraft1DescriptionParagraphPosition,
+                    opacity: trillAlbumDraft1DescriptionParagraphOpacity,
+                  }}
+                >
+                  After discussing his vision, I sketched out a rough cover
+                  design to see if the idea had potential. This step is crucial
+                  to decide whether to proceed with an idea or pivot in a
+                  different direction. Luckily, he liked the concept, giving us
+                  the green light to move forward.
+                </motion.p>
+              </div>
+            </div>
+          </div>
+          <div className="client-project-initial-concepts-single-cover h-full w-full hd:w-1/2">
+            <div className="client-project-initial-concepts-single-cover-concept-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+              <div className="client-project-initial-concepts-single-cover-concept-artwork h-3/5 w-full">
+                <motion.img
+                  src={mtSingleConceptArt1}
+                  alt="An abstract illustration of trill tega and his other personas"
+                  className="mb-2"
+                  ref={trillSingleDraft1Ref}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: trillSingleDraft1Position,
+                    opacity: trillSingleDraft1Opacity,
+                  }}
+                />
+              </div>
+              <div className="client-project-initial-concepts-single-cover-concept-description h-2/5 w-full flex flex-col items-center justify-center">
+                <motion.h4
+                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold"
+                  ref={trillSingleDraft1DescriptionHeaderRef}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: trillSingleDraft1DescriptionHeaderPosition,
+                    opacity: trillSingleDraft1DescriptionHeaderOpacity,
+                  }}
+                >
+                  Single Cover Draft
+                </motion.h4>
+                <motion.p
+                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium"
+                  ref={trillSingleDraft1DescriptionParagraphRef}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: trillSingleDraft1DescriptionParagraphPosition,
+                    opacity: trillSingleDraft1DescriptionParagraphOpacity,
+                  }}
+                >
+                  For the lead single cover, I aimed to capture Trill up close,
+                  showcasing the intensity he brings to the project. I initially
+                  designed a cover featuring clones, each representing a
+                  distinct style he transitions between on the tape. However,
+                  the direction of the cover was eventually revised to a
+                  portrait of Trill himself.
+                </motion.p>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="h-[1080px] w-full bg-slate-800">process</div>
         <div className="h-[1080px] w-full bg-slate-900">final deliverables</div>

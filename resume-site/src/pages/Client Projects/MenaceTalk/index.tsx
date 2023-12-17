@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import mtHeroBanner from '/optimised/trill_tega_menace_talk_video_still_1.jpg';
 import hoodedTrill from '/optimised/trill_tega_menace_talk_hero.png';
-import mtAlbumConceptArt1 from '/optimised/trill_tega_menace_talk_draft.jpg';
-import mtSingleConceptArt1 from '/optimised/trill_tega_menace_talk_abstract.jpg';
+import scrappedSingleCover from '/optimised/trill_tega_menace_talk_version_1.jpg';
+import splitProjectDetailData from './draftsData';
 
 const MenaceTalk = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -54,6 +54,9 @@ const MenaceTalk = () => {
         setHoodedTrillOpacity(1);
         setHoodedTrillPosition(0);
       }, 50);
+    } else {
+      setHoodedTrillOpacity(0);
+      setHoodedTrillPosition(20);
     }
   }, [hoodedTrillInView, scrollY]);
 
@@ -71,6 +74,9 @@ const MenaceTalk = () => {
         setHoodedTrillHeaderOpacity(1);
         setHoodedTrillHeaderPosition(0);
       }, 50);
+    } else {
+      setHoodedTrillHeaderOpacity(0);
+      setHoodedTrillHeaderPosition(20);
     }
   }, [hoodedTrillHeaderInView, scrollY]);
 
@@ -87,6 +93,9 @@ const MenaceTalk = () => {
         setHoodedTrillP1Opacity(1);
         setHoodedTrillP1Position(0);
       }, 50);
+    } else {
+      setHoodedTrillP1Opacity(0);
+      setHoodedTrillP1Position(20);
     }
   }, [hoodedTrillP1InView, scrollY]);
 
@@ -103,6 +112,9 @@ const MenaceTalk = () => {
         setHoodedTrillP2Opacity(1);
         setHoodedTrillP2Position(0);
       }, 50);
+    } else {
+      setHoodedTrillP2Opacity(0);
+      setHoodedTrillP2Position(20);
     }
   }, [hoodedTrillP2InView, scrollY]);
 
@@ -119,6 +131,9 @@ const MenaceTalk = () => {
         setHoodedTrillP3Opacity(1);
         setHoodedTrillP3Position(0);
       }, 50);
+    } else {
+      setHoodedTrillP3Opacity(0);
+      setHoodedTrillP3Position(20);
     }
   }, [hoodedTrillP3InView, scrollY]);
 
@@ -130,7 +145,7 @@ const MenaceTalk = () => {
   const [trillAlbumDraft1Position, setTrillAlbumDraft1Position] = useState(20);
 
   useEffect(() => {
-    if (trillAlbumDraft1InView && scrollY > parallaxValue) {
+    if (trillAlbumDraft1InView) {
       setTimeout(() => {
         setTrillAlbumDraft1Opacity(1);
         setTrillAlbumDraft1Position(0);
@@ -155,7 +170,7 @@ const MenaceTalk = () => {
   ] = useState(20);
 
   useEffect(() => {
-    if (trillAlbumDraft1DescriptionHeaderInView && scrollY > parallaxValue) {
+    if (trillAlbumDraft1DescriptionHeaderInView) {
       setTimeout(() => {
         setTrillAlbumDraft1DescriptionHeaderOpacity(1);
         setTrillAlbumDraft1DescriptionHeaderPosition(0);
@@ -180,7 +195,7 @@ const MenaceTalk = () => {
   ] = useState(20);
 
   useEffect(() => {
-    if (trillAlbumDraft1DescriptionParagraphInView && scrollY > parallaxValue) {
+    if (trillAlbumDraft1DescriptionParagraphInView) {
       setTimeout(() => {
         setTrillAlbumDraft1DescriptionParagraphOpacity(1);
         setTrillAlbumDraft1DescriptionParagraphPosition(0);
@@ -197,7 +212,7 @@ const MenaceTalk = () => {
     useState(20);
 
   useEffect(() => {
-    if (trillSingleDraft1InView && scrollY > parallaxValue) {
+    if (trillSingleDraft1InView) {
       setTimeout(() => {
         setTrillSingleDraft1Opacity(1);
         setTrillSingleDraft1Position(0);
@@ -222,7 +237,7 @@ const MenaceTalk = () => {
   ] = useState(20);
 
   useEffect(() => {
-    if (trillSingleDraft1DescriptionHeaderInView && scrollY > parallaxValue) {
+    if (trillSingleDraft1DescriptionHeaderInView) {
       setTimeout(() => {
         setTrillSingleDraft1DescriptionHeaderOpacity(1);
         setTrillSingleDraft1DescriptionHeaderPosition(0);
@@ -247,10 +262,7 @@ const MenaceTalk = () => {
   ] = useState(20);
 
   useEffect(() => {
-    if (
-      trillSingleDraft1DescriptionParagraphInView &&
-      scrollY > parallaxValue
-    ) {
+    if (trillSingleDraft1DescriptionParagraphInView) {
       setTimeout(() => {
         setTrillSingleDraft1DescriptionParagraphOpacity(1);
         setTrillSingleDraft1DescriptionParagraphPosition(0);
@@ -281,7 +293,7 @@ const MenaceTalk = () => {
           &nbsp;
         </div>
         <div className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5">
-          <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px]">
+          <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
             <motion.h2
               ref={hoodedTrillHeaderRef}
               className="client-project-design-goal-description-header text-zinc-200 font-custom font-semibold italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mb-5"
@@ -371,10 +383,10 @@ const MenaceTalk = () => {
         <div className="client-project-initial-concepts-container h-auto w-full flex flex-col hd:flex-row p-5">
           <div className="client-project-initial-concepts-album-cover h-full w-full hd:w-1/2">
             <div className="client-project-initial-concepts-album-cover-concept-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-              <div className="client-project-initial-concepts-album-cover-concept-artwork h-3/5 w-full">
+              <div className="client-project-initial-concepts-album-cover-concept-artwork h-3/5 w-full flex flex-col items-center justify-center">
                 <motion.img
-                  src={mtAlbumConceptArt1}
-                  alt="An abstract drawing of trill tega shooting laser beams from his eyes with bat wings"
+                  src={splitProjectDetailData.Draft1.src}
+                  alt={splitProjectDetailData.Draft1.alt}
                   className="mb-2"
                   ref={trillAlbumDraft1Ref}
                   initial={{ opacity: 0 }}
@@ -386,7 +398,7 @@ const MenaceTalk = () => {
               </div>
               <div className="client-project-initial-concepts-album-cover-concept-description h-2/5 w-full flex flex-col items-center justify-center">
                 <motion.h4
-                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold"
+                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
                   ref={trillAlbumDraft1DescriptionHeaderRef}
                   initial={{ opacity: 0 }}
                   animate={{
@@ -394,10 +406,10 @@ const MenaceTalk = () => {
                     opacity: trillAlbumDraft1DescriptionHeaderOpacity,
                   }}
                 >
-                  Album Cover Draft
+                  {splitProjectDetailData.Draft1.header}
                 </motion.h4>
                 <motion.p
-                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium"
+                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
                   ref={trillAlbumDraft1DescriptionParagraphRef}
                   initial={{ opacity: 0 }}
                   animate={{
@@ -405,21 +417,17 @@ const MenaceTalk = () => {
                     opacity: trillAlbumDraft1DescriptionParagraphOpacity,
                   }}
                 >
-                  After discussing his vision, I sketched out a rough cover
-                  design to see if the idea had potential. This step is crucial
-                  to decide whether to proceed with an idea or pivot in a
-                  different direction. Luckily, he liked the concept, giving us
-                  the green light to move forward.
+                  {splitProjectDetailData.Draft1.paragraph}
                 </motion.p>
               </div>
             </div>
           </div>
           <div className="client-project-initial-concepts-single-cover h-full w-full hd:w-1/2">
             <div className="client-project-initial-concepts-single-cover-concept-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-              <div className="client-project-initial-concepts-single-cover-concept-artwork h-3/5 w-full">
+              <div className="client-project-initial-concepts-single-cover-concept-artwork h-3/5 w-full flex flex-col items-center justify-center">
                 <motion.img
-                  src={mtSingleConceptArt1}
-                  alt="An abstract illustration of trill tega and his other personas"
+                  src={splitProjectDetailData.Draft2.src}
+                  alt={splitProjectDetailData.Draft2.alt}
                   className="mb-2"
                   ref={trillSingleDraft1Ref}
                   initial={{ opacity: 0 }}
@@ -431,7 +439,7 @@ const MenaceTalk = () => {
               </div>
               <div className="client-project-initial-concepts-single-cover-concept-description h-2/5 w-full flex flex-col items-center justify-center">
                 <motion.h4
-                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold"
+                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
                   ref={trillSingleDraft1DescriptionHeaderRef}
                   initial={{ opacity: 0 }}
                   animate={{
@@ -439,10 +447,10 @@ const MenaceTalk = () => {
                     opacity: trillSingleDraft1DescriptionHeaderOpacity,
                   }}
                 >
-                  Single Cover Draft
+                  {splitProjectDetailData.Draft2.header}
                 </motion.h4>
                 <motion.p
-                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium"
+                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
                   ref={trillSingleDraft1DescriptionParagraphRef}
                   initial={{ opacity: 0 }}
                   animate={{
@@ -450,18 +458,29 @@ const MenaceTalk = () => {
                     opacity: trillSingleDraft1DescriptionParagraphOpacity,
                   }}
                 >
-                  For the lead single cover, I aimed to capture Trill up close,
-                  showcasing the intensity he brings to the project. I initially
-                  designed a cover featuring clones, each representing a
-                  distinct style he transitions between on the tape. However,
-                  the direction of the cover was eventually revised to a
-                  portrait of Trill himself.
+                  {splitProjectDetailData.Draft2.paragraph}
                 </motion.p>
               </div>
             </div>
           </div>
         </div>
-        <div className="h-[1080px] w-full bg-slate-800">process</div>
+        <div className="client-project-scrapped-single-cover-container h-auto w-full p-5">
+          <div className="client-project-scrapped-single-cover-items flex flex-col hd:flex-row h-auto w-full items-center justify-center">
+            <div className="client-project-scrapped-single-cover-container w-full h-full flex flex-col items-center justify-center p-5 hd:p-20">
+              <div className="client-project-scrapped-single-cover-image-container w-auto h-4/5">
+                <img
+                  className="client-project-scrapped-single-cover-image w-[864px] h-auto mb-2"
+                  src={scrappedSingleCover}
+                />
+                <div className="client-project-scrapped-single-cover-image-description w-full h-1/5">
+                  <h4 className="client-project-scrapped-single-cover-image-description-text font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold">
+                    Album Single Cover &#40;Scrapped&#41;
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="h-[1080px] w-full bg-slate-900">final deliverables</div>
         <div className="h-[1080px] w-full bg-slate-950">external links</div>
         <div className="h-[1080px] w-full bg-black">other projects</div>

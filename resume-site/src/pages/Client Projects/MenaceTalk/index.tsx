@@ -1,21 +1,62 @@
 import { useEffect, useRef, useState } from 'react';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { motion, useAnimation, useInView, anticipate } from 'framer-motion';
 import mtHeroBanner from '/optimised/trill_tega_menace_talk_video_still_1.jpg';
 import hoodedTrill from '/optimised/trill_tega_menace_talk_hero.png';
-import scrappedSingleCover from '/optimised/trill_tega_menace_talk_version_1.jpg';
-import splitProjectDetailData from './draftsData';
+import splitProjectDetailData from './data';
+import useInViewAnimation from '../../../Hooks/useInViewAnimation';
+import mtPromoVideo from '/optimised/videos/trill_tega_menace_talk_promo_video.mp4';
+import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
+import GalleryModal from '../../../components/GalleryModal';
+import { ModalContent } from '../../../interfaces/ModalContent';
+import { useNavigate } from 'react-router-dom';
 
 const MenaceTalk = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState<ModalContent>({
+    src: undefined,
+    alt: undefined,
+    title: undefined,
+    year: undefined,
+  });
+
+  const handleImageFocus = (data: ModalContent) => {
+    return () => {
+      setModalContent({
+        src: data.src,
+        alt: data.alt,
+        title: data.title,
+        year: data.year,
+      });
+      setModalOpen(true);
+    };
+  };
+
+  const handleImageExit = () => {
+    setModalOpen(false);
+    setModalContent({
+      src: undefined,
+      alt: undefined,
+      title: undefined,
+      year: undefined,
+    });
+  };
+  // Stores the value of the vertical scroll
   const [scrollY, setScrollY] = useState(0);
+
+  // Controls used to animate motion properties
   const controls = useAnimation();
+
+  // Control Hero Y axis position
   const [heroTranslate, setHeroTranslate] = useState(0);
 
+  // Sets the depth for the hero parallax effect
   const parallaxValue = 400;
 
   const handleScroll = () => {
     setScrollY(window.scrollY);
   };
 
+  // Animates element effects based on vertical scroll
   useEffect(() => {
     if (scrollY < parallaxValue) {
       controls.start({ scale: 1 + scrollY * 0.001, opacity: 1 });
@@ -43,6 +84,7 @@ const MenaceTalk = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Declarations required for page section effects
   const hoodedTrillRef = useRef(null);
   const hoodedTrillInView = useInView(hoodedTrillRef, { once: true });
   const [hoodedTrillOpacity, setHoodedTrillOpacity] = useState(0);
@@ -70,10 +112,8 @@ const MenaceTalk = () => {
 
   useEffect(() => {
     if (hoodedTrillHeaderInView && scrollY > parallaxValue) {
-      setTimeout(() => {
-        setHoodedTrillHeaderOpacity(1);
-        setHoodedTrillHeaderPosition(0);
-      }, 50);
+      setHoodedTrillHeaderOpacity(1);
+      setHoodedTrillHeaderPosition(0);
     } else {
       setHoodedTrillHeaderOpacity(0);
       setHoodedTrillHeaderPosition(20);
@@ -137,141 +177,167 @@ const MenaceTalk = () => {
     }
   }, [hoodedTrillP3InView, scrollY]);
 
-  const trillAlbumDraft1Ref = useRef(null);
-  const trillAlbumDraft1InView = useInView(trillAlbumDraft1Ref, {
-    once: true,
-  });
-  const [trillAlbumDraft1Opacity, setTrillAlbumDraft1Opacity] = useState(0);
-  const [trillAlbumDraft1Position, setTrillAlbumDraft1Position] = useState(20);
+  // Uses custom hook to generate ref, and states for opacity & position values
+  const {
+    ref: trillScrappedDraftRef,
+    opacity: trillScrappedDraftOpacity,
+    position: trillScrappedDraftPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: trillScrappedDraftHeaderRef,
+    opacity: trillScrappedDraftHeaderOpacity,
+    position: trillScrappedDraftHeaderPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: trillAlbumDraft1Ref,
+    opacity: trillAlbumDraft1Opacity,
+    position: trillAlbumDraft1Position,
+  } = useInViewAnimation();
+
+  const {
+    ref: trillAlbumDraft1DescriptionHeaderRef,
+    opacity: trillAlbumDraft1DescriptionHeaderOpacity,
+    position: trillAlbumDraft1DescriptionHeaderPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: trillAlbumDraft1DescriptionParagraphRef,
+    opacity: trillAlbumDraft1DescriptionParagraphOpacity,
+    position: trillAlbumDraft1DescriptionParagraphPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: trillSingleDraft1Ref,
+    opacity: trillSingleDraft1Opacity,
+    position: trillSingleDraft1Position,
+  } = useInViewAnimation();
+
+  const {
+    ref: trillSingleDraft1DescriptionHeaderRef,
+    opacity: trillSingleDraft1DescriptionHeaderOpacity,
+    position: trillSingleDraft1DescriptionHeaderPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: trillSingleDraft1DescriptionParagraphRef,
+    opacity: trillSingleDraft1DescriptionParagraphOpacity,
+    position: trillSingleDraft1DescriptionParagraphPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: trillFinalAlbumCoverRef,
+    opacity: trillFinalAlbumCoverOpacity,
+    position: trillFinalAlbumCoverPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: trillFinalAlbumCoverHeaderRef,
+    opacity: trillFinalAlbumCoverHeaderOpacity,
+    position: trillFinalAlbumCoverHeaderPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: trillFinalAlbumCoverParagraphRef,
+    opacity: trillFinalAlbumCoverParagraphOpacity,
+    position: trillFinalAlbumCoverParagraphPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: trillAlbumTracklistCoverRef,
+    opacity: trillAlbumTracklistCoverOpacity,
+    position: trillAlbumTracklistCoverPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: trillAlbumTracklistCoverHeaderRef,
+    opacity: trillAlbumTracklistCoverHeaderOpacity,
+    position: trillAlbumTracklistCoverHeaderPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: trillAlbumTracklistCoverParagraphRef,
+    opacity: trillAlbumTracklistCoverParagraphOpacity,
+    position: trillAlbumTracklistCoverParagraphPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: trillAlbumPromoVideoRef,
+    inView: trillAlbumPromoVideoInView,
+    opacity: trillAlbumPromoVideoOpacity,
+    position: trillAlbumPromoVideoPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: projectDeliverablesHeaderRef,
+    opacity: projectDeliverablesHeaderOpacity,
+    position: projectDeliverablesHeaderPosition,
+  } = useInViewAnimation();
+
+  // Declarations for Project Deliverables section
+  const [projectDeliverablesUnderline, setProjectDeliverablesUnderline] =
+    useState(0);
+
+  const projectDeliverablesItemsRef = useRef(null);
+  const projectDeliverablesItemsInView = useInView(projectDeliverablesItemsRef);
 
   useEffect(() => {
-    if (trillAlbumDraft1InView) {
-      setTimeout(() => {
-        setTrillAlbumDraft1Opacity(1);
-        setTrillAlbumDraft1Position(0);
-      }, 50);
+    if (projectDeliverablesItemsInView === true) {
+      setProjectDeliverablesUnderline(1);
+    } else {
+      setProjectDeliverablesUnderline(0);
     }
-  }, [trillAlbumDraft1InView, scrollY]);
+  }, [projectDeliverablesItemsInView]);
 
-  const trillAlbumDraft1DescriptionHeaderRef = useRef(null);
-  const trillAlbumDraft1DescriptionHeaderInView = useInView(
-    trillAlbumDraft1DescriptionHeaderRef,
-    {
-      once: true,
-    },
+  const projectDeliverablesScope = useMenuAnimation(
+    projectDeliverablesItemsInView,
   );
-  const [
-    trillAlbumDraft1DescriptionHeaderOpacity,
-    setTrillAlbumDraft1DescriptionHeaderOpacity,
-  ] = useState(0);
-  const [
-    trillAlbumDraft1DescriptionHeaderPosition,
-    setTrillAlbumDraft1DescriptionHeaderPosition,
-  ] = useState(20);
 
-  useEffect(() => {
-    if (trillAlbumDraft1DescriptionHeaderInView) {
-      setTimeout(() => {
-        setTrillAlbumDraft1DescriptionHeaderOpacity(1);
-        setTrillAlbumDraft1DescriptionHeaderPosition(0);
-      }, 50);
-    }
-  }, [trillAlbumDraft1DescriptionHeaderInView, scrollY]);
+  const projectDeliverables = [
+    'Album Cover',
 
-  const trillAlbumDraft1DescriptionParagraphRef = useRef(null);
-  const trillAlbumDraft1DescriptionParagraphInView = useInView(
-    trillAlbumDraft1DescriptionParagraphRef,
-    {
-      once: true,
-    },
-  );
-  const [
-    trillAlbumDraft1DescriptionParagraphOpacity,
-    setTrillAlbumDraft1DescriptionParagraphOpacity,
-  ] = useState(0);
-  const [
-    trillAlbumDraft1DescriptionParagraphPosition,
-    setTrillAlbumDraft1DescriptionParagraphPosition,
-  ] = useState(20);
+    'Tracklist',
 
-  useEffect(() => {
-    if (trillAlbumDraft1DescriptionParagraphInView) {
-      setTimeout(() => {
-        setTrillAlbumDraft1DescriptionParagraphOpacity(1);
-        setTrillAlbumDraft1DescriptionParagraphPosition(0);
-      }, 50);
-    }
-  }, [trillAlbumDraft1DescriptionParagraphInView, scrollY]);
+    'Promotional Video',
 
-  const trillSingleDraft1Ref = useRef(null);
-  const trillSingleDraft1InView = useInView(trillSingleDraft1Ref, {
-    once: true,
-  });
-  const [trillSingleDraft1Opacity, setTrillSingleDraft1Opacity] = useState(0);
-  const [trillSingleDraft1Position, setTrillSingleDraft1Position] =
-    useState(20);
+    'Branding Assets',
 
-  useEffect(() => {
-    if (trillSingleDraft1InView) {
-      setTimeout(() => {
-        setTrillSingleDraft1Opacity(1);
-        setTrillSingleDraft1Position(0);
-      }, 50);
-    }
-  }, [trillSingleDraft1InView, scrollY]);
+    'World-building Materials',
+  ];
 
-  const trillSingleDraft1DescriptionHeaderRef = useRef(null);
-  const trillSingleDraft1DescriptionHeaderInView = useInView(
-    trillSingleDraft1DescriptionHeaderRef,
-    {
-      once: true,
-    },
-  );
-  const [
-    trillSingleDraft1DescriptionHeaderOpacity,
-    setTrillSingleDraft1DescriptionHeaderOpacity,
-  ] = useState(0);
-  const [
-    trillSingleDraft1DescriptionHeaderPosition,
-    setTrillSingleDraft1DescriptionHeaderPosition,
-  ] = useState(20);
+  // Declarations for Project Navigate section
+  const projectNavigateRef = useRef(null);
+  const projectNavigateInView = useInView(projectNavigateRef);
 
-  useEffect(() => {
-    if (trillSingleDraft1DescriptionHeaderInView) {
-      setTimeout(() => {
-        setTrillSingleDraft1DescriptionHeaderOpacity(1);
-        setTrillSingleDraft1DescriptionHeaderPosition(0);
-      }, 50);
-    }
-  }, [trillSingleDraft1DescriptionHeaderInView, scrollY]);
+  const projectNavigateScope = useMenuAnimation(projectNavigateInView);
 
-  const trillSingleDraft1DescriptionParagraphRef = useRef(null);
-  const trillSingleDraft1DescriptionParagraphInView = useInView(
-    trillSingleDraft1DescriptionParagraphRef,
-    {
-      once: true,
-    },
-  );
-  const [
-    trillSingleDraft1DescriptionParagraphOpacity,
-    setTrillSingleDraft1DescriptionParagraphOpacity,
-  ] = useState(0);
-  const [
-    trillSingleDraft1DescriptionParagraphPosition,
-    setTrillSingleDraft1DescriptionParagraphPosition,
-  ] = useState(20);
+  const previousProject = "Mike's World";
+  const nextProject = 'Ye Anthem';
 
-  useEffect(() => {
-    if (trillSingleDraft1DescriptionParagraphInView) {
-      setTimeout(() => {
-        setTrillSingleDraft1DescriptionParagraphOpacity(1);
-        setTrillSingleDraft1DescriptionParagraphPosition(0);
-      }, 50);
-    }
-  }, [trillSingleDraft1DescriptionParagraphInView, scrollY]);
+  const navigate = useNavigate();
+
+  const handleNavigate = (path: string) => {
+    navigate(`/${path}`);
+    window.scrollTo(0, 0);
+  };
+
+  // Controls greyscale effect applied to scrapped cover section
+  const [isGrayscale, setIsGrayscale] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsGrayscale(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsGrayscale(false);
+  };
 
   return (
     <div className="client-project-container bg-black w-full h-auto">
+      {modalOpen && (
+        <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
+      )}
       <div className="client-project-sections w-full h-auto flex flex-col items-center justify-center">
         <div
           className="client-project-hero w-full h-[1080] overflow-hidden sticky top-0"
@@ -394,6 +460,9 @@ const MenaceTalk = () => {
                     translateY: trillAlbumDraft1Position,
                     opacity: trillAlbumDraft1Opacity,
                   }}
+                  onClick={handleImageFocus(splitProjectDetailData.Draft1)}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.9 }}
                 />
               </div>
               <div className="client-project-initial-concepts-album-cover-concept-description h-2/5 w-full flex flex-col items-center justify-center">
@@ -435,6 +504,9 @@ const MenaceTalk = () => {
                     translateY: trillSingleDraft1Position,
                     opacity: trillSingleDraft1Opacity,
                   }}
+                  onClick={handleImageFocus(splitProjectDetailData.Draft2)}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.9 }}
                 />
               </div>
               <div className="client-project-initial-concepts-single-cover-concept-description h-2/5 w-full flex flex-col items-center justify-center">
@@ -464,27 +536,249 @@ const MenaceTalk = () => {
             </div>
           </div>
         </div>
-        <div className="client-project-scrapped-single-cover-container h-auto w-full p-5">
+        <div
+          className={`client-project-scrapped-single-cover-container h-auto w-full p-5 ${
+            isGrayscale ? 'bg-black' : 'bg-fuchsia-600'
+          } transition-all`}
+        >
           <div className="client-project-scrapped-single-cover-items flex flex-col hd:flex-row h-auto w-full items-center justify-center">
-            <div className="client-project-scrapped-single-cover-container w-full h-full flex flex-col items-center justify-center p-5 hd:p-20">
+            <div
+              className={`client-project-scrapped-single-cover-container w-full h-full flex flex-col items-center justify-center p-5 hd:p-20 ${
+                isGrayscale ? 'grayscale' : ''
+              } transition-all`}
+            >
               <div className="client-project-scrapped-single-cover-image-container w-auto h-4/5">
-                <img
-                  className="client-project-scrapped-single-cover-image w-[864px] h-auto mb-2"
-                  src={scrappedSingleCover}
+                <motion.img
+                  className="client-project-scrapped-single-cover-image w-[648px] h-auto mb-2"
+                  src={splitProjectDetailData.ScrappedCover.src}
+                  alt={splitProjectDetailData.ScrappedCover.alt}
+                  ref={trillScrappedDraftRef}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: trillScrappedDraftPosition,
+                    opacity: trillScrappedDraftOpacity,
+                  }}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                  onTouchStart={handleMouseEnter}
+                  onTouchEnd={handleMouseLeave}
+                  onClick={handleImageFocus(
+                    splitProjectDetailData.ScrappedCover,
+                  )}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.9 }}
                 />
                 <div className="client-project-scrapped-single-cover-image-description w-full h-1/5">
-                  <h4 className="client-project-scrapped-single-cover-image-description-text font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold">
-                    Album Single Cover &#40;Scrapped&#41;
-                  </h4>
+                  <motion.h4
+                    ref={trillScrappedDraftHeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: trillScrappedDraftHeaderPosition,
+                      opacity: trillScrappedDraftHeaderOpacity,
+                    }}
+                    className="client-project-scrapped-single-cover-image-description-text font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold"
+                  >
+                    {splitProjectDetailData.ScrappedCover.header}
+                  </motion.h4>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="h-[1080px] w-full bg-slate-900">final deliverables</div>
-        <div className="h-[1080px] w-full bg-slate-950">external links</div>
-        <div className="h-[1080px] w-full bg-black">other projects</div>
-        <div className="h-[1080px] w-full bg-pink-500">fake</div>
+        <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5">
+          <div className="client-project-final-album-cover h-full w-full hd:w-1/2">
+            <div className="client-project-final-album-cover-concept-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+              <div className="client-project-final-album-cover-concept-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                <motion.img
+                  src={splitProjectDetailData.AlbumCover.src}
+                  alt={splitProjectDetailData.AlbumCover.alt}
+                  className="mb-2"
+                  ref={trillFinalAlbumCoverRef}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: trillFinalAlbumCoverPosition,
+                    opacity: trillFinalAlbumCoverOpacity,
+                  }}
+                  onClick={handleImageFocus(splitProjectDetailData.AlbumCover)}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.9 }}
+                />
+              </div>
+              <div className="client-project-final-album-cover-concept-description h-2/5 w-full flex flex-col items-center justify-center">
+                <motion.h4
+                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                  ref={trillFinalAlbumCoverHeaderRef}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: trillFinalAlbumCoverHeaderPosition,
+                    opacity: trillFinalAlbumCoverHeaderOpacity,
+                  }}
+                >
+                  {splitProjectDetailData.AlbumCover.header}
+                </motion.h4>
+                <motion.p
+                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                  ref={trillFinalAlbumCoverParagraphRef}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: trillFinalAlbumCoverParagraphPosition,
+                    opacity: trillFinalAlbumCoverParagraphOpacity,
+                  }}
+                >
+                  {splitProjectDetailData.AlbumCover.paragraph}
+                </motion.p>
+              </div>
+            </div>
+          </div>
+          <div className="client-project-final-tracklist h-full w-full hd:w-1/2">
+            <div className="client-project-final-tracklist-concept-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+              <div className="client-project-final-tracklist-concept-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                <motion.img
+                  src={splitProjectDetailData.TracklistCover.src}
+                  alt={splitProjectDetailData.TracklistCover.alt}
+                  className="mb-2"
+                  ref={trillAlbumTracklistCoverRef}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: trillAlbumTracklistCoverPosition,
+                    opacity: trillAlbumTracklistCoverOpacity,
+                  }}
+                  onClick={handleImageFocus(
+                    splitProjectDetailData.TracklistCover,
+                  )}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.9 }}
+                />
+              </div>
+              <div className="client-project-final-tracklist-concept-description h-2/5 w-full flex flex-col items-center justify-center">
+                <motion.h4
+                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                  ref={trillAlbumTracklistCoverHeaderRef}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: trillAlbumTracklistCoverHeaderPosition,
+                    opacity: trillAlbumTracklistCoverHeaderOpacity,
+                  }}
+                >
+                  {splitProjectDetailData.TracklistCover.header}
+                </motion.h4>
+                <motion.p
+                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                  ref={trillAlbumTracklistCoverParagraphRef}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: trillAlbumTracklistCoverParagraphPosition,
+                    opacity: trillAlbumTracklistCoverParagraphOpacity,
+                  }}
+                >
+                  {splitProjectDetailData.TracklistCover.paragraph}
+                </motion.p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="client-project-promo-video-container h-auto w-full py-5">
+          {trillAlbumPromoVideoInView && (
+            <motion.div
+              className="client-project-promo-video h-auto w-full flex flex-col items-center justify-center"
+              ref={trillAlbumPromoVideoRef}
+              initial={{ opacity: 0 }}
+              animate={{
+                translateY: trillAlbumPromoVideoPosition,
+                opacity: trillAlbumPromoVideoOpacity,
+              }}
+            >
+              <video width="1920" height="1080" controls>
+                <source src={mtPromoVideo} type="video/mp4"></source>
+              </video>
+            </motion.div>
+          )}
+        </div>
+        <div className="client-project-deliverables-container h-auto w-full bg-fuchsia-600 p-5">
+          <div className="client-project-deliverables flex flex-col items-start justify-center">
+            <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
+              <motion.h4
+                className="client-project-deliverables-header font-custom text-5xl text-left text-black w-full font-semibold"
+                ref={projectDeliverablesHeaderRef}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: projectDeliverablesHeaderPosition,
+                  opacity: projectDeliverablesHeaderOpacity,
+                }}
+              >
+                Project Deliverables
+              </motion.h4>
+              <motion.div
+                className="w-full h-full"
+                ref={projectDeliverablesItemsRef}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: 20,
+                  opacity: 1,
+                }}
+              >
+                <motion.hr
+                  className="border-t-1 border-black w-full mt-5"
+                  initial={{ scaleX: 0 }}
+                  animate={{
+                    scaleX: projectDeliverablesUnderline,
+                  }}
+                  transition={{ duration: 1, ease: anticipate }}
+                />
+                <ul
+                  className="client-project-deliverables-paragraph font-custom text-3xl text-left text-black mt-5 w-full font-semibold"
+                  ref={projectDeliverablesScope}
+                >
+                  {projectDeliverables.map((deliverable, index) => (
+                    <li key={index} className="list-none">
+                      <p>{deliverable}</p>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+        <nav className="client-project-navigate h-[468px] w-full bg-pink-500 p-5">
+          <ul
+            className="client-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"
+            ref={projectNavigateScope}
+          >
+            <li
+              className="client-project-navigate-previous h-full w-1/3 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
+              onClick={() => {
+                handleNavigate('client-projects/mikes-wrld');
+              }}
+            >
+              <p className="client-project-navigate-previous-title font-custom text-2xl text-left text-black w-full font-normal">
+                &larr;
+              </p>
+              <motion.p
+                className="client-project-navigate-previous-title font-custom text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
+                whileTap={{ scaleY: 0.9 }}
+                ref={projectNavigateRef}
+              >
+                {previousProject}
+              </motion.p>
+            </li>
+            <li
+              className="client-project-navigate-next h-full w-1/3 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
+              onClick={() => {
+                handleNavigate('client-projects/ye-anthem');
+              }}
+            >
+              <p className="client-project-navigate-next-title font-custom text-2xl text-right text-black w-full font-normal">
+                &rarr;
+              </p>
+              <motion.p
+                className="client-project-navigate-next-title font-custom text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
+                whileTap={{ scaleY: 0.9 }}
+              >
+                {nextProject}
+              </motion.p>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   );

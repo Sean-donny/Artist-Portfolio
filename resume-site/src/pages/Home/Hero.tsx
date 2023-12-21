@@ -6,14 +6,7 @@ import Images from './HeroImages';
 const Hero = () => {
   const [bgColorIndex, setBgColorIndex] = useState(0);
 
-  const bgColors = [
-    'bg-zima',
-    'bg-orangutan',
-    'bg-aubergine',
-    'bg-black',
-    'bg-bloody',
-    'bg-clover',
-  ];
+  const bgColors = ['bg-zima', 'bg-aubergine', 'bg-black', 'bg-clover'];
 
   const bgShuffle = () => {
     setBgColorIndex(prevIndex => (prevIndex + 1) % bgColors.length);

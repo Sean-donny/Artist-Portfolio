@@ -269,13 +269,13 @@ const MenaceTalk = () => {
     position: trillAlbumPromoVideoPosition,
   } = useInViewAnimation();
 
+  // Declarations for Project Deliverables section
   const {
     ref: projectDeliverablesHeaderRef,
     opacity: projectDeliverablesHeaderOpacity,
     position: projectDeliverablesHeaderPosition,
   } = useInViewAnimation();
 
-  // Declarations for Project Deliverables section
   const [projectDeliverablesUnderline, setProjectDeliverablesUnderline] =
     useState(0);
 
@@ -340,7 +340,7 @@ const MenaceTalk = () => {
       )}
       <div className="client-project-sections w-full h-auto flex flex-col items-center justify-center">
         <div
-          className="client-project-hero w-full h-[1080] overflow-hidden sticky top-0"
+          className="client-project-hero w-full h-auto overflow-hidden sticky top-0 pointer-events-none"
           style={{
             transform: `translate(0px, ${-heroTranslate}px)`,
             zIndex: 1,
@@ -358,7 +358,7 @@ const MenaceTalk = () => {
         <div className={`client-project-hero-safe-space h-[400px] w-full`}>
           &nbsp;
         </div>
-        <div className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5">
+        <div className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5">
           <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
             <motion.h2
               ref={hoodedTrillHeaderRef}
@@ -587,8 +587,8 @@ const MenaceTalk = () => {
         </div>
         <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5">
           <div className="client-project-final-album-cover h-full w-full hd:w-1/2">
-            <div className="client-project-final-album-cover-concept-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-              <div className="client-project-final-album-cover-concept-artwork h-3/5 w-full flex flex-col items-center justify-center">
+            <div className="client-project-final-album-cover-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+              <div className="client-project-final-album-cover-artwork h-3/5 w-full flex flex-col items-center justify-center">
                 <motion.img
                   src={splitProjectDetailData.AlbumCover.src}
                   alt={splitProjectDetailData.AlbumCover.alt}
@@ -604,7 +604,7 @@ const MenaceTalk = () => {
                   whileTap={{ scale: 0.9 }}
                 />
               </div>
-              <div className="client-project-final-album-cover-concept-description h-2/5 w-full flex flex-col items-center justify-center">
+              <div className="client-project-final-album-cover-description h-2/5 w-full flex flex-col items-center justify-center">
                 <motion.h4
                   className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
                   ref={trillFinalAlbumCoverHeaderRef}
@@ -631,8 +631,8 @@ const MenaceTalk = () => {
             </div>
           </div>
           <div className="client-project-final-tracklist h-full w-full hd:w-1/2">
-            <div className="client-project-final-tracklist-concept-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-              <div className="client-project-final-tracklist-concept-artwork h-3/5 w-full flex flex-col items-center justify-center">
+            <div className="client-project-final-tracklist-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+              <div className="client-project-final-tracklist-artwork h-3/5 w-full flex flex-col items-center justify-center">
                 <motion.img
                   src={splitProjectDetailData.TracklistCover.src}
                   alt={splitProjectDetailData.TracklistCover.alt}
@@ -650,7 +650,7 @@ const MenaceTalk = () => {
                   whileTap={{ scale: 0.9 }}
                 />
               </div>
-              <div className="client-project-final-tracklist-concept-description h-2/5 w-full flex flex-col items-center justify-center">
+              <div className="client-project-final-tracklist-description h-2/5 w-full flex flex-col items-center justify-center">
                 <motion.h4
                   className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
                   ref={trillAlbumTracklistCoverHeaderRef}

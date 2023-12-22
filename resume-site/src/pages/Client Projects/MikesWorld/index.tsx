@@ -352,8 +352,6 @@ const MikesWrld = () => {
         const clientHeight = myElementRef.current.clientHeight;
         setHeroWidth(clientWidth);
         setHeroHeight(clientHeight);
-        console.log('Client Width:', clientWidth);
-        console.log('Client Height:', clientHeight);
       }
     };
 

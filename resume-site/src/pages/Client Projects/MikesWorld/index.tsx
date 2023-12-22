@@ -6,12 +6,12 @@ import { useNavigate } from 'react-router-dom';
 import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 
-import mkWrldBanner from '/optimised/mikeswrld_banner.gif';
-import mkLogo from '/optimised/mikeswrld_title.png';
-import mkPromoVid from '/optimised/videos/mikeswrld_album_out_now_video.mp4';
-import mkReference1 from '/optimised/mha_reference.jpg';
-import mkReference2 from '/optimised/mikeswrld_planet_reference.jpg';
-import mkReference3 from '/optimised/mikeswrld_reference.jpg';
+const mkWrldBanner = '/optimised/mikeswrld_banner.gif';
+const mkLogo = '/optimised/mikeswrld_title.png';
+const mkPromoVid = '/optimised/videos/mikeswrld_album_out_now_video.mp4';
+const mkReference1 = '/optimised/mha_reference.jpg';
+const mkReference2 = '/optimised/mikeswrld_planet_reference.jpg';
+const mkReference3 = '/optimised/mikeswrld_reference.jpg';
 import mkWrldData from './data';
 
 const MikesWrld = () => {

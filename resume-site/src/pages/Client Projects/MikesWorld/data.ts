@@ -20,7 +20,7 @@ const mkWrldData = {
         year: '(2022)',
         style: '',
         header: 'Album Cover',
-        paragraph: "After a few revisions, this final version was approved following into the development of other project deliverables.",
+        paragraph: "The final cover depicts Mike surrounded by a dense, starry galaxy, complemented by analogous pinkish-purple nebulae that harmonize with his red theme.",
     },
     TracklistCover : {
         src: mkTracklist,
@@ -29,7 +29,7 @@ const mkWrldData = {
         year: '(2022)',
         style: '',
         header: 'Tracklist',
-        paragraph: "Trill went 10 for 10, and the tracklist is an extension of the ascension from the netherealm theme.",
+        paragraph: "The tracklist follows the starry galaxy theme, featuring roses cascading alongside the seven tracks.",
     },
 
 

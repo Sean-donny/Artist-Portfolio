@@ -6,12 +6,16 @@ import { useNavigate } from 'react-router-dom';
 import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 
+// import { AdvancedVideo } from '@cloudinary/react';
+// import { fill } from '@cloudinary/url-gen/actions/resize';
+
 const mkWrldBanner = '/optimised/mikeswrld_banner.gif';
 const mkLogo = '/optimised/mikeswrld_title.png';
 const mkPromoVid = '/optimised/videos/mikeswrld_album_out_now_video.mp4';
 const mkReference1 = '/optimised/mha_reference.jpg';
 const mkReference2 = '/optimised/mikeswrld_planet_reference.jpg';
 const mkReference3 = '/optimised/mikeswrld_reference.jpg';
+
 import mkWrldData from './data';
 
 const MikesWrld = () => {
@@ -478,7 +482,7 @@ const MikesWrld = () => {
                   target="_blank"
                   className="hover:underline"
                 >
-                  Red Roses
+                  Red&nbsp;Roses
                 </a>
               </mark>
               "
@@ -578,14 +582,31 @@ const MikesWrld = () => {
             ref={referenceBoard2ItemsRef}
           >
             <p className="client-project-reference-description-text w-full hd:w-3/5 m-auto font-custom text-2xl text-center text-black font-normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-              justo mi, gravida eu eleifend eget, mattis accumsan nibh. Duis
-              dapibus sapien id porta vehicula. Donec bibendum arcu nulla, id
-              sodales libero efficitur eget. Pellentesque vehicula condimentum
-              lacus vulputate suscipit. Nullam non nisi a diam dapibus congue.
-              Aliquam eget risus quis leo mattis iaculis. Vivamus luctus nunc
-              placerat sem pulvinar malesuada. Sed in luctus tellus. Aliquam nec
-              porta ipsum, sit amet suscipit dui.
+              Mike provided detailed references for the cover, aiming to capture
+              his love for anime. He pointed to a picture of{' '}
+              <a
+                href="https://myheroacademia.fandom.com/wiki/Shoto_Todoroki"
+                target="_blank"
+                className="hover:underline font-semibold"
+              >
+                Shoto Todoroki
+              </a>
+              , specifying, "Emulate the art style and shading." Additionally,
+              he expressed, "I want to hold the Earth in my hands, just like{' '}
+              <a
+                href="https://hunterxhunter.fandom.com/wiki/Meruem"
+                target="_blank"
+                className="hover:underline font-semibold"
+              >
+                Meruem
+              </a>
+              ." To provide further guidance, he added, "My character should
+              sport a red hoodie, akin to the one in this photo, and feature my
+              signature red braids."
+              <br />
+              Providing clear references is crucial for the visual development
+              process. My job is to take in the client's cues and deliver a
+              cohesive result.
             </p>
           </div>
         </div>

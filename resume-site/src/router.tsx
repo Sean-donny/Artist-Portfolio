@@ -84,7 +84,7 @@ const router = createBrowserRouter([
         element: <Popwave />,
       },
       {
-        path: '/client-projects/mikes-wrld',
+        path: '/client-projects/mikes-world',
         element: <MikesWrld />,
       },
       {

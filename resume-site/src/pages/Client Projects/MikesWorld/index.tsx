@@ -243,7 +243,7 @@ const MikesWrld = () => {
     position: mikeAlbumPromoVideoPosition,
   } = useInViewAnimation();
 
-  // Declarations for reference baord
+  // Declarations for reference board
 
   const [referenceBoardUnderline, setReferenceBoardUnderline] = useState(0);
 

@@ -53,7 +53,7 @@ const clientProjectsData = {
         title: "Mike's World",
         year: '(2022)',
         style: 'hd:w-1/6 w-1/2 md:w-1/3',
-        navigate: 'client-projects/mikes-wrld',
+        navigate: 'client-projects/mikes-world',
     },
 };
 

@@ -747,7 +747,7 @@ const MenaceTalk = () => {
             <li
               className="client-project-navigate-previous h-full w-1/3 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
               onClick={() => {
-                handleNavigate('client-projects/mikes-wrld');
+                handleNavigate('client-projects/mikes-world');
               }}
             >
               <p className="client-project-navigate-previous-title font-custom text-2xl text-left text-black w-full font-normal">

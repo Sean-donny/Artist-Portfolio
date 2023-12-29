@@ -94,16 +94,6 @@ const MikesWrld = () => {
 
   const windowWidth = window.innerWidth;
 
-  // useEffect(() => {
-  //   console.log('window width:', windowWidth);
-  // }, [windowWidth]);
-
-  // const windowHeight = window.innerHeight;
-
-  // useEffect(() => {
-  //   console.log('window Height:', windowHeight);
-  // }, [windowHeight]);
-
   //////////////////
 
   // Declarations required for page section effects
@@ -376,7 +366,7 @@ const MikesWrld = () => {
       {modalOpen && (
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
       )}
-      <div className="client-project-sections w-full h-auto flex flex-col items-center justify-center">
+      <div className="client-project-sections w-full h-auto flex flex-col items-center justify-center selection:bg-red-600 selection:text-zinc-200">
         <div
           className="client-project-hero w-full h-auto overflow-hidden sticky top-0 pointer-events-none"
           style={{
@@ -462,7 +452,7 @@ const MikesWrld = () => {
               transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
             >
               "Imagine me suspended in space, cradling the Earth in the palms of
-              my hands."...
+              my hands"...
             </motion.p>
             <motion.p
               className="client-project-design-goal-description-paragraph-3 text-zinc-400 font-custom font-extralight italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
@@ -502,7 +492,7 @@ const MikesWrld = () => {
             />
           </div>
         </div>
-        <div className="client-project-references-container bg-red-600 w-full h-auto flex flex-col items-center justify-center p-5 pt-10 ">
+        <div className="client-project-references-container bg-red-600 selection:bg-black w-full h-auto flex flex-col items-center justify-center p-5 pt-10">
           <h4
             className="client-project-reference-board-title font-custom text-5xl text-center text-black w-full font-semibold mb-5"
             ref={referenceBoardItemsRef}
@@ -610,7 +600,6 @@ const MikesWrld = () => {
             </p>
           </div>
         </div>
-        <div>process</div>
         <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5">
           <div className="client-project-final-album-cover h-full w-full hd:w-1/2">
             <div className="client-project-final-album-cover-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
@@ -730,7 +719,7 @@ const MikesWrld = () => {
             )}
           </div>
         </div>
-        <div className="client-project-deliverables-container h-auto w-full bg-red-600 p-5">
+        <div className="client-project-deliverables-container h-auto w-full bg-red-600 selection:bg-black p-5">
           <div className="client-project-deliverables flex flex-col items-start justify-center">
             <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
               <motion.h4
@@ -775,7 +764,7 @@ const MikesWrld = () => {
             </div>
           </div>
         </div>
-        <nav className="client-project-navigate h-[468px] w-full bg-purple-600 p-5">
+        <nav className="client-project-navigate h-[468px] w-full bg-purple-600 selection:bg-black p-5">
           <ul
             className="client-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"
             ref={projectNavigateScope}

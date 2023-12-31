@@ -1,3 +1,4 @@
+// Image imports
 import mtAlbumConceptArt from '/optimised/trill_tega_menace_talk_draft.jpg';
 import mtSingleConceptArt from '/optimised/trill_tega_menace_talk_abstract.jpg';
 import mtAlbumArt from '/optimised/trill_tega_menace_talk_album_cover.jpg'

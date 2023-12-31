@@ -1,3 +1,4 @@
+// Image imports
 import GuitarGurl from '/optimised/guitar_girl_x.jpg';
 import ALoveStory from '/optimised/two_alt_girls.jpg';
 import RedHeadGirls from '/optimised/red_heads_illustration.jpg';

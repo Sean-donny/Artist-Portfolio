@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import SeanPortrait from '/optimised/sean_donny_portrait.jpg';
 import Slideshow from '../../components/Slideshow';
 import Images from './HeroImages';
+
+// Image imports
+import SeanPortrait from '/optimised/sean_donny_portrait.jpg';
 
 const Hero = () => {
   const [bgColorIndex, setBgColorIndex] = useState(0);

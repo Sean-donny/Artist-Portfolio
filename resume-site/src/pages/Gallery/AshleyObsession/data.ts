@@ -1,3 +1,4 @@
+// Image imports
 import Wdylmh from '/optimised/ashley_okoli_portrait.jpg';
 import Agiag from '/optimised/ashley_okoli_with_a_gun.jpg';
 import Aitl from '/optimised/ashley_into_the_light.jpg';

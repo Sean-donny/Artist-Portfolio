@@ -5,6 +5,9 @@ import GalleryModal from '../../../components/GalleryModal';
 import { useNavigate } from 'react-router-dom';
 import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
+import popwaveData from './data';
+
+// Image imports
 import pwBanner from '/optimised/popwave_comic_panel_banner.jpg';
 import pwCharacter from '/optimised/popwave_character.png';
 import pwStar1 from '/optimised/popwave_star_logo_1.png';
@@ -12,7 +15,6 @@ import pwStar2 from '/optimised/popwave_star_logo_2.png';
 import pwStar3 from '/optimised/popwave_star_logo_3.png';
 import pwTshirtLive from '/optimised/popwave_star_logo_shirt_design_on_model.jpg';
 import pwTshirtMockup from '/optimised/popwave_star_logo_shirt_design.jpg';
-import popwaveData from './data';
 
 const Popwave = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -287,7 +289,7 @@ const Popwave = () => {
       {modalOpen && (
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
       )}
-      <div className="client-project-sections w-full h-auto flex flex-col items-center justify-center selection:bg-orange-600 selection:text-zinc-200">
+      <div className="client-project-sections w-full h-auto flex flex-col items-center justify-center">
         <div
           className="client-project-hero w-full h-auto overflow-hidden sticky top-0 pointer-events-none"
           style={{
@@ -307,7 +309,7 @@ const Popwave = () => {
         <div className={`client-project-hero-safe-space h-[400px] w-full`}>
           &nbsp;
         </div>
-        <div className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5">
+        <div className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-orange-600 selection:text-zinc-200">
           <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
             <motion.h2
               ref={heroHeaderRef}
@@ -392,7 +394,7 @@ const Popwave = () => {
             />
           </div>
         </div>
-        <div className="client-project-draft-selection-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5">
+        <div className="client-project-draft-selection-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-orange-600 selection:text-zinc-200">
           <div className="client-project-draft-selection-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
             <motion.img
               className="client-project-draft-selection-image w-auto h-full hd:h-auto object-cover object-center"
@@ -436,7 +438,7 @@ const Popwave = () => {
             </div>
           </div>
         </div>
-        <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5">
+        <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-orange-600 selection:text-zinc-200">
           <div className="client-project-refined-sketch h-full w-full hd:w-1/2">
             <div className="client-project-refined-sketch-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
               <div className="client-project-refined-sketch-artwork h-3/5 w-full flex flex-col items-center justify-center">
@@ -526,7 +528,7 @@ const Popwave = () => {
             </div>
           </div>
         </div>
-        <div className="client-project-tshirt-container w-full h-auto flex flex-col hd:flex-row items-center justify-center p-5">
+        <div className="client-project-tshirt-container w-full h-auto flex flex-col hd:flex-row items-center justify-center p-5 selection:bg-orange-600">
           <div className="client-project-tshirt-live-container w-full h-auto hd:w-1/2 flex flex-col items-center justify-center p-5">
             <img
               className="client-project-tshirt-live h-full hd:h-[900px] w-auto"
@@ -542,7 +544,7 @@ const Popwave = () => {
             />
           </div>
         </div>
-        <div className="client-project-logos-container w-full h-auto bg-zinc-900 flex flex-col hd:flex-row items-center justify-center p-5">
+        <div className="client-project-logos-container w-full h-auto bg-zinc-900 flex flex-col hd:flex-row items-center justify-center p-5 selection:bg-orange-600">
           <div className="client-project-logo-1-container">
             <img
               className="client-project-logo-1"
@@ -565,7 +567,7 @@ const Popwave = () => {
             />
           </div>
         </div>
-        <div className="client-project-deliverables-container h-auto w-full bg-orange-600 selection:bg-black p-5">
+        <div className="client-project-deliverables-container h-auto w-full bg-orange-600 selection:bg-black selection:text-zinc-200 p-5">
           <div className="client-project-deliverables flex flex-col items-start justify-center">
             <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
               <motion.h4
@@ -610,7 +612,7 @@ const Popwave = () => {
             </div>
           </div>
         </div>
-        <nav className="client-project-navigate h-[468px] w-full bg-green-600 selection:bg-black p-5">
+        <nav className="client-project-navigate h-[468px] w-full bg-green-600 selection:bg-black selection:text-zinc-200 p-5">
           <ul
             className="client-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"
             ref={projectNavigateScope}

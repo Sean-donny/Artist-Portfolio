@@ -1,3 +1,4 @@
+// Image imports
 import mnctlk from '/optimised/client_project_mt.png';
 import yeanthm from '/optimised/client_project_ya.png';
 import nnvrs from '/optimised/client_project_nv.jpg';
@@ -41,7 +42,7 @@ const clientProjectsData = {
     },
     illustration5 : {
         src: pwv,
-        alt: "An illustrationof a man pointing a gun with a star logo behind him",
+        alt: "An illustration of a man pointing a gun with a star logo behind him",
         title: 'Popwave',
         year: '(2022)',
         style: 'hd:w-1/6 w-1/2 md:w-1/3',

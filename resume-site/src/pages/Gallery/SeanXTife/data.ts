@@ -1,3 +1,4 @@
+// Image imports
 import Doom from '/optimised/mf_doom_7ife_x_sean_donny.jpg';
 import Astroboy from '/optimised/sean_donny_x_7ife_astro_boy.jpg';
 

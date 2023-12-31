@@ -1,3 +1,4 @@
+// Image imports
 import ani from '/optimised/personal_project_an.jpg';
 import sbrby from '/optimised/personal_project_sb.png';
 import ctmsc from '/optimised/personal_project_cm.jpg';

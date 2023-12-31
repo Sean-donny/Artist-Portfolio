@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation, useInView, anticipate } from 'framer-motion';
-import mtHeroBanner from '/optimised/trill_tega_menace_talk_video_still_1.jpg';
-import hoodedTrill from '/optimised/trill_tega_menace_talk_hero.png';
 import splitProjectDetailData from './data';
 import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import mtPromoVideo from '/optimised/videos/trill_tega_menace_talk_promo_video.mp4';
@@ -9,6 +7,10 @@ import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 import GalleryModal from '../../../components/GalleryModal';
 import { ModalContent } from '../../../interfaces/ModalContent';
 import { useNavigate } from 'react-router-dom';
+
+// Image imports
+import mtHeroBanner from '/optimised/trill_tega_menace_talk_skull_graphic.jpg';
+import hoodedTrill from '/optimised/trill_tega_menace_talk_hero.png';
 
 const MenaceTalk = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -338,7 +340,7 @@ const MenaceTalk = () => {
       {modalOpen && (
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
       )}
-      <div className="client-project-sections w-full h-auto flex flex-col items-center justify-center selection:bg-fuchsia-600 selection:text-zinc-200">
+      <div className="client-project-sections w-full h-auto flex flex-col items-center justify-center">
         <div
           className="client-project-hero w-full h-auto overflow-hidden sticky top-0 pointer-events-none"
           style={{
@@ -348,7 +350,7 @@ const MenaceTalk = () => {
         >
           <motion.img
             src={mtHeroBanner}
-            alt="Chrome skull emerges from purple hole in the desert on a dark moonlit night"
+            alt="Chrome skull floating in a dark void"
             className="client-project-hero-image w-full h-full object-cover object-center"
             initial={{ scale: 1, opacity: 1 }}
             animate={controls}
@@ -358,7 +360,7 @@ const MenaceTalk = () => {
         <div className={`client-project-hero-safe-space h-[400px] w-full`}>
           &nbsp;
         </div>
-        <div className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5">
+        <div className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-fuchsia-600 selection:text-zinc-200">
           <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
             <motion.h2
               ref={hoodedTrillHeaderRef}
@@ -446,7 +448,7 @@ const MenaceTalk = () => {
             />
           </div>
         </div>
-        <div className="client-project-initial-concepts-container h-auto w-full flex flex-col hd:flex-row p-5">
+        <div className="client-project-initial-concepts-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-fuchsia-600 selection:text-zinc-200">
           <div className="client-project-initial-concepts-album-cover h-full w-full hd:w-1/2">
             <div className="client-project-initial-concepts-album-cover-concept-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
               <div className="client-project-initial-concepts-album-cover-concept-artwork h-3/5 w-full flex flex-col items-center justify-center">
@@ -585,7 +587,7 @@ const MenaceTalk = () => {
             </div>
           </div>
         </div>
-        <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5">
+        <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-fuchsia-600 selection:text-zinc-200">
           <div className="client-project-final-album-cover h-full w-full hd:w-1/2">
             <div className="client-project-final-album-cover-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
               <div className="client-project-final-album-cover-artwork h-3/5 w-full flex flex-col items-center justify-center">
@@ -694,7 +696,7 @@ const MenaceTalk = () => {
             </motion.div>
           )}
         </div>
-        <div className="client-project-deliverables-container h-auto w-full bg-fuchsia-600 selection:bg-black p-5">
+        <div className="client-project-deliverables-container h-auto w-full bg-fuchsia-600 selection:bg-black selection:text-zinc-200 p-5">
           <div className="client-project-deliverables flex flex-col items-start justify-center">
             <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
               <motion.h4
@@ -739,7 +741,7 @@ const MenaceTalk = () => {
             </div>
           </div>
         </div>
-        <nav className="client-project-navigate h-[468px] w-full bg-pink-500 selection:bg-black p-5">
+        <nav className="client-project-navigate h-[468px] w-full bg-pink-500 selection:bg-black selection:text-zinc-200 p-5">
           <ul
             className="client-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"
             ref={projectNavigateScope}

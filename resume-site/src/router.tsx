@@ -88,7 +88,7 @@ const router = createBrowserRouter([
         element: <MikesWrld />,
       },
       {
-        path: '/client-projects/about',
+        path: '/about',
         element: <About />,
       },
     ],

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+// Image imports
 import RulesTheWorld from '/optimised/crtz_spread.jpg';
 import SubaruBoy from '/optimised/cruel_santino_subaru_boy_wide.jpg';
 import MenaceTalk from '/optimised/trill_tega_menace_talk_video_still_1.jpg';
@@ -47,7 +49,6 @@ const Works = () => {
             onMouseLeave={eggPlant}
             onClick={() => {
               handleNavigate('gallery');
-              //TODO: Approve functionality with FDOG
             }}
           >
             <div className="works-gallery-image-container h-auto lg:h-works xl:h-auto overflow-hidden flex items-center justify-center">

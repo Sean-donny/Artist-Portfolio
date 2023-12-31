@@ -1,3 +1,4 @@
+// Image imports
 import pwSketchShortlist from '/optimised/popwave_draft_choices.jpg';
 import pwSketch from '/optimised/popwave_comic_sketch.jpg';
 import pwComicPanel from '/optimised/popwave_comic_panel.jpg';

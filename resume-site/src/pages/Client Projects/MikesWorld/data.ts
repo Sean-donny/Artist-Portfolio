@@ -1,3 +1,4 @@
+// Image imports
 import mkSketch from '/optimised/mikeswrld_sketch.jpg';
 import mkAlbumCover from '/optimised/mikeswrld_album_cover.jpg';
 import mkTracklist from '/optimised/mikeswrld_tracklist.jpg';

@@ -1,13 +1,15 @@
 import { anticipate, motion, useAnimation, useInView } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import { ModalContent } from '../../../interfaces/ModalContent';
-import fmBanner from '/optimised/smada_family_banner.jpg';
-import fmSketch from '/optimised/smada_family_sketch.jpg';
 import GalleryModal from '../../../components/GalleryModal';
 import { useNavigate } from 'react-router-dom';
 import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 import familyData from './data';
+
+// Image imports
+import fmBanner from '/optimised/smada_family_banner.jpg';
+import fmSketch from '/optimised/smada_family_sketch.jpg';
 
 const Family = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -293,7 +295,7 @@ const Family = () => {
       {modalOpen && (
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
       )}
-      <div className="client-project-sections w-full h-auto flex flex-col items-center justify-center selection:bg-lime-300 selection:text-black">
+      <div className="client-project-sections w-full h-auto flex flex-col items-center justify-center">
         <div
           className="client-project-hero w-full h-auto overflow-hidden sticky top-0 pointer-events-none"
           style={{
@@ -313,7 +315,7 @@ const Family = () => {
         <div className={`client-project-hero-safe-space h-[400px] w-full`}>
           &nbsp;
         </div>
-        <div className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5">
+        <div className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-lime-300 selection:text-black">
           <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
             <motion.h2
               ref={heroHeaderRef}
@@ -389,7 +391,7 @@ const Family = () => {
             />
           </div>
         </div>
-        <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5">
+        <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-lime-300 selection:text-black">
           <div className="client-project-single-sketch h-full w-full hd:w-1/2">
             <div className="client-project-single-sketch-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
               <div className="client-project-single-sketch-artwork h-3/5 w-full flex flex-col items-center justify-center">
@@ -479,7 +481,7 @@ const Family = () => {
             </div>
           </div>
         </div>
-        <div className="client-project-streaming-and-promotional-container w-full h-auto flex flex-col hd:flex-row items-center justify-center bg-zinc-900 hd:py-20">
+        <div className="client-project-streaming-and-promotional-container w-full h-auto flex flex-col hd:flex-row items-center justify-center bg-zinc-900 hd:py-20 selection:bg-lime-300">
           <div className="client-project-streaming-preview w-full h-[330px] hd:w-1/2 p-5 hd:py-20 hd:px-0 flex flex-col items-center justify-center">
             <iframe
               id="embedPlayer"

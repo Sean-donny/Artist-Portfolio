@@ -1,3 +1,4 @@
+// Image imports
 import fmDraft from '/optimised/smada_family_draft.jpg';
 import fmCover from '/optimised/smada_family_album_cover.jpg';
 import fmMetrics from '/optimised/smada_family_album_cove_100k_promo.jpg';

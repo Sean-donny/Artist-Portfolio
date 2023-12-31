@@ -1,6 +1,6 @@
+// Image imports
 import Idluam from '/optimised/idluam.jpg';
 import EnterMars from '/optimised/enter_mars.jpg';
-
 
 const imageData = {
     illustration1 : {

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 
 // image imports
 import mowaSpinner from '/optimised/mowalola_360_logo.gif';
@@ -71,9 +71,50 @@ const Mowalola = () => {
     pageBoundsRef,
   ]);
 
+  const screenshotInView = useInView(mowaScreenshotRef);
+
+  const [jumpValue, setJumpValue] = useState(5);
+
+  useEffect(() => {
+    const pokeEffect = () => {
+      const leftOrRight = () => {
+        const randomValue = Math.random();
+        return randomValue >= 0.5 ? 1 : -1;
+      };
+      const widthClamp = () => {
+        return Math.max(Math.random() * 14, 2.5);
+      };
+
+      // 760 to check if the width of the device is greater than mobile
+
+      if (screenshotInView && pageBounds.x > 760) {
+        const newJumpValue =
+          (Math.floor(Math.random() * (pageBounds?.x / widthClamp())) + 1) *
+          leftOrRight();
+        setJumpValue(newJumpValue);
+      } else {
+        setJumpValue(0);
+      }
+    };
+
+    const pokeInterval = setInterval(() => {
+      pokeEffect();
+    }, 3000);
+
+    const element = mowaScreenshotRef.current;
+    if (element) {
+      const rect = element.getBoundingClientRect();
+      if (rect.x < 0 || rect.x > pageBounds?.x) {
+        setJumpValue(0);
+      }
+    }
+
+    return () => clearInterval(pokeInterval);
+  }, [pageBounds?.x, screenshotInView]);
+
   return (
     <div
-      className="mowalola-container bg-black flex flex-col items-center justify-center"
+      className="mowalola-container bg-black flex flex-col items-center justify-center overflow-hidden"
       ref={pageBoundsRef}
     >
       <div className="mowalola-spinner-container w-auto max-w-[800px] h-auto min-h-screen flex items-center justify-center">
@@ -111,9 +152,16 @@ const Mowalola = () => {
           <motion.img
             src={mowaRepost}
             ref={mowaScreenshotRef}
-            className="mowalola-ig-repost-screenshot-image w-auto h-[660px]"
+            className="mowalola-ig-repost-screenshot-image w-auto h-[660px] cursor-grab"
             drag
             dragConstraints={screenshotConstraints}
+            animate={{ x: jumpValue }}
+            transition={{
+              type: 'spring',
+              damping: 3,
+              stiffness: 50,
+              restDelta: 0.001,
+            }}
           />
         </div>
       </div>

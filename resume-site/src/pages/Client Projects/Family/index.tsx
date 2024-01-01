@@ -492,7 +492,7 @@ const Family = () => {
               style={embedStyle}
             ></iframe>
           </div>
-          <div className="client-project-streaming-metrics-container h-auto w-full hd:w-1/2 p-5">
+          <div className="client-project-streaming-metrics-container h-auto w-full hd:w-1/2 p-5 flex flex-col items-center justify-center">
             <motion.img
               src={familyData.FamilySingleMetrics.src}
               alt={familyData.FamilySingleMetrics.alt}

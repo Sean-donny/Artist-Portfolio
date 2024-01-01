@@ -5,6 +5,8 @@ import { motion, useInView } from 'framer-motion';
 import mowaSpinner from '/optimised/mowalola_360_logo.gif';
 import mowaLogo from '/optimised/mowalola_logo.jpg';
 import mowaRepost from '/optimised/mowalola_ig_repost.jpg';
+import { useNavigate } from 'react-router-dom';
+import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 
 const Mowalola = () => {
   const bannerSource = [mowaSpinner, mowaLogo];
@@ -112,6 +114,22 @@ const Mowalola = () => {
     return () => clearInterval(pokeInterval);
   }, [pageBounds?.x, screenshotInView]);
 
+  // Declarations for Project Navigate section
+  const projectNavigateRef = useRef(null);
+  const projectNavigateInView = useInView(projectNavigateRef);
+
+  const projectNavigateScope = useMenuAnimation(projectNavigateInView);
+
+  const previousProject = 'Music';
+  const nextProject = 'Animation Project';
+
+  const navigate = useNavigate();
+
+  const handleNavigate = (path: string) => {
+    navigate(`/${path}`);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div
       className="mowalola-container bg-black flex flex-col items-center justify-center overflow-hidden"
@@ -125,7 +143,7 @@ const Mowalola = () => {
           onClick={bannerShuffle}
         />
       </div>
-      <div className="mowalola-ig-repost-section flex flex-col items-center justify-center">
+      <div className="mowalola-ig-repost-section flex flex-col items-center justify-center pb-10">
         <div className="mowalola-ig-repost-description w-auto h-auto hd:w-2/3 m-auto">
           <p className="mowalola-ig-repost-description-text text-zinc-400 font-custom font-normal tracking-tight p-10 lg:text-4xl text-2xl lg:leading-relaxed selection:bg-red-600 selection:text-zinc-200">
             Circa &#40;2021&#41;
@@ -165,6 +183,46 @@ const Mowalola = () => {
           />
         </div>
       </div>
+      <nav className="personal-project-navigate h-[468px] w-full bg-red-600 selection:bg-black selection:text-zinc-200 p-5">
+        <ul
+          className="personal-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"
+          ref={projectNavigateScope}
+        >
+          <li
+            className="personal-project-navigate-previous h-full w-1/3 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
+            onClick={() => {
+              handleNavigate('personal-projects/music');
+            }}
+          >
+            <p className="personal-project-navigate-previous-title font-custom text-2xl text-left text-black w-full font-normal">
+              &larr;
+            </p>
+            <motion.p
+              className="personal-project-navigate-previous-title font-custom text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
+              whileTap={{ scaleY: 0.9 }}
+              ref={projectNavigateRef}
+            >
+              {previousProject}
+            </motion.p>
+          </li>
+          <li
+            className="personal-project-navigate-next h-full w-1/3 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
+            onClick={() => {
+              handleNavigate('personal-projects/animation-project');
+            }}
+          >
+            <p className="personal-project-navigate-next-title font-custom text-2xl text-right text-black w-full font-normal">
+              &rarr;
+            </p>
+            <motion.p
+              className="personal-project-navigate-next-title font-custom text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
+              whileTap={{ scaleY: 0.9 }}
+            >
+              {nextProject}
+            </motion.p>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };

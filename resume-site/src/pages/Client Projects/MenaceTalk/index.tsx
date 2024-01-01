@@ -93,7 +93,7 @@ const MenaceTalk = () => {
   const [hoodedTrillPosition, setHoodedTrillPosition] = useState(20);
 
   useEffect(() => {
-    if (hoodedTrillInView && scrollY > parallaxValue) {
+    if (hoodedTrillInView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
         setHoodedTrillOpacity(1);
         setHoodedTrillPosition(0);
@@ -113,7 +113,7 @@ const MenaceTalk = () => {
     useState(20);
 
   useEffect(() => {
-    if (hoodedTrillHeaderInView && scrollY > parallaxValue) {
+    if (hoodedTrillHeaderInView && scrollY > parallaxValue / 2.5) {
       setHoodedTrillHeaderOpacity(1);
       setHoodedTrillHeaderPosition(0);
     } else {
@@ -130,7 +130,7 @@ const MenaceTalk = () => {
   const [hoodedTrillP1Position, setHoodedTrillP1Position] = useState(20);
 
   useEffect(() => {
-    if (hoodedTrillP1InView && scrollY > parallaxValue) {
+    if (hoodedTrillP1InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
         setHoodedTrillP1Opacity(1);
         setHoodedTrillP1Position(0);
@@ -149,7 +149,7 @@ const MenaceTalk = () => {
   const [hoodedTrillP2Position, setHoodedTrillP2Position] = useState(20);
 
   useEffect(() => {
-    if (hoodedTrillP2InView && scrollY > parallaxValue) {
+    if (hoodedTrillP2InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
         setHoodedTrillP2Opacity(1);
         setHoodedTrillP2Position(0);
@@ -168,7 +168,7 @@ const MenaceTalk = () => {
   const [hoodedTrillP3Position, setHoodedTrillP3Position] = useState(20);
 
   useEffect(() => {
-    if (hoodedTrillP3InView && scrollY > parallaxValue) {
+    if (hoodedTrillP3InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
         setHoodedTrillP3Opacity(1);
         setHoodedTrillP3Position(0);
@@ -700,7 +700,7 @@ const MenaceTalk = () => {
           <div className="client-project-deliverables flex flex-col items-start justify-center">
             <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
               <motion.h4
-                className="client-project-deliverables-header font-custom text-5xl text-left text-black w-full font-semibold"
+                className="client-project-deliverables-header font-custom text-4xl sm:text-5xl text-left text-black w-full font-semibold"
                 ref={projectDeliverablesHeaderRef}
                 initial={{ opacity: 0 }}
                 animate={{
@@ -728,7 +728,7 @@ const MenaceTalk = () => {
                   transition={{ duration: 1, ease: anticipate }}
                 />
                 <ul
-                  className="client-project-deliverables-paragraph font-custom text-3xl text-left text-black mt-5 w-full font-semibold"
+                  className="client-project-deliverables-paragraph font-custom text-2xl sm:text-3xl text-left text-black mt-5 w-full font-semibold"
                   ref={projectDeliverablesScope}
                 >
                   {projectDeliverables.map((deliverable, index) => (
@@ -747,7 +747,7 @@ const MenaceTalk = () => {
             ref={projectNavigateScope}
           >
             <li
-              className="client-project-navigate-previous h-full w-1/3 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
+              className="client-project-navigate-previous h-full w-2/5 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
               onClick={() => {
                 handleNavigate('client-projects/mikes-world');
               }}
@@ -756,7 +756,7 @@ const MenaceTalk = () => {
                 &larr;
               </p>
               <motion.p
-                className="client-project-navigate-previous-title font-custom text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
+                className="client-project-navigate-previous-title font-custom text-2xl md:text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
                 whileTap={{ scaleY: 0.9 }}
                 ref={projectNavigateRef}
               >
@@ -764,7 +764,7 @@ const MenaceTalk = () => {
               </motion.p>
             </li>
             <li
-              className="client-project-navigate-next h-full w-1/3 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
+              className="client-project-navigate-next h-full w-2/5 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
               onClick={() => {
                 handleNavigate('client-projects/ye-anthem');
               }}
@@ -773,7 +773,7 @@ const MenaceTalk = () => {
                 &rarr;
               </p>
               <motion.p
-                className="client-project-navigate-next-title font-custom text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
+                className="client-project-navigate-next-title font-custom text-2xl md:text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
                 whileTap={{ scaleY: 0.9 }}
               >
                 {nextProject}

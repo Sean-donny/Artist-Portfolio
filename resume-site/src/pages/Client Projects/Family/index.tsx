@@ -92,7 +92,7 @@ const Family = () => {
   const [heroPosition, setHeroPosition] = useState(20);
 
   useEffect(() => {
-    if (heroInView && scrollY > parallaxValue) {
+    if (heroInView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
         setHeroOpacity(1);
         setHeroPosition(0);
@@ -111,7 +111,7 @@ const Family = () => {
   const [heroHeaderPosition, setHeroHeaderPosition] = useState(20);
 
   useEffect(() => {
-    if (heroHeaderInView && scrollY > parallaxValue) {
+    if (heroHeaderInView && scrollY > parallaxValue / 2.5) {
       setHeroHeaderOpacity(1);
       setHeroHeaderPosition(0);
     } else {
@@ -128,7 +128,7 @@ const Family = () => {
   const [heroP1Position, setHeroP1Position] = useState(20);
 
   useEffect(() => {
-    if (heroP1InView && scrollY > parallaxValue) {
+    if (heroP1InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
         setHeroP1Opacity(1);
         setHeroP1Position(0);
@@ -147,7 +147,7 @@ const Family = () => {
   const [heroP2Position, setHeroP2Position] = useState(20);
 
   useEffect(() => {
-    if (heroP2InView && scrollY > parallaxValue) {
+    if (heroP2InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
         setHeroP2Opacity(1);
         setHeroP2Position(0);
@@ -166,7 +166,7 @@ const Family = () => {
   const [heroP3Position, setHeroP3Position] = useState(20);
 
   useEffect(() => {
-    if (heroP3InView && scrollY > parallaxValue) {
+    if (heroP3InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
         setHeroP3Opacity(1);
         setHeroP3Position(0);
@@ -513,7 +513,7 @@ const Family = () => {
           <div className="client-project-deliverables flex flex-col items-start justify-center">
             <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
               <motion.h4
-                className="client-project-deliverables-header font-custom text-5xl text-left text-black w-full font-semibold"
+                className="client-project-deliverables-header font-custom text-4xl sm:text-5xl text-left text-black w-full font-semibold"
                 ref={projectDeliverablesHeaderRef}
                 initial={{ opacity: 0 }}
                 animate={{
@@ -541,7 +541,7 @@ const Family = () => {
                   transition={{ duration: 1, ease: anticipate }}
                 />
                 <ul
-                  className="client-project-deliverables-paragraph font-custom text-3xl text-left text-black mt-5 w-full font-semibold"
+                  className="client-project-deliverables-paragraph font-custom text-2xl sm:text-3xl text-left text-black mt-5 w-full font-semibold"
                   ref={projectDeliverablesScope}
                 >
                   {projectDeliverables.map((deliverable, index) => (
@@ -560,7 +560,7 @@ const Family = () => {
             ref={projectNavigateScope}
           >
             <li
-              className="client-project-navigate-previous h-full w-1/3 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
+              className="client-project-navigate-previous h-full w-2/5 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
               onClick={() => {
                 handleNavigate('client-projects/nuniverse');
               }}
@@ -569,7 +569,7 @@ const Family = () => {
                 &larr;
               </p>
               <motion.p
-                className="client-project-navigate-previous-title font-custom text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
+                className="client-project-navigate-previous-title font-custom text-2xl md:text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
                 whileTap={{ scaleY: 0.9 }}
                 ref={projectNavigateRef}
               >
@@ -577,7 +577,7 @@ const Family = () => {
               </motion.p>
             </li>
             <li
-              className="client-project-navigate-next h-full w-1/3 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
+              className="client-project-navigate-next h-full w-2/5 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
               onClick={() => {
                 handleNavigate('client-projects/popwave');
               }}
@@ -586,7 +586,7 @@ const Family = () => {
                 &rarr;
               </p>
               <motion.p
-                className="client-project-navigate-next-title font-custom text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
+                className="client-project-navigate-next-title font-custom text-2xl md:text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
                 whileTap={{ scaleY: 0.9 }}
               >
                 {nextProject}

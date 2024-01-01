@@ -104,7 +104,7 @@ const MikesWrld = () => {
   const [mikeSketchPosition, setmikeSketchPosition] = useState(20);
 
   useEffect(() => {
-    if (mikeSketchInView && scrollY > parallaxValue) {
+    if (mikeSketchInView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
         setmikeSketchOpacity(1);
         setmikeSketchPosition(0);
@@ -123,7 +123,7 @@ const MikesWrld = () => {
   const [mikeSketchHeaderPosition, setmikeSketchHeaderPosition] = useState(20);
 
   useEffect(() => {
-    if (mikeSketchHeaderInView && scrollY > parallaxValue) {
+    if (mikeSketchHeaderInView && scrollY > parallaxValue / 2.5) {
       setmikeSketchHeaderOpacity(1);
       setmikeSketchHeaderPosition(0);
     } else {
@@ -140,7 +140,7 @@ const MikesWrld = () => {
   const [mikeSketchP1Position, setmikeSketchP1Position] = useState(20);
 
   useEffect(() => {
-    if (mikeSketchP1InView && scrollY > parallaxValue) {
+    if (mikeSketchP1InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
         setmikeSketchP1Opacity(1);
         setmikeSketchP1Position(0);
@@ -159,7 +159,7 @@ const MikesWrld = () => {
   const [mikeSketchP2Position, setmikeSketchP2Position] = useState(20);
 
   useEffect(() => {
-    if (mikeSketchP2InView && scrollY > parallaxValue) {
+    if (mikeSketchP2InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
         setmikeSketchP2Opacity(1);
         setmikeSketchP2Position(0);
@@ -178,7 +178,7 @@ const MikesWrld = () => {
   const [mikeSketchP3Position, setmikeSketchP3Position] = useState(20);
 
   useEffect(() => {
-    if (mikeSketchP3InView && scrollY > parallaxValue) {
+    if (mikeSketchP3InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
         setmikeSketchP3Opacity(1);
         setmikeSketchP3Position(0);
@@ -724,7 +724,7 @@ const MikesWrld = () => {
           <div className="client-project-deliverables flex flex-col items-start justify-center">
             <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
               <motion.h4
-                className="client-project-deliverables-header font-custom text-5xl text-left text-black w-full font-semibold"
+                className="client-project-deliverables-header font-custom text-4xl sm:text-5xl text-left text-black w-full font-semibold"
                 ref={projectDeliverablesHeaderRef}
                 initial={{ opacity: 0 }}
                 animate={{
@@ -752,7 +752,7 @@ const MikesWrld = () => {
                   transition={{ duration: 1, ease: anticipate }}
                 />
                 <ul
-                  className="client-project-deliverables-paragraph font-custom text-3xl text-left text-black mt-5 w-full font-semibold"
+                  className="client-project-deliverables-paragraph font-custom text-2xl sm:text-3xl text-left text-black mt-5 w-full font-semibold"
                   ref={projectDeliverablesScope}
                 >
                   {projectDeliverables.map((deliverable, index) => (
@@ -771,7 +771,7 @@ const MikesWrld = () => {
             ref={projectNavigateScope}
           >
             <li
-              className="client-project-navigate-previous h-full w-1/3 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
+              className="client-project-navigate-previous h-full w-2/5 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
               onClick={() => {
                 handleNavigate('client-projects/popwave');
               }}
@@ -780,7 +780,7 @@ const MikesWrld = () => {
                 &larr;
               </p>
               <motion.p
-                className="client-project-navigate-previous-title font-custom text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
+                className="client-project-navigate-previous-title font-custom text-2xl md:text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
                 whileTap={{ scaleY: 0.9 }}
                 ref={projectNavigateRef}
               >
@@ -788,7 +788,7 @@ const MikesWrld = () => {
               </motion.p>
             </li>
             <li
-              className="client-project-navigate-next h-full w-1/3 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
+              className="client-project-navigate-next h-full w-2/5 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
               onClick={() => {
                 handleNavigate('client-projects/menace-talk');
               }}
@@ -797,7 +797,7 @@ const MikesWrld = () => {
                 &rarr;
               </p>
               <motion.p
-                className="client-project-navigate-next-title font-custom text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
+                className="client-project-navigate-next-title font-custom text-2xl md:text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
                 whileTap={{ scaleY: 0.9 }}
               >
                 {nextProject}

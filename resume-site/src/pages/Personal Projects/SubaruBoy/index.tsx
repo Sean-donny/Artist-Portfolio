@@ -92,7 +92,7 @@ const SubaruBoy = () => {
   const [heroPosition, setHeroPosition] = useState(20);
 
   useEffect(() => {
-    if (heroInView && scrollY > parallaxValue) {
+    if (heroInView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
         setHeroOpacity(1);
         setHeroPosition(0);
@@ -111,7 +111,7 @@ const SubaruBoy = () => {
   const [heroHeaderPosition, setHeroHeaderPosition] = useState(20);
 
   useEffect(() => {
-    if (heroHeaderInView && scrollY > parallaxValue) {
+    if (heroHeaderInView && scrollY > parallaxValue / 2.5) {
       setHeroHeaderOpacity(1);
       setHeroHeaderPosition(0);
     } else {
@@ -128,7 +128,7 @@ const SubaruBoy = () => {
   const [heroP1Position, setHeroP1Position] = useState(20);
 
   useEffect(() => {
-    if (heroP1InView && scrollY > parallaxValue) {
+    if (heroP1InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
         setHeroP1Opacity(1);
         setHeroP1Position(0);
@@ -147,7 +147,7 @@ const SubaruBoy = () => {
   const [heroP2Position, setHeroP2Position] = useState(20);
 
   useEffect(() => {
-    if (heroP2InView && scrollY > parallaxValue) {
+    if (heroP2InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
         setHeroP2Opacity(1);
         setHeroP2Position(0);
@@ -166,7 +166,7 @@ const SubaruBoy = () => {
   const [heroP3Position, setHeroP3Position] = useState(20);
 
   useEffect(() => {
-    if (heroP3InView && scrollY > parallaxValue) {
+    if (heroP3InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
         setHeroP3Opacity(1);
         setHeroP3Position(0);
@@ -423,7 +423,7 @@ const SubaruBoy = () => {
             ref={projectNavigateScope}
           >
             <li
-              className="personal-project-navigate-previous h-full w-1/3 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
+              className="personal-project-navigate-previous h-full w-2/5 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
               onClick={() => {
                 handleNavigate('personal-projects/animation-project');
               }}
@@ -432,7 +432,7 @@ const SubaruBoy = () => {
                 &larr;
               </p>
               <motion.p
-                className="personal-project-navigate-previous-title font-custom text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
+                className="personal-project-navigate-previous-title font-custom text-2xl md:text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
                 whileTap={{ scaleY: 0.9 }}
                 ref={projectNavigateRef}
               >
@@ -440,7 +440,7 @@ const SubaruBoy = () => {
               </motion.p>
             </li>
             <li
-              className="personal-project-navigate-next h-full w-1/3 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
+              className="personal-project-navigate-next h-full w-2/5 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
               onClick={() => {
                 handleNavigate('personal-projects/music');
               }}
@@ -449,7 +449,7 @@ const SubaruBoy = () => {
                 &rarr;
               </p>
               <motion.p
-                className="personal-project-navigate-next-title font-custom text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
+                className="personal-project-navigate-next-title font-custom text-2xl md:text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
                 whileTap={{ scaleY: 0.9 }}
               >
                 {nextProject}

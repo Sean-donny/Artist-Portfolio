@@ -4,10 +4,10 @@ const Footer = () => {
       <ul className="flex justify-between">
         <li>
           <span className="font-custom text-aquatic tracking-tight cursor-pointer text-base opacity-80">
-            &#169;2023
+            &#169;2024
           </span>
           <a
-            className="font-custom text-aquatic tracking-tight cursor-pointer text-base ml-12 lg:ml-4 opacity-80 hover:opacity-30"
+            className="font-custom text-aquatic tracking-tight cursor-pointer text-base ml-6 sm:ml-9 md:ml-12 lg:ml-4 opacity-80 hover:opacity-30"
             href="https://github.com/Sean-donny"
             target="_blank"
           >
@@ -23,7 +23,7 @@ const Footer = () => {
             Instagram
           </a>
           <a
-            className="font-custom text-aquatic tracking-tight cursor-pointer text-base ml-12 lg:ml-4 opacity-80 hover:opacity-30"
+            className="font-custom text-aquatic tracking-tight cursor-pointer text-base ml-6 sm:ml-9 md:ml-12 lg:ml-4 opacity-80 hover:opacity-30"
             href="mailto:seandonny333@gmail.com"
             target="_blank"
           >

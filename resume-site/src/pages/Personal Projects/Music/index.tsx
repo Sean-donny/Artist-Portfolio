@@ -89,7 +89,7 @@ const Music = () => {
   const [cmCover1Position, setcmCover1Position] = useState(20);
 
   useEffect(() => {
-    if (cmCover1InView && scrollY > parallaxValue / 2.5) {
+    if (cmCover1InView && scrollY > parallaxValue / 2.5 / 2.5) {
       setTimeout(() => {
         setcmCover1Opacity(1);
         setcmCover1Position(0);
@@ -108,7 +108,7 @@ const Music = () => {
   const [cmCover1HeaderPosition, setcmCover1HeaderPosition] = useState(20);
 
   useEffect(() => {
-    if (cmCover1HeaderInView && scrollY > parallaxValue / 2.5) {
+    if (cmCover1HeaderInView && scrollY > parallaxValue / 2.5 / 2.5) {
       setTimeout(() => {
         setcmCover1HeaderOpacity(1);
         setcmCover1HeaderPosition(0);
@@ -128,7 +128,7 @@ const Music = () => {
     useState(20);
 
   useEffect(() => {
-    if (cmCover1ParagraphInView && scrollY > parallaxValue / 2.5) {
+    if (cmCover1ParagraphInView && scrollY > parallaxValue / 2.5 / 2.5) {
       setTimeout(() => {
         setcmCover1ParagraphOpacity(1);
         setcmCover1ParagraphPosition(0);
@@ -147,7 +147,7 @@ const Music = () => {
   const [cmCover2Position, setcmCover2Position] = useState(20);
 
   useEffect(() => {
-    if (cmCover2InView && scrollY > parallaxValue / 2.5) {
+    if (cmCover2InView && scrollY > parallaxValue / 2.5 / 2.5) {
       setTimeout(() => {
         setcmCover2Opacity(1);
         setcmCover2Position(0);
@@ -166,7 +166,7 @@ const Music = () => {
   const [cmCover2HeaderPosition, setcmCover2HeaderPosition] = useState(20);
 
   useEffect(() => {
-    if (cmCover2HeaderInView && scrollY > parallaxValue / 2.5) {
+    if (cmCover2HeaderInView && scrollY > parallaxValue / 2.5 / 2.5) {
       setTimeout(() => {
         setcmCover2HeaderOpacity(1);
         setcmCover2HeaderPosition(0);
@@ -186,7 +186,7 @@ const Music = () => {
     useState(20);
 
   useEffect(() => {
-    if (cmCover2ParagraphInView && scrollY > parallaxValue / 2.5) {
+    if (cmCover2ParagraphInView && scrollY > parallaxValue / 2.5 / 2.5) {
       setTimeout(() => {
         setcmCover2ParagraphOpacity(1);
         setcmCover2ParagraphPosition(0);
@@ -465,7 +465,7 @@ const Music = () => {
             ref={projectNavigateScope}
           >
             <li
-              className="personal-project-navigate-previous h-full w-1/3 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
+              className="personal-project-navigate-previous h-full w-2/5 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
               onClick={() => {
                 handleNavigate('personal-projects/subaru-boy');
               }}
@@ -474,7 +474,7 @@ const Music = () => {
                 &larr;
               </p>
               <motion.p
-                className="personal-project-navigate-previous-title font-custom text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
+                className="personal-project-navigate-previous-title font-custom text-2xl md:text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
                 whileTap={{ scaleY: 0.9 }}
                 ref={projectNavigateRef}
               >
@@ -482,7 +482,7 @@ const Music = () => {
               </motion.p>
             </li>
             <li
-              className="personal-project-navigate-next h-full w-1/3 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
+              className="personal-project-navigate-next h-full w-2/5 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
               onClick={() => {
                 handleNavigate('personal-projects/mowalola');
               }}
@@ -491,7 +491,7 @@ const Music = () => {
                 &rarr;
               </p>
               <motion.p
-                className="personal-project-navigate-next-title font-custom text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
+                className="personal-project-navigate-next-title font-custom text-2xl md:text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
                 whileTap={{ scaleY: 0.9 }}
               >
                 {nextProject}

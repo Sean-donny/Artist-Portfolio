@@ -437,7 +437,7 @@ const MenaceTalk = () => {
           </div>
           <div className="client-project-design-goal-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
             <motion.img
-              className="client-project-design-goal-image w-auto h-full hd:h-auto object-cover object-center"
+              className="client-project-design-goal-image"
               src={hoodedTrill}
               ref={hoodedTrillRef}
               initial={{ opacity: 0 }}

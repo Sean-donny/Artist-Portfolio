@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { anticipate, motion } from 'framer-motion';
 import { MenuOverlayProps } from '../../interfaces/MenuOverlayProps';
+import { useNavigate } from 'react-router-dom';
 
 const MenuOverlay = ({
   menuOverlayOpen,
@@ -17,6 +18,14 @@ const MenuOverlay = ({
   const unFocus = () => {
     setIsFocused(false);
     setHighlightedIndex(null);
+  };
+
+  const navigate = useNavigate();
+
+  const handleNavigate = (path: string) => {
+    window.scrollTo(0, 0);
+    navigate(`/${path}`);
+    setMenuOverlayOpen(!menuOverlayOpen);
   };
 
   // Add an effect to handle the body class when the modal opens and closes
@@ -40,64 +49,50 @@ const MenuOverlay = ({
       >
         <div className="w-full min-h-screen flex items-center justify-center p-2">
           <div>
-            <ul className="font-custom font-semibold tracking-tight lg:text-massive1 text-2xl lg:leading-massive1 text-aquatic">
-              <a
-                href="/gallery"
-                onClick={() => setMenuOverlayOpen(!menuOverlayOpen)}
+            <ul className="font-custom font-semibold tracking-tight lg:text-massive1 text-2xl lg:leading-massive1 text-aquatic cursor-pointer">
+              <li
+                className={`${
+                  isFocused && highlightedIndex !== 0 ? 'opacity-20' : null
+                }`}
+                onMouseEnter={() => focus(0)}
+                onMouseLeave={unFocus}
+                onClick={() => handleNavigate('gallery')}
               >
-                <li
-                  className={`${
-                    isFocused && highlightedIndex !== 0 ? 'opacity-20' : null
-                  }`}
-                  onMouseEnter={() => focus(0)}
-                  onMouseLeave={unFocus}
-                >
-                  GALLERY&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;
-                </li>
-              </a>
-              <a
-                href="/personal-projects"
-                onClick={() => setMenuOverlayOpen(!menuOverlayOpen)}
+                GALLERY&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;
+              </li>
+
+              <li
+                className={`${
+                  isFocused && highlightedIndex !== 1 ? 'opacity-20' : null
+                }`}
+                onMouseEnter={() => focus(1)}
+                onMouseLeave={unFocus}
+                onClick={() => handleNavigate('personal-projects')}
               >
-                <li
-                  className={`${
-                    isFocused && highlightedIndex !== 1 ? 'opacity-20' : null
-                  }`}
-                  onMouseEnter={() => focus(1)}
-                  onMouseLeave={unFocus}
-                >
-                  PERSONAL PROJECTS
-                </li>
-              </a>
-              <a
-                href="/client-projects"
-                onClick={() => setMenuOverlayOpen(!menuOverlayOpen)}
+                PERSONAL PROJECTS
+              </li>
+
+              <li
+                className={`${
+                  isFocused && highlightedIndex !== 2 ? 'opacity-20' : null
+                }`}
+                onMouseEnter={() => focus(2)}
+                onMouseLeave={unFocus}
+                onClick={() => handleNavigate('client-projects')}
               >
-                <li
-                  className={`${
-                    isFocused && highlightedIndex !== 2 ? 'opacity-20' : null
-                  }`}
-                  onMouseEnter={() => focus(2)}
-                  onMouseLeave={unFocus}
-                >
-                  CLIENT
-                  PROJECTS&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;
-                </li>
-              </a>
-              <a
-                href="/about"
-                onClick={() => setMenuOverlayOpen(!menuOverlayOpen)}
+                CLIENT PROJECTS&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;
+              </li>
+
+              <li
+                className={`${
+                  isFocused && highlightedIndex !== 3 ? 'opacity-20' : null
+                }`}
+                onMouseEnter={() => focus(3)}
+                onMouseLeave={unFocus}
+                onClick={() => handleNavigate('about')}
               >
-                <li
-                  className={`${
-                    isFocused && highlightedIndex !== 3 ? 'opacity-20' : null
-                  }`}
-                  onMouseEnter={() => focus(3)}
-                  onMouseLeave={unFocus}
-                >
-                  ABOUT&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;
-                </li>
-              </a>
+                ABOUT&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;
+              </li>
             </ul>
           </div>
         </div>

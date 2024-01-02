@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation, useInView, anticipate } from 'framer-motion';
 import splitProjectDetailData from './data';
 import useInViewAnimation from '../../../Hooks/useInViewAnimation';
-import mtPromoVideo from '/optimised/videos/trill_tega_menace_talk_promo_video.mp4';
 import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 import GalleryModal from '../../../components/GalleryModal';
 import { ModalContent } from '../../../interfaces/ModalContent';
@@ -11,6 +10,8 @@ import { useNavigate } from 'react-router-dom';
 // Image imports
 import mtHeroBanner from '/optimised/trill_tega_menace_talk_skull_graphic.jpg';
 import hoodedTrill from '/optimised/trill_tega_menace_talk_hero.png';
+
+import cld from '../../../utils/cloudinary';
 
 const MenaceTalk = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -690,9 +691,21 @@ const MenaceTalk = () => {
                 opacity: trillAlbumPromoVideoOpacity,
               }}
             >
-              <video width="1920" height="1080" controls>
-                <source src={mtPromoVideo} type="video/mp4"></source>
-              </video>
+              <iframe
+                src={cld
+                  .video('resume-site/trill_tega_menace_talk_promo_video')
+                  .quality('auto')
+                  .toURL()}
+                width="1920"
+                height="1080"
+                style={{
+                  height: 'auto',
+                  width: '100%',
+                  aspectRatio: 1920 / 1080,
+                }}
+                allow="fullscreen; encrypted-media; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </motion.div>
           )}
         </div>

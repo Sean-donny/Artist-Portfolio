@@ -6,18 +6,15 @@ import { useNavigate } from 'react-router-dom';
 import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 
-// import { AdvancedVideo } from '@cloudinary/react';
-// import { fill } from '@cloudinary/url-gen/actions/resize';
-
 // Image imports
 const mkWrldBanner = '/optimised/mikeswrld_banner.gif';
 const mkLogo = '/optimised/mikeswrld_title.png';
-const mkPromoVid = '/optimised/videos/mikeswrld_album_out_now_video.mp4';
 const mkReference1 = '/optimised/mha_reference.jpg';
 const mkReference2 = '/optimised/mikeswrld_planet_reference.jpg';
 const mkReference3 = '/optimised/mikeswrld_reference.jpg';
 
 import mkWrldData from './data';
+import cld from '../../../utils/cloudinary';
 
 const MikesWrld = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -713,9 +710,22 @@ const MikesWrld = () => {
                   opacity: mikeAlbumPromoVideoOpacity,
                 }}
               >
-                <video width="660" height="660" controls>
-                  <source src={mkPromoVid} type="video/mp4"></source>
-                </video>
+                <iframe
+                  src={cld
+                    .video('resume-site/mikeswrld_album_out_now_video')
+                    .quality('auto')
+                    .toURL()}
+                  width="660"
+                  height="660"
+                  className="hd:p-20"
+                  style={{
+                    height: 'auto',
+                    width: '100%',
+                    aspectRatio: 660 / 660,
+                  }}
+                  allow="fullscreen; encrypted-media; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </motion.div>
             )}
           </div>

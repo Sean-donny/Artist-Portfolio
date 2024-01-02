@@ -11,11 +11,11 @@ interface Props {
 
 const AshelyObsession = ({ onOpen }: Props) => {
   //Refs used for tracking items on the page
-  const ashTitleRef = useRef(null);
+  // const ashTitleRef = useRef(null);
   const ashContentRef = useRef(null);
 
   //Used to check if tracked items are in view
-  const ashTitleInView = useInView(ashTitleRef, { once: true });
+  // const ashTitleInView = useInView(ashTitleRef, { once: true });
   const ashContentInView = useInView(ashContentRef, { once: true });
 
   //Used to change the X positions of the left and right images
@@ -61,14 +61,14 @@ const AshelyObsession = ({ onOpen }: Props) => {
   }, [ashContentInView]);
 
   const bgColor = 'bg-black';
-  const componentTitle = 'The Ashley Obsession';
+  // const componentTitle = 'The Ashley Obsession';
 
   return (
     <div className="ashley-obsession-container w-full h-auto hd:h-screen">
       <div
         className={`ashley-obsession-items w-full h-auto hd:h-screen bg-${bgColor} p-10 flex flex-col hd:items-center hd:justify-center`}
       >
-        <div
+        {/* <div
           className="ashley-obsession-title w-full h-24 hd:h-1/4 flex items-center justify-center"
           ref={ashTitleRef}
         >
@@ -79,13 +79,13 @@ const AshelyObsession = ({ onOpen }: Props) => {
           >
             {componentTitle}
           </motion.h2>
-        </div>
+        </div> */}
         <motion.div
-          className="ashley-obsession-content w-full h-auto flex flex-col p-2 hd:h-3/4"
+          className="ashley-obsession-content w-full h-auto flex flex-col p-2"
           ref={ashContentRef}
           style={{ opacity: contentOpacity }}
         >
-          <div className="ashley-obsession-content-images w-full h-full flex flex-col items-center justify-center md:flex-row">
+          <div className="ashley-obsession-content-images w-full h-full flex flex-col items-center justify-center md:flex-row mt-10">
             <motion.div
               className={`ashley-obsession-image-container`}
               onClick={onOpen(imageData.illustration1)}
@@ -100,11 +100,12 @@ const AshelyObsession = ({ onOpen }: Props) => {
                 src={imageData.illustration1.src}
                 alt={imageData.illustration1.alt}
                 title={imageData.illustration1.title}
-                className="ashley-obsession-image-1 z-30 pointer-events-none"
+                className="ashley-obsession-image-1 pointer-events-none"
                 style={{
                   height: 'auto',
                   width: '100%',
                   marginBottom: 20,
+                  zIndex: 3,
                 }}
               />
               <motion.div className="ashley-obsession-content-images-description-1 w-full">
@@ -126,11 +127,12 @@ const AshelyObsession = ({ onOpen }: Props) => {
                 src={imageData.illustration2.src}
                 alt={imageData.illustration2.alt}
                 title={imageData.illustration2.title}
-                className="ashley-obsession-image-2 z-20 pointer-events-none"
+                className="ashley-obsession-image-2 pointer-events-none"
                 style={{
                   height: 'auto',
                   width: '100%',
                   marginBottom: 20,
+                  zIndex: 2,
                 }}
               />
               <motion.div className="ashley-obsession-content-images-description-2 w-full">
@@ -155,11 +157,12 @@ const AshelyObsession = ({ onOpen }: Props) => {
                 src={imageData.illustration3.src}
                 alt={imageData.illustration3.alt}
                 title={imageData.illustration3.title}
-                className="ashley-obsession-image-3 z-10 pointer-events-none"
+                className="ashley-obsession-image-3 pointer-events-none"
                 style={{
                   height: 'auto',
                   width: '100%',
                   marginBottom: 20,
+                  zIndex: 1,
                 }}
               />
               <motion.div className="ashley-obsession-content-images-description-3 w-full">

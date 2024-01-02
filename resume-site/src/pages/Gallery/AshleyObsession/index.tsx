@@ -100,9 +100,14 @@ const AshelyObsession = ({ onOpen }: Props) => {
                 src={imageData.illustration1.src}
                 alt={imageData.illustration1.alt}
                 title={imageData.illustration1.title}
-                className="ashley-obsession-image-1 h-5/6 z-30 pointer-events-none"
+                className="ashley-obsession-image-1 z-30 pointer-events-none"
+                style={{
+                  height: '100%',
+                  width: 'auto',
+                  marginBottom: 20,
+                }}
               />
-              <motion.div className="ashley-obsession-content-images-description-1 w-full h-1/6">
+              <motion.div className="ashley-obsession-content-images-description-1 w-full">
                 <p className="font-custom text-base text-center text-zinc-200">
                   {imageData.illustration1.title}
                   <br />
@@ -121,9 +126,14 @@ const AshelyObsession = ({ onOpen }: Props) => {
                 src={imageData.illustration2.src}
                 alt={imageData.illustration2.alt}
                 title={imageData.illustration2.title}
-                className="ashley-obsession-image-2 h-5/6 z-20 pointer-events-none"
+                className="ashley-obsession-image-2 z-20 pointer-events-none"
+                style={{
+                  height: '100%',
+                  width: 'auto',
+                  marginBottom: 20,
+                }}
               />
-              <motion.div className="ashley-obsession-content-images-description-2 w-full h-1/6">
+              <motion.div className="ashley-obsession-content-images-description-2 w-full">
                 <p className="font-custom text-base text-center text-zinc-200">
                   {imageData.illustration2.title}
                   <br />
@@ -145,9 +155,14 @@ const AshelyObsession = ({ onOpen }: Props) => {
                 src={imageData.illustration3.src}
                 alt={imageData.illustration3.alt}
                 title={imageData.illustration3.title}
-                className="ashley-obsession-image-3 h-5/6 z-10 pointer-events-none"
+                className="ashley-obsession-image-3 z-10 pointer-events-none"
+                style={{
+                  height: '100%',
+                  width: 'auto',
+                  marginBottom: 20,
+                }}
               />
-              <motion.div className="ashley-obsession-content-images-description-3 w-full h-1/6">
+              <motion.div className="ashley-obsession-content-images-description-3 w-full">
                 <p className="font-custom text-base text-center text-zinc-200">
                   {imageData.illustration3.title}
                   <br />

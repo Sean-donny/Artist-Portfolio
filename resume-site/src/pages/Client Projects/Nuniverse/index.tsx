@@ -507,7 +507,7 @@ const Nuniverse = () => {
             className="client-project-reference-description-container w-full h-auto flex flex-col items-center justify-center py-5"
             ref={referenceBoard2ItemsRef}
           >
-            <p className="client-project-reference-description-text w-full hd:w-3/5 m-auto font-custom text-2xl text-center text-black font-normal">
+            <p className="client-project-reference-description-text w-full hd:w-3/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left md:text-center text-black font-normal">
               Building upon the galactic themes introduced in the Family cover,
               I drew inspiration from the legendary{' '}
               <a

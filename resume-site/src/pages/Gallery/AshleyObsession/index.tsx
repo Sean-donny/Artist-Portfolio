@@ -85,9 +85,9 @@ const AshelyObsession = ({ onOpen }: Props) => {
           ref={ashContentRef}
           style={{ opacity: contentOpacity }}
         >
-          <div className="ashley-obsession-content-images w-full h-full flex flex-col items-center justify-center hd:flex-row">
+          <div className="ashley-obsession-content-images w-full h-full flex flex-col items-center justify-center md:flex-row">
             <motion.div
-              className={`ashley-obsession-image-container-1 h-full w-full p-2 flex flex-col items-center justify-center ${imageData.illustration1.style} mb-10 hd:mb-2`}
+              className={`ashley-obsession-image-container`}
               onClick={onOpen(imageData.illustration1)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.9 }}
@@ -102,8 +102,8 @@ const AshelyObsession = ({ onOpen }: Props) => {
                 title={imageData.illustration1.title}
                 className="ashley-obsession-image-1 z-30 pointer-events-none"
                 style={{
-                  height: '100%',
-                  width: 'auto',
+                  height: 'auto',
+                  width: '100%',
                   marginBottom: 20,
                 }}
               />
@@ -116,7 +116,7 @@ const AshelyObsession = ({ onOpen }: Props) => {
               </motion.div>
             </motion.div>
             <motion.div
-              className={`ashley-obsession-image-container-2 h-full w-full p-2 flex flex-col items-center justify-center ${imageData.illustration2.style} mb-10 hd:mb-2`}
+              className={`ashley-obsession-image-container`}
               onClick={onOpen(imageData.illustration2)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.9 }}
@@ -128,8 +128,8 @@ const AshelyObsession = ({ onOpen }: Props) => {
                 title={imageData.illustration2.title}
                 className="ashley-obsession-image-2 z-20 pointer-events-none"
                 style={{
-                  height: '100%',
-                  width: 'auto',
+                  height: 'auto',
+                  width: '100%',
                   marginBottom: 20,
                 }}
               />
@@ -142,7 +142,7 @@ const AshelyObsession = ({ onOpen }: Props) => {
               </motion.div>
             </motion.div>
             <motion.div
-              className={`ashley-obsession-image-container-3 h-full w-full p-2 flex flex-col items-center justify-center ${imageData.illustration3.style} mb-10 hd:mb-2`}
+              className={`ashley-obsession-image-container`}
               onClick={onOpen(imageData.illustration3)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.9 }}
@@ -157,8 +157,8 @@ const AshelyObsession = ({ onOpen }: Props) => {
                 title={imageData.illustration3.title}
                 className="ashley-obsession-image-3 z-10 pointer-events-none"
                 style={{
-                  height: '100%',
-                  width: 'auto',
+                  height: 'auto',
+                  width: '100%',
                   marginBottom: 20,
                 }}
               />

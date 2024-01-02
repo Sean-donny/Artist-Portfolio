@@ -18,4 +18,24 @@ body.modal-open, body.menu-overlay-open {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+
+  /* ashley-obsession-image-container-1 h-full w-full p-2 flex flex-col items-center justify-center hd:w-1/3 mb-10 hd:mb-2 */
+
+  .ashley-obsession-image-container {
+    height: 100%;
+    width: 100%;
+    padding: 0.5rem/* 8px */;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.5rem/* 40px */;
+  }
+  @media only screen and (min-width: 768px) {
+    .ashley-obsession-image-container {
+      margin-bottom: 0.5rem/* 8px */;
+      width: 33.333333%;
+    }
+  }
+  
   

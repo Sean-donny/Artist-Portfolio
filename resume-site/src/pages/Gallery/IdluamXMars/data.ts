@@ -1,6 +1,6 @@
 // Image imports
-import Idluam from '/optimised/idluam.jpg';
-import EnterMars from '/optimised/enter_mars.jpg';
+import Idluam from '/optimised/idluam_v2.jpg';
+import EnterMars from '/optimised/enter_mars_v2.jpg';
 
 const imageData = {
     illustration1 : {

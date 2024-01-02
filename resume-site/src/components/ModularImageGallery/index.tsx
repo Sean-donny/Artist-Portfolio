@@ -41,7 +41,7 @@ const ModularImageGallery = ({
               src={data.src}
               alt={data.alt}
               title={data.title}
-              className="component-image object-cover object-center h-5/6 w-auto z-20 pointer-events-none"
+              className="component-image pointer-events-none"
             />
             <motion.div
               className="component-content-images-description w-full h-1/6"

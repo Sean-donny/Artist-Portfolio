@@ -41,10 +41,6 @@ const Gallery = () => {
   return (
     <div className="gallery-container bg-black flex flex-col justify-start">
       <div className="gallery-items">
-        <AshelyObsession onOpen={handleImageFocus} />
-        <SeanXTife onOpen={handleImageFocus} />
-        <Illustrations onOpen={handleImageFocus} />
-        <IdluamXMars onOpen={handleImageFocus} />
         <AnimatePresence initial={false} mode="wait">
           {modalOpen && (
             <GalleryModal
@@ -53,6 +49,10 @@ const Gallery = () => {
             />
           )}
         </AnimatePresence>
+        <AshelyObsession onOpen={handleImageFocus} />
+        <SeanXTife onOpen={handleImageFocus} />
+        <Illustrations onOpen={handleImageFocus} />
+        <IdluamXMars onOpen={handleImageFocus} />
       </div>
     </div>
   );

@@ -3,11 +3,11 @@ import { ModalContent } from '../../../interfaces/ModalContent';
 
 import ModularImageGallery from '../../../components/ModularImageGallery';
 
-interface Props {
+interface IdluamXMarsProps {
   onOpen: (data: ModalContent) => () => void;
 }
 
-const IdluamXMars = ({ onOpen }: Props) => {
+const IdluamXMars = ({ onOpen }: IdluamXMarsProps) => {
   const bgColor = 'bg-gradient-to-b from-zima to-fuchsia-500';
   const componentTitle = '3D Artworks';
 

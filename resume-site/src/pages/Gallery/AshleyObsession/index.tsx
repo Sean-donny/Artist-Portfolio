@@ -100,7 +100,7 @@ const AshelyObsession = ({ onOpen }: Props) => {
                 src={imageData.illustration1.src}
                 alt={imageData.illustration1.alt}
                 title={imageData.illustration1.title}
-                className="ashley-obsession-image-1 object-cover object-center h-5/6 w-auto my-auto z-30 pointer-events-none"
+                className="ashley-obsession-image-1 h-5/6 z-30 pointer-events-none"
               />
               <motion.div className="ashley-obsession-content-images-description-1 w-full h-1/6">
                 <p className="font-custom text-base text-center text-zinc-200">
@@ -121,7 +121,7 @@ const AshelyObsession = ({ onOpen }: Props) => {
                 src={imageData.illustration2.src}
                 alt={imageData.illustration2.alt}
                 title={imageData.illustration2.title}
-                className="ashley-obsession-image-2 object-cover object-center h-5/6 w-auto my-auto z-20 pointer-events-none"
+                className="ashley-obsession-image-2 h-5/6 z-20 pointer-events-none"
               />
               <motion.div className="ashley-obsession-content-images-description-2 w-full h-1/6">
                 <p className="font-custom text-base text-center text-zinc-200">
@@ -145,7 +145,7 @@ const AshelyObsession = ({ onOpen }: Props) => {
                 src={imageData.illustration3.src}
                 alt={imageData.illustration3.alt}
                 title={imageData.illustration3.title}
-                className="ashley-obsession-image-3 object-cover object-center h-5/6 w-auto my-auto z-10 pointer-events-none"
+                className="ashley-obsession-image-3 h-5/6 z-10 pointer-events-none"
               />
               <motion.div className="ashley-obsession-content-images-description-3 w-full h-1/6">
                 <p className="font-custom text-base text-center text-zinc-200">

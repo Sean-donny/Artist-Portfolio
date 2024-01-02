@@ -397,7 +397,7 @@ const Popwave = () => {
         <div className="client-project-draft-selection-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-orange-600 selection:text-zinc-200">
           <div className="client-project-draft-selection-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
             <motion.img
-              className="client-project-draft-selection-image w-auto h-full hd:h-auto object-cover object-center"
+              className="client-project-draft-selection-image"
               src={popwaveData.SketchShortlistCover.src}
               ref={pwDraftSelectionRef}
               initial={{ opacity: 0 }}

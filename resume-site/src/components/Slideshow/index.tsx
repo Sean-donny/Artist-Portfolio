@@ -53,11 +53,7 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
           className="inner-carousel flex"
         >
           {images.map((image, index) => (
-            <motion.div
-              className="min-h-slide2 min-w-slide2 px-2"
-              key={image}
-              whileHover={{ translateY: 10 }}
-            >
+            <motion.div className="min-h-slide2 min-w-slide2 px-2" key={image}>
               <motion.img
                 src={image}
                 alt={titles[index]}

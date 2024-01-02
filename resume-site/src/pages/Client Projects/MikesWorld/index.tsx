@@ -14,7 +14,7 @@ const mkReference2 = '/optimised/mikeswrld_planet_reference.jpg';
 const mkReference3 = '/optimised/mikeswrld_reference.jpg';
 
 import mkWrldData from './data';
-import cld from '../../../utils/cloudinary';
+// import cld from '../../../utils/cloudinary';
 
 const MikesWrld = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -710,7 +710,7 @@ const MikesWrld = () => {
                   opacity: mikeAlbumPromoVideoOpacity,
                 }}
               >
-                <iframe
+                {/* <iframe
                   src={cld
                     .video('resume-site/mikeswrld_album_out_now_video')
                     .quality('auto')
@@ -725,7 +725,7 @@ const MikesWrld = () => {
                   }}
                   allow="fullscreen; encrypted-media; picture-in-picture"
                   allowFullScreen
-                ></iframe>
+                ></iframe> */}
               </motion.div>
             )}
           </div>

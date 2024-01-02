@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Slideshow from '../../components/Slideshow';
 import Images from './HeroImages';
+import Titles from './HeroTitles';
 
 // Image imports
 import SeanPortrait from '/optimised/sean_donny_portrait.jpg';
@@ -21,7 +22,7 @@ const Hero = () => {
         <div className="flex-grow md:w-3/5 md:flex-none">
           <div className="flex flex-col h-auto md:h-full p-2">
             <div className="w-full h-1/2">
-              <Slideshow images={Images} />
+              <Slideshow images={Images} titles={Titles} />
             </div>
             <div className="w-full h-auto md:h-full">
               <article className="h-full w-auto flex items-end overflow-clip">

@@ -531,7 +531,7 @@ const Popwave = () => {
         <div className="client-project-tshirt-container w-full h-auto flex flex-col hd:flex-row items-center justify-center p-5 selection:bg-orange-600">
           <div className="client-project-tshirt-live-container w-full h-auto hd:w-1/2 flex flex-col items-center justify-center p-5">
             <img
-              className="client-project-tshirt-live h-full hd:h-[900px] w-auto"
+              className="client-project-tshirt-live"
               src={pwTshirtLive}
               alt="Popwave Star logo T-shirt on a model"
             />

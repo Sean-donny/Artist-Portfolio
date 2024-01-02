@@ -3,9 +3,10 @@ import { motion } from 'framer-motion';
 
 interface SlideshowProps {
   images: string[];
+  titles: string[];
 }
 
-const Slideshow = ({ images }: SlideshowProps) => {
+const Slideshow = ({ images, titles }: SlideshowProps) => {
   const [leftConstraint, setLeftConstraint] = useState(0);
   const [containerKey, setContainerKey] = useState(0);
 
@@ -39,28 +40,28 @@ const Slideshow = ({ images }: SlideshowProps) => {
   }, [handleLeftConstraint]);
 
   return (
-    <div className="w-auto h-full">
+    <div className="carousel-container">
       <motion.div
         key={containerKey}
         id={slideshowId}
         ref={slideshowRef}
-        className="carousel cursor-grab overflow-hidden"
+        className="carousel-body cursor-grab overflow-hidden"
       >
         <motion.div
           drag="x"
           dragConstraints={{ right: 0, left: -leftConstraint }}
-          className="inner-carousel flex h-full w-auto"
+          className="inner-carousel flex"
         >
-          {images.map(image => (
+          {images.map((image, index) => (
             <motion.div
-              className="min-h-slide2 min-w-slide2 px-2 h-full w-auto"
+              className="min-h-slide2 min-w-slide2 px-2"
               key={image}
               whileHover={{ translateY: 10 }}
             >
               <motion.img
                 src={image}
-                alt=""
-                className="w-auto h-full pointer-events-none"
+                alt={titles[index]}
+                className="pointer-events-none"
               />
             </motion.div>
           ))}

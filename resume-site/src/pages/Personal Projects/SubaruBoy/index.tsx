@@ -301,7 +301,7 @@ const SubaruBoy = () => {
           </div>
           <div className="personal-project-design-goal-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
             <motion.img
-              className="personal-project-design-goal-image w-auto h-full hd:h-auto object-cover object-center"
+              className="personal-project-design-goal-image"
               src={sb3DModel}
               ref={heroRef}
               initial={{ opacity: 0 }}

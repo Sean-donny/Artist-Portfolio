@@ -29,11 +29,27 @@ body.modal-open, body.menu-overlay-open {
     justify-content: center;
     margin-bottom: 2.5rem/* 40px */;
   }
+
+  .hero-container {
+    flex-direction: column;
+  }
+
   @media only screen and (min-width: 768px) {
     .ashley-obsession-image-container {
       margin-bottom: 0.5rem/* 8px */;
       width: 33.333333%;
     }
+    .hero-container {
+      flex-direction: row;
+    }
   }
-  
-  
+
+  @media screen and (width < 450px) {
+    .hero-carousel {
+      display: none;
+    }
+    .hero-container {
+      flex-direction: column-reverse;
+    }
+    
+  }

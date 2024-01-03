@@ -14,7 +14,7 @@ const MarqueeBanner = () => {
   ));
 
   return (
-    <div className="bg-neutral-950 py-5">
+    <div className="bg-black py-5">
       <Marquee
         className="overflow-hidden"
         // pauseOnHover

@@ -7,7 +7,8 @@ import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 
 // Image imports
-const mkWrldBanner = '/optimised/mikeswrld_banner.gif';
+// const mkWrldBanner = '/optimised/mikeswrld_banner.gif';
+const mkWrldBanner2 = '/optimised/mikeswrld_banner.jpg';
 const mkLogo = '/optimised/mikeswrld_title.png';
 const mkReference1 = '/optimised/mha_reference.jpg';
 const mkReference2 = '/optimised/mikeswrld_planet_reference.jpg';
@@ -374,7 +375,7 @@ const MikesWrld = () => {
           ref={myElementRef}
         >
           <motion.img
-            src={mkWrldBanner}
+            src={mkWrldBanner2}
             alt="Mike holding the earth"
             className="client-project-hero-image w-full h-full object-cover object-center"
             initial={{ scale: 1, opacity: 1 }}

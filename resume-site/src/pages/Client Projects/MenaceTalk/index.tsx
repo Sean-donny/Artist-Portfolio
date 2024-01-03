@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import mtHeroBanner from '/optimised/trill_tega_menace_talk_skull_graphic.jpg';
 import hoodedTrill from '/optimised/trill_tega_menace_talk_hero.png';
 
-// import cld from '../../../utils/cloudinary';
+import cld from '../../../utils/cloudinary';
 
 const MenaceTalk = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -265,12 +265,12 @@ const MenaceTalk = () => {
     position: trillAlbumTracklistCoverParagraphPosition,
   } = useInViewAnimation();
 
-  // const {
-  //   ref: trillAlbumPromoVideoRef,
-  //   inView: trillAlbumPromoVideoInView,
-  //   opacity: trillAlbumPromoVideoOpacity,
-  //   position: trillAlbumPromoVideoPosition,
-  // } = useInViewAnimation();
+  const {
+    ref: trillAlbumPromoVideoRef,
+    inView: trillAlbumPromoVideoInView,
+    opacity: trillAlbumPromoVideoOpacity,
+    position: trillAlbumPromoVideoPosition,
+  } = useInViewAnimation();
 
   // Declarations for Project Deliverables section
   const {
@@ -680,7 +680,7 @@ const MenaceTalk = () => {
             </div>
           </div>
         </div>
-        {/* <div className="client-project-promo-video-container h-auto w-full py-5">
+        <div className="client-project-promo-video-container h-auto w-full py-5">
           {trillAlbumPromoVideoInView && (
             <motion.div
               className="client-project-promo-video h-auto w-full flex flex-col items-center justify-center"
@@ -708,7 +708,7 @@ const MenaceTalk = () => {
               ></iframe>
             </motion.div>
           )}
-        </div> */}
+        </div>
         <div className="client-project-deliverables-container h-auto w-full bg-fuchsia-600 selection:bg-black selection:text-zinc-200 p-5">
           <div className="client-project-deliverables flex flex-col items-start justify-center">
             <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">

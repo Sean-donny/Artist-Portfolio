@@ -21,7 +21,7 @@ const Hero = () => {
       >
         <div className="hero-carousel-and-bio-container flex-grow md:w-3/5 md:flex-none">
           <div className="hero-carousel-and-bio flex flex-col h-auto md:h-full p-2">
-            <div className="hero-carousel w-full h-1/2">
+            <div className="hero-carousel w-full h-1/2 pointer-events-none">
               <Slideshow images={Images} titles={Titles} />
             </div>
             <div className="hero-bio w-full h-auto md:h-full">

@@ -54,15 +54,15 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
   };
 
   return (
-    <div className="carousel-container">
+    <div className="carousel-container pointer-events-none">
       <motion.div
         key={containerKey}
         id={slideshowId}
         ref={slideshowRef}
-        className="carousel-body cursor-grab overflow-hidden"
+        className="carousel-body overflow-hidden pointer-events-none"
       >
         <motion.div
-          className="inner-carousel flex"
+          className="inner-carousel flex pointer-events-none"
           variants={carouselVariants}
           initial="initial"
           animate="animate"
@@ -85,7 +85,7 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
         >
           {images.map((image, index) => (
             <div
-              className="min-h-slide2 min-w-slide2 px-2"
+              className="min-h-slide2 min-w-slide2 px-2 pointer-events-none"
               key={`cloned:${image}`}
             >
               <img

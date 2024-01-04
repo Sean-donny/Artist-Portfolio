@@ -721,8 +721,8 @@ const MikesWrld = () => {
                   height="660"
                   className="hd:p-20"
                   style={{
-                    height: 'auto',
-                    width: '100%',
+                    height: '660px',
+                    width: '660px',
                     aspectRatio: 660 / 660,
                   }}
                   allow="fullscreen; encrypted-media; picture-in-picture"

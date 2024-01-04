@@ -17,7 +17,6 @@ const MarqueeBanner = () => {
     <div className="bg-black py-5">
       <Marquee
         className="overflow-hidden"
-        // pauseOnHover
         speed={150}
         delay={0.5}
         gradient

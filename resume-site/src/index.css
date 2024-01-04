@@ -44,12 +44,22 @@ body.modal-open, body.menu-overlay-open {
     }
   }
 
-  @media screen and (width < 450px) {
-    .hero-carousel {
-      display: none;
-    }
+  @media screen and (max-width: 450px) {
+
     .hero-container {
       flex-direction: column-reverse;
     }
+    .hero-carousel-and-bio {
+      flex-direction: column-reverse;
+    }
+    .carousel-container {
+      padding-top: 1rem/* 16px */;
+    }
     
+  }
+
+  .carousel-body {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
   }

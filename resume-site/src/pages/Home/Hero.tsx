@@ -36,12 +36,12 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="hero-image flex-grow md:w-2/5 md:flex-none p-2">
+        <div className="hero-image-container flex-grow md:w-2/5 md:flex-none p-2">
           <div className="flex items-center justify-center h-full overflow-hidden">
             <img
               src={SeanPortrait}
               alt="Sean Donny"
-              className="object-cover object-center h-full w-auto my-auto cursor-pointer pt-5 md:pt-0"
+              className="hero-image object-cover object-center h-full w-auto my-auto cursor-pointer pt-5 md:pt-0"
               onClick={bgShuffle}
             />
           </div>

@@ -7,29 +7,29 @@ interface SlideshowProps {
 }
 
 const Slideshow = ({ images, titles }: SlideshowProps) => {
-  const [leftConstraint, setLeftConstraint] = useState(0);
+  const [translateWidth, setTranslateWidth] = useState(0);
   const [containerKey, setContainerKey] = useState(0);
 
   const slideshowId = 'slideshow-container';
   const slideshowRef = useRef<HTMLDivElement>(null);
 
-  const handleLeftConstraint = useCallback(() => {
+  const handleTranslateWidth = useCallback(() => {
     if (slideshowRef.current) {
       const innerCarouselWidth =
         slideshowRef.current.querySelector('.inner-carousel')?.scrollWidth || 0;
 
-      setLeftConstraint(innerCarouselWidth - slideshowRef.current.offsetWidth);
+      setTranslateWidth(innerCarouselWidth);
     }
   }, []);
 
   useEffect(() => {
-    handleLeftConstraint();
-  }, [handleLeftConstraint]);
+    handleTranslateWidth();
+  }, [handleTranslateWidth]);
 
   useEffect(() => {
     const handleResize = () => {
       setContainerKey(prev => prev + 1);
-      handleLeftConstraint();
+      handleTranslateWidth();
     };
 
     window.addEventListener('resize', handleResize);
@@ -37,7 +37,21 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [handleLeftConstraint]);
+  }, [handleTranslateWidth]);
+
+  const carouselVariants = {
+    initial: {
+      x: 0,
+    },
+    animate: {
+      x: -translateWidth,
+      transition: {
+        duration: 12.8,
+        ease: 'linear',
+        repeat: Infinity,
+      },
+    },
+  };
 
   return (
     <div className="carousel-container">
@@ -48,18 +62,38 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
         className="carousel-body cursor-grab overflow-hidden"
       >
         <motion.div
-          drag="x"
-          dragConstraints={{ right: 0, left: -leftConstraint }}
           className="inner-carousel flex"
+          variants={carouselVariants}
+          initial="initial"
+          animate="animate"
         >
           {images.map((image, index) => (
-            <motion.div className="min-h-slide2 min-w-slide2 px-2" key={image}>
-              <motion.img
+            <div className="min-h-slide2 min-w-slide2 px-2" key={image}>
+              <img
                 src={image}
                 alt={titles[index]}
                 className="pointer-events-none"
               />
-            </motion.div>
+            </div>
+          ))}
+        </motion.div>
+        <motion.div
+          className="inner-carousel-clone flex"
+          variants={carouselVariants}
+          initial="initial"
+          animate="animate"
+        >
+          {images.map((image, index) => (
+            <div
+              className="min-h-slide2 min-w-slide2 px-2"
+              key={`cloned:${image}`}
+            >
+              <img
+                src={image}
+                alt={titles[index]}
+                className="pointer-events-none"
+              />
+            </div>
           ))}
         </motion.div>
       </motion.div>

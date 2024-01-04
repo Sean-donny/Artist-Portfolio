@@ -701,7 +701,7 @@ const MikesWrld = () => {
               style={embedStyle}
             ></iframe>
           </div>
-          <div className="client-project-promo-video-container h-auto w-full hd:w-1/2 hd:py-5">
+          <div className="client-project-promo-video-container h-auto w-full hd:w-1/2 hd:py-5 flex flex-col items-center justify-center">
             {mikeAlbumPromoVideoInView && (
               <motion.div
                 className="client-project-promo-video h-auto w-full flex flex-col items-center justify-center"

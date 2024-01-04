@@ -1,5 +1,5 @@
-import { useRef, useState, useEffect, useCallback } from 'react';
-import { motion } from 'framer-motion';
+// import { useRef, useState, useEffect, useCallback } from 'react';
+// import { motion } from 'framer-motion';
 
 interface SlideshowProps {
   images: string[];
@@ -7,65 +7,65 @@ interface SlideshowProps {
 }
 
 const Slideshow = ({ images, titles }: SlideshowProps) => {
-  const [translateWidth, setTranslateWidth] = useState(0);
-  const [containerKey, setContainerKey] = useState(0);
+  // const [translateWidth, setTranslateWidth] = useState(0);
+  // const [containerKey, setContainerKey] = useState(0);
 
-  const slideshowId = 'slideshow-container';
-  const slideshowRef = useRef<HTMLDivElement>(null);
+  // const slideshowId = 'slideshow-container';
+  // const slideshowRef = useRef<HTMLDivElement>(null);
 
-  const handleTranslateWidth = useCallback(() => {
-    if (slideshowRef.current) {
-      const innerCarouselWidth =
-        slideshowRef.current.querySelector('.inner-carousel')?.scrollWidth || 0;
+  // const handleTranslateWidth = useCallback(() => {
+  //   if (slideshowRef.current) {
+  //     const innerCarouselWidth =
+  //       slideshowRef.current.querySelector('.inner-carousel')?.scrollWidth || 0;
 
-      setTranslateWidth(innerCarouselWidth);
-    }
-  }, []);
+  //     setTranslateWidth(innerCarouselWidth);
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    handleTranslateWidth();
-  }, [handleTranslateWidth]);
+  // useEffect(() => {
+  //   handleTranslateWidth();
+  // }, [handleTranslateWidth]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setContainerKey(prev => prev + 1);
-      handleTranslateWidth();
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setContainerKey(prev => prev + 1);
+  //     handleTranslateWidth();
+  //   };
 
-    window.addEventListener('resize', handleResize);
+  //   window.addEventListener('resize', handleResize);
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [handleTranslateWidth]);
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, [handleTranslateWidth]);
 
-  const carouselVariants = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: -translateWidth,
-      transition: {
-        duration: 12.8,
-        ease: 'linear',
-        repeat: Infinity,
-      },
-    },
-  };
+  // const carouselVariants = {
+  //   initial: {
+  //     x: 0,
+  //   },
+  //   animate: {
+  //     x: -translateWidth,
+  //     transition: {
+  //       duration: 12.8,
+  //       ease: 'linear',
+  //       repeat: Infinity,
+  //     },
+  //   },
+  // };
 
   return (
     <div className="carousel-container pointer-events-none">
-      <motion.div
-        key={containerKey}
-        id={slideshowId}
-        ref={slideshowRef}
+      <div
+        // key={containerKey}
+        // id={slideshowId}
+        // ref={slideshowRef}
         className="carousel-body overflow-hidden pointer-events-none"
       >
-        <motion.div
+        <div
           className="inner-carousel flex pointer-events-none"
-          variants={carouselVariants}
-          initial="initial"
-          animate="animate"
+          // variants={carouselVariants}
+          // initial="initial"
+          // animate="animate"
         >
           {images.map((image, index) => (
             <div className="min-h-slide2 min-w-slide2 px-2" key={image}>
@@ -76,12 +76,12 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
               />
             </div>
           ))}
-        </motion.div>
-        <motion.div
-          className="inner-carousel-clone flex"
-          variants={carouselVariants}
-          initial="initial"
-          animate="animate"
+        </div>
+        <div
+          className="inner-carousel flex"
+          // variants={carouselVariants}
+          // initial="initial"
+          // animate="animate"
         >
           {images.map((image, index) => (
             <div
@@ -95,8 +95,8 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
               />
             </div>
           ))}
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </div>
   );
 };

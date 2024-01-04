@@ -63,3 +63,16 @@ body.modal-open, body.menu-overlay-open {
     flex-direction: row;
     white-space: nowrap;
   }
+
+  @keyframes carousel-slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-1920px);
+    }
+  }
+
+  .inner-carousel {
+    animation: 12.8s carousel-slide infinite linear;
+  }

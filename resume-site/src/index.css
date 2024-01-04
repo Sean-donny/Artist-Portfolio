@@ -66,10 +66,10 @@ body.modal-open, body.menu-overlay-open {
 
   @keyframes carousel-slide {
     from {
-      transform: translateX(0);
+      -webkit-transform: translateX(0) translateZ(0);
     }
     to {
-      transform: translateX(-1920px);
+      -webkit-transform: translateX(-1920px) translateZ(0);
     }
   }
 

@@ -224,11 +224,11 @@ const SubaruBoy = () => {
       {modalOpen && (
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
       )}
-      <div className="personal-project-sections w-full h-auto flex flex-col items-center justify-center">
+      <div className="personal-project-sections w-full h-auto flex flex-col items-center justify-center relative">
         <div
           className="personal-project-hero w-full h-auto overflow-hidden sticky top-0 pointer-events-none"
           style={{
-            transform: `translate(0px, ${-heroTranslate}px)`,
+            transform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
             zIndex: 1,
           }}
         >

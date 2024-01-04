@@ -15,7 +15,7 @@ const mkReference2 = '/optimised/mikeswrld_planet_reference.jpg';
 const mkReference3 = '/optimised/mikeswrld_reference.jpg';
 
 import mkWrldData from './data';
-import cld from '../../../utils/cloudinary';
+// import cld from '../../../utils/cloudinary';
 
 const MikesWrld = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -225,12 +225,12 @@ const MikesWrld = () => {
     position: mikeAlbumTracklistCoverParagraphPosition,
   } = useInViewAnimation();
 
-  const {
-    ref: mikeAlbumPromoVideoRef,
-    inView: mikeAlbumPromoVideoInView,
-    opacity: mikeAlbumPromoVideoOpacity,
-    position: mikeAlbumPromoVideoPosition,
-  } = useInViewAnimation();
+  // const {
+  //   ref: mikeAlbumPromoVideoRef,
+  //   inView: mikeAlbumPromoVideoInView,
+  //   opacity: mikeAlbumPromoVideoOpacity,
+  //   position: mikeAlbumPromoVideoPosition,
+  // } = useInViewAnimation();
 
   // Declarations for reference board
 
@@ -691,7 +691,7 @@ const MikesWrld = () => {
           </div>
         </div>
         <div className="client-project-streaming-and-promotional-container w-full h-auto flex flex-col hd:flex-row items-center justify-center bg-zinc-900 hd:py-20 selection:bg-red-600">
-          <div className="client-project-streaming-preview w-full h-auto p-5 hd:w-1/2 hd:py-20 hd:px-0 flex flex-col items-center justify-center">
+          <div className="client-project-streaming-preview w-full h-auto p-5 hd:py-20 hd:px-0 flex flex-col items-center justify-center">
             <iframe
               id="embedPlayer"
               src="https://embed.music.apple.com/us/album/mikes-world/1615035503?app=music&amp;itsct=music_box_player&amp;itscg=30200&amp;ls=1&amp;theme=auto"
@@ -701,7 +701,7 @@ const MikesWrld = () => {
               style={embedStyle}
             ></iframe>
           </div>
-          <div className="client-project-promo-video-container h-auto w-full hd:w-1/2 hd:py-5 flex flex-col items-center justify-center">
+          {/* <div className="client-project-promo-video-container h-auto w-full hd:w-1/2 hd:py-5 flex flex-col items-center justify-center">
             {mikeAlbumPromoVideoInView && (
               <motion.div
                 className="client-project-promo-video h-auto w-full flex flex-col items-center justify-center"
@@ -721,8 +721,8 @@ const MikesWrld = () => {
                   height="660"
                   className="hd:p-20"
                   style={{
-                    height: '660px',
-                    width: '660px',
+                    height: 'auto',
+                    width: '100%',
                     aspectRatio: 660 / 660,
                   }}
                   allow="fullscreen; encrypted-media; picture-in-picture"
@@ -730,7 +730,7 @@ const MikesWrld = () => {
                 ></iframe>
               </motion.div>
             )}
-          </div>
+          </div> */}
         </div>
         <div className="client-project-deliverables-container h-auto w-full bg-red-600 selection:bg-black selection:text-zinc-200 p-5">
           <div className="client-project-deliverables flex flex-col items-start justify-center">

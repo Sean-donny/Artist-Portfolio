@@ -17,6 +17,7 @@ body.modal-open, body.menu-overlay-open {
   body {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+    background-color: black;
   }
 
   .ashley-obsession-image-container {

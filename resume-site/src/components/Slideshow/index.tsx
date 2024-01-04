@@ -53,6 +53,8 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
   //   },
   // };
 
+  const repeatCount = 9;
+
   return (
     <div className="carousel-container pointer-events-none">
       <div
@@ -76,26 +78,29 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
               />
             </div>
           ))}
+          {[...Array(repeatCount)].map((_, repeatIndex) =>
+            images.map((image, index) => (
+              <div
+                className="min-h-slide2 min-w-slide2 px-2"
+                key={`${image}-${repeatIndex}-${index}`}
+              >
+                <img
+                  src={image}
+                  alt={titles[index]}
+                  className="pointer-events-none"
+                />
+              </div>
+            )),
+          )}
         </div>
-        <div
+        {/* <div
           className="inner-carousel flex"
           // variants={carouselVariants}
           // initial="initial"
           // animate="animate"
         >
-          {images.map((image, index) => (
-            <div
-              className="min-h-slide2 min-w-slide2 px-2 pointer-events-none"
-              key={`cloned:${image}`}
-            >
-              <img
-                src={image}
-                alt={titles[index]}
-                className="pointer-events-none"
-              />
-            </div>
-          ))}
-        </div>
+          
+        </div> */}
       </div>
     </div>
   );

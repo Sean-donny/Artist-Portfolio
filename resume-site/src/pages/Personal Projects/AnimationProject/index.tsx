@@ -81,7 +81,7 @@ const AnimationProject = () => {
       {modalOpen && (
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
       )}
-      <div className="personal-project-sections w-full h-auto flex flex-col items-center justify-center">
+      <div className="personal-project-sections w-full h-auto flex flex-col items-center justify-center relative">
         <div className="personal-project-character-sheet-image-container w-full h-auto flex flex-col items-center justify-center py-10 hd:p-10">
           <img
             src={sdCharacterSheet}

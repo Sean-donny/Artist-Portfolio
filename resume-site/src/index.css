@@ -4,76 +4,80 @@
 @tailwind components;
 @tailwind utilities;
 
-body.modal-open, body.menu-overlay-open {
-    overflow: hidden;
-  }
-  
-  /* Hide scrollbar for Chrome, Safari, and Opera */
-  body::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* Hide scrollbar for IE, Edge, and Firefox */
-  body {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-    background-color: black;
-  }
+body.modal-open,
+body.menu-overlay-open {
+  overflow: hidden;
+}
 
+/* Hide scrollbar for Chrome, Safari, and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  background-color: black;
+}
+
+.ashley-obsession-image-container {
+  height: 100%;
+  width: 100%;
+  padding: 0.5rem /* 8px */;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5rem /* 40px */;
+}
+
+.hero-container {
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
   .ashley-obsession-image-container {
-    height: 100%;
-    width: 100%;
-    padding: 0.5rem/* 8px */;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2.5rem/* 40px */;
+    margin-bottom: 0.5rem /* 8px */;
+    width: 33.333333%;
   }
-
   .hero-container {
-    flex-direction: column;
-  }
-
-  @media only screen and (min-width: 768px) {
-    .ashley-obsession-image-container {
-      margin-bottom: 0.5rem/* 8px */;
-      width: 33.333333%;
-    }
-    .hero-container {
-      flex-direction: row;
-    }
-  }
-
-  @media screen and (max-width: 450px) {
-
-    .hero-container {
-      flex-direction: column-reverse;
-    }
-    .hero-carousel-and-bio {
-      flex-direction: column-reverse;
-    }
-    .carousel-container {
-      padding-top: 1rem/* 16px */;
-    }
-    
-  }
-
-  .carousel-body {
-    display: flex;
     flex-direction: row;
-    white-space: nowrap;
   }
+}
 
-  @keyframes carousel-slide {
-    from {
-      -webkit-transform: translateX(0) translateZ(0);
-    }
-    to {
-      -webkit-transform: translateX(-19200px) translateZ(0);
-    }
+@media screen and (max-width: 450px) {
+  .hero-container {
+    flex-direction: column-reverse;
   }
+  .hero-carousel-and-bio {
+    flex-direction: column-reverse;
+  }
+  .carousel-container {
+    padding-top: 1rem /* 16px */;
+  }
+}
 
-  .inner-carousel {
-    animation: 128s carousel-slide infinite linear;
+.carousel-body {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+}
+
+@keyframes carousel-slide {
+  from {
+    -webkit-transform: translateX(0) translateZ(0);
   }
+  to {
+    -webkit-transform: translateX(-19200px) translateZ(0);
+  }
+}
+
+.inner-carousel {
+  animation: 128s carousel-slide infinite linear;
+}
+
+.youtube-video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}

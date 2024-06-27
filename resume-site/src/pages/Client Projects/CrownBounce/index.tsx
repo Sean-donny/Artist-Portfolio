@@ -8,12 +8,10 @@ import { ModalContent } from '../../../interfaces/ModalContent';
 import { useNavigate } from 'react-router-dom';
 
 // Image imports
-import mtHeroBanner from '/optimised/trill_tega_menace_talk_skull_graphic.jpg';
-import hoodedTrill from '/optimised/trill_tega_menace_talk_hero.png';
+import cbHeroBanner from '/optimised/odunsi_the_engine_crown_bounce_banner.jpg';
+import odunsiMecha from '/optimised/odunsi_mecha_illustration.png';
 
-import cld from '../../../utils/cloudinary';
-
-const MenaceTalk = () => {
+const CrownBounce = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<ModalContent>({
     src: undefined,
@@ -88,97 +86,97 @@ const MenaceTalk = () => {
   }, []);
 
   // Declarations required for page section effects
-  const hoodedTrillRef = useRef(null);
-  const hoodedTrillInView = useInView(hoodedTrillRef, { once: true });
-  const [hoodedTrillOpacity, setHoodedTrillOpacity] = useState(0);
-  const [hoodedTrillPosition, setHoodedTrillPosition] = useState(20);
+  const odunsiMechaRef = useRef(null);
+  const odunsiMechaInView = useInView(odunsiMechaRef, { once: true });
+  const [odunsiMechaOpacity, setodunsiMechaOpacity] = useState(0);
+  const [odunsiMechaPosition, setodunsiMechaPosition] = useState(20);
 
   useEffect(() => {
-    if (hoodedTrillInView && scrollY > parallaxValue / 2.5) {
+    if (odunsiMechaInView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
-        setHoodedTrillOpacity(1);
-        setHoodedTrillPosition(0);
+        setodunsiMechaOpacity(1);
+        setodunsiMechaPosition(0);
       }, 50);
     } else {
-      setHoodedTrillOpacity(0);
-      setHoodedTrillPosition(20);
+      setodunsiMechaOpacity(0);
+      setodunsiMechaPosition(20);
     }
-  }, [hoodedTrillInView, scrollY]);
+  }, [odunsiMechaInView, scrollY]);
 
-  const hoodedTrillHeaderRef = useRef(null);
-  const hoodedTrillHeaderInView = useInView(hoodedTrillHeaderRef, {
+  const odunsiMechaHeaderRef = useRef(null);
+  const odunsiMechaHeaderInView = useInView(odunsiMechaHeaderRef, {
     once: true,
   });
-  const [hoodedTrillHeaderOpacity, setHoodedTrillHeaderOpacity] = useState(0);
-  const [hoodedTrillHeaderPosition, setHoodedTrillHeaderPosition] =
+  const [odunsiMechaHeaderOpacity, setodunsiMechaHeaderOpacity] = useState(0);
+  const [odunsiMechaHeaderPosition, setodunsiMechaHeaderPosition] =
     useState(20);
 
   useEffect(() => {
-    if (hoodedTrillHeaderInView && scrollY > parallaxValue / 2.5) {
-      setHoodedTrillHeaderOpacity(1);
-      setHoodedTrillHeaderPosition(0);
+    if (odunsiMechaHeaderInView && scrollY > parallaxValue / 2.5) {
+      setodunsiMechaHeaderOpacity(1);
+      setodunsiMechaHeaderPosition(0);
     } else {
-      setHoodedTrillHeaderOpacity(0);
-      setHoodedTrillHeaderPosition(20);
+      setodunsiMechaHeaderOpacity(0);
+      setodunsiMechaHeaderPosition(20);
     }
-  }, [hoodedTrillHeaderInView, scrollY]);
+  }, [odunsiMechaHeaderInView, scrollY]);
 
-  const hoodedTrillP1Ref = useRef(null);
-  const hoodedTrillP1InView = useInView(hoodedTrillP1Ref, {
+  const odunsiMechaP1Ref = useRef(null);
+  const odunsiMechaP1InView = useInView(odunsiMechaP1Ref, {
     once: true,
   });
-  const [hoodedTrillP1Opacity, setHoodedTrillP1Opacity] = useState(0);
-  const [hoodedTrillP1Position, setHoodedTrillP1Position] = useState(20);
+  const [odunsiMechaP1Opacity, setodunsiMechaP1Opacity] = useState(0);
+  const [odunsiMechaP1Position, setodunsiMechaP1Position] = useState(20);
 
   useEffect(() => {
-    if (hoodedTrillP1InView && scrollY > parallaxValue / 2.5) {
+    if (odunsiMechaP1InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
-        setHoodedTrillP1Opacity(1);
-        setHoodedTrillP1Position(0);
+        setodunsiMechaP1Opacity(1);
+        setodunsiMechaP1Position(0);
       }, 50);
     } else {
-      setHoodedTrillP1Opacity(0);
-      setHoodedTrillP1Position(20);
+      setodunsiMechaP1Opacity(0);
+      setodunsiMechaP1Position(20);
     }
-  }, [hoodedTrillP1InView, scrollY]);
+  }, [odunsiMechaP1InView, scrollY]);
 
-  const hoodedTrillP2Ref = useRef(null);
-  const hoodedTrillP2InView = useInView(hoodedTrillP2Ref, {
+  const odunsiMechaP2Ref = useRef(null);
+  const odunsiMechaP2InView = useInView(odunsiMechaP2Ref, {
     once: true,
   });
-  const [hoodedTrillP2Opacity, setHoodedTrillP2Opacity] = useState(0);
-  const [hoodedTrillP2Position, setHoodedTrillP2Position] = useState(20);
+  const [odunsiMechaP2Opacity, setodunsiMechaP2Opacity] = useState(0);
+  const [odunsiMechaP2Position, setodunsiMechaP2Position] = useState(20);
 
   useEffect(() => {
-    if (hoodedTrillP2InView && scrollY > parallaxValue / 2.5) {
+    if (odunsiMechaP2InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
-        setHoodedTrillP2Opacity(1);
-        setHoodedTrillP2Position(0);
+        setodunsiMechaP2Opacity(1);
+        setodunsiMechaP2Position(0);
       }, 50);
     } else {
-      setHoodedTrillP2Opacity(0);
-      setHoodedTrillP2Position(20);
+      setodunsiMechaP2Opacity(0);
+      setodunsiMechaP2Position(20);
     }
-  }, [hoodedTrillP2InView, scrollY]);
+  }, [odunsiMechaP2InView, scrollY]);
 
-  const hoodedTrillP3Ref = useRef(null);
-  const hoodedTrillP3InView = useInView(hoodedTrillP3Ref, {
+  const odunsiMechaP3Ref = useRef(null);
+  const odunsiMechaP3InView = useInView(odunsiMechaP3Ref, {
     once: true,
   });
-  const [hoodedTrillP3Opacity, setHoodedTrillP3Opacity] = useState(0);
-  const [hoodedTrillP3Position, setHoodedTrillP3Position] = useState(20);
+  const [odunsiMechaP3Opacity, setodunsiMechaP3Opacity] = useState(0);
+  const [odunsiMechaP3Position, setodunsiMechaP3Position] = useState(20);
 
   useEffect(() => {
-    if (hoodedTrillP3InView && scrollY > parallaxValue / 2.5) {
+    if (odunsiMechaP3InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
-        setHoodedTrillP3Opacity(1);
-        setHoodedTrillP3Position(0);
+        setodunsiMechaP3Opacity(1);
+        setodunsiMechaP3Position(0);
       }, 50);
     } else {
-      setHoodedTrillP3Opacity(0);
-      setHoodedTrillP3Position(20);
+      setodunsiMechaP3Opacity(0);
+      setodunsiMechaP3Position(20);
     }
-  }, [hoodedTrillP3InView, scrollY]);
+  }, [odunsiMechaP3InView, scrollY]);
 
   // Uses custom hook to generate ref, and states for opacity & position values
   const {
@@ -230,46 +228,39 @@ const MenaceTalk = () => {
   } = useInViewAnimation();
 
   const {
-    ref: trillFinalAlbumCoverRef,
-    opacity: trillFinalAlbumCoverOpacity,
-    position: trillFinalAlbumCoverPosition,
+    ref: trillFinalOriginalCoverRef,
+    opacity: trillFinalOriginalCoverOpacity,
+    position: trillFinalOriginalCoverPosition,
   } = useInViewAnimation();
 
   const {
-    ref: trillFinalAlbumCoverHeaderRef,
-    opacity: trillFinalAlbumCoverHeaderOpacity,
-    position: trillFinalAlbumCoverHeaderPosition,
+    ref: trillFinalOriginalCoverHeaderRef,
+    opacity: trillFinalOriginalCoverHeaderOpacity,
+    position: trillFinalOriginalCoverHeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: trillFinalAlbumCoverParagraphRef,
-    opacity: trillFinalAlbumCoverParagraphOpacity,
-    position: trillFinalAlbumCoverParagraphPosition,
+    ref: trillFinalOriginalCoverParagraphRef,
+    opacity: trillFinalOriginalCoverParagraphOpacity,
+    position: trillFinalOriginalCoverParagraphPosition,
   } = useInViewAnimation();
 
   const {
-    ref: trillAlbumTracklistCoverRef,
-    opacity: trillAlbumTracklistCoverOpacity,
-    position: trillAlbumTracklistCoverPosition,
+    ref: trillAlbumRemixCoverRef,
+    opacity: trillAlbumRemixCoverOpacity,
+    position: trillAlbumRemixCoverPosition,
   } = useInViewAnimation();
 
   const {
-    ref: trillAlbumTracklistCoverHeaderRef,
-    opacity: trillAlbumTracklistCoverHeaderOpacity,
-    position: trillAlbumTracklistCoverHeaderPosition,
+    ref: trillAlbumRemixCoverHeaderRef,
+    opacity: trillAlbumRemixCoverHeaderOpacity,
+    position: trillAlbumRemixCoverHeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: trillAlbumTracklistCoverParagraphRef,
-    opacity: trillAlbumTracklistCoverParagraphOpacity,
-    position: trillAlbumTracklistCoverParagraphPosition,
-  } = useInViewAnimation();
-
-  const {
-    ref: trillAlbumPromoVideoRef,
-    inView: trillAlbumPromoVideoInView,
-    opacity: trillAlbumPromoVideoOpacity,
-    position: trillAlbumPromoVideoPosition,
+    ref: trillAlbumRemixCoverParagraphRef,
+    opacity: trillAlbumRemixCoverParagraphOpacity,
+    position: trillAlbumRemixCoverParagraphPosition,
   } = useInViewAnimation();
 
   // Declarations for Project Deliverables section
@@ -298,15 +289,15 @@ const MenaceTalk = () => {
   );
 
   const projectDeliverables = [
-    'Album Cover',
+    'Single Cover',
 
-    'Tracklist',
+    'Remix Cover',
 
-    'Promotional Video',
+    'YouTube Visualiser',
 
-    'Branding Assets',
+    'Spotify Canvas Video',
 
-    'World-building Materials',
+    'TikTok Promotional Video',
   ];
 
   // Declarations for Project Navigate section
@@ -315,8 +306,8 @@ const MenaceTalk = () => {
 
   const projectNavigateScope = useMenuAnimation(projectNavigateInView);
 
-  const previousProject = 'Crown Bounce';
-  const nextProject = 'Ye Anthem';
+  const previousProject = "Mike's World";
+  const nextProject = 'Menace Talk';
 
   const navigate = useNavigate();
 
@@ -351,7 +342,7 @@ const MenaceTalk = () => {
           }}
         >
           <motion.img
-            src={mtHeroBanner}
+            src={cbHeroBanner}
             alt="Chrome skull floating in a dark void"
             className="client-project-hero-image w-full h-full object-cover object-center"
             initial={{ scale: 1, opacity: 1 }}
@@ -365,86 +356,74 @@ const MenaceTalk = () => {
         <div className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-fuchsia-600 selection:text-zinc-200">
           <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
             <motion.h2
-              ref={hoodedTrillHeaderRef}
+              ref={odunsiMechaHeaderRef}
               className="client-project-design-goal-description-header text-zinc-200 font-custom font-semibold italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mb-5"
               initial={{ opacity: 0 }}
               animate={{
-                translateY: hoodedTrillHeaderPosition,
-                opacity: hoodedTrillHeaderOpacity,
+                translateY: odunsiMechaHeaderPosition,
+                opacity: odunsiMechaHeaderOpacity,
               }}
               transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
             >
-              Trill hit me on FaceTime and told me to "Go Crazy"
+              Odunsi hit me on IG "Let's do one together"
             </motion.h2>
             <motion.p
               className="client-project-design-goal-description-paragraph-1 text-zinc-400 font-custom font-medium italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-              ref={hoodedTrillP1Ref}
+              ref={odunsiMechaP1Ref}
               initial={{ opacity: 0 }}
               animate={{
-                translateY: hoodedTrillP1Position,
-                opacity: hoodedTrillP1Opacity,
+                translateY: odunsiMechaP1Position,
+                opacity: odunsiMechaP1Opacity,
               }}
               transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
             >
-              "I want it like them{' '}
-              <mark className="bg-fuchsia-600 text-zinc-200">
-                <a
-                  href="https://genius.com/albums/Comethazine/Bawskee"
-                  target="_blank"
-                  className="hover:underline"
-                >
-                  Bawskee
-                </a>
-              </mark>{' '}
-              covers Comethazine got, video game inspired, and most importantly
-              I want it purple"...
+              "I want something sexy, with a lot of motion"...
             </motion.p>
             <motion.p
               className="client-project-design-goal-description-paragraph-2 text-zinc-400 font-custom font-normal italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-              ref={hoodedTrillP2Ref}
+              ref={odunsiMechaP2Ref}
               initial={{ opacity: 0 }}
               animate={{
-                translateY: hoodedTrillP2Position,
-                opacity: hoodedTrillP2Opacity,
+                translateY: odunsiMechaP2Position,
+                opacity: odunsiMechaP2Opacity,
               }}
               transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
             >
-              "I want the earth to open up, and I fly out of the netherealm with
-              bat wings rocking full{' '}
+              "So I've got this record with Minz & Elias called Crown Bounce. I
+              need you to take some inspo from the{' '}
               <mark className="bg-fuchsia-600 text-zinc-200">
                 <a
-                  href="https://www.mowalola.com/pages/ss20"
+                  href="https://youtu.be/wigZvnfIue4?si=VqH23VPgwPapxgXY"
                   target="_blank"
                   className="hover:underline"
                 >
-                  Mowalola
+                  music&nbsp;video
                 </a>
-              </mark>
-              , shooting laser beams from my eyes, warding off demons emerging
-              from the depths below"...
+              </mark>{' '}
+              and work some magic"...
             </motion.p>
             <motion.p
               className="client-project-design-goal-description-paragraph-3 text-zinc-400 font-custom font-extralight italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-              ref={hoodedTrillP3Ref}
+              ref={odunsiMechaP3Ref}
               initial={{ opacity: 0 }}
               animate={{
-                translateY: hoodedTrillP3Position,
-                opacity: hoodedTrillP3Opacity,
+                translateY: odunsiMechaP3Position,
+                opacity: odunsiMechaP3Opacity,
               }}
               transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
             >
-              "Oh, and don't forget the chain"
+              "I want the attention centred on the girls"
             </motion.p>
           </div>
           <div className="client-project-design-goal-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
             <motion.img
               className="client-project-design-goal-image"
-              src={hoodedTrill}
-              ref={hoodedTrillRef}
+              src={odunsiMecha}
+              ref={odunsiMechaRef}
               initial={{ opacity: 0 }}
               animate={{
-                translateY: hoodedTrillPosition,
-                opacity: hoodedTrillOpacity,
+                translateY: odunsiMechaPosition,
+                opacity: odunsiMechaOpacity,
               }}
               transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
             />
@@ -554,8 +533,8 @@ const MenaceTalk = () => {
               <div className="client-project-scrapped-single-cover-image-container w-auto h-4/5">
                 <motion.img
                   className="client-project-scrapped-single-cover-image w-[648px] h-auto mb-2"
-                  src={splitProjectDetailData.ScrappedCover.src}
-                  alt={splitProjectDetailData.ScrappedCover.alt}
+                  src={splitProjectDetailData.VisualiserIllustration.src}
+                  alt={splitProjectDetailData.VisualiserIllustration.alt}
                   ref={trillScrappedDraftRef}
                   initial={{ opacity: 0 }}
                   animate={{
@@ -567,7 +546,7 @@ const MenaceTalk = () => {
                   onTouchStart={handleMouseEnter}
                   onTouchEnd={handleMouseLeave}
                   onClick={handleImageFocus(
-                    splitProjectDetailData.ScrappedCover,
+                    splitProjectDetailData.VisualiserIllustration,
                   )}
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.9 }}
@@ -582,7 +561,7 @@ const MenaceTalk = () => {
                     }}
                     className="client-project-scrapped-single-cover-image-description-text font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold"
                   >
-                    {splitProjectDetailData.ScrappedCover.header}
+                    {splitProjectDetailData.VisualiserIllustration.header}
                   </motion.h4>
                 </div>
               </div>
@@ -594,16 +573,18 @@ const MenaceTalk = () => {
             <div className="client-project-final-album-cover-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
               <div className="client-project-final-album-cover-artwork h-3/5 w-full flex flex-col items-center justify-center">
                 <motion.img
-                  src={splitProjectDetailData.AlbumCover.src}
-                  alt={splitProjectDetailData.AlbumCover.alt}
+                  src={splitProjectDetailData.OriginalCover.src}
+                  alt={splitProjectDetailData.OriginalCover.alt}
                   className="mb-2"
-                  ref={trillFinalAlbumCoverRef}
+                  ref={trillFinalOriginalCoverRef}
                   initial={{ opacity: 0 }}
                   animate={{
-                    translateY: trillFinalAlbumCoverPosition,
-                    opacity: trillFinalAlbumCoverOpacity,
+                    translateY: trillFinalOriginalCoverPosition,
+                    opacity: trillFinalOriginalCoverOpacity,
                   }}
-                  onClick={handleImageFocus(splitProjectDetailData.AlbumCover)}
+                  onClick={handleImageFocus(
+                    splitProjectDetailData.OriginalCover,
+                  )}
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.9 }}
                 />
@@ -611,25 +592,25 @@ const MenaceTalk = () => {
               <div className="client-project-final-album-cover-description h-2/5 w-full flex flex-col items-center justify-center">
                 <motion.h4
                   className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                  ref={trillFinalAlbumCoverHeaderRef}
+                  ref={trillFinalOriginalCoverHeaderRef}
                   initial={{ opacity: 0 }}
                   animate={{
-                    translateY: trillFinalAlbumCoverHeaderPosition,
-                    opacity: trillFinalAlbumCoverHeaderOpacity,
+                    translateY: trillFinalOriginalCoverHeaderPosition,
+                    opacity: trillFinalOriginalCoverHeaderOpacity,
                   }}
                 >
-                  {splitProjectDetailData.AlbumCover.header}
+                  {splitProjectDetailData.OriginalCover.header}
                 </motion.h4>
                 <motion.p
                   className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                  ref={trillFinalAlbumCoverParagraphRef}
+                  ref={trillFinalOriginalCoverParagraphRef}
                   initial={{ opacity: 0 }}
                   animate={{
-                    translateY: trillFinalAlbumCoverParagraphPosition,
-                    opacity: trillFinalAlbumCoverParagraphOpacity,
+                    translateY: trillFinalOriginalCoverParagraphPosition,
+                    opacity: trillFinalOriginalCoverParagraphOpacity,
                   }}
                 >
-                  {splitProjectDetailData.AlbumCover.paragraph}
+                  {splitProjectDetailData.OriginalCover.paragraph}
                 </motion.p>
               </div>
             </div>
@@ -638,18 +619,16 @@ const MenaceTalk = () => {
             <div className="client-project-final-tracklist-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
               <div className="client-project-final-tracklist-artwork h-3/5 w-full flex flex-col items-center justify-center">
                 <motion.img
-                  src={splitProjectDetailData.TracklistCover.src}
-                  alt={splitProjectDetailData.TracklistCover.alt}
+                  src={splitProjectDetailData.RemixCover.src}
+                  alt={splitProjectDetailData.RemixCover.alt}
                   className="mb-2"
-                  ref={trillAlbumTracklistCoverRef}
+                  ref={trillAlbumRemixCoverRef}
                   initial={{ opacity: 0 }}
                   animate={{
-                    translateY: trillAlbumTracklistCoverPosition,
-                    opacity: trillAlbumTracklistCoverOpacity,
+                    translateY: trillAlbumRemixCoverPosition,
+                    opacity: trillAlbumRemixCoverOpacity,
                   }}
-                  onClick={handleImageFocus(
-                    splitProjectDetailData.TracklistCover,
-                  )}
+                  onClick={handleImageFocus(splitProjectDetailData.RemixCover)}
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.9 }}
                 />
@@ -657,58 +636,42 @@ const MenaceTalk = () => {
               <div className="client-project-final-tracklist-description h-2/5 w-full flex flex-col items-center justify-center">
                 <motion.h4
                   className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                  ref={trillAlbumTracklistCoverHeaderRef}
+                  ref={trillAlbumRemixCoverHeaderRef}
                   initial={{ opacity: 0 }}
                   animate={{
-                    translateY: trillAlbumTracklistCoverHeaderPosition,
-                    opacity: trillAlbumTracklistCoverHeaderOpacity,
+                    translateY: trillAlbumRemixCoverHeaderPosition,
+                    opacity: trillAlbumRemixCoverHeaderOpacity,
                   }}
                 >
-                  {splitProjectDetailData.TracklistCover.header}
+                  {splitProjectDetailData.RemixCover.header}
                 </motion.h4>
                 <motion.p
                   className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                  ref={trillAlbumTracklistCoverParagraphRef}
+                  ref={trillAlbumRemixCoverParagraphRef}
                   initial={{ opacity: 0 }}
                   animate={{
-                    translateY: trillAlbumTracklistCoverParagraphPosition,
-                    opacity: trillAlbumTracklistCoverParagraphOpacity,
+                    translateY: trillAlbumRemixCoverParagraphPosition,
+                    opacity: trillAlbumRemixCoverParagraphOpacity,
                   }}
                 >
-                  {splitProjectDetailData.TracklistCover.paragraph}
+                  {splitProjectDetailData.RemixCover.paragraph}
                 </motion.p>
               </div>
             </div>
           </div>
         </div>
-        <div className="client-project-promo-video-container h-auto w-full py-5">
-          {trillAlbumPromoVideoInView && (
-            <motion.div
-              className="client-project-promo-video h-auto w-full flex flex-col items-center justify-center"
-              ref={trillAlbumPromoVideoRef}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: trillAlbumPromoVideoPosition,
-                opacity: trillAlbumPromoVideoOpacity,
-              }}
-            >
-              <iframe
-                src={cld
-                  .video('resume-site/trill_tega_menace_talk_promo_video')
-                  .quality('auto')
-                  .toURL()}
-                width="1920"
-                height="1080"
-                style={{
-                  height: 'auto',
-                  width: '100%',
-                  aspectRatio: 1920 / 1080,
-                }}
-                allow="fullscreen; encrypted-media; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </motion.div>
-          )}
+        <div className="client-project-visualiser-video-container h-auto w-full py-5">
+          <div className="client-project-visualiser-video h-auto w-full flex flex-col items-center justify-center p-5">
+            <iframe
+              className="youtube-video"
+              src="https://www.youtube.com/embed/ff-XcLz22Bs?si=fMpl3eFiKmldRP2s"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
         <div className="client-project-deliverables-container h-auto w-full bg-fuchsia-600 selection:bg-black selection:text-zinc-200 p-5">
           <div className="client-project-deliverables flex flex-col items-start justify-center">
@@ -763,7 +726,7 @@ const MenaceTalk = () => {
             <li
               className="client-project-navigate-previous h-full w-2/5 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
               onClick={() => {
-                handleNavigate('client-projects/crown-bounce');
+                handleNavigate('client-projects/mikes-world');
               }}
             >
               <p className="client-project-navigate-previous-title font-custom text-2xl text-left text-black w-full font-normal">
@@ -780,7 +743,7 @@ const MenaceTalk = () => {
             <li
               className="client-project-navigate-next h-full w-2/5 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
               onClick={() => {
-                handleNavigate('client-projects/ye-anthem');
+                handleNavigate('client-projects/menace-talk');
               }}
             >
               <p className="client-project-navigate-next-title font-custom text-2xl text-right text-black w-full font-normal">
@@ -800,4 +763,4 @@ const MenaceTalk = () => {
   );
 };
 
-export default MenaceTalk;
+export default CrownBounce;

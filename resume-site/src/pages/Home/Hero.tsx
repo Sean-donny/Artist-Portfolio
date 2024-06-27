@@ -30,7 +30,7 @@ const Hero = () => {
                   Sean Donny is a<br />
                   contemporary artist
                   <br />
-                  based in London, England.
+                  based in England, UK.
                 </h1>
               </article>
             </div>

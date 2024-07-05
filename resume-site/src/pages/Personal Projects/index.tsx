@@ -4,6 +4,10 @@ import { useNavigate } from 'react-router-dom';
 
 import ProjectData from '../../interfaces/ProjectData';
 import personalProjectsData from './data';
+import SEO from '../../components/SEO/SEO';
+
+// Image imports
+import ani from '/optimised/personal_project_an.jpg';
 
 const PersonalProjects = () => {
   interface PersonalProjectsProps {
@@ -57,6 +61,13 @@ const PersonalProjects = () => {
 
   return (
     <div className="personal-projects-container w-full h-auto hd:h-screen">
+      <SEO
+        title={componentTitle}
+        description="Explore a curated selection of personal projects by contemporary artist Sean Donny, showcasing his creative range."
+        type="website"
+        url="https://seandonny.com/personal-projects"
+        image={ani}
+      />
       <div
         className={`personal-projects-items w-full min-h-screen hd:h-screen ${bgColor} p-10 flex flex-col items-center justify-center`}
       >
@@ -64,13 +75,13 @@ const PersonalProjects = () => {
           className="personal-projects-title w-full h-24 hd:h-1/4 flex items-center justify-center"
           ref={titleRef}
         >
-          <motion.h2
+          <motion.h1
             className="font-custom font-semibold tracking-tight text-zinc-200 text-sm md:text-2xl lg:text-3xl hd:text-massive1 lg:leading-massive1 text-center"
             animate={{ scale: titleInView ? 2 : 0.5 }}
             transition={{ delay: 0.2, ease: 'anticipate' }}
           >
             {componentTitle}
-          </motion.h2>
+          </motion.h1>
         </div>
         <motion.div className="personal-projects-content w-full h-auto flex flex-col p-2 hd:h-3/4">
           <Projects personalProjectsData={personalProjectsData} />

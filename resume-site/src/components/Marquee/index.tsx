@@ -5,12 +5,12 @@ const MarqueeBanner = () => {
   const repeatCount = 20;
 
   const marqueeContent = Array.from({ length: repeatCount }, (_, index) => (
-    <h4
+    <p
       key={index}
       className="font-mono font-semibold text-zinc-300 text-xl lg:text-4xl mx-5"
     >
       {funFacts[index % funFacts.length]}
-    </h4>
+    </p>
   ));
 
   return (

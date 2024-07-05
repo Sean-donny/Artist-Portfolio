@@ -27,9 +27,8 @@ const Hero = () => {
             <div className="hero-bio w-full h-auto md:h-full">
               <article className="hero-bio-text-container h-full w-auto flex items-end overflow-clip">
                 <h1 className="hero-bio-text font-custom font-semibold italic tracking-tight text-aquatic p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1">
-                  Sean Donny is a<br />
-                  contemporary artist
-                  <br />
+                  Sean Donny is a <br />
+                  contemporary artist <br />
                   based in England, UK.
                 </h1>
               </article>

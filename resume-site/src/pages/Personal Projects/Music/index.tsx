@@ -9,6 +9,7 @@ import { ModalContent } from '../../../interfaces/ModalContent';
 import cmBanner from '/optimised/carti_music_wide.jpg';
 import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import musicData from './data';
+import SEO from '../../../components/SEO/SEO';
 
 const Music = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -256,210 +257,219 @@ const Music = () => {
 
   return (
     <div className="personal-project-container bg-black w-full h-auto">
+      <SEO
+        title="Music | Personal Projects | Sean Donny"
+        description="Explore a Playboi Carti album concept project by contemporary artist Sean Donny, showcasing his creative direction skills."
+        type="article"
+        url="https://seandonny.com/personal-projects/music"
+        image={cmBanner}
+      />
       {modalOpen && (
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
       )}
       <div className="personal-project-sections w-full h-auto flex flex-col items-center justify-center relative">
-        <div
-          className="personal-project-hero w-full h-auto overflow-hidden sticky top-0 pointer-events-none"
-          style={{
-            transform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
-            WebkitTransform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
-            zIndex: 1,
-          }}
-        >
-          <motion.img
-            src={cmBanner}
-            alt="An illustration playboi carti engulfed in black flames against a red backdrop"
-            className="personal-project-hero-image w-full h-full object-cover object-center"
-            initial={{ scale: 1, opacity: 1 }}
-            animate={controls}
-          />
-        </div>
-        {/* height of safe space is set to the same as parallaxValue */}
-        <div className={`personal-project-hero-safe-space h-[400px] w-full`}>
-          &nbsp;
-        </div>
-        <div className="personal-project-concepts-1-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-rose-500 selection:text-zinc-200">
-          <div className="personal-project-cover-1 h-full w-full hd:w-1/2">
-            <div className="personal-project-cover-1-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-              <div className="personal-project-cover-1-artwork h-3/5 w-full flex flex-col items-center justify-center">
-                <motion.img
-                  src={musicData.Cover1.src}
-                  alt={musicData.Cover1.alt}
-                  className="mb-2"
-                  ref={cmCover1Ref}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: cmCover1Position,
-                    opacity: cmCover1Opacity,
-                  }}
-                  onClick={handleImageFocus(musicData.Cover1)}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-              </div>
-              <div className="personal-project-cover-1-description h-2/5 w-full flex flex-col items-center justify-center">
-                <motion.h4
-                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                  ref={cmCover1HeaderRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: cmCover1HeaderPosition,
-                    opacity: cmCover1HeaderOpacity,
-                  }}
-                >
-                  {musicData.Cover1.header}
-                </motion.h4>
-                <motion.p
-                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                  ref={cmCover1ParagraphRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: cmCover1ParagraphPosition,
-                    opacity: cmCover1ParagraphOpacity,
-                  }}
-                >
-                  {musicData.Cover1.paragraph}
-                </motion.p>
-              </div>
+        <main>
+          <figure
+            className="personal-project-hero w-full h-auto overflow-hidden sticky top-0 pointer-events-none"
+            style={{
+              transform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
+              WebkitTransform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
+              zIndex: 1,
+            }}
+          >
+            <motion.img
+              src={cmBanner}
+              alt="An illustration playboi carti engulfed in black flames against a red backdrop"
+              className="personal-project-hero-image w-full h-full object-cover object-center"
+              initial={{ scale: 1, opacity: 1 }}
+              animate={controls}
+            />
+          </figure>
+          {/* height of safe space is set to the same as parallaxValue */}
+          <div className={`personal-project-hero-safe-space h-[400px] w-full`}>
+            &nbsp;
+          </div>
+          <div className="personal-project-concepts-1-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-rose-500 selection:text-zinc-200">
+            <div className="personal-project-cover-1 h-full w-full hd:w-1/2">
+              <article className="personal-project-cover-1-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="personal-project-cover-1-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                  <motion.img
+                    src={musicData.Cover1.src}
+                    alt={musicData.Cover1.alt}
+                    className="mb-2"
+                    ref={cmCover1Ref}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cmCover1Position,
+                      opacity: cmCover1Opacity,
+                    }}
+                    onClick={handleImageFocus(musicData.Cover1)}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                </figure>
+                <div className="personal-project-cover-1-description h-2/5 w-full flex flex-col items-center justify-center">
+                  <motion.h4
+                    className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                    ref={cmCover1HeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cmCover1HeaderPosition,
+                      opacity: cmCover1HeaderOpacity,
+                    }}
+                  >
+                    {musicData.Cover1.header}
+                  </motion.h4>
+                  <motion.p
+                    className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                    ref={cmCover1ParagraphRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cmCover1ParagraphPosition,
+                      opacity: cmCover1ParagraphOpacity,
+                    }}
+                  >
+                    {musicData.Cover1.paragraph}
+                  </motion.p>
+                </div>
+              </article>
+            </div>
+            <div className="personal-project-cover-2 h-full w-full hd:w-1/2">
+              <article className="personal-project-cover-2-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="personal-project-cover-2-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                  <motion.img
+                    src={musicData.Cover2.src}
+                    alt={musicData.Cover2.alt}
+                    className="mb-2"
+                    ref={cmCover2Ref}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cmCover2Position,
+                      opacity: cmCover2Opacity,
+                    }}
+                    onClick={handleImageFocus(musicData.Cover2)}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                </figure>
+                <div className="personal-project-cover-2-description h-2/5 w-full flex flex-col items-center justify-center">
+                  <motion.h4
+                    className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                    ref={cmCover2HeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cmCover2HeaderPosition,
+                      opacity: cmCover2HeaderOpacity,
+                    }}
+                  >
+                    {musicData.Cover2.header}
+                  </motion.h4>
+                  <motion.p
+                    className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                    ref={cmCover2ParagraphRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cmCover2ParagraphPosition,
+                      opacity: cmCover2ParagraphOpacity,
+                    }}
+                  >
+                    {musicData.Cover2.paragraph}
+                  </motion.p>
+                </div>
+              </article>
             </div>
           </div>
-          <div className="personal-project-cover-2 h-full w-full hd:w-1/2">
-            <div className="personal-project-cover-2-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-              <div className="personal-project-cover-2-artwork h-3/5 w-full flex flex-col items-center justify-center">
-                <motion.img
-                  src={musicData.Cover2.src}
-                  alt={musicData.Cover2.alt}
-                  className="mb-2"
-                  ref={cmCover2Ref}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: cmCover2Position,
-                    opacity: cmCover2Opacity,
-                  }}
-                  onClick={handleImageFocus(musicData.Cover2)}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-              </div>
-              <div className="personal-project-cover-2-description h-2/5 w-full flex flex-col items-center justify-center">
-                <motion.h4
-                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                  ref={cmCover2HeaderRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: cmCover2HeaderPosition,
-                    opacity: cmCover2HeaderOpacity,
-                  }}
-                >
-                  {musicData.Cover2.header}
-                </motion.h4>
-                <motion.p
-                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                  ref={cmCover2ParagraphRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: cmCover2ParagraphPosition,
-                    opacity: cmCover2ParagraphOpacity,
-                  }}
-                >
-                  {musicData.Cover2.paragraph}
-                </motion.p>
-              </div>
+          <div className="personal-project-concepts-2-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-rose-500 selection:text-zinc-200">
+            <div className="personal-project-cover-3 h-full w-full hd:w-1/2">
+              <article className="personal-project-cover-3-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="personal-project-cover-3-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                  <motion.img
+                    src={musicData.Cover3.src}
+                    alt={musicData.Cover3.alt}
+                    className="mb-2"
+                    ref={cmCover3Ref}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cmCover3Position,
+                      opacity: cmCover3Opacity,
+                    }}
+                    onClick={handleImageFocus(musicData.Cover3)}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                </figure>
+                <div className="personal-project-cover-3-description h-2/5 w-full flex flex-col items-center justify-center">
+                  <motion.h4
+                    className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                    ref={cmCover3HeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cmCover3HeaderPosition,
+                      opacity: cmCover3HeaderOpacity,
+                    }}
+                  >
+                    {musicData.Cover3.header}
+                  </motion.h4>
+                  <motion.p
+                    className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                    ref={cmCover3ParagraphRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cmCover3ParagraphPosition,
+                      opacity: cmCover3ParagraphOpacity,
+                    }}
+                  >
+                    {musicData.Cover3.paragraph}
+                  </motion.p>
+                </div>
+              </article>
+            </div>
+            <div className="personal-project-tracklist h-full w-full hd:w-1/2">
+              <article className="personal-project-tracklist-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="personal-project-tracklist-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                  <motion.img
+                    src={musicData.Cover3Tracklist.src}
+                    alt={musicData.Cover3Tracklist.alt}
+                    className="mb-2"
+                    ref={cmCover3TracklistRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cmCover3TracklistPosition,
+                      opacity: cmCover3TracklistOpacity,
+                    }}
+                    onClick={handleImageFocus(musicData.Cover3Tracklist)}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                </figure>
+                <div className="personal-project-tracklist-description h-2/5 w-full flex flex-col items-center justify-center">
+                  <motion.h4
+                    className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                    ref={cmCover3TracklistHeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cmCover3TracklistHeaderPosition,
+                      opacity: cmCover3TracklistHeaderOpacity,
+                    }}
+                  >
+                    {musicData.Cover3Tracklist.header}
+                  </motion.h4>
+                  <motion.p
+                    className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                    ref={cmCover3TracklistParagraphRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cmCover3TracklistParagraphPosition,
+                      opacity: cmCover3TracklistParagraphOpacity,
+                    }}
+                  >
+                    {musicData.Cover3Tracklist.paragraph}
+                  </motion.p>
+                </div>
+              </article>
             </div>
           </div>
-        </div>
-        <div className="personal-project-concepts-2-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-rose-500 selection:text-zinc-200">
-          <div className="personal-project-cover-3 h-full w-full hd:w-1/2">
-            <div className="personal-project-cover-3-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-              <div className="personal-project-cover-3-artwork h-3/5 w-full flex flex-col items-center justify-center">
-                <motion.img
-                  src={musicData.Cover3.src}
-                  alt={musicData.Cover3.alt}
-                  className="mb-2"
-                  ref={cmCover3Ref}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: cmCover3Position,
-                    opacity: cmCover3Opacity,
-                  }}
-                  onClick={handleImageFocus(musicData.Cover3)}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-              </div>
-              <div className="personal-project-cover-3-description h-2/5 w-full flex flex-col items-center justify-center">
-                <motion.h4
-                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                  ref={cmCover3HeaderRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: cmCover3HeaderPosition,
-                    opacity: cmCover3HeaderOpacity,
-                  }}
-                >
-                  {musicData.Cover3.header}
-                </motion.h4>
-                <motion.p
-                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                  ref={cmCover3ParagraphRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: cmCover3ParagraphPosition,
-                    opacity: cmCover3ParagraphOpacity,
-                  }}
-                >
-                  {musicData.Cover3.paragraph}
-                </motion.p>
-              </div>
-            </div>
-          </div>
-          <div className="personal-project-tracklist h-full w-full hd:w-1/2">
-            <div className="personal-project-tracklist-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-              <div className="personal-project-tracklist-artwork h-3/5 w-full flex flex-col items-center justify-center">
-                <motion.img
-                  src={musicData.Cover3Tracklist.src}
-                  alt={musicData.Cover3Tracklist.alt}
-                  className="mb-2"
-                  ref={cmCover3TracklistRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: cmCover3TracklistPosition,
-                    opacity: cmCover3TracklistOpacity,
-                  }}
-                  onClick={handleImageFocus(musicData.Cover3Tracklist)}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-              </div>
-              <div className="personal-project-tracklist-description h-2/5 w-full flex flex-col items-center justify-center">
-                <motion.h4
-                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                  ref={cmCover3TracklistHeaderRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: cmCover3TracklistHeaderPosition,
-                    opacity: cmCover3TracklistHeaderOpacity,
-                  }}
-                >
-                  {musicData.Cover3Tracklist.header}
-                </motion.h4>
-                <motion.p
-                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                  ref={cmCover3TracklistParagraphRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: cmCover3TracklistParagraphPosition,
-                    opacity: cmCover3TracklistParagraphOpacity,
-                  }}
-                >
-                  {musicData.Cover3Tracklist.paragraph}
-                </motion.p>
-              </div>
-            </div>
-          </div>
-        </div>
+        </main>
         <nav className="personal-project-navigate h-[468px] w-full bg-red-600 selection:bg-black selection:text-zinc-200 p-5">
           <ul
             className="personal-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"

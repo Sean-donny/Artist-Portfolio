@@ -4,6 +4,10 @@ import { useNavigate } from 'react-router-dom';
 
 import ProjectData from '../../interfaces/ProjectData';
 import clientProjectsData from './data';
+import SEO from '../../components/SEO/SEO';
+
+// Image imports
+import mnctlk from '/optimised/client_project_mt.png';
 
 const ClientProjects = () => {
   interface ClientProjectsProps {
@@ -57,6 +61,13 @@ const ClientProjects = () => {
 
   return (
     <div className="client-projects-container w-full h-auto hd:h-screen">
+      <SEO
+        title={componentTitle}
+        description="Explore a curated selection of client projects by contemporary artist Sean Donny, showcasing his creative range."
+        type="website"
+        url="https://seandonny.com/client-projects"
+        image={mnctlk}
+      />
       <div
         className={`client-projects-items w-full min-h-screen hd:h-screen ${bgColor} p-10 flex flex-col items-center justify-center`}
       >

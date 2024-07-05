@@ -6,6 +6,10 @@ import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import GalleryModal from '../../components/GalleryModal';
 import { ModalContent } from '../../interfaces/ModalContent';
+import SEO from '../../components/SEO/SEO';
+
+// Image imports
+import Wdylmh from '/optimised/ashley_okoli_portrait.jpg';
 
 const Gallery = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -41,6 +45,13 @@ const Gallery = () => {
   return (
     <div className="gallery-container bg-black flex flex-col justify-start">
       <div className="gallery-items">
+        <SEO
+          title="Gallery"
+          description="Explore a curated selection of works by contemporary artist Sean Donny, showcasing his creative range."
+          type="website"
+          url="https://seandonny.com/gallery"
+          image={Wdylmh}
+        />
         <AnimatePresence initial={false} mode="wait">
           {modalOpen && (
             <GalleryModal

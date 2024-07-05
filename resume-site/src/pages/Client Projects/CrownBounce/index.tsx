@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 // Image imports
 import cbHeroBanner from '/optimised/odunsi_the_engine_crown_bounce_banner.jpg';
 import odunsiMecha from '/optimised/odunsi_mecha_illustration.png';
+import SEO from '../../../components/SEO/SEO';
 
 const CrownBounce = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -180,87 +181,87 @@ const CrownBounce = () => {
 
   // Uses custom hook to generate ref, and states for opacity & position values
   const {
-    ref: trillScrappedDraftRef,
-    opacity: trillScrappedDraftOpacity,
-    position: trillScrappedDraftPosition,
+    ref: odunsiVisualiserDraftRef,
+    opacity: odunsiVisualiserDraftOpacity,
+    position: odunsiVisualiserDraftPosition,
   } = useInViewAnimation();
 
   const {
-    ref: trillScrappedDraftHeaderRef,
-    opacity: trillScrappedDraftHeaderOpacity,
-    position: trillScrappedDraftHeaderPosition,
+    ref: odunsiVisualiserDraftHeaderRef,
+    opacity: odunsiVisualiserDraftHeaderOpacity,
+    position: odunsiVisualiserDraftHeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: trillAlbumDraft1Ref,
-    opacity: trillAlbumDraft1Opacity,
-    position: trillAlbumDraft1Position,
+    ref: odunsiAlbumDraft1Ref,
+    opacity: odunsiAlbumDraft1Opacity,
+    position: odunsiAlbumDraft1Position,
   } = useInViewAnimation();
 
   const {
-    ref: trillAlbumDraft1DescriptionHeaderRef,
-    opacity: trillAlbumDraft1DescriptionHeaderOpacity,
-    position: trillAlbumDraft1DescriptionHeaderPosition,
+    ref: odunsiAlbumDraft1DescriptionHeaderRef,
+    opacity: odunsiAlbumDraft1DescriptionHeaderOpacity,
+    position: odunsiAlbumDraft1DescriptionHeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: trillAlbumDraft1DescriptionParagraphRef,
-    opacity: trillAlbumDraft1DescriptionParagraphOpacity,
-    position: trillAlbumDraft1DescriptionParagraphPosition,
+    ref: odunsiAlbumDraft1DescriptionParagraphRef,
+    opacity: odunsiAlbumDraft1DescriptionParagraphOpacity,
+    position: odunsiAlbumDraft1DescriptionParagraphPosition,
   } = useInViewAnimation();
 
   const {
-    ref: trillSingleDraft1Ref,
-    opacity: trillSingleDraft1Opacity,
-    position: trillSingleDraft1Position,
+    ref: odunsiSingleDraft1Ref,
+    opacity: odunsiSingleDraft1Opacity,
+    position: odunsiSingleDraft1Position,
   } = useInViewAnimation();
 
   const {
-    ref: trillSingleDraft1DescriptionHeaderRef,
-    opacity: trillSingleDraft1DescriptionHeaderOpacity,
-    position: trillSingleDraft1DescriptionHeaderPosition,
+    ref: odunsiSingleDraft1DescriptionHeaderRef,
+    opacity: odunsiSingleDraft1DescriptionHeaderOpacity,
+    position: odunsiSingleDraft1DescriptionHeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: trillSingleDraft1DescriptionParagraphRef,
-    opacity: trillSingleDraft1DescriptionParagraphOpacity,
-    position: trillSingleDraft1DescriptionParagraphPosition,
+    ref: odunsiSingleDraft1DescriptionParagraphRef,
+    opacity: odunsiSingleDraft1DescriptionParagraphOpacity,
+    position: odunsiSingleDraft1DescriptionParagraphPosition,
   } = useInViewAnimation();
 
   const {
-    ref: trillFinalOriginalCoverRef,
-    opacity: trillFinalOriginalCoverOpacity,
-    position: trillFinalOriginalCoverPosition,
+    ref: odunsiFinalOriginalCoverRef,
+    opacity: odunsiFinalOriginalCoverOpacity,
+    position: odunsiFinalOriginalCoverPosition,
   } = useInViewAnimation();
 
   const {
-    ref: trillFinalOriginalCoverHeaderRef,
-    opacity: trillFinalOriginalCoverHeaderOpacity,
-    position: trillFinalOriginalCoverHeaderPosition,
+    ref: odunsiFinalOriginalCoverHeaderRef,
+    opacity: odunsiFinalOriginalCoverHeaderOpacity,
+    position: odunsiFinalOriginalCoverHeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: trillFinalOriginalCoverParagraphRef,
-    opacity: trillFinalOriginalCoverParagraphOpacity,
-    position: trillFinalOriginalCoverParagraphPosition,
+    ref: odunsiFinalOriginalCoverParagraphRef,
+    opacity: odunsiFinalOriginalCoverParagraphOpacity,
+    position: odunsiFinalOriginalCoverParagraphPosition,
   } = useInViewAnimation();
 
   const {
-    ref: trillAlbumRemixCoverRef,
-    opacity: trillAlbumRemixCoverOpacity,
-    position: trillAlbumRemixCoverPosition,
+    ref: odunsiAlbumRemixCoverRef,
+    opacity: odunsiAlbumRemixCoverOpacity,
+    position: odunsiAlbumRemixCoverPosition,
   } = useInViewAnimation();
 
   const {
-    ref: trillAlbumRemixCoverHeaderRef,
-    opacity: trillAlbumRemixCoverHeaderOpacity,
-    position: trillAlbumRemixCoverHeaderPosition,
+    ref: odunsiAlbumRemixCoverHeaderRef,
+    opacity: odunsiAlbumRemixCoverHeaderOpacity,
+    position: odunsiAlbumRemixCoverHeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: trillAlbumRemixCoverParagraphRef,
-    opacity: trillAlbumRemixCoverParagraphOpacity,
-    position: trillAlbumRemixCoverParagraphPosition,
+    ref: odunsiAlbumRemixCoverParagraphRef,
+    opacity: odunsiAlbumRemixCoverParagraphOpacity,
+    position: odunsiAlbumRemixCoverParagraphPosition,
   } = useInViewAnimation();
 
   // Declarations for Project Deliverables section
@@ -316,7 +317,7 @@ const CrownBounce = () => {
     window.scrollTo(0, 0);
   };
 
-  // Controls greyscale effect applied to scrapped cover section
+  // Controls greyscale effect applied to visualiser cover section
   const [isGrayscale, setIsGrayscale] = useState(false);
 
   const handleMouseEnter = () => {
@@ -329,395 +330,407 @@ const CrownBounce = () => {
 
   return (
     <div className="client-project-container bg-black w-full h-auto">
+      <SEO
+        title="Crown Bounce | Client Projects | Sean Donny"
+        description="Explore a client project for Odunsi (The Engine) by contemporary artist Sean Donny, showcasing his creative direction expertise."
+        type="article"
+        url="https://seandonny.com/client-projects/crown-bounce"
+        image={cbHeroBanner}
+      />
       {modalOpen && (
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
       )}
       <div className="client-project-sections w-full h-auto flex flex-col items-center justify-center relative">
-        <div
-          className="client-project-hero w-full h-auto overflow-hidden sticky top-0 pointer-events-none"
-          style={{
-            transform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
-            WebkitTransform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
-            zIndex: 1,
-          }}
-        >
-          <motion.img
-            src={cbHeroBanner}
-            alt="Chrome skull floating in a dark void"
-            className="client-project-hero-image w-full h-full object-cover object-center"
-            initial={{ scale: 1, opacity: 1 }}
-            animate={controls}
-          />
-        </div>
-        {/* height of safe space is set to the same as parallaxValue */}
-        <div className={`client-project-hero-safe-space h-[400px] w-full`}>
-          &nbsp;
-        </div>
-        <div className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-fuchsia-600 selection:text-zinc-200">
-          <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
-            <motion.h2
-              ref={odunsiMechaHeaderRef}
-              className="client-project-design-goal-description-header text-zinc-200 font-custom font-semibold italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mb-5"
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: odunsiMechaHeaderPosition,
-                opacity: odunsiMechaHeaderOpacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            >
-              Odunsi hit me on IG "Let's do one together"
-            </motion.h2>
-            <motion.p
-              className="client-project-design-goal-description-paragraph-1 text-zinc-400 font-custom font-medium italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-              ref={odunsiMechaP1Ref}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: odunsiMechaP1Position,
-                opacity: odunsiMechaP1Opacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            >
-              "I want something sexy, with a lot of motion"...
-            </motion.p>
-            <motion.p
-              className="client-project-design-goal-description-paragraph-2 text-zinc-400 font-custom font-normal italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-              ref={odunsiMechaP2Ref}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: odunsiMechaP2Position,
-                opacity: odunsiMechaP2Opacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            >
-              "So I've got this record with Minz & Elias called Crown Bounce. I
-              need you to take some inspo from the{' '}
-              <mark className="bg-fuchsia-600 text-zinc-200">
-                <a
-                  href="https://youtu.be/wigZvnfIue4?si=VqH23VPgwPapxgXY"
-                  target="_blank"
-                  className="hover:underline"
-                >
-                  music&nbsp;video
-                </a>
-              </mark>{' '}
-              and work some magic"...
-            </motion.p>
-            <motion.p
-              className="client-project-design-goal-description-paragraph-3 text-zinc-400 font-custom font-extralight italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-              ref={odunsiMechaP3Ref}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: odunsiMechaP3Position,
-                opacity: odunsiMechaP3Opacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            >
-              "I want the attention centred on the girls"
-            </motion.p>
-          </div>
-          <div className="client-project-design-goal-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
+        <main>
+          <figure
+            className="client-project-hero w-full h-auto overflow-hidden sticky top-0 pointer-events-none"
+            style={{
+              transform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
+              WebkitTransform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
+              zIndex: 1,
+            }}
+          >
             <motion.img
-              className="client-project-design-goal-image"
-              src={odunsiMecha}
-              ref={odunsiMechaRef}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: odunsiMechaPosition,
-                opacity: odunsiMechaOpacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              src={cbHeroBanner}
+              alt="Chrome skull floating in a dark void"
+              className="client-project-hero-image w-full h-full object-cover object-center"
+              initial={{ scale: 1, opacity: 1 }}
+              animate={controls}
             />
+          </figure>
+          {/* height of safe space is set to the same as parallaxValue */}
+          <div className={`client-project-hero-safe-space h-[400px] w-full`}>
+            &nbsp;
           </div>
-        </div>
-        <div className="client-project-initial-concepts-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-fuchsia-600 selection:text-zinc-200">
-          <div className="client-project-initial-concepts-album-cover h-full w-full hd:w-1/2">
-            <div className="client-project-initial-concepts-album-cover-concept-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-              <div className="client-project-initial-concepts-album-cover-concept-artwork h-3/5 w-full flex flex-col items-center justify-center">
-                <motion.img
-                  src={splitProjectDetailData.Draft1.src}
-                  alt={splitProjectDetailData.Draft1.alt}
-                  className="mb-2"
-                  ref={trillAlbumDraft1Ref}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: trillAlbumDraft1Position,
-                    opacity: trillAlbumDraft1Opacity,
-                  }}
-                  onClick={handleImageFocus(splitProjectDetailData.Draft1)}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-              </div>
-              <div className="client-project-initial-concepts-album-cover-concept-description h-2/5 w-full flex flex-col items-center justify-center">
-                <motion.h4
-                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                  ref={trillAlbumDraft1DescriptionHeaderRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: trillAlbumDraft1DescriptionHeaderPosition,
-                    opacity: trillAlbumDraft1DescriptionHeaderOpacity,
-                  }}
-                >
-                  {splitProjectDetailData.Draft1.header}
-                </motion.h4>
-                <motion.p
-                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                  ref={trillAlbumDraft1DescriptionParagraphRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: trillAlbumDraft1DescriptionParagraphPosition,
-                    opacity: trillAlbumDraft1DescriptionParagraphOpacity,
-                  }}
-                >
-                  {splitProjectDetailData.Draft1.paragraph}
-                </motion.p>
-              </div>
+          <article className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-fuchsia-600 selection:text-zinc-200">
+            <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
+              <motion.h2
+                ref={odunsiMechaHeaderRef}
+                className="client-project-design-goal-description-header text-zinc-200 font-custom font-semibold italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mb-5"
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: odunsiMechaHeaderPosition,
+                  opacity: odunsiMechaHeaderOpacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              >
+                Odunsi hit me on IG "Let's do one together"
+              </motion.h2>
+              <motion.p
+                className="client-project-design-goal-description-paragraph-1 text-zinc-400 font-custom font-medium italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
+                ref={odunsiMechaP1Ref}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: odunsiMechaP1Position,
+                  opacity: odunsiMechaP1Opacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              >
+                "I want something sexy, with a lot of motion"...
+              </motion.p>
+              <motion.p
+                className="client-project-design-goal-description-paragraph-2 text-zinc-400 font-custom font-normal italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
+                ref={odunsiMechaP2Ref}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: odunsiMechaP2Position,
+                  opacity: odunsiMechaP2Opacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              >
+                "So I've got this record with Minz & Elias called Crown Bounce.
+                I need you to take some inspo from the{' '}
+                <mark className="bg-fuchsia-600 text-zinc-200">
+                  <a
+                    href="https://youtu.be/wigZvnfIue4?si=VqH23VPgwPapxgXY"
+                    target="_blank"
+                    className="hover:underline"
+                  >
+                    music&nbsp;video
+                  </a>
+                </mark>{' '}
+                and work some magic"...
+              </motion.p>
+              <motion.p
+                className="client-project-design-goal-description-paragraph-3 text-zinc-400 font-custom font-extralight italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
+                ref={odunsiMechaP3Ref}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: odunsiMechaP3Position,
+                  opacity: odunsiMechaP3Opacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              >
+                "I want the attention centred on the girls"
+              </motion.p>
             </div>
-          </div>
-          <div className="client-project-initial-concepts-single-cover h-full w-full hd:w-1/2">
-            <div className="client-project-initial-concepts-single-cover-concept-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-              <div className="client-project-initial-concepts-single-cover-concept-artwork h-3/5 w-full flex flex-col items-center justify-center">
-                <motion.img
-                  src={splitProjectDetailData.Draft2.src}
-                  alt={splitProjectDetailData.Draft2.alt}
-                  className="mb-2"
-                  ref={trillSingleDraft1Ref}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: trillSingleDraft1Position,
-                    opacity: trillSingleDraft1Opacity,
-                  }}
-                  onClick={handleImageFocus(splitProjectDetailData.Draft2)}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-              </div>
-              <div className="client-project-initial-concepts-single-cover-concept-description h-2/5 w-full flex flex-col items-center justify-center">
-                <motion.h4
-                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                  ref={trillSingleDraft1DescriptionHeaderRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: trillSingleDraft1DescriptionHeaderPosition,
-                    opacity: trillSingleDraft1DescriptionHeaderOpacity,
-                  }}
-                >
-                  {splitProjectDetailData.Draft2.header}
-                </motion.h4>
-                <motion.p
-                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                  ref={trillSingleDraft1DescriptionParagraphRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: trillSingleDraft1DescriptionParagraphPosition,
-                    opacity: trillSingleDraft1DescriptionParagraphOpacity,
-                  }}
-                >
-                  {splitProjectDetailData.Draft2.paragraph}
-                </motion.p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className={`client-project-scrapped-single-cover-container h-auto w-full p-5 ${
-            isGrayscale ? 'bg-black' : 'bg-fuchsia-600 selection:bg-black'
-          } transition-all`}
-        >
-          <div className="client-project-scrapped-single-cover-items flex flex-col hd:flex-row h-auto w-full items-center justify-center">
-            <div
-              className={`client-project-scrapped-single-cover-container w-full h-full flex flex-col items-center justify-center p-5 hd:p-20 ${
-                isGrayscale ? 'grayscale' : ''
-              } transition-all`}
-            >
-              <div className="client-project-scrapped-single-cover-image-container w-auto h-4/5">
-                <motion.img
-                  className="client-project-scrapped-single-cover-image w-[648px] h-auto mb-2"
-                  src={splitProjectDetailData.VisualiserIllustration.src}
-                  alt={splitProjectDetailData.VisualiserIllustration.alt}
-                  ref={trillScrappedDraftRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: trillScrappedDraftPosition,
-                    opacity: trillScrappedDraftOpacity,
-                  }}
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                  onTouchStart={handleMouseEnter}
-                  onTouchEnd={handleMouseLeave}
-                  onClick={handleImageFocus(
-                    splitProjectDetailData.VisualiserIllustration,
-                  )}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-                <div className="client-project-scrapped-single-cover-image-description w-full h-1/5">
-                  <motion.h4
-                    ref={trillScrappedDraftHeaderRef}
+            <figure className="client-project-design-goal-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
+              <motion.img
+                className="client-project-design-goal-image"
+                src={odunsiMecha}
+                ref={odunsiMechaRef}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: odunsiMechaPosition,
+                  opacity: odunsiMechaOpacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              />
+            </figure>
+          </article>
+          <div className="client-project-initial-concepts-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-fuchsia-600 selection:text-zinc-200">
+            <div className="client-project-initial-concepts-album-cover h-full w-full hd:w-1/2">
+              <article className="client-project-initial-concepts-album-cover-concept-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="client-project-initial-concepts-album-cover-concept-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                  <motion.img
+                    src={splitProjectDetailData.Draft1.src}
+                    alt={splitProjectDetailData.Draft1.alt}
+                    className="mb-2"
+                    ref={odunsiAlbumDraft1Ref}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: trillScrappedDraftHeaderPosition,
-                      opacity: trillScrappedDraftHeaderOpacity,
+                      translateY: odunsiAlbumDraft1Position,
+                      opacity: odunsiAlbumDraft1Opacity,
                     }}
-                    className="client-project-scrapped-single-cover-image-description-text font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold"
+                    onClick={handleImageFocus(splitProjectDetailData.Draft1)}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                </figure>
+                <div className="client-project-initial-concepts-album-cover-concept-description h-2/5 w-full flex flex-col items-center justify-center">
+                  <motion.h4
+                    className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                    ref={odunsiAlbumDraft1DescriptionHeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: odunsiAlbumDraft1DescriptionHeaderPosition,
+                      opacity: odunsiAlbumDraft1DescriptionHeaderOpacity,
+                    }}
                   >
-                    {splitProjectDetailData.VisualiserIllustration.header}
+                    {splitProjectDetailData.Draft1.header}
                   </motion.h4>
+                  <motion.p
+                    className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                    ref={odunsiAlbumDraft1DescriptionParagraphRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: odunsiAlbumDraft1DescriptionParagraphPosition,
+                      opacity: odunsiAlbumDraft1DescriptionParagraphOpacity,
+                    }}
+                  >
+                    {splitProjectDetailData.Draft1.paragraph}
+                  </motion.p>
+                </div>
+              </article>
+            </div>
+            <div className="client-project-initial-concepts-single-cover h-full w-full hd:w-1/2">
+              <article className="client-project-initial-concepts-single-cover-concept-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="client-project-initial-concepts-single-cover-concept-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                  <motion.img
+                    src={splitProjectDetailData.Draft2.src}
+                    alt={splitProjectDetailData.Draft2.alt}
+                    className="mb-2"
+                    ref={odunsiSingleDraft1Ref}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: odunsiSingleDraft1Position,
+                      opacity: odunsiSingleDraft1Opacity,
+                    }}
+                    onClick={handleImageFocus(splitProjectDetailData.Draft2)}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                </figure>
+                <div className="client-project-initial-concepts-single-cover-concept-description h-2/5 w-full flex flex-col items-center justify-center">
+                  <motion.h4
+                    className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                    ref={odunsiSingleDraft1DescriptionHeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: odunsiSingleDraft1DescriptionHeaderPosition,
+                      opacity: odunsiSingleDraft1DescriptionHeaderOpacity,
+                    }}
+                  >
+                    {splitProjectDetailData.Draft2.header}
+                  </motion.h4>
+                  <motion.p
+                    className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                    ref={odunsiSingleDraft1DescriptionParagraphRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY:
+                        odunsiSingleDraft1DescriptionParagraphPosition,
+                      opacity: odunsiSingleDraft1DescriptionParagraphOpacity,
+                    }}
+                  >
+                    {splitProjectDetailData.Draft2.paragraph}
+                  </motion.p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <section
+            className={`client-project-visualiser-single-cover-container h-auto w-full p-5 ${
+              isGrayscale ? 'bg-black' : 'bg-fuchsia-600 selection:bg-black'
+            } transition-all`}
+          >
+            <div className="client-project-visualiser-single-cover-items flex flex-col hd:flex-row h-auto w-full items-center justify-center">
+              <div
+                className={`client-project-visualiser-single-cover-container w-full h-full flex flex-col items-center justify-center p-5 hd:p-20 ${
+                  isGrayscale ? 'grayscale' : ''
+                } transition-all`}
+              >
+                <div className="client-project-visualiser-single-cover-image-container w-auto h-4/5">
+                  <motion.img
+                    className="client-project-visualiser-single-cover-image w-[648px] h-auto mb-2"
+                    src={splitProjectDetailData.VisualiserIllustration.src}
+                    alt={splitProjectDetailData.VisualiserIllustration.alt}
+                    ref={odunsiVisualiserDraftRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: odunsiVisualiserDraftPosition,
+                      opacity: odunsiVisualiserDraftOpacity,
+                    }}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    onTouchStart={handleMouseEnter}
+                    onTouchEnd={handleMouseLeave}
+                    onClick={handleImageFocus(
+                      splitProjectDetailData.VisualiserIllustration,
+                    )}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                  <div className="client-project-visualiser-single-cover-image-description w-full h-1/5">
+                    <motion.h4
+                      ref={odunsiVisualiserDraftHeaderRef}
+                      initial={{ opacity: 0 }}
+                      animate={{
+                        translateY: odunsiVisualiserDraftHeaderPosition,
+                        opacity: odunsiVisualiserDraftHeaderOpacity,
+                      }}
+                      className="client-project-visualiser-single-cover-image-description-text font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold"
+                    >
+                      {splitProjectDetailData.VisualiserIllustration.header}
+                    </motion.h4>
+                  </div>
                 </div>
               </div>
             </div>
+          </section>
+          <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-fuchsia-600 selection:text-zinc-200">
+            <div className="client-project-final-album-cover h-full w-full hd:w-1/2">
+              <article className="client-project-final-album-cover-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="client-project-final-album-cover-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                  <motion.img
+                    src={splitProjectDetailData.OriginalCover.src}
+                    alt={splitProjectDetailData.OriginalCover.alt}
+                    className="mb-2"
+                    ref={odunsiFinalOriginalCoverRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: odunsiFinalOriginalCoverPosition,
+                      opacity: odunsiFinalOriginalCoverOpacity,
+                    }}
+                    onClick={handleImageFocus(
+                      splitProjectDetailData.OriginalCover,
+                    )}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                </figure>
+                <div className="client-project-final-album-cover-description h-2/5 w-full flex flex-col items-center justify-center">
+                  <motion.h4
+                    className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                    ref={odunsiFinalOriginalCoverHeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: odunsiFinalOriginalCoverHeaderPosition,
+                      opacity: odunsiFinalOriginalCoverHeaderOpacity,
+                    }}
+                  >
+                    {splitProjectDetailData.OriginalCover.header}
+                  </motion.h4>
+                  <motion.p
+                    className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                    ref={odunsiFinalOriginalCoverParagraphRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: odunsiFinalOriginalCoverParagraphPosition,
+                      opacity: odunsiFinalOriginalCoverParagraphOpacity,
+                    }}
+                  >
+                    {splitProjectDetailData.OriginalCover.paragraph}
+                  </motion.p>
+                </div>
+              </article>
+            </div>
+            <div className="client-project-final-tracklist h-full w-full hd:w-1/2">
+              <article className="client-project-final-tracklist-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="client-project-final-tracklist-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                  <motion.img
+                    src={splitProjectDetailData.RemixCover.src}
+                    alt={splitProjectDetailData.RemixCover.alt}
+                    className="mb-2"
+                    ref={odunsiAlbumRemixCoverRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: odunsiAlbumRemixCoverPosition,
+                      opacity: odunsiAlbumRemixCoverOpacity,
+                    }}
+                    onClick={handleImageFocus(
+                      splitProjectDetailData.RemixCover,
+                    )}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                </figure>
+                <div className="client-project-final-tracklist-description h-2/5 w-full flex flex-col items-center justify-center">
+                  <motion.h4
+                    className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                    ref={odunsiAlbumRemixCoverHeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: odunsiAlbumRemixCoverHeaderPosition,
+                      opacity: odunsiAlbumRemixCoverHeaderOpacity,
+                    }}
+                  >
+                    {splitProjectDetailData.RemixCover.header}
+                  </motion.h4>
+                  <motion.p
+                    className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                    ref={odunsiAlbumRemixCoverParagraphRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: odunsiAlbumRemixCoverParagraphPosition,
+                      opacity: odunsiAlbumRemixCoverParagraphOpacity,
+                    }}
+                  >
+                    {splitProjectDetailData.RemixCover.paragraph}
+                  </motion.p>
+                </div>
+              </article>
+            </div>
           </div>
-        </div>
-        <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-fuchsia-600 selection:text-zinc-200">
-          <div className="client-project-final-album-cover h-full w-full hd:w-1/2">
-            <div className="client-project-final-album-cover-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-              <div className="client-project-final-album-cover-artwork h-3/5 w-full flex flex-col items-center justify-center">
-                <motion.img
-                  src={splitProjectDetailData.OriginalCover.src}
-                  alt={splitProjectDetailData.OriginalCover.alt}
-                  className="mb-2"
-                  ref={trillFinalOriginalCoverRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: trillFinalOriginalCoverPosition,
-                    opacity: trillFinalOriginalCoverOpacity,
-                  }}
-                  onClick={handleImageFocus(
-                    splitProjectDetailData.OriginalCover,
-                  )}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-              </div>
-              <div className="client-project-final-album-cover-description h-2/5 w-full flex flex-col items-center justify-center">
+          <section className="client-project-visualiser-video-container h-auto w-full py-5">
+            <div className="client-project-visualiser-video h-auto w-full flex flex-col items-center justify-center p-5">
+              <iframe
+                className="youtube-video"
+                src="https://www.youtube.com/embed/ff-XcLz22Bs?si=fMpl3eFiKmldRP2s"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </section>
+          <section className="client-project-deliverables-container h-auto w-full bg-fuchsia-600 selection:bg-black selection:text-zinc-200 p-5">
+            <div className="client-project-deliverables flex flex-col items-start justify-center">
+              <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
                 <motion.h4
-                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                  ref={trillFinalOriginalCoverHeaderRef}
+                  className="client-project-deliverables-header font-custom text-4xl sm:text-5xl text-left text-black w-full font-semibold"
+                  ref={projectDeliverablesHeaderRef}
                   initial={{ opacity: 0 }}
                   animate={{
-                    translateY: trillFinalOriginalCoverHeaderPosition,
-                    opacity: trillFinalOriginalCoverHeaderOpacity,
+                    translateY: projectDeliverablesHeaderPosition,
+                    opacity: projectDeliverablesHeaderOpacity,
                   }}
                 >
-                  {splitProjectDetailData.OriginalCover.header}
+                  Project Deliverables
                 </motion.h4>
-                <motion.p
-                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                  ref={trillFinalOriginalCoverParagraphRef}
+                <motion.div
+                  className="w-full h-full"
+                  ref={projectDeliverablesItemsRef}
                   initial={{ opacity: 0 }}
                   animate={{
-                    translateY: trillFinalOriginalCoverParagraphPosition,
-                    opacity: trillFinalOriginalCoverParagraphOpacity,
+                    translateY: 20,
+                    opacity: 1,
                   }}
                 >
-                  {splitProjectDetailData.OriginalCover.paragraph}
-                </motion.p>
+                  <motion.hr
+                    className="border-t-1 border-black w-full mt-5"
+                    initial={{ scaleX: 0 }}
+                    animate={{
+                      scaleX: projectDeliverablesUnderline,
+                    }}
+                    transition={{ duration: 1, ease: anticipate }}
+                  />
+                  <ul
+                    className="client-project-deliverables-paragraph font-custom text-2xl sm:text-3xl text-left text-black mt-5 w-full font-semibold"
+                    ref={projectDeliverablesScope}
+                  >
+                    {projectDeliverables.map((deliverable, index) => (
+                      <li key={index} className="list-none">
+                        <p>{deliverable}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
               </div>
             </div>
-          </div>
-          <div className="client-project-final-tracklist h-full w-full hd:w-1/2">
-            <div className="client-project-final-tracklist-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-              <div className="client-project-final-tracklist-artwork h-3/5 w-full flex flex-col items-center justify-center">
-                <motion.img
-                  src={splitProjectDetailData.RemixCover.src}
-                  alt={splitProjectDetailData.RemixCover.alt}
-                  className="mb-2"
-                  ref={trillAlbumRemixCoverRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: trillAlbumRemixCoverPosition,
-                    opacity: trillAlbumRemixCoverOpacity,
-                  }}
-                  onClick={handleImageFocus(splitProjectDetailData.RemixCover)}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-              </div>
-              <div className="client-project-final-tracklist-description h-2/5 w-full flex flex-col items-center justify-center">
-                <motion.h4
-                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                  ref={trillAlbumRemixCoverHeaderRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: trillAlbumRemixCoverHeaderPosition,
-                    opacity: trillAlbumRemixCoverHeaderOpacity,
-                  }}
-                >
-                  {splitProjectDetailData.RemixCover.header}
-                </motion.h4>
-                <motion.p
-                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                  ref={trillAlbumRemixCoverParagraphRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: trillAlbumRemixCoverParagraphPosition,
-                    opacity: trillAlbumRemixCoverParagraphOpacity,
-                  }}
-                >
-                  {splitProjectDetailData.RemixCover.paragraph}
-                </motion.p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="client-project-visualiser-video-container h-auto w-full py-5">
-          <div className="client-project-visualiser-video h-auto w-full flex flex-col items-center justify-center p-5">
-            <iframe
-              className="youtube-video"
-              src="https://www.youtube.com/embed/ff-XcLz22Bs?si=fMpl3eFiKmldRP2s"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-        <div className="client-project-deliverables-container h-auto w-full bg-fuchsia-600 selection:bg-black selection:text-zinc-200 p-5">
-          <div className="client-project-deliverables flex flex-col items-start justify-center">
-            <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
-              <motion.h4
-                className="client-project-deliverables-header font-custom text-4xl sm:text-5xl text-left text-black w-full font-semibold"
-                ref={projectDeliverablesHeaderRef}
-                initial={{ opacity: 0 }}
-                animate={{
-                  translateY: projectDeliverablesHeaderPosition,
-                  opacity: projectDeliverablesHeaderOpacity,
-                }}
-              >
-                Project Deliverables
-              </motion.h4>
-              <motion.div
-                className="w-full h-full"
-                ref={projectDeliverablesItemsRef}
-                initial={{ opacity: 0 }}
-                animate={{
-                  translateY: 20,
-                  opacity: 1,
-                }}
-              >
-                <motion.hr
-                  className="border-t-1 border-black w-full mt-5"
-                  initial={{ scaleX: 0 }}
-                  animate={{
-                    scaleX: projectDeliverablesUnderline,
-                  }}
-                  transition={{ duration: 1, ease: anticipate }}
-                />
-                <ul
-                  className="client-project-deliverables-paragraph font-custom text-2xl sm:text-3xl text-left text-black mt-5 w-full font-semibold"
-                  ref={projectDeliverablesScope}
-                >
-                  {projectDeliverables.map((deliverable, index) => (
-                    <li key={index} className="list-none">
-                      <p>{deliverable}</p>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            </div>
-          </div>
-        </div>
+          </section>
+        </main>
         <nav className="client-project-navigate h-[468px] w-full bg-pink-500 selection:bg-black selection:text-zinc-200 p-5">
           <ul
             className="client-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"

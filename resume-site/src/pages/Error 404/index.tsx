@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 const Error404 = () => {
   const cursorX = useMotionValue(-100);
@@ -39,6 +40,9 @@ const Error404 = () => {
       className="error-404-page-container bg-black w-full h-screen p-10 hd:p-20 flex flex-col items-center justify-center"
       style={{ cursor: 'none' }}
     >
+      <Helmet>
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <div>
         <h1 className="font-custom font-semibold tracking-tight text-white text-5xl hd:text-massive1 lg:leading-massive1 text-center mb-5">
           <span

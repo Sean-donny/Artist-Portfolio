@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="w-full px-5 py-2 z-40 bg-black">
+    <footer className="w-full px-5 py-2 z-40 bg-black">
       <ul className="flex justify-between flex-col-reverse sm:flex-row">
         <li className="mt-5 flex justify-center items-end sm:mt-0">
           <span className="font-custom text-gray-600 tracking-tight cursor-pointer text-base">
@@ -31,7 +31,7 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-    </div>
+    </footer>
   );
 };
 

@@ -10,6 +10,7 @@ import sbBanner from '/optimised/cruel_santino_subaru_boy_wide.jpg';
 import sb3DModel from '/optimised/cruel_santino_subaru_boy_3d_model.jpg';
 import subaruData from './data';
 import useInViewAnimation from '../../../Hooks/useInViewAnimation';
+import SEO from '../../../components/SEO/SEO';
 
 const SubaruBoy = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -224,200 +225,209 @@ const SubaruBoy = () => {
       {modalOpen && (
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
       )}
+      <SEO
+        title="Subaru Boy | Personal Projects | Sean Donny"
+        description="Explore a collection of Cruel Santino inspired works by contemporary artist Sean Donny, showcasing his character design skills."
+        type="article"
+        url="https://seandonny.com/personal-projects/subaru-boy"
+        image={sbBanner}
+      />
       <div className="personal-project-sections w-full h-auto flex flex-col items-center justify-center relative">
-        <div
-          className="personal-project-hero w-full h-auto overflow-hidden sticky top-0 pointer-events-none"
-          style={{
-            transform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
-            WebkitTransform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
-            zIndex: 1,
-          }}
-        >
-          <motion.img
-            src={sbBanner}
-            alt="A tight close up of Smada performing"
-            className="personal-project-hero-image w-full h-full object-cover object-center"
-            initial={{ scale: 1, opacity: 1 }}
-            animate={controls}
-          />
-        </div>
-        {/* height of safe space is set to the same as parallaxValue */}
-        <div className={`personal-project-hero-safe-space h-[400px] w-full`}>
-          &nbsp;
-        </div>
-        <div className="personal-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-orange-600 selection:text-zinc-200">
-          <div className="personal-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
-            <motion.h2
-              ref={heroHeaderRef}
-              className="personal-project-design-goal-description-header text-zinc-200 font-custom font-semibold italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mb-5"
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: heroHeaderPosition,
-                opacity: heroHeaderOpacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            >
-              I swear it's not an obsession, I just really like his music
-            </motion.h2>
-            <motion.p
-              className="personal-project-design-goal-description-paragraph-1 text-zinc-400 font-custom font-medium italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-              ref={heroP1Ref}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: heroP1Position,
-                opacity: heroP1Opacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            >
-              I've drawn Santi around 5 to 6 times; it'll be tough to beat the
-              allegations...
-            </motion.p>
-            <motion.p
-              className="personal-project-design-goal-description-paragraph-2 text-zinc-400 font-custom font-normal italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-              ref={heroP2Ref}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: heroP2Position,
-                opacity: heroP2Opacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            >
-              But he understands the importance of branding, and he has so much
-              personality, so it's very easy to translate his moments into
-              illustrations...
-            </motion.p>
-            <motion.p
-              className="personal-project-design-goal-description-paragraph-3 text-zinc-400 font-custom font-extralight italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-              ref={heroP3Ref}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: heroP3Position,
-                opacity: heroP3Opacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            >
-              I'm always making projects based on my personal interests, being a
-              Subaru Boy just happens to be one of them.
-            </motion.p>
-          </div>
-          <div className="personal-project-design-goal-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
+        <main>
+          <figure
+            className="personal-project-hero w-full h-auto overflow-hidden sticky top-0 pointer-events-none"
+            style={{
+              transform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
+              WebkitTransform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
+              zIndex: 1,
+            }}
+          >
             <motion.img
-              className="personal-project-design-goal-image"
-              src={sb3DModel}
-              ref={heroRef}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: heroPosition,
-                opacity: heroOpacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              src={sbBanner}
+              alt="A tight close up of Smada performing"
+              className="personal-project-hero-image w-full h-full object-cover object-center"
+              initial={{ scale: 1, opacity: 1 }}
+              animate={controls}
             />
+          </figure>
+          {/* height of safe space is set to the same as parallaxValue */}
+          <div className={`personal-project-hero-safe-space h-[400px] w-full`}>
+            &nbsp;
           </div>
-        </div>
-        <div className="personal-project-illustrations-set-1-container w-full h-auto flex flex-col hd:flex-row items-center justify-center hd:py-20 selection:bg-orange-600">
-          <div className="personal-project-illustrations-1-container h-auto w-full hd:w-1/2 p-5 flex flex-col items-center justify-center">
-            <div className="flex flex-col items-center justify-center w-full h-5/6">
-              <motion.img
-                src={subaruData.Illustration1.src}
-                alt={subaruData.Illustration1.alt}
-                className="personal-project-illustrations-1-image mb-2 p-5"
-                ref={sbIllustration1Ref}
+          <article className="personal-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-orange-600 selection:text-zinc-200">
+            <div className="personal-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
+              <motion.h2
+                ref={heroHeaderRef}
+                className="personal-project-design-goal-description-header text-zinc-200 font-custom font-semibold italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mb-5"
                 initial={{ opacity: 0 }}
                 animate={{
-                  translateY: sbIllustration1Position,
-                  opacity: sbIllustration1Opacity,
+                  translateY: heroHeaderPosition,
+                  opacity: heroHeaderOpacity,
                 }}
-                onClick={handleImageFocus(subaruData.Illustration1)}
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.9 }}
-              />
-            </div>
-            <motion.div className="illustration-images-description-1 w-full h-1/6">
-              <p className="font-custom text-base text-center text-zinc-200">
-                {subaruData.Illustration1.title}
-                <br />
-                {subaruData.Illustration1.year}
-              </p>
-            </motion.div>
-          </div>
-          <div className="personal-project-illustrations-2-container h-auto w-full hd:w-1/2 p-5 flex flex-col items-center justify-center">
-            <div className="flex flex-col items-center justify-center w-full h-5/6">
-              <motion.img
-                src={subaruData.Illustration2.src}
-                alt={subaruData.Illustration2.alt}
-                className="personal-project-illustrations-2-image mb-2 p-5"
-                ref={sbIllustration2Ref}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              >
+                I swear it's not an obsession, I just really like his music
+              </motion.h2>
+              <motion.p
+                className="personal-project-design-goal-description-paragraph-1 text-zinc-400 font-custom font-medium italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
+                ref={heroP1Ref}
                 initial={{ opacity: 0 }}
                 animate={{
-                  translateY: sbIllustration2Position,
-                  opacity: sbIllustration2Opacity,
+                  translateY: heroP1Position,
+                  opacity: heroP1Opacity,
                 }}
-                onClick={handleImageFocus(subaruData.Illustration2)}
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.9 }}
-              />
-            </div>
-            <motion.div className="illustration-images-description-2 w-full h-1/6">
-              <p className="font-custom text-base text-center text-zinc-200">
-                {subaruData.Illustration2.title}
-                <br />
-                {subaruData.Illustration2.year}
-              </p>
-            </motion.div>
-          </div>
-        </div>
-        <div className="personal-project-illustrations-set-2-container w-full h-auto flex flex-col hd:flex-row items-center justify-center hd:py-20 selection:bg-orange-600">
-          <div className="personal-project-illustrations-3-container h-auto w-full hd:w-1/2 p-5 flex flex-col items-center justify-center">
-            <div className="flex flex-col items-center justify-center w-full h-5/6">
-              <motion.img
-                src={subaruData.Illustration3.src}
-                alt={subaruData.Illustration3.alt}
-                className="personal-project-subaru-boy-illustrations-3-image mb-2 p-5 h-auto w-[700px]"
-                ref={sbIllustration3Ref}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              >
+                I've drawn Santi around 5 to 6 times; it'll be tough to beat the
+                allegations...
+              </motion.p>
+              <motion.p
+                className="personal-project-design-goal-description-paragraph-2 text-zinc-400 font-custom font-normal italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
+                ref={heroP2Ref}
                 initial={{ opacity: 0 }}
                 animate={{
-                  translateY: sbIllustration3Position,
-                  opacity: sbIllustration3Opacity,
+                  translateY: heroP2Position,
+                  opacity: heroP2Opacity,
                 }}
-                onClick={handleImageFocus(subaruData.Illustration3)}
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.9 }}
-              />
-            </div>
-            <motion.div className="subaru-boy-illustration-images-description-3 w-full h-1/6">
-              <p className="font-custom text-base text-center text-zinc-200">
-                {subaruData.Illustration3.title}
-                <br />
-                {subaruData.Illustration3.year}
-              </p>
-            </motion.div>
-          </div>
-          <div className="personal-project-subaru-boy-illustrations-4-container h-auto w-full hd:w-1/2 p-5 flex flex-col items-center justify-center">
-            <div className="flex flex-col items-center justify-center w-full h-5/6">
-              <motion.img
-                src={subaruData.Illustration4.src}
-                alt={subaruData.Illustration4.alt}
-                className="personal-project-subaru-boy-illustrations-4-image mb-2 p-5"
-                ref={sbIllustration4Ref}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              >
+                But he understands the importance of branding, and he has so
+                much personality, so it's very easy to translate his moments
+                into illustrations...
+              </motion.p>
+              <motion.p
+                className="personal-project-design-goal-description-paragraph-3 text-zinc-400 font-custom font-extralight italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
+                ref={heroP3Ref}
                 initial={{ opacity: 0 }}
                 animate={{
-                  translateY: sbIllustration4Position,
-                  opacity: sbIllustration4Opacity,
+                  translateY: heroP3Position,
+                  opacity: heroP3Opacity,
                 }}
-                onClick={handleImageFocus(subaruData.Illustration4)}
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.9 }}
-              />
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              >
+                I'm always making projects based on my personal interests, being
+                a Subaru Boy just happens to be one of them.
+              </motion.p>
             </div>
-            <motion.div className="subaru-boy-illustration-images-description-4 w-full h-1/6">
-              <p className="font-custom text-base text-center text-zinc-200">
-                {subaruData.Illustration4.title}
-                <br />
-                {subaruData.Illustration4.year}
-              </p>
-            </motion.div>
+            <figure className="personal-project-design-goal-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
+              <motion.img
+                className="personal-project-design-goal-image"
+                src={sb3DModel}
+                ref={heroRef}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: heroPosition,
+                  opacity: heroOpacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              />
+            </figure>
+          </article>
+          <div className="personal-project-illustrations-set-1-container w-full h-auto flex flex-col hd:flex-row items-center justify-center hd:py-20 selection:bg-orange-600">
+            <div className="personal-project-illustrations-1-container h-auto w-full hd:w-1/2 p-5 flex flex-col items-center justify-center">
+              <figure className="flex flex-col items-center justify-center w-full h-5/6">
+                <motion.img
+                  src={subaruData.Illustration1.src}
+                  alt={subaruData.Illustration1.alt}
+                  className="personal-project-illustrations-1-image mb-2 p-5"
+                  ref={sbIllustration1Ref}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: sbIllustration1Position,
+                    opacity: sbIllustration1Opacity,
+                  }}
+                  onClick={handleImageFocus(subaruData.Illustration1)}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.9 }}
+                />
+              </figure>
+              <motion.div className="illustration-images-description-1 w-full h-1/6">
+                <p className="font-custom text-base text-center text-zinc-200">
+                  {subaruData.Illustration1.title}
+                  <br />
+                  {subaruData.Illustration1.year}
+                </p>
+              </motion.div>
+            </div>
+            <div className="personal-project-illustrations-2-container h-auto w-full hd:w-1/2 p-5 flex flex-col items-center justify-center">
+              <figure className="flex flex-col items-center justify-center w-full h-5/6">
+                <motion.img
+                  src={subaruData.Illustration2.src}
+                  alt={subaruData.Illustration2.alt}
+                  className="personal-project-illustrations-2-image mb-2 p-5"
+                  ref={sbIllustration2Ref}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: sbIllustration2Position,
+                    opacity: sbIllustration2Opacity,
+                  }}
+                  onClick={handleImageFocus(subaruData.Illustration2)}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.9 }}
+                />
+              </figure>
+              <motion.div className="illustration-images-description-2 w-full h-1/6">
+                <p className="font-custom text-base text-center text-zinc-200">
+                  {subaruData.Illustration2.title}
+                  <br />
+                  {subaruData.Illustration2.year}
+                </p>
+              </motion.div>
+            </div>
           </div>
-        </div>
+          <div className="personal-project-illustrations-set-2-container w-full h-auto flex flex-col hd:flex-row items-center justify-center hd:py-20 selection:bg-orange-600">
+            <div className="personal-project-illustrations-3-container h-auto w-full hd:w-1/2 p-5 flex flex-col items-center justify-center">
+              <figure className="flex flex-col items-center justify-center w-full h-5/6">
+                <motion.img
+                  src={subaruData.Illustration3.src}
+                  alt={subaruData.Illustration3.alt}
+                  className="personal-project-subaru-boy-illustrations-3-image mb-2 p-5 h-auto w-[700px]"
+                  ref={sbIllustration3Ref}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: sbIllustration3Position,
+                    opacity: sbIllustration3Opacity,
+                  }}
+                  onClick={handleImageFocus(subaruData.Illustration3)}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.9 }}
+                />
+              </figure>
+              <motion.div className="subaru-boy-illustration-images-description-3 w-full h-1/6">
+                <p className="font-custom text-base text-center text-zinc-200">
+                  {subaruData.Illustration3.title}
+                  <br />
+                  {subaruData.Illustration3.year}
+                </p>
+              </motion.div>
+            </div>
+            <div className="personal-project-subaru-boy-illustrations-4-container h-auto w-full hd:w-1/2 p-5 flex flex-col items-center justify-center">
+              <figure className="flex flex-col items-center justify-center w-full h-5/6">
+                <motion.img
+                  src={subaruData.Illustration4.src}
+                  alt={subaruData.Illustration4.alt}
+                  className="personal-project-subaru-boy-illustrations-4-image mb-2 p-5"
+                  ref={sbIllustration4Ref}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: sbIllustration4Position,
+                    opacity: sbIllustration4Opacity,
+                  }}
+                  onClick={handleImageFocus(subaruData.Illustration4)}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.9 }}
+                />
+              </figure>
+              <motion.div className="subaru-boy-illustration-images-description-4 w-full h-1/6">
+                <p className="font-custom text-base text-center text-zinc-200">
+                  {subaruData.Illustration4.title}
+                  <br />
+                  {subaruData.Illustration4.year}
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </main>
         <nav className="personal-project-navigate h-[468px] w-full bg-orange-600 selection:bg-black selection:text-zinc-200 p-5">
           <ul
             className="personal-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"

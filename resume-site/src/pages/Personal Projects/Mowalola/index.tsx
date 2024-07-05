@@ -5,8 +5,10 @@ import { motion, useInView } from 'framer-motion';
 import mowaSpinner from '/optimised/mowalola_360_logo.gif';
 import mowaLogo from '/optimised/mowalola_logo.jpg';
 import mowaRepost from '/optimised/mowalola_ig_repost.jpg';
+
 import { useNavigate } from 'react-router-dom';
 import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
+import SEO from '../../../components/SEO/SEO';
 
 const Mowalola = () => {
   const bannerSource = [mowaSpinner, mowaLogo];
@@ -132,59 +134,68 @@ const Mowalola = () => {
 
   return (
     <div className="mowalola-container bg-black flex flex-col items-center justify-center overflow-hidden">
-      <div
-        className="mowaola-playground flex flex-col items-center justify-center overflow-hidden"
-        ref={pageBoundsRef}
-      >
-        <div className="mowalola-spinner-container w-auto max-w-[800px] h-auto min-h-screen flex items-center justify-center">
-          <img
-            src={bannerSource[bannerIndex]}
-            alt="spinning 3d model of a Mowalola logo"
-            className="mowalola-spinner-gif h-auto w-auto cursor-pointer"
-            onClick={bannerShuffle}
-          />
-        </div>
-        <div className="mowalola-ig-repost-section flex flex-col items-center justify-center">
-          <div className="mowalola-ig-repost-description w-auto h-auto hd:w-2/3 m-auto">
-            <p className="mowalola-ig-repost-description-text text-zinc-400 font-custom font-normal tracking-tight p-10 lg:text-4xl text-2xl lg:leading-relaxed selection:bg-red-600 selection:text-zinc-200">
-              Circa &#40;2021&#41;
-              <br />
-              After stumbling upon an insightful Blender tutorial by{' '}
-              <a
-                href="https://youtu.be/HsnzMZve_NU?si=MDyKoTio1x5mJjbd"
-                target="_blank"
-                className="hover:underline text-lime-300"
-              >
-                {' '}
-                IntranetGirl
-              </a>
-              , I felt inspired to create a logo for Mowalola. The entire
-              project consumed a day of my time, and I thoroughly enjoyed the
-              process. Excited about the outcome, I shared it on my Instagram
-              story, tagging Mowa, and to my delight, she reposted it. This
-              sparked a conversation about utilizing the logo and potentially
-              collaborating on a project together. However, unfortunately, the
-              collaboration never came to fruition.
-            </p>
-          </div>
-          <div className="mowalola-ig-repost-screenshot-container w-auto h-auto">
-            <motion.img
-              src={mowaRepost}
-              ref={mowaScreenshotRef}
-              className="mowalola-ig-repost-screenshot-image w-auto h-[300px] md:h-[660px] cursor-grab"
-              drag
-              dragConstraints={screenshotConstraints}
-              animate={{ x: jumpValue }}
-              transition={{
-                type: 'spring',
-                damping: 3,
-                stiffness: 50,
-                restDelta: 0.001,
-              }}
+      <SEO
+        title="Mowalola | Personal Projects | Sean Donny"
+        description="Explore a 3D logo project by contemporary artist Sean Donny, showcasing his 3D modelling and design skills."
+        type="article"
+        url="https://seandonny.com/personal-projects/mowalola"
+        image={mowaLogo}
+      />
+      <main>
+        <div
+          className="mowaola-playground flex flex-col items-center justify-center overflow-hidden"
+          ref={pageBoundsRef}
+        >
+          <figure className="mowalola-spinner-container w-auto max-w-[800px] h-auto min-h-screen flex items-center justify-center">
+            <img
+              src={bannerSource[bannerIndex]}
+              alt="spinning 3d model of a Mowalola logo"
+              className="mowalola-spinner-gif h-auto w-auto cursor-pointer"
+              onClick={bannerShuffle}
             />
+          </figure>
+          <div className="mowalola-ig-repost-section flex flex-col items-center justify-center">
+            <article className="mowalola-ig-repost-description w-auto h-auto hd:w-2/3 m-auto">
+              <p className="mowalola-ig-repost-description-text text-zinc-400 font-custom font-normal tracking-tight p-10 lg:text-4xl text-2xl lg:leading-relaxed selection:bg-red-600 selection:text-zinc-200">
+                Circa &#40;2021&#41;
+                <br />
+                After stumbling upon an insightful Blender tutorial by{' '}
+                <a
+                  href="https://youtu.be/HsnzMZve_NU?si=MDyKoTio1x5mJjbd"
+                  target="_blank"
+                  className="hover:underline text-lime-300"
+                >
+                  {' '}
+                  IntranetGirl
+                </a>
+                , I felt inspired to create a logo for Mowalola. The entire
+                project consumed a day of my time, and I thoroughly enjoyed the
+                process. Excited about the outcome, I shared it on my Instagram
+                story, tagging Mowa, and to my delight, she reposted it. This
+                sparked a conversation about utilizing the logo and potentially
+                collaborating on a project together. However, the collaboration
+                never came to fruition.
+              </p>
+            </article>
+            <figure className="mowalola-ig-repost-screenshot-container w-auto h-auto">
+              <motion.img
+                src={mowaRepost}
+                ref={mowaScreenshotRef}
+                className="mowalola-ig-repost-screenshot-image w-auto h-[300px] md:h-[660px] cursor-grab"
+                drag
+                dragConstraints={screenshotConstraints}
+                animate={{ x: jumpValue }}
+                transition={{
+                  type: 'spring',
+                  damping: 3,
+                  stiffness: 50,
+                  restDelta: 0.001,
+                }}
+              />
+            </figure>
           </div>
         </div>
-      </div>
+      </main>
       <nav className="personal-project-navigate h-[468px] w-full bg-red-600 selection:bg-black selection:text-zinc-200 p-5 mt-5">
         <ul
           className="personal-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"

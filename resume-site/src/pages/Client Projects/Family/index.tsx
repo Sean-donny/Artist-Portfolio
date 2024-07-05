@@ -10,6 +10,7 @@ import familyData from './data';
 // Image imports
 import fmBanner from '/optimised/smada_family_banner.jpg';
 import fmSketch from '/optimised/smada_family_sketch.jpg';
+import SEO from '../../../components/SEO/SEO';
 
 const Family = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -292,269 +293,279 @@ const Family = () => {
   }, []);
   return (
     <div className="client-project-container bg-black w-full h-auto">
+      <SEO
+        title="Family | Client Projects | Sean Donny"
+        description="Explore a client project for Smada by contemporary artist Sean Donny, showcasing his creative direction expertise."
+        type="article"
+        url="https://seandonny.com/client-projects/family"
+        image={fmBanner}
+      />
       {modalOpen && (
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
       )}
       <div className="client-project-sections w-full h-auto flex flex-col items-center justify-center relative">
-        <div
-          className="client-project-hero w-full h-auto overflow-hidden sticky top-0 pointer-events-none"
-          style={{
-            transform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
-            WebkitTransform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
-            zIndex: 1,
-          }}
-        >
-          <motion.img
-            src={fmBanner}
-            alt="A tight close up of Smada performing"
-            className="client-project-hero-image w-full h-full object-cover object-center"
-            initial={{ scale: 1, opacity: 1 }}
-            animate={controls}
-          />
-        </div>
-        {/* height of safe space is set to the same as parallaxValue */}
-        <div className={`client-project-hero-safe-space h-[400px] w-full`}>
-          &nbsp;
-        </div>
-        <div className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-lime-300 selection:text-black">
-          <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
-            <motion.h2
-              ref={heroHeaderRef}
-              className="client-project-design-goal-description-header text-zinc-200 font-custom font-semibold italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mb-5"
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: heroHeaderPosition,
-                opacity: heroHeaderOpacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            >
-              Smada hit me on Instagram: "We should do something"
-            </motion.h2>
-            <motion.p
-              className="client-project-design-goal-description-paragraph-1 text-zinc-400 font-custom font-medium italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-              ref={heroP1Ref}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: heroP1Position,
-                opacity: heroP1Opacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            >
-              "I like what you did with that drawing of{' '}
-              <mark className="bg-lime-300 text-black">
-                <a
-                  href="https://www.instagram.com/p/CMcwODenq3x/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=="
-                  target="_blank"
-                  className="hover:underline"
-                >
-                  Santi and Odunsi
-                </a>
-              </mark>
-              "...
-            </motion.p>
-            <motion.p
-              className="client-project-design-goal-description-paragraph-2 text-zinc-400 font-custom font-normal italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-              ref={heroP2Ref}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: heroP2Position,
-                opacity: heroP2Opacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            >
-              "I want to do something for my new single, it's called Family"...
-            </motion.p>
-            <motion.p
-              className="client-project-design-goal-description-paragraph-3 text-zinc-400 font-custom font-extralight italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-              ref={heroP3Ref}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: heroP3Position,
-                opacity: heroP3Opacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            >
-              "It's special to me because I'm giving a shout-out to everyone who
-              has brought me to this point"
-            </motion.p>
-          </div>
-          <div className="client-project-design-goal-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
+        <main>
+          <figure
+            className="client-project-hero w-full h-auto overflow-hidden sticky top-0 pointer-events-none"
+            style={{
+              transform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
+              WebkitTransform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
+              zIndex: 1,
+            }}
+          >
             <motion.img
-              className="client-project-design-goal-image"
-              src={fmSketch}
-              ref={heroRef}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: heroPosition,
-                opacity: heroOpacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              src={fmBanner}
+              alt="A tight close up of Smada performing"
+              className="client-project-hero-image w-full h-full object-cover object-center"
+              initial={{ scale: 1, opacity: 1 }}
+              animate={controls}
             />
+          </figure>
+          {/* height of safe space is set to the same as parallaxValue */}
+          <div className={`client-project-hero-safe-space h-[400px] w-full`}>
+            &nbsp;
           </div>
-        </div>
-        <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-lime-300 selection:text-black">
-          <div className="client-project-single-sketch h-full w-full hd:w-1/2">
-            <div className="client-project-single-sketch-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-              <div className="client-project-single-sketch-artwork h-3/5 w-full flex flex-col items-center justify-center">
-                <motion.img
-                  src={familyData.FamilyCoverSketch.src}
-                  alt={familyData.FamilyCoverSketch.alt}
-                  className="mb-2"
-                  ref={fmCoverSketchRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: fmCoverSketchPosition,
-                    opacity: fmCoverSketchOpacity,
-                  }}
-                  onClick={handleImageFocus(familyData.FamilyCoverSketch)}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-              </div>
-              <div className="client-project-single-sketch-description h-2/5 w-full flex flex-col items-center justify-center">
-                <motion.h4
-                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                  ref={fmCoverSketchHeaderRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: fmCoverSketchHeaderPosition,
-                    opacity: fmCoverSketchHeaderOpacity,
-                  }}
-                >
-                  {familyData.FamilyCoverSketch.header}
-                </motion.h4>
-                <motion.p
-                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                  ref={fmCoverSketchParagraphRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: fmCoverSketchParagraphPosition,
-                    opacity: fmCoverSketchParagraphOpacity,
-                  }}
-                >
-                  {familyData.FamilyCoverSketch.paragraph}
-                </motion.p>
-              </div>
-            </div>
-          </div>
-          <div className="client-project-final-single-cover h-full w-full hd:w-1/2">
-            <div className="client-project-final-single-cover-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-              <div className="client-project-final-single-cover-artwork h-3/5 w-full flex flex-col items-center justify-center">
-                <motion.img
-                  src={familyData.FamilySingleCover.src}
-                  alt={familyData.FamilySingleCover.alt}
-                  className="mb-2"
-                  ref={fmSingleCoverRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: fmSingleCoverPosition,
-                    opacity: fmSingleCoverOpacity,
-                  }}
-                  onClick={handleImageFocus(familyData.FamilySingleCover)}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-              </div>
-              <div className="client-project-final-single-cover-description h-2/5 w-full flex flex-col items-center justify-center">
-                <motion.h4
-                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                  ref={fmSingleCoverHeaderRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: fmSingleCoverHeaderPosition,
-                    opacity: fmSingleCoverHeaderOpacity,
-                  }}
-                >
-                  {familyData.FamilySingleCover.header}
-                </motion.h4>
-                <motion.p
-                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                  ref={fmSingleCoverParagraphRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: fmSingleCoverParagraphPosition,
-                    opacity: fmSingleCoverParagraphOpacity,
-                  }}
-                >
-                  {familyData.FamilySingleCover.paragraph}
-                </motion.p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="client-project-streaming-and-promotional-container w-full h-auto flex flex-col hd:flex-row items-center justify-center bg-zinc-900 hd:py-20 selection:bg-lime-300">
-          <div className="client-project-streaming-preview w-full h-[330px] hd:w-1/2 p-5 hd:py-20 hd:px-0 flex flex-col items-center justify-center">
-            <iframe
-              id="embedPlayer"
-              src="https://embed.music.apple.com/us/album/family/1579815445?i=1579815446&amp;app=music&amp;itsct=music_box_player&amp;itscg=30200&amp;ls=1&amp;theme=auto"
-              height="175px"
-              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-              allow="autoplay *; encrypted-media *; clipboard-write"
-              style={embedStyle}
-            ></iframe>
-          </div>
-          <div className="client-project-streaming-metrics-container h-auto w-full hd:w-1/2 p-5 flex flex-col items-center justify-center">
-            <motion.img
-              src={familyData.FamilySingleMetrics.src}
-              alt={familyData.FamilySingleMetrics.alt}
-              className="client-project-streaming-metrics-image mb-2 p-5"
-              ref={fmFamilySingleMetricsRef}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: fmFamilySingleMetricsPosition,
-                opacity: fmFamilySingleMetricsOpacity,
-              }}
-              onClick={handleImageFocus(familyData.FamilySingleMetrics)}
-              whileHover={{ scale: 1.01 }}
-              whileTap={{ scale: 0.9 }}
-            />
-          </div>
-        </div>
-        <div className="client-project-deliverables-container h-auto w-full bg-lime-400 selection:bg-black selection:text-zinc-200 p-5">
-          <div className="client-project-deliverables flex flex-col items-start justify-center">
-            <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
-              <motion.h4
-                className="client-project-deliverables-header font-custom text-4xl sm:text-5xl text-left text-black w-full font-semibold"
-                ref={projectDeliverablesHeaderRef}
+          <article className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-lime-300 selection:text-black">
+            <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
+              <motion.h2
+                ref={heroHeaderRef}
+                className="client-project-design-goal-description-header text-zinc-200 font-custom font-semibold italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mb-5"
                 initial={{ opacity: 0 }}
                 animate={{
-                  translateY: projectDeliverablesHeaderPosition,
-                  opacity: projectDeliverablesHeaderOpacity,
+                  translateY: heroHeaderPosition,
+                  opacity: heroHeaderOpacity,
                 }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                Project Deliverables
-              </motion.h4>
-              <motion.div
-                className="w-full h-full"
-                ref={projectDeliverablesItemsRef}
+                Smada hit me on Instagram: "We should do something"
+              </motion.h2>
+              <motion.p
+                className="client-project-design-goal-description-paragraph-1 text-zinc-400 font-custom font-medium italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
+                ref={heroP1Ref}
                 initial={{ opacity: 0 }}
                 animate={{
-                  translateY: 20,
-                  opacity: 1,
+                  translateY: heroP1Position,
+                  opacity: heroP1Opacity,
                 }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                <motion.hr
-                  className="border-t-1 border-black w-full mt-5"
-                  initial={{ scaleX: 0 }}
-                  animate={{
-                    scaleX: projectDeliverablesUnderline,
-                  }}
-                  transition={{ duration: 1, ease: anticipate }}
-                />
-                <ul
-                  className="client-project-deliverables-paragraph font-custom text-2xl sm:text-3xl text-left text-black mt-5 w-full font-semibold"
-                  ref={projectDeliverablesScope}
-                >
-                  {projectDeliverables.map((deliverable, index) => (
-                    <li key={index} className="list-none">
-                      <p>{deliverable}</p>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+                "I like what you did with that drawing of{' '}
+                <mark className="bg-lime-300 text-black">
+                  <a
+                    href="https://www.instagram.com/p/CMcwODenq3x/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=="
+                    target="_blank"
+                    className="hover:underline"
+                  >
+                    Santi and Odunsi
+                  </a>
+                </mark>
+                "...
+              </motion.p>
+              <motion.p
+                className="client-project-design-goal-description-paragraph-2 text-zinc-400 font-custom font-normal italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
+                ref={heroP2Ref}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: heroP2Position,
+                  opacity: heroP2Opacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              >
+                "I want to do something for my new single, it's called
+                Family"...
+              </motion.p>
+              <motion.p
+                className="client-project-design-goal-description-paragraph-3 text-zinc-400 font-custom font-extralight italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
+                ref={heroP3Ref}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: heroP3Position,
+                  opacity: heroP3Opacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              >
+                "It's special to me because I'm giving a shout-out to everyone
+                who has brought me to this point"
+              </motion.p>
+            </div>
+            <figure className="client-project-design-goal-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
+              <motion.img
+                className="client-project-design-goal-image"
+                src={fmSketch}
+                ref={heroRef}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: heroPosition,
+                  opacity: heroOpacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              />
+            </figure>
+          </article>
+          <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-lime-300 selection:text-black">
+            <div className="client-project-single-sketch h-full w-full hd:w-1/2">
+              <article className="client-project-single-sketch-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="client-project-single-sketch-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                  <motion.img
+                    src={familyData.FamilyCoverSketch.src}
+                    alt={familyData.FamilyCoverSketch.alt}
+                    className="mb-2"
+                    ref={fmCoverSketchRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: fmCoverSketchPosition,
+                      opacity: fmCoverSketchOpacity,
+                    }}
+                    onClick={handleImageFocus(familyData.FamilyCoverSketch)}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                </figure>
+                <div className="client-project-single-sketch-description h-2/5 w-full flex flex-col items-center justify-center">
+                  <motion.h4
+                    className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                    ref={fmCoverSketchHeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: fmCoverSketchHeaderPosition,
+                      opacity: fmCoverSketchHeaderOpacity,
+                    }}
+                  >
+                    {familyData.FamilyCoverSketch.header}
+                  </motion.h4>
+                  <motion.p
+                    className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                    ref={fmCoverSketchParagraphRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: fmCoverSketchParagraphPosition,
+                      opacity: fmCoverSketchParagraphOpacity,
+                    }}
+                  >
+                    {familyData.FamilyCoverSketch.paragraph}
+                  </motion.p>
+                </div>
+              </article>
+            </div>
+            <div className="client-project-final-single-cover h-full w-full hd:w-1/2">
+              <article className="client-project-final-single-cover-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="client-project-final-single-cover-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                  <motion.img
+                    src={familyData.FamilySingleCover.src}
+                    alt={familyData.FamilySingleCover.alt}
+                    className="mb-2"
+                    ref={fmSingleCoverRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: fmSingleCoverPosition,
+                      opacity: fmSingleCoverOpacity,
+                    }}
+                    onClick={handleImageFocus(familyData.FamilySingleCover)}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                </figure>
+                <div className="client-project-final-single-cover-description h-2/5 w-full flex flex-col items-center justify-center">
+                  <motion.h4
+                    className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                    ref={fmSingleCoverHeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: fmSingleCoverHeaderPosition,
+                      opacity: fmSingleCoverHeaderOpacity,
+                    }}
+                  >
+                    {familyData.FamilySingleCover.header}
+                  </motion.h4>
+                  <motion.p
+                    className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                    ref={fmSingleCoverParagraphRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: fmSingleCoverParagraphPosition,
+                      opacity: fmSingleCoverParagraphOpacity,
+                    }}
+                  >
+                    {familyData.FamilySingleCover.paragraph}
+                  </motion.p>
+                </div>
+              </article>
             </div>
           </div>
-        </div>
+          <section className="client-project-streaming-and-promotional-container w-full h-auto flex flex-col hd:flex-row items-center justify-center bg-zinc-900 hd:py-20 selection:bg-lime-300">
+            <div className="client-project-streaming-preview w-full h-[330px] hd:w-1/2 p-5 hd:py-20 hd:px-0 flex flex-col items-center justify-center">
+              <iframe
+                id="embedPlayer"
+                src="https://embed.music.apple.com/us/album/family/1579815445?i=1579815446&amp;app=music&amp;itsct=music_box_player&amp;itscg=30200&amp;ls=1&amp;theme=auto"
+                height="175px"
+                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                allow="autoplay *; encrypted-media *; clipboard-write"
+                style={embedStyle}
+              ></iframe>
+            </div>
+            <div className="client-project-streaming-metrics-container h-auto w-full hd:w-1/2 p-5 flex flex-col items-center justify-center">
+              <motion.img
+                src={familyData.FamilySingleMetrics.src}
+                alt={familyData.FamilySingleMetrics.alt}
+                className="client-project-streaming-metrics-image mb-2 p-5"
+                ref={fmFamilySingleMetricsRef}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: fmFamilySingleMetricsPosition,
+                  opacity: fmFamilySingleMetricsOpacity,
+                }}
+                onClick={handleImageFocus(familyData.FamilySingleMetrics)}
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.9 }}
+              />
+            </div>
+          </section>
+          <section className="client-project-deliverables-container h-auto w-full bg-lime-400 selection:bg-black selection:text-zinc-200 p-5">
+            <div className="client-project-deliverables flex flex-col items-start justify-center">
+              <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
+                <motion.h4
+                  className="client-project-deliverables-header font-custom text-4xl sm:text-5xl text-left text-black w-full font-semibold"
+                  ref={projectDeliverablesHeaderRef}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: projectDeliverablesHeaderPosition,
+                    opacity: projectDeliverablesHeaderOpacity,
+                  }}
+                >
+                  Project Deliverables
+                </motion.h4>
+                <motion.div
+                  className="w-full h-full"
+                  ref={projectDeliverablesItemsRef}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: 20,
+                    opacity: 1,
+                  }}
+                >
+                  <motion.hr
+                    className="border-t-1 border-black w-full mt-5"
+                    initial={{ scaleX: 0 }}
+                    animate={{
+                      scaleX: projectDeliverablesUnderline,
+                    }}
+                    transition={{ duration: 1, ease: anticipate }}
+                  />
+                  <ul
+                    className="client-project-deliverables-paragraph font-custom text-2xl sm:text-3xl text-left text-black mt-5 w-full font-semibold"
+                    ref={projectDeliverablesScope}
+                  >
+                    {projectDeliverables.map((deliverable, index) => (
+                      <li key={index} className="list-none">
+                        <p>{deliverable}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </div>
+            </div>
+          </section>
+        </main>
         <nav className="client-project-navigate h-[468px] w-full bg-sky-500 selection:bg-black selection:text-zinc-200 p-5">
           <ul
             className="client-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"

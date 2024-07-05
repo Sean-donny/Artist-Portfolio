@@ -8,7 +8,7 @@ import SeanPortrait from '/optimised/sean_donny_portrait.jpg';
 
 const Home = () => {
   return (
-    <div>
+    <main>
       <SEO
         title="Home"
         description="Discover the captivating art of Sean Donny, a contemporary artist in England, UK. Explore his portfolio of personal & client projects, and gallery."
@@ -16,10 +16,16 @@ const Home = () => {
         url="https://seandonny.com/"
         image={SeanPortrait}
       />
-      <Hero />
-      <Marquee />
-      <Works />
-    </div>
+      <article>
+        <Hero />
+      </article>
+      <section>
+        <Marquee />
+      </section>
+      <article>
+        <Works />
+      </article>
+    </main>
   );
 };
 

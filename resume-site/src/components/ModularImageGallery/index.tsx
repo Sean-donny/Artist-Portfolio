@@ -41,6 +41,7 @@ const ModularImageGallery = ({
               src={data.src}
               alt={data.alt}
               title={data.title}
+              loading="lazy"
               className="component-image pointer-events-none"
             />
             <motion.div

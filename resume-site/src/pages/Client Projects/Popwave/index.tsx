@@ -15,6 +15,7 @@ import pwStar2 from '/optimised/popwave_star_logo_2.png';
 import pwStar3 from '/optimised/popwave_star_logo_3.png';
 import pwTshirtLive from '/optimised/popwave_star_logo_shirt_design_on_model.jpg';
 import pwTshirtMockup from '/optimised/popwave_star_logo_shirt_design.jpg';
+import SEO from '../../../components/SEO/SEO';
 
 const Popwave = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -286,333 +287,364 @@ const Popwave = () => {
   }, []);
   return (
     <div className="client-project-container bg-black w-full h-auto">
+      <SEO
+        title="Popwave | Client Projects"
+        description="Explore a client project for Popwave by contemporary artist Sean Donny, showcasing his creative direction expertise."
+        type="article"
+        url="https://seandonny.com/client-projects/popwave"
+        image={pwBanner}
+      />
       {modalOpen && (
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
       )}
       <div className="client-project-sections w-full h-auto flex flex-col items-center justify-center relative">
-        <div
-          className="client-project-hero w-full h-auto overflow-hidden sticky top-0 pointer-events-none"
-          style={{
-            transform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
-            WebkitTransform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
-            zIndex: 1,
-          }}
-        >
-          <motion.img
-            src={pwBanner}
-            alt="An illustration man pointing a gun at another man"
-            className="client-project-hero-image w-full h-full object-cover object-center"
-            initial={{ scale: 1, opacity: 1 }}
-            animate={controls}
-          />
-        </div>
-        {/* height of safe space is set to the same as parallaxValue */}
-        <div className={`client-project-hero-safe-space h-[400px] w-full`}>
-          &nbsp;
-        </div>
-        <div className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-orange-600 selection:text-zinc-200">
-          <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
-            <motion.h2
-              ref={heroHeaderRef}
-              className="client-project-design-goal-description-header text-zinc-200 font-custom font-semibold italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mb-5"
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: heroHeaderPosition,
-                opacity: heroHeaderOpacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            >
-              Patrick Star hit me on Instagram: "Let's&nbsp;work"
-            </motion.h2>
-            <motion.p
-              className="client-project-design-goal-description-paragraph-1 text-zinc-400 font-custom font-medium italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-              ref={heroP1Ref}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: heroP1Position,
-                opacity: heroP1Opacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            >
-              "I want a Popwave logo with a star design, kinda like them{' '}
-              <mark className="bg-orange-600 text-zinc-200">
-                <a
-                  href="https://graphicdome.com/blog/y2k-2000s-graphic-design-trend/"
-                  target="_blank"
-                  className="hover:underline"
-                >
-                  Y2K
-                </a>
-              </mark>{' '}
-              ones"...
-            </motion.p>
-            <motion.p
-              className="client-project-design-goal-description-paragraph-2 text-zinc-400 font-custom font-normal italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-              ref={heroP2Ref}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: heroP2Position,
-                opacity: heroP2Opacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            >
-              "I'd like a comic strip illustration showcasing our new{' '}
-              <mark className="bg-orange-600 text-zinc-200">
-                <a
-                  href="https://www.instagram.com/p/CiQE-8Fj4Tp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-                  target="_blank"
-                  className="hover:underline"
-                >
-                  T-shirt
-                </a>
-              </mark>{' '}
-              to complement the marketing when it drops"...
-            </motion.p>
-            <motion.p
-              className="client-project-design-goal-description-paragraph-3 text-zinc-400 font-custom font-extralight italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-              ref={heroP3Ref}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: heroP3Position,
-                opacity: heroP3Opacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            >
-              "We also want to use the illustration as a sticker"
-            </motion.p>
-          </div>
-          <div className="client-project-design-goal-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
+        <main>
+          <figure
+            className="client-project-hero w-full h-auto overflow-hidden sticky top-0 pointer-events-none"
+            style={{
+              transform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
+              WebkitTransform: `translate3d(0px, ${-heroTranslate}px, 0px)`,
+              zIndex: 1,
+            }}
+          >
             <motion.img
-              className="client-project-design-goal-image"
-              src={pwCharacter}
-              ref={heroRef}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: heroPosition,
-                opacity: heroOpacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              src={pwBanner}
+              alt="An illustration man pointing a gun at another man"
+              title="Popwave banner image"
+              loading="eager"
+              className="client-project-hero-image w-full h-full object-cover object-center"
+              initial={{ scale: 1, opacity: 1 }}
+              animate={controls}
             />
+          </figure>
+          {/* height of safe space is set to the same as parallaxValue */}
+          <div className={`client-project-hero-safe-space h-[400px] w-full`}>
+            &nbsp;
           </div>
-        </div>
-        <div className="client-project-draft-selection-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-orange-600 selection:text-zinc-200">
-          <div className="client-project-draft-selection-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
-            <motion.img
-              className="client-project-draft-selection-image"
-              src={popwaveData.SketchShortlistCover.src}
-              ref={pwDraftSelectionRef}
-              initial={{ opacity: 0 }}
-              animate={{
-                translateY: pwDraftSelectionPosition,
-                opacity: pwDraftSelectionOpacity,
-              }}
-              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
-            />
-          </div>
-          <div className="client-project-draft-selection-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pr-20">
-            <div
-              className="client-project-draft-selection-description-paragraph"
-              ref={pwDraftSelectionDescriptionRef}
-            >
-              {popwaveData.SketchShortlistCover.paragraph.map(
-                (paragraph, index) => {
-                  return (
-                    <motion.p
-                      className="client-project-draft-selection-description-paragraph-text text-zinc-400 font-custom font-normal tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-4xl text-2xl lg:leading-relaxed mt-5"
-                      initial={{ opacity: 0 }}
-                      animate={{
-                        translateY: pwDraftSelectionDescriptionPosition,
-                        opacity: pwDraftSelectionDescriptionOpacity,
-                      }}
-                      transition={{
-                        delay: 0.3,
-                        ease: 'anticipate',
-                        duration: 1,
-                      }}
-                      key={index}
-                    >
-                      {paragraph}
-                    </motion.p>
-                  );
-                },
-              )}
-            </div>
-          </div>
-        </div>
-        <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-orange-600 selection:text-zinc-200">
-          <div className="client-project-refined-sketch h-full w-full hd:w-1/2">
-            <div className="client-project-refined-sketch-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-              <div className="client-project-refined-sketch-artwork h-3/5 w-full flex flex-col items-center justify-center">
-                <motion.img
-                  src={popwaveData.SketchedComicPanel.src}
-                  alt={popwaveData.SketchedComicPanel.alt}
-                  className="mb-2"
-                  ref={pwSketchedComicPanelRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: pwSketchedComicPanelPosition,
-                    opacity: pwSketchedComicPanelOpacity,
-                  }}
-                  onClick={handleImageFocus(popwaveData.SketchedComicPanel)}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-              </div>
-              <div className="client-project-refined-sketch-description h-2/5 w-full flex flex-col items-center justify-center">
-                <motion.h4
-                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                  ref={pwSketchedComicPanelHeaderRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: pwSketchedComicPanelHeaderPosition,
-                    opacity: pwSketchedComicPanelHeaderOpacity,
-                  }}
-                >
-                  {popwaveData.SketchedComicPanel.header}
-                </motion.h4>
-                <motion.p
-                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                  ref={pwSketchedComicPanelParagraphRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: pwSketchedComicPanelParagraphPosition,
-                    opacity: pwSketchedComicPanelParagraphOpacity,
-                  }}
-                >
-                  {popwaveData.SketchedComicPanel.paragraph}
-                </motion.p>
-              </div>
-            </div>
-          </div>
-          <div className="client-project-final-illustration h-full w-full hd:w-1/2">
-            <div className="client-project-final-illustration-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-              <div className="client-project-final-illustration-artwork h-3/5 w-full flex flex-col items-center justify-center">
-                <motion.img
-                  src={popwaveData.ComicPanel.src}
-                  alt={popwaveData.ComicPanel.alt}
-                  className="mb-2"
-                  ref={pwComicPanelRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: pwComicPanelPosition,
-                    opacity: pwComicPanelOpacity,
-                  }}
-                  onClick={handleImageFocus(popwaveData.ComicPanel)}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-              </div>
-              <div className="client-project-final-illustration-description h-2/5 w-full flex flex-col items-center justify-center">
-                <motion.h4
-                  className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                  ref={pwComicPanelHeaderRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: pwComicPanelHeaderPosition,
-                    opacity: pwComicPanelHeaderOpacity,
-                  }}
-                >
-                  {popwaveData.ComicPanel.header}
-                </motion.h4>
-                <motion.p
-                  className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                  ref={pwComicPanelParagraphRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: pwComicPanelParagraphPosition,
-                    opacity: pwComicPanelParagraphOpacity,
-                  }}
-                >
-                  {popwaveData.ComicPanel.paragraph}
-                </motion.p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="client-project-tshirt-container w-full h-auto flex flex-col hd:flex-row items-center justify-center p-5 selection:bg-orange-600">
-          <div className="client-project-tshirt-live-container w-full h-auto hd:w-1/2 flex flex-col items-center justify-center p-5">
-            <img
-              className="client-project-tshirt-live"
-              src={pwTshirtLive}
-              alt="Popwave Star logo T-shirt on a model"
-            />
-          </div>
-          <div className="client-project-tshirt-mockup-container w-full h-auto hd:w-1/2 flex flex-col items-center justify-center p-5">
-            <img
-              className="client-project-tshirt-mockup"
-              src={pwTshirtMockup}
-              alt="Popwave Star logo T-shirt mockup"
-            />
-          </div>
-        </div>
-        <div className="client-project-logos-container w-full h-auto bg-zinc-900 flex flex-col hd:flex-row items-center justify-center p-5 selection:bg-orange-600">
-          <div className="client-project-logo-1-container">
-            <img
-              className="client-project-logo-1"
-              src={pwStar1}
-              alt="Popwave Star logo: Black"
-            />
-          </div>
-          <div className="client-project-logo-2-container">
-            <img
-              className="client-project-logo-2"
-              src={pwStar2}
-              alt="Popwave Star logo: Black and Yellow"
-            />
-          </div>
-          <div className="client-project-logo-3-container">
-            <img
-              className="client-project-logo-3"
-              src={pwStar3}
-              alt="Popwave Star logo: White"
-            />
-          </div>
-        </div>
-        <div className="client-project-deliverables-container h-auto w-full bg-orange-600 selection:bg-black selection:text-zinc-200 p-5">
-          <div className="client-project-deliverables flex flex-col items-start justify-center">
-            <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
-              <motion.h4
-                className="client-project-deliverables-header font-custom text-4xl sm:text-5xl text-left text-black w-full font-semibold"
-                ref={projectDeliverablesHeaderRef}
+          <article className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-orange-600 selection:text-zinc-200">
+            <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
+              <motion.h1
+                ref={heroHeaderRef}
+                className="client-project-design-goal-description-header text-zinc-200 font-custom font-semibold italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mb-5"
                 initial={{ opacity: 0 }}
                 animate={{
-                  translateY: projectDeliverablesHeaderPosition,
-                  opacity: projectDeliverablesHeaderOpacity,
+                  translateY: heroHeaderPosition,
+                  opacity: heroHeaderOpacity,
                 }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                Project Deliverables
-              </motion.h4>
-              <motion.div
-                className="w-full h-full"
-                ref={projectDeliverablesItemsRef}
+                Patrick Star hit me on Instagram: "Let's&nbsp;work"
+              </motion.h1>
+              <motion.p
+                className="client-project-design-goal-description-paragraph-1 text-zinc-400 font-custom font-medium italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
+                ref={heroP1Ref}
                 initial={{ opacity: 0 }}
                 animate={{
-                  translateY: 20,
-                  opacity: 1,
+                  translateY: heroP1Position,
+                  opacity: heroP1Opacity,
                 }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                <motion.hr
-                  className="border-t-1 border-black w-full mt-5"
-                  initial={{ scaleX: 0 }}
-                  animate={{
-                    scaleX: projectDeliverablesUnderline,
-                  }}
-                  transition={{ duration: 1, ease: anticipate }}
-                />
-                <ul
-                  className="client-project-deliverables-paragraph font-custom text-2xl sm:text-3xl text-left text-black mt-5 w-full font-semibold"
-                  ref={projectDeliverablesScope}
-                >
-                  {projectDeliverables.map((deliverable, index) => (
-                    <li key={index} className="list-none">
-                      <p>{deliverable}</p>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+                "I want a Popwave logo with a star design, kinda like them{' '}
+                <mark className="bg-orange-600 text-zinc-200">
+                  <a
+                    href="https://graphicdome.com/blog/y2k-2000s-graphic-design-trend/"
+                    target="_blank"
+                    className="hover:underline"
+                  >
+                    Y2K
+                  </a>
+                </mark>{' '}
+                ones"...
+              </motion.p>
+              <motion.p
+                className="client-project-design-goal-description-paragraph-2 text-zinc-400 font-custom font-normal italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
+                ref={heroP2Ref}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: heroP2Position,
+                  opacity: heroP2Opacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              >
+                "I'd like a comic strip illustration showcasing our new{' '}
+                <mark className="bg-orange-600 text-zinc-200">
+                  <a
+                    href="https://www.instagram.com/p/CiQE-8Fj4Tp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                    target="_blank"
+                    className="hover:underline"
+                  >
+                    T-shirt
+                  </a>
+                </mark>{' '}
+                to complement the marketing when it drops"...
+              </motion.p>
+              <motion.p
+                className="client-project-design-goal-description-paragraph-3 text-zinc-400 font-custom font-extralight italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
+                ref={heroP3Ref}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: heroP3Position,
+                  opacity: heroP3Opacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              >
+                "We also want to use the illustration as a sticker"
+              </motion.p>
+            </div>
+            <figure className="client-project-design-goal-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
+              <motion.img
+                className="client-project-design-goal-image"
+                src={pwCharacter}
+                alt="Popwave character holding gun"
+                title="Popwave character"
+                loading="eager"
+                ref={heroRef}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: heroPosition,
+                  opacity: heroOpacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              />
+            </figure>
+          </article>
+          <article className="client-project-draft-selection-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-orange-600 selection:text-zinc-200">
+            <figure className="client-project-draft-selection-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
+              <motion.img
+                className="client-project-draft-selection-image"
+                src={popwaveData.SketchShortlistCover.src}
+                alt="Popwave illustration drafts sheet"
+                title="Popwave illustration drafts sheet"
+                loading="lazy"
+                ref={pwDraftSelectionRef}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: pwDraftSelectionPosition,
+                  opacity: pwDraftSelectionOpacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              />
+            </figure>
+            <div className="client-project-draft-selection-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pr-20">
+              <div
+                className="client-project-draft-selection-description-paragraph"
+                ref={pwDraftSelectionDescriptionRef}
+              >
+                {popwaveData.SketchShortlistCover.paragraph.map(
+                  (paragraph, index) => {
+                    return (
+                      <motion.p
+                        className="client-project-draft-selection-description-paragraph-text text-zinc-400 font-custom font-normal tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-4xl text-2xl lg:leading-relaxed mt-5"
+                        initial={{ opacity: 0 }}
+                        animate={{
+                          translateY: pwDraftSelectionDescriptionPosition,
+                          opacity: pwDraftSelectionDescriptionOpacity,
+                        }}
+                        transition={{
+                          delay: 0.3,
+                          ease: 'anticipate',
+                          duration: 1,
+                        }}
+                        key={index}
+                      >
+                        {paragraph}
+                      </motion.p>
+                    );
+                  },
+                )}
+              </div>
+            </div>
+          </article>
+          <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-orange-600 selection:text-zinc-200">
+            <div className="client-project-refined-sketch h-full w-full hd:w-1/2">
+              <article className="client-project-refined-sketch-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="client-project-refined-sketch-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                  <motion.img
+                    src={popwaveData.SketchedComicPanel.src}
+                    alt={popwaveData.SketchedComicPanel.alt}
+                    title={popwaveData.SketchedComicPanel.alt}
+                    loading="lazy"
+                    className="mb-2"
+                    ref={pwSketchedComicPanelRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: pwSketchedComicPanelPosition,
+                      opacity: pwSketchedComicPanelOpacity,
+                    }}
+                    onClick={handleImageFocus(popwaveData.SketchedComicPanel)}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                </figure>
+                <div className="client-project-refined-sketch-description h-2/5 w-full flex flex-col items-center justify-center">
+                  <motion.h2
+                    className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                    ref={pwSketchedComicPanelHeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: pwSketchedComicPanelHeaderPosition,
+                      opacity: pwSketchedComicPanelHeaderOpacity,
+                    }}
+                  >
+                    {popwaveData.SketchedComicPanel.header}
+                  </motion.h2>
+                  <motion.p
+                    className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                    ref={pwSketchedComicPanelParagraphRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: pwSketchedComicPanelParagraphPosition,
+                      opacity: pwSketchedComicPanelParagraphOpacity,
+                    }}
+                  >
+                    {popwaveData.SketchedComicPanel.paragraph}
+                  </motion.p>
+                </div>
+              </article>
+            </div>
+            <div className="client-project-final-illustration h-full w-full hd:w-1/2">
+              <article className="client-project-final-illustration-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="client-project-final-illustration-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                  <motion.img
+                    src={popwaveData.ComicPanel.src}
+                    alt={popwaveData.ComicPanel.alt}
+                    title={popwaveData.ComicPanel.title}
+                    loading="lazy"
+                    className="mb-2"
+                    ref={pwComicPanelRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: pwComicPanelPosition,
+                      opacity: pwComicPanelOpacity,
+                    }}
+                    onClick={handleImageFocus(popwaveData.ComicPanel)}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                </figure>
+                <div className="client-project-final-illustration-description h-2/5 w-full flex flex-col items-center justify-center">
+                  <motion.h2
+                    className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                    ref={pwComicPanelHeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: pwComicPanelHeaderPosition,
+                      opacity: pwComicPanelHeaderOpacity,
+                    }}
+                  >
+                    {popwaveData.ComicPanel.header}
+                  </motion.h2>
+                  <motion.p
+                    className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                    ref={pwComicPanelParagraphRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: pwComicPanelParagraphPosition,
+                      opacity: pwComicPanelParagraphOpacity,
+                    }}
+                  >
+                    {popwaveData.ComicPanel.paragraph}
+                  </motion.p>
+                </div>
+              </article>
             </div>
           </div>
-        </div>
+          <article className="client-project-tshirt-container w-full h-auto flex flex-col hd:flex-row items-center justify-center p-5 selection:bg-orange-600">
+            <figure className="client-project-tshirt-live-container w-full h-auto hd:w-1/2 flex flex-col items-center justify-center p-5">
+              <img
+                className="client-project-tshirt-live"
+                src={pwTshirtLive}
+                alt="Popwave Star logo T-shirt on a model"
+                title="Popwave Star logo T-shirt on a model"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="client-project-tshirt-mockup-container w-full h-auto hd:w-1/2 flex flex-col items-center justify-center p-5">
+              <img
+                className="client-project-tshirt-mockup"
+                src={pwTshirtMockup}
+                alt="Popwave Star logo T-shirt mockup"
+                title="Popwave Star logo T-shirt mockup"
+                loading="lazy"
+              />
+            </figure>
+          </article>
+          <section className="client-project-logos-container w-full h-auto bg-zinc-900 flex flex-col hd:flex-row items-center justify-center p-5 selection:bg-orange-600">
+            <figure className="client-project-logo-1-container">
+              <img
+                className="client-project-logo-1"
+                src={pwStar1}
+                alt="Popwave Star logo: Black"
+                title="Popwave Star logo: Black"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="client-project-logo-2-container">
+              <img
+                className="client-project-logo-2"
+                src={pwStar2}
+                alt="Popwave Star logo: Black and Yellow"
+                title="Popwave Star logo: Black and Yellow"
+                loading="lazy"
+              />
+            </figure>
+            <figure className="client-project-logo-3-container">
+              <img
+                className="client-project-logo-3"
+                src={pwStar3}
+                alt="Popwave Star logo: White"
+                title="Popwave Star logo: White"
+                loading="lazy"
+              />
+            </figure>
+          </section>
+          <section className="client-project-deliverables-container h-auto w-full bg-orange-600 selection:bg-black selection:text-zinc-200 p-5">
+            <div className="client-project-deliverables flex flex-col items-start justify-center">
+              <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
+                <motion.h2
+                  className="client-project-deliverables-header font-custom text-4xl sm:text-5xl text-left text-black w-full font-semibold"
+                  ref={projectDeliverablesHeaderRef}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: projectDeliverablesHeaderPosition,
+                    opacity: projectDeliverablesHeaderOpacity,
+                  }}
+                >
+                  Project Deliverables
+                </motion.h2>
+                <motion.div
+                  className="w-full h-full"
+                  ref={projectDeliverablesItemsRef}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    translateY: 20,
+                    opacity: 1,
+                  }}
+                >
+                  <motion.hr
+                    className="border-t-1 border-black w-full mt-5"
+                    initial={{ scaleX: 0 }}
+                    animate={{
+                      scaleX: projectDeliverablesUnderline,
+                    }}
+                    transition={{ duration: 1, ease: anticipate }}
+                  />
+                  <ul
+                    className="client-project-deliverables-paragraph font-custom text-2xl sm:text-3xl text-left text-black mt-5 w-full font-semibold"
+                    ref={projectDeliverablesScope}
+                  >
+                    {projectDeliverables.map((deliverable, index) => (
+                      <li key={index} className="list-none">
+                        <p>{deliverable}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </div>
+            </div>
+          </section>
+        </main>
         <nav className="client-project-navigate h-[468px] w-full bg-green-600 selection:bg-black selection:text-zinc-200 p-5">
           <ul
             className="client-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"

@@ -97,7 +97,9 @@ const AnimationProject = () => {
             <img
               src={sdCharacterSheet}
               alt="A character design sheet of my 19 year old self"
+              title="A character design sheet of my 19 year old self"
               className="animation-project-character-sheet-image w-full h-auto"
+              loading="eager"
             />
           </figure>
           <article className="personal-project-description-and-illustration-container w-full h-auto flex flex-col hd:flex-row items-start justify-center hd:py-20 selection:bg-pink-600">
@@ -133,6 +135,8 @@ const AnimationProject = () => {
                 <motion.img
                   src={animationProjectData.TurnAround.src}
                   alt={animationProjectData.TurnAround.alt}
+                  title={animationProjectData.TurnAround.title}
+                  loading="eager"
                   className="personal-project-illustrations-2-image mb-2 p-5"
                   ref={sdTurnAroundRef}
                   initial={{ opacity: 0 }}
@@ -160,6 +164,8 @@ const AnimationProject = () => {
                 <motion.img
                   src={animationProjectData.Character.src}
                   alt={animationProjectData.Character.alt}
+                  title={animationProjectData.Character.title}
+                  loading="lazy"
                   className="personal-project-illustrations-3-image mb-2 p-5"
                   ref={sdCharacterRef}
                   initial={{ opacity: 0 }}
@@ -185,6 +191,8 @@ const AnimationProject = () => {
                 <motion.img
                   src={animationProjectData.ExpressionSheet.src}
                   alt={animationProjectData.ExpressionSheet.alt}
+                  title={animationProjectData.ExpressionSheet.title}
+                  loading="lazy"
                   className="personal-project-illustrations-4-image mb-2 p-5"
                   ref={sdExpressionSheetRef}
                   initial={{ opacity: 0 }}

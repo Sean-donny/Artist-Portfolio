@@ -280,6 +280,8 @@ const Music = () => {
             <motion.img
               src={cmBanner}
               alt="An illustration playboi carti engulfed in black flames against a red backdrop"
+              title="An illustration playboi carti engulfed in black flames against a red backdrop"
+              loading="eager"
               className="personal-project-hero-image w-full h-full object-cover object-center"
               initial={{ scale: 1, opacity: 1 }}
               animate={controls}
@@ -296,6 +298,8 @@ const Music = () => {
                   <motion.img
                     src={musicData.Cover1.src}
                     alt={musicData.Cover1.alt}
+                    title={musicData.Cover1.alt}
+                    loading="eager"
                     className="mb-2"
                     ref={cmCover1Ref}
                     initial={{ opacity: 0 }}
@@ -309,7 +313,7 @@ const Music = () => {
                   />
                 </figure>
                 <div className="personal-project-cover-1-description h-2/5 w-full flex flex-col items-center justify-center">
-                  <motion.h4
+                  <motion.h2
                     className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
                     ref={cmCover1HeaderRef}
                     initial={{ opacity: 0 }}
@@ -319,7 +323,7 @@ const Music = () => {
                     }}
                   >
                     {musicData.Cover1.header}
-                  </motion.h4>
+                  </motion.h2>
                   <motion.p
                     className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
                     ref={cmCover1ParagraphRef}
@@ -340,6 +344,8 @@ const Music = () => {
                   <motion.img
                     src={musicData.Cover2.src}
                     alt={musicData.Cover2.alt}
+                    title={musicData.Cover2.alt}
+                    loading="eager"
                     className="mb-2"
                     ref={cmCover2Ref}
                     initial={{ opacity: 0 }}
@@ -353,7 +359,7 @@ const Music = () => {
                   />
                 </figure>
                 <div className="personal-project-cover-2-description h-2/5 w-full flex flex-col items-center justify-center">
-                  <motion.h4
+                  <motion.h2
                     className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
                     ref={cmCover2HeaderRef}
                     initial={{ opacity: 0 }}
@@ -363,7 +369,7 @@ const Music = () => {
                     }}
                   >
                     {musicData.Cover2.header}
-                  </motion.h4>
+                  </motion.h2>
                   <motion.p
                     className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
                     ref={cmCover2ParagraphRef}
@@ -386,6 +392,8 @@ const Music = () => {
                   <motion.img
                     src={musicData.Cover3.src}
                     alt={musicData.Cover3.alt}
+                    title={musicData.Cover3.alt}
+                    loading="eager"
                     className="mb-2"
                     ref={cmCover3Ref}
                     initial={{ opacity: 0 }}
@@ -399,7 +407,7 @@ const Music = () => {
                   />
                 </figure>
                 <div className="personal-project-cover-3-description h-2/5 w-full flex flex-col items-center justify-center">
-                  <motion.h4
+                  <motion.h2
                     className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
                     ref={cmCover3HeaderRef}
                     initial={{ opacity: 0 }}
@@ -409,7 +417,7 @@ const Music = () => {
                     }}
                   >
                     {musicData.Cover3.header}
-                  </motion.h4>
+                  </motion.h2>
                   <motion.p
                     className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
                     ref={cmCover3ParagraphRef}
@@ -430,6 +438,8 @@ const Music = () => {
                   <motion.img
                     src={musicData.Cover3Tracklist.src}
                     alt={musicData.Cover3Tracklist.alt}
+                    title={musicData.Cover3Tracklist.title}
+                    loading="eager"
                     className="mb-2"
                     ref={cmCover3TracklistRef}
                     initial={{ opacity: 0 }}
@@ -443,7 +453,7 @@ const Music = () => {
                   />
                 </figure>
                 <div className="personal-project-tracklist-description h-2/5 w-full flex flex-col items-center justify-center">
-                  <motion.h4
+                  <motion.h2
                     className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
                     ref={cmCover3TracklistHeaderRef}
                     initial={{ opacity: 0 }}
@@ -453,7 +463,7 @@ const Music = () => {
                     }}
                   >
                     {musicData.Cover3Tracklist.header}
-                  </motion.h4>
+                  </motion.h2>
                   <motion.p
                     className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
                     ref={cmCover3TracklistParagraphRef}

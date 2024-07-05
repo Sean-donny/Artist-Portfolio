@@ -48,7 +48,7 @@ const About = () => {
     >
       <SEO
         title="About"
-        description="A biography of the contemporary artist Sean Donny"
+        description="A biography of the contemporary artist Sean Donny based in England, UK."
         type="article"
         url="https://seandonny.com/about"
         image={headShot}
@@ -61,6 +61,7 @@ const About = () => {
               className="about-sean-donny-image h-auto w-[475px] min-w-[100px]"
               alt="Head shot of artist Sean Donny against an orange background"
               title="Sean Donny head shot"
+              loading="eager"
             />
           </figure>
           <div className="about-sean-donny-description-container hd:w-3/5 hd:px-10">
@@ -98,6 +99,7 @@ const About = () => {
           className="about-sean-donny-name-tag h-auto w-[100px]"
           alt="Sean Donny name tag"
           title="Sean Donny name tag"
+          loading="eager"
         />
       </motion.div>
     </div>

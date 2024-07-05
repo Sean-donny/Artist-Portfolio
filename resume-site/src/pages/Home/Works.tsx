@@ -51,17 +51,19 @@ const Works = () => {
               handleNavigate('gallery');
             }}
           >
-            <div className="works-gallery-image-container h-auto lg:h-works xl:h-auto overflow-hidden flex items-center justify-center">
+            <figure className="works-gallery-image-container h-auto lg:h-works xl:h-auto overflow-hidden flex items-center justify-center">
               <img
                 src={RulesTheWorld}
                 alt="RulesTheWorld"
                 className="works-gallery-image object-cover object-center h-full w-auto cursor-pointer"
+                title="RulesTheWorld"
+                loading="lazy"
               />
-            </div>
+            </figure>
             <div className="works-gallery-title py-1 xl:text-center">
-              <h6 className="font-custom text-base font-semibold tracking-tight text-aquatic">
+              <h2 className="font-custom text-base font-semibold tracking-tight text-aquatic">
                 Gallery
-              </h6>
+              </h2>
             </div>
           </div>
           <div
@@ -76,17 +78,19 @@ const Works = () => {
               handleNavigate('personal-projects');
             }}
           >
-            <div className="works-personal-projects-image-container h-auto lg:h-works xl:h-auto overflow-hidden flex items-center justify-center">
+            <figure className="works-personal-projects-image-container h-auto lg:h-works xl:h-auto overflow-hidden flex items-center justify-center">
               <img
                 src={SubaruBoy}
                 alt="Subaru Boy"
                 className="works-personal-projects-image object-cover object-center h-full w-auto cursor-pointer"
+                title="Subaru Boy"
+                loading="lazy"
               />
-            </div>
+            </figure>
             <div className="works-personal-projects-title py-1 xl:text-center">
-              <h6 className="font-custom text-base font-semibold tracking-tight text-aquatic">
+              <h2 className="font-custom text-base font-semibold tracking-tight text-aquatic">
                 Personal Projects
-              </h6>
+              </h2>
             </div>
           </div>
         </div>
@@ -103,17 +107,19 @@ const Works = () => {
               handleNavigate('client-projects');
             }}
           >
-            <div className="works-client-projects-image-container h-auto lg:h-works xl:h-works2 overflow-hidden flex items-center justify-center">
+            <figure className="works-client-projects-image-container h-auto lg:h-works xl:h-works2 overflow-hidden flex items-center justify-center">
               <img
                 src={MenaceTalk}
                 alt="Menace Talk"
                 className="works-client-projects-image object-cover object-center w-full h-auto cursor-pointer"
+                title="Menace Talk"
+                loading="lazy"
               />
-            </div>
+            </figure>
             <div className="works-client-projects-title py-1 xl:text-center">
-              <h6 className="font-custom text-base font-semibold tracking-tight text-aquatic">
+              <h2 className="font-custom text-base font-semibold tracking-tight text-aquatic">
                 Client Projects
-              </h6>
+              </h2>
             </div>
           </div>
           <div
@@ -128,17 +134,19 @@ const Works = () => {
               handleNavigate('about');
             }}
           >
-            <div className="works-about-image-container h-auto lg:h-works xl:h-works2 overflow-hidden flex items-center justify-center">
+            <figure className="works-about-image-container h-auto lg:h-works xl:h-works2 overflow-hidden flex items-center justify-center">
               <img
                 src={SeanDonny}
                 alt="Sean Donny animated photo"
                 className="works-about-image object-cover object-center h-full w-auto cursor-pointer"
+                title="Sean Donny animated photo"
+                loading="lazy"
               />
-            </div>
+            </figure>
             <div className="works-about-title py-1 xl:text-center">
-              <h6 className="font-custom text-base font-semibold tracking-tight text-aquatic">
+              <h2 className="font-custom text-base font-semibold tracking-tight text-aquatic">
                 About
-              </h6>
+              </h2>
             </div>
           </div>
         </div>

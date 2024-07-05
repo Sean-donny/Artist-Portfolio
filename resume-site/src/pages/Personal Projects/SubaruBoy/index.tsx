@@ -245,6 +245,8 @@ const SubaruBoy = () => {
             <motion.img
               src={sbBanner}
               alt="A tight close up of Smada performing"
+              title="A tight close up of Smada performing"
+              loading="eager"
               className="personal-project-hero-image w-full h-full object-cover object-center"
               initial={{ scale: 1, opacity: 1 }}
               animate={controls}
@@ -256,7 +258,7 @@ const SubaruBoy = () => {
           </div>
           <article className="personal-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-orange-600 selection:text-zinc-200">
             <div className="personal-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
-              <motion.h2
+              <motion.h1
                 ref={heroHeaderRef}
                 className="personal-project-design-goal-description-header text-zinc-200 font-custom font-semibold italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mb-5"
                 initial={{ opacity: 0 }}
@@ -267,7 +269,7 @@ const SubaruBoy = () => {
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
                 I swear it's not an obsession, I just really like his music
-              </motion.h2>
+              </motion.h1>
               <motion.p
                 className="personal-project-design-goal-description-paragraph-1 text-zinc-400 font-custom font-medium italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
                 ref={heroP1Ref}
@@ -313,6 +315,9 @@ const SubaruBoy = () => {
               <motion.img
                 className="personal-project-design-goal-image"
                 src={sb3DModel}
+                alt="Cruel Santino 3D model"
+                title="Cruel Santino 3D model"
+                loading="eager"
                 ref={heroRef}
                 initial={{ opacity: 0 }}
                 animate={{
@@ -329,6 +334,8 @@ const SubaruBoy = () => {
                 <motion.img
                   src={subaruData.Illustration1.src}
                   alt={subaruData.Illustration1.alt}
+                  title={subaruData.Illustration1.alt}
+                  loading="lazy"
                   className="personal-project-illustrations-1-image mb-2 p-5"
                   ref={sbIllustration1Ref}
                   initial={{ opacity: 0 }}
@@ -354,6 +361,8 @@ const SubaruBoy = () => {
                 <motion.img
                   src={subaruData.Illustration2.src}
                   alt={subaruData.Illustration2.alt}
+                  title={subaruData.Illustration2.alt}
+                  loading="lazy"
                   className="personal-project-illustrations-2-image mb-2 p-5"
                   ref={sbIllustration2Ref}
                   initial={{ opacity: 0 }}
@@ -381,6 +390,8 @@ const SubaruBoy = () => {
                 <motion.img
                   src={subaruData.Illustration3.src}
                   alt={subaruData.Illustration3.alt}
+                  title={subaruData.Illustration3.alt}
+                  loading="lazy"
                   className="personal-project-subaru-boy-illustrations-3-image mb-2 p-5 h-auto w-[700px]"
                   ref={sbIllustration3Ref}
                   initial={{ opacity: 0 }}
@@ -406,6 +417,8 @@ const SubaruBoy = () => {
                 <motion.img
                   src={subaruData.Illustration4.src}
                   alt={subaruData.Illustration4.alt}
+                  title={subaruData.Illustration4.title}
+                  loading="lazy"
                   className="personal-project-subaru-boy-illustrations-4-image mb-2 p-5"
                   ref={sbIllustration4Ref}
                   initial={{ opacity: 0 }}

@@ -316,6 +316,8 @@ const Family = () => {
             <motion.img
               src={fmBanner}
               alt="A tight close up of Smada performing"
+              title="Smada performing"
+              loading="eager"
               className="client-project-hero-image w-full h-full object-cover object-center"
               initial={{ scale: 1, opacity: 1 }}
               animate={controls}
@@ -327,7 +329,7 @@ const Family = () => {
           </div>
           <article className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-lime-300 selection:text-black">
             <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
-              <motion.h2
+              <motion.h1
                 ref={heroHeaderRef}
                 className="client-project-design-goal-description-header text-zinc-200 font-custom font-semibold italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mb-5"
                 initial={{ opacity: 0 }}
@@ -338,7 +340,7 @@ const Family = () => {
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
                 Smada hit me on Instagram: "We should do something"
-              </motion.h2>
+              </motion.h1>
               <motion.p
                 className="client-project-design-goal-description-paragraph-1 text-zinc-400 font-custom font-medium italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
                 ref={heroP1Ref}
@@ -392,6 +394,9 @@ const Family = () => {
               <motion.img
                 className="client-project-design-goal-image"
                 src={fmSketch}
+                alt="A sketch of the Family cover"
+                title="A sketch of the Family cover"
+                loading="eager"
                 ref={heroRef}
                 initial={{ opacity: 0 }}
                 animate={{
@@ -409,6 +414,8 @@ const Family = () => {
                   <motion.img
                     src={familyData.FamilyCoverSketch.src}
                     alt={familyData.FamilyCoverSketch.alt}
+                    title={familyData.FamilyCoverSketch.alt}
+                    loading="lazy"
                     className="mb-2"
                     ref={fmCoverSketchRef}
                     initial={{ opacity: 0 }}
@@ -422,7 +429,7 @@ const Family = () => {
                   />
                 </figure>
                 <div className="client-project-single-sketch-description h-2/5 w-full flex flex-col items-center justify-center">
-                  <motion.h4
+                  <motion.h2
                     className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
                     ref={fmCoverSketchHeaderRef}
                     initial={{ opacity: 0 }}
@@ -432,7 +439,7 @@ const Family = () => {
                     }}
                   >
                     {familyData.FamilyCoverSketch.header}
-                  </motion.h4>
+                  </motion.h2>
                   <motion.p
                     className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
                     ref={fmCoverSketchParagraphRef}
@@ -453,6 +460,8 @@ const Family = () => {
                   <motion.img
                     src={familyData.FamilySingleCover.src}
                     alt={familyData.FamilySingleCover.alt}
+                    title={familyData.FamilySingleCover.alt}
+                    loading="lazy"
                     className="mb-2"
                     ref={fmSingleCoverRef}
                     initial={{ opacity: 0 }}
@@ -466,7 +475,7 @@ const Family = () => {
                   />
                 </figure>
                 <div className="client-project-final-single-cover-description h-2/5 w-full flex flex-col items-center justify-center">
-                  <motion.h4
+                  <motion.h2
                     className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
                     ref={fmSingleCoverHeaderRef}
                     initial={{ opacity: 0 }}
@@ -476,7 +485,7 @@ const Family = () => {
                     }}
                   >
                     {familyData.FamilySingleCover.header}
-                  </motion.h4>
+                  </motion.h2>
                   <motion.p
                     className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
                     ref={fmSingleCoverParagraphRef}
@@ -503,10 +512,12 @@ const Family = () => {
                 style={embedStyle}
               ></iframe>
             </div>
-            <div className="client-project-streaming-metrics-container h-auto w-full hd:w-1/2 p-5 flex flex-col items-center justify-center">
+            <figure className="client-project-streaming-metrics-container h-auto w-full hd:w-1/2 p-5 flex flex-col items-center justify-center">
               <motion.img
                 src={familyData.FamilySingleMetrics.src}
                 alt={familyData.FamilySingleMetrics.alt}
+                title={familyData.FamilySingleMetrics.title}
+                loading="lazy"
                 className="client-project-streaming-metrics-image mb-2 p-5"
                 ref={fmFamilySingleMetricsRef}
                 initial={{ opacity: 0 }}
@@ -518,12 +529,12 @@ const Family = () => {
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.9 }}
               />
-            </div>
+            </figure>
           </section>
           <section className="client-project-deliverables-container h-auto w-full bg-lime-400 selection:bg-black selection:text-zinc-200 p-5">
             <div className="client-project-deliverables flex flex-col items-start justify-center">
               <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
-                <motion.h4
+                <motion.h2
                   className="client-project-deliverables-header font-custom text-4xl sm:text-5xl text-left text-black w-full font-semibold"
                   ref={projectDeliverablesHeaderRef}
                   initial={{ opacity: 0 }}
@@ -533,7 +544,7 @@ const Family = () => {
                   }}
                 >
                   Project Deliverables
-                </motion.h4>
+                </motion.h2>
                 <motion.div
                   className="w-full h-full"
                   ref={projectDeliverablesItemsRef}

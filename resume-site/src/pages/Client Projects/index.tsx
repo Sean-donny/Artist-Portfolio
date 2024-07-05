@@ -44,6 +44,7 @@ const ClientProjects = () => {
               src={data.src}
               alt={data.alt}
               title={data.title}
+              loading="eager"
               className="client-projects-image pointer-events-none"
             />
             <motion.div className="client-projects-content-images-description w-full h-auto">
@@ -75,13 +76,13 @@ const ClientProjects = () => {
           className="client-projects-title w-full h-24 hd:h-1/4 flex items-center justify-center"
           ref={titleRef}
         >
-          <motion.h2
+          <motion.h1
             className="font-custom font-semibold tracking-tight text-zinc-200 text-sm md:text-2xl lg:text-3xl hd:text-massive1 lg:leading-massive1 text-center"
             animate={{ scale: titleInView ? 2 : 0.5 }}
             transition={{ delay: 0.2, ease: 'anticipate' }}
           >
             {componentTitle}
-          </motion.h2>
+          </motion.h1>
         </div>
         <motion.div className="client-projects-content w-full h-auto flex flex-col p-2 hd:h-3/4">
           <Projects clientProjectsData={clientProjectsData} />

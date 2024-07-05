@@ -70,13 +70,15 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
           // animate="animate"
         >
           {images.map((image, index) => (
-            <div className="min-h-slide2 min-w-slide2 px-2" key={image}>
+            <figure className="min-h-slide2 min-w-slide2 px-2" key={image}>
               <img
                 src={image}
                 alt={titles[index]}
                 className="pointer-events-none"
+                title={titles[index]}
+                loading="eager"
               />
-            </div>
+            </figure>
           ))}
           {[...Array(repeatCount)].map((_, repeatIndex) =>
             images.map((image, index) => (
@@ -88,6 +90,8 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
                   src={image}
                   alt={titles[index]}
                   className="pointer-events-none"
+                  title={titles[index]}
+                  loading="eager"
                 />
               </div>
             )),

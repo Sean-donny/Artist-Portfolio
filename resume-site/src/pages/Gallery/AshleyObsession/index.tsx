@@ -99,6 +99,7 @@ const AshelyObsession = ({ onOpen }: Props) => {
               <img
                 src={imageData.illustration1.src}
                 alt={imageData.illustration1.alt}
+                loading="eager"
                 title={imageData.illustration1.title}
                 className="ashley-obsession-image-1 pointer-events-none"
                 style={{
@@ -126,6 +127,7 @@ const AshelyObsession = ({ onOpen }: Props) => {
               <img
                 src={imageData.illustration2.src}
                 alt={imageData.illustration2.alt}
+                loading="eager"
                 title={imageData.illustration2.title}
                 className="ashley-obsession-image-2 pointer-events-none"
                 style={{
@@ -156,6 +158,7 @@ const AshelyObsession = ({ onOpen }: Props) => {
               <img
                 src={imageData.illustration3.src}
                 alt={imageData.illustration3.alt}
+                loading="eager"
                 title={imageData.illustration3.title}
                 className="ashley-obsession-image-3 pointer-events-none"
                 style={{

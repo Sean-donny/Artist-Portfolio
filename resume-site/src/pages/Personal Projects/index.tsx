@@ -44,6 +44,7 @@ const PersonalProjects = () => {
               src={data.src}
               alt={data.alt}
               title={data.title}
+              loading="eager"
               className="personal-projects-image pointer-events-none"
             />
             <motion.div className="personal-projects-content-images-description w-full h-auto">

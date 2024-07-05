@@ -258,7 +258,7 @@ const Music = () => {
   return (
     <div className="personal-project-container bg-black w-full h-auto">
       <SEO
-        title="Music | Personal Projects | Sean Donny"
+        title="Music | Personal Projects"
         description="Explore a Playboi Carti album concept project by contemporary artist Sean Donny, showcasing his creative direction skills."
         type="article"
         url="https://seandonny.com/personal-projects/music"

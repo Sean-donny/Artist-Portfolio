@@ -135,7 +135,7 @@ const Mowalola = () => {
   return (
     <div className="mowalola-container bg-black flex flex-col items-center justify-center overflow-hidden">
       <SEO
-        title="Mowalola | Personal Projects | Sean Donny"
+        title="Mowalola | Personal Projects"
         description="Explore a 3D logo project by contemporary artist Sean Donny, showcasing his 3D modelling and design skills."
         type="article"
         url="https://seandonny.com/personal-projects/mowalola"

@@ -294,7 +294,7 @@ const Family = () => {
   return (
     <div className="client-project-container bg-black w-full h-auto">
       <SEO
-        title="Family | Client Projects | Sean Donny"
+        title="Family | Client Projects"
         description="Explore a client project for Smada by contemporary artist Sean Donny, showcasing his creative direction expertise."
         type="article"
         url="https://seandonny.com/client-projects/family"

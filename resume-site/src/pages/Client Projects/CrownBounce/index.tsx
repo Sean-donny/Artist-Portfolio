@@ -331,7 +331,7 @@ const CrownBounce = () => {
   return (
     <div className="client-project-container bg-black w-full h-auto">
       <SEO
-        title="Crown Bounce | Client Projects | Sean Donny"
+        title="Crown Bounce | Client Projects"
         description="Explore a client project for Odunsi (The Engine) by contemporary artist Sean Donny, showcasing his creative direction expertise."
         type="article"
         url="https://seandonny.com/client-projects/crown-bounce"

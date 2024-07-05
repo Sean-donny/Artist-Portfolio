@@ -47,7 +47,7 @@ const About = () => {
       style={{ cursor: 'none' }}
     >
       <SEO
-        title="About | Sean Donny"
+        title="About"
         description="A biography of the contemporary artist Sean Donny"
         type="article"
         url="https://seandonny.com/about"
@@ -59,6 +59,8 @@ const About = () => {
             <img
               src={headShot}
               className="about-sean-donny-image h-auto w-[475px] min-w-[100px]"
+              alt="Head shot of artist Sean Donny against an orange background"
+              title="Sean Donny head shot"
             />
           </figure>
           <div className="about-sean-donny-description-container hd:w-3/5 hd:px-10">
@@ -94,6 +96,8 @@ const About = () => {
           src={nameTag}
           // width is set to imageXRadius * 2
           className="about-sean-donny-name-tag h-auto w-[100px]"
+          alt="Sean Donny name tag"
+          title="Sean Donny name tag"
         />
       </motion.div>
     </div>

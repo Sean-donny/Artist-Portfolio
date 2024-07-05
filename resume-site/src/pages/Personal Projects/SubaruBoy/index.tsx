@@ -226,7 +226,7 @@ const SubaruBoy = () => {
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
       )}
       <SEO
-        title="Subaru Boy | Personal Projects | Sean Donny"
+        title="Subaru Boy | Personal Projects"
         description="Explore a collection of Cruel Santino inspired works by contemporary artist Sean Donny, showcasing his character design skills."
         type="article"
         url="https://seandonny.com/personal-projects/subaru-boy"

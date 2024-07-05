@@ -82,7 +82,7 @@ const AnimationProject = () => {
   return (
     <div className="personal-project-container bg-black flex flex-col items-center justify-center overflow-hidden min-h-screen">
       <SEO
-        title="Animation Project | Personal Projects | Sean Donny"
+        title="Animation Project | Personal Projects"
         description="Explore a charatcer design and animation project by contemporary artist Sean Donny, showcasing his animation development skills."
         type="article"
         url="https://seandonny.com/personal-projects/animation-project"

@@ -376,7 +376,7 @@ const CrownBounce = () => {
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                Odunsi hit me on IG "Let's do one together"
+                Odunsi hit me on IG: "Let's do one together"
               </motion.h1>
               <motion.p
                 className="client-project-design-goal-description-paragraph-1 text-zinc-400 font-custom font-medium italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"

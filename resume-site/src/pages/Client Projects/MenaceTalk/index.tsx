@@ -452,7 +452,7 @@ const MenaceTalk = () => {
                 className="client-project-design-goal-image"
                 src={hoodedTrill}
                 alt="Trill Tega squating wearing a hoodie"
-                title="Trill Tega squating wearing a hoodie"
+                title="Trill Tega"
                 loading="eager"
                 ref={hoodedTrillRef}
                 initial={{ opacity: 0 }}
@@ -471,7 +471,7 @@ const MenaceTalk = () => {
                   <motion.img
                     src={splitProjectDetailData.Draft1.src}
                     alt={splitProjectDetailData.Draft1.alt}
-                    title={splitProjectDetailData.Draft1.alt}
+                    title={splitProjectDetailData.Draft1.title}
                     loading="lazy"
                     className="mb-2"
                     ref={trillAlbumDraft1Ref}
@@ -517,7 +517,7 @@ const MenaceTalk = () => {
                   <motion.img
                     src={splitProjectDetailData.Draft2.src}
                     alt={splitProjectDetailData.Draft2.alt}
-                    title={splitProjectDetailData.Draft2.alt}
+                    title={splitProjectDetailData.Draft2.title}
                     loading="lazy"
                     className="mb-2"
                     ref={trillSingleDraft1Ref}
@@ -574,7 +574,7 @@ const MenaceTalk = () => {
                     className="client-project-scrapped-single-cover-image w-[648px] h-auto mb-2"
                     src={splitProjectDetailData.ScrappedCover.src}
                     alt={splitProjectDetailData.ScrappedCover.alt}
-                    title={splitProjectDetailData.ScrappedCover.alt}
+                    title={splitProjectDetailData.ScrappedCover.title}
                     loading="lazy"
                     ref={trillScrappedDraftRef}
                     initial={{ opacity: 0 }}
@@ -616,7 +616,7 @@ const MenaceTalk = () => {
                   <motion.img
                     src={splitProjectDetailData.AlbumCover.src}
                     alt={splitProjectDetailData.AlbumCover.alt}
-                    title={splitProjectDetailData.AlbumCover.alt}
+                    title={splitProjectDetailData.AlbumCover.title}
                     loading="lazy"
                     className="mb-2"
                     ref={trillFinalAlbumCoverRef}

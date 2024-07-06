@@ -449,7 +449,7 @@ const YeAnthem = () => {
             <motion.img
               src={yaBanner}
               alt="A sketch of Smada mesmerized by a gorgeous lady"
-              title="A sketch of Smada mesmerized by a gorgeous lady"
+              title="Ye Anthem Scene Sketch"
               loading="eager"
               className="client-project-hero-image w-full h-full object-cover object-center"
               initial={{ scale: 1, opacity: 1 }}
@@ -538,7 +538,7 @@ const YeAnthem = () => {
                 className="client-project-design-goal-image"
                 src={yaAddedEmotionSketch}
                 alt="A sketch of Smada reaching his palms out"
-                title="A sketch of Smada reaching his palms out"
+                title="Ye Anthem Cover Sketch"
                 loading="eager"
                 ref={heroRef}
                 initial={{ opacity: 0 }}
@@ -664,7 +664,7 @@ const YeAnthem = () => {
                   <motion.img
                     src={yeAnthemData.RoughSketch.src}
                     alt={yeAnthemData.RoughSketch.alt}
-                    title={yeAnthemData.RoughSketch.alt}
+                    title={yeAnthemData.RoughSketch.title}
                     loading="lazy"
                     className="mb-2"
                     ref={yaRoughSketchRef}
@@ -710,7 +710,7 @@ const YeAnthem = () => {
                   <motion.img
                     src={yeAnthemData.ColouredRoughSketch.src}
                     alt={yeAnthemData.ColouredRoughSketch.alt}
-                    title={yeAnthemData.ColouredRoughSketch.alt}
+                    title={yeAnthemData.ColouredRoughSketch.title}
                     loading="lazy"
                     className="mb-2"
                     ref={yaColouredRoughSketchRef}
@@ -758,7 +758,7 @@ const YeAnthem = () => {
                   <motion.img
                     src={yeAnthemData.RefinedSketch.src}
                     alt={yeAnthemData.RefinedSketch.alt}
-                    title={yeAnthemData.RefinedSketch.alt}
+                    title={yeAnthemData.RefinedSketch.title}
                     loading="lazy"
                     className="mb-2"
                     ref={yaRefinedSketchRef}
@@ -804,7 +804,7 @@ const YeAnthem = () => {
                   <motion.img
                     src={yeAnthemData.BackgroundPainting.src}
                     alt={yeAnthemData.BackgroundPainting.alt}
-                    title={yeAnthemData.BackgroundPainting.alt}
+                    title={yeAnthemData.BackgroundPainting.title}
                     loading="lazy"
                     className="mb-2"
                     ref={yaBackgroundPaintingRef}
@@ -852,7 +852,7 @@ const YeAnthem = () => {
                   <motion.img
                     src={yeAnthemData.SingleCover.src}
                     alt={yeAnthemData.SingleCover.alt}
-                    title={yeAnthemData.SingleCover.alt}
+                    title={yeAnthemData.SingleCover.title}
                     loading="lazy"
                     className="mb-2"
                     ref={yaSingleCoverRef}
@@ -900,7 +900,7 @@ const YeAnthem = () => {
                   <motion.img
                     src={yeAnthemData.YkRemix.src}
                     alt={yeAnthemData.YkRemix.alt}
-                    title={yeAnthemData.YkRemix.alt}
+                    title={yeAnthemData.YkRemix.title}
                     loading="lazy"
                     className="mb-2"
                     ref={yaYkRemixRef}

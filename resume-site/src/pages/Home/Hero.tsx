@@ -40,7 +40,7 @@ const Hero = () => {
             <img
               src={SeanPortrait}
               alt="Sean Donny"
-              title="Sean Donny head shot"
+              title="Sean Donny - Click to change my background colour ;)"
               loading="eager"
               className="hero-image object-cover object-center h-full w-auto my-auto cursor-pointer pt-5 md:pt-0"
               onClick={bgShuffle}

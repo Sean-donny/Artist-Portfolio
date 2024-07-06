@@ -352,8 +352,8 @@ const CrownBounce = () => {
           >
             <motion.img
               src={cbHeroBanner}
-              alt="Chrome skull floating in a dark void"
-              title="Chrome skull floating in a dark void"
+              alt="Odunsi and friends dancing"
+              title="Crown Bounce Dance Scene"
               loading="eager"
               className="client-project-hero-image w-full h-full object-cover object-center"
               initial={{ scale: 1, opacity: 1 }}

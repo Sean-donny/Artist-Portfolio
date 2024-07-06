@@ -97,7 +97,7 @@ const AnimationProject = () => {
             <img
               src={sdCharacterSheet}
               alt="A character design sheet of my 19 year old self"
-              title="A character design sheet of my 19 year old self"
+              title="Character Design Sheet"
               className="animation-project-character-sheet-image w-full h-auto"
               loading="eager"
             />

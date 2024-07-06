@@ -387,7 +387,7 @@ const MikesWrld = () => {
             <motion.img
               src={mkWrldBanner2}
               alt="Mike holding the earth"
-              title="Mike's World Banner"
+              title="Mike's World"
               loading="eager"
               className="client-project-hero-image w-full h-full object-cover object-center"
               initial={{ scale: 1, opacity: 1 }}
@@ -496,7 +496,7 @@ const MikesWrld = () => {
                 className="client-project-design-goal-image"
                 src={mkWrldData.SketchedCover.src}
                 alt="Sketch of Mike's World Tape Cover"
-                title="Sketch of Mike's World Tape Cover"
+                title="Mike's World Tape Cover Sketch"
                 loading="eager"
                 ref={mikeSketchRef}
                 initial={{ opacity: 0 }}
@@ -548,7 +548,7 @@ const MikesWrld = () => {
                 <img
                   src={mkReference1}
                   alt="MHA reference image"
-                  title="MHA reference image"
+                  title="MHA Reference"
                   loading="lazy"
                   className="client-project-reference-image-1"
                   style={{ zIndex: 1, border: 'solid black 1px' }}
@@ -558,7 +558,7 @@ const MikesWrld = () => {
                 <img
                   src={mkReference2}
                   alt="Holding Earth reference image"
-                  title="Holding Earth reference image"
+                  title="Holding Earth Reference"
                   loading="lazy"
                   className="client-project-referencei-image-2"
                   style={{ zIndex: 3, border: 'solid black 1px' }}
@@ -574,7 +574,7 @@ const MikesWrld = () => {
                 <img
                   src={mkReference3}
                   alt="Mike reference image"
-                  title="Mike reference image"
+                  title="Mike Reference"
                   loading="lazy"
                   className="client-project-reference-image-3"
                   style={{ zIndex: 2, border: 'solid black 1px' }}
@@ -629,7 +629,7 @@ const MikesWrld = () => {
                   <motion.img
                     src={mkWrldData.AlbumCover.src}
                     alt={mkWrldData.AlbumCover.alt}
-                    title={mkWrldData.AlbumCover.alt}
+                    title={mkWrldData.AlbumCover.title}
                     loading="lazy"
                     className="mb-2"
                     ref={mikeFinalAlbumCoverRef}

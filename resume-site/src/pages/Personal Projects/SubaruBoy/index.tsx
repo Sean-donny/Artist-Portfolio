@@ -334,7 +334,7 @@ const SubaruBoy = () => {
                 <motion.img
                   src={subaruData.Illustration1.src}
                   alt={subaruData.Illustration1.alt}
-                  title={subaruData.Illustration1.alt}
+                  title={subaruData.Illustration1.title}
                   loading="lazy"
                   className="personal-project-illustrations-1-image mb-2 p-5"
                   ref={sbIllustration1Ref}
@@ -361,7 +361,7 @@ const SubaruBoy = () => {
                 <motion.img
                   src={subaruData.Illustration2.src}
                   alt={subaruData.Illustration2.alt}
-                  title={subaruData.Illustration2.alt}
+                  title={subaruData.Illustration2.title}
                   loading="lazy"
                   className="personal-project-illustrations-2-image mb-2 p-5"
                   ref={sbIllustration2Ref}
@@ -390,7 +390,7 @@ const SubaruBoy = () => {
                 <motion.img
                   src={subaruData.Illustration3.src}
                   alt={subaruData.Illustration3.alt}
-                  title={subaruData.Illustration3.alt}
+                  title={subaruData.Illustration3.title}
                   loading="lazy"
                   className="personal-project-subaru-boy-illustrations-3-image mb-2 p-5 h-auto w-[700px]"
                   ref={sbIllustration3Ref}

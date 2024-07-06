@@ -316,7 +316,7 @@ const Family = () => {
             <motion.img
               src={fmBanner}
               alt="A tight close up of Smada performing"
-              title="Smada performing"
+              title="Smada Performing"
               loading="eager"
               className="client-project-hero-image w-full h-full object-cover object-center"
               initial={{ scale: 1, opacity: 1 }}
@@ -394,8 +394,8 @@ const Family = () => {
               <motion.img
                 className="client-project-design-goal-image"
                 src={fmSketch}
-                alt="A sketch of the Family cover"
-                title="A sketch of the Family cover"
+                alt="A cover sketch of the Smada's single Family"
+                title="Family Cover Sketch"
                 loading="eager"
                 ref={heroRef}
                 initial={{ opacity: 0 }}
@@ -414,7 +414,7 @@ const Family = () => {
                   <motion.img
                     src={familyData.FamilyCoverSketch.src}
                     alt={familyData.FamilyCoverSketch.alt}
-                    title={familyData.FamilyCoverSketch.alt}
+                    title={familyData.FamilyCoverSketch.title}
                     loading="lazy"
                     className="mb-2"
                     ref={fmCoverSketchRef}
@@ -460,7 +460,7 @@ const Family = () => {
                   <motion.img
                     src={familyData.FamilySingleCover.src}
                     alt={familyData.FamilySingleCover.alt}
-                    title={familyData.FamilySingleCover.alt}
+                    title={familyData.FamilySingleCover.title}
                     loading="lazy"
                     className="mb-2"
                     ref={fmSingleCoverRef}

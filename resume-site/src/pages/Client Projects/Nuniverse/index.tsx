@@ -353,7 +353,7 @@ const Nuniverse = () => {
             <motion.img
               src={nuBanner}
               alt="A wide shot of Smada's NüNiverse"
-              title="A wide shot of Smada's NüNiverse"
+              title="Smada's NüNiverse"
               loading="eager"
               className="client-project-hero-image w-full h-full object-cover object-center"
               initial={{ scale: 1, opacity: 1 }}
@@ -431,7 +431,7 @@ const Nuniverse = () => {
                 className="client-project-design-goal-image"
                 src={nuDraft}
                 alt="A draft version of the NüNiverse tape"
-                title="A draft version of the NüNiverse tape"
+                title="NüNiverse Draft Cover"
                 loading="eager"
                 ref={heroRef}
                 initial={{ opacity: 0 }}
@@ -482,8 +482,8 @@ const Nuniverse = () => {
               >
                 <img
                   src={nuReference1}
-                  alt="MHA reference image"
-                  title="MHA reference image"
+                  alt="Ascension of Christ reference painting by Jan Matejko"
+                  title="Ascension of Christ Reference"
                   loading="lazy"
                   className="client-project-reference-image-1"
                   style={{ zIndex: 1, border: 'solid black 1px' }}
@@ -492,8 +492,8 @@ const Nuniverse = () => {
               <motion.figure className="client-project-reference-image-container-2 h-auto w-1/3 flex flex-col items-center justify-center">
                 <img
                   src={nuReference2}
-                  alt="Holding Earth reference image"
-                  title="Holding Earth reference image"
+                  alt="Superman breaking out of glowing green chains against a bright background illustrated by Alex Ross"
+                  title="Superman by Alex Ross"
                   loading="lazy"
                   className="client-project-referencei-image-2"
                   style={{ zIndex: 3, border: 'solid black 1px' }}
@@ -508,8 +508,8 @@ const Nuniverse = () => {
               >
                 <img
                   src={nuReference3}
-                  alt="Mike reference image"
-                  title="Mike reference image"
+                  alt="The Incredible Hulk breaking out of chains against a bright background illustrated by Alex Ross"
+                  title="The Incredible Hulk by Alex Ross"
                   loading="lazy"
                   className="client-project-reference-image-3"
                   style={{ zIndex: 2, border: 'solid black 1px' }}
@@ -570,7 +570,7 @@ const Nuniverse = () => {
                   <motion.img
                     src={nuniverseData.EpCover.src}
                     alt={nuniverseData.EpCover.alt}
-                    title={nuniverseData.EpCover.alt}
+                    title={nuniverseData.EpCover.title}
                     loading="lazy"
                     className="mb-2"
                     ref={nuniverseFinalEpCoverRef}

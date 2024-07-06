@@ -310,7 +310,7 @@ const Popwave = () => {
             <motion.img
               src={pwBanner}
               alt="An illustration man pointing a gun at another man"
-              title="Popwave banner image"
+              title="Popwave Illustration"
               loading="eager"
               className="client-project-hero-image w-full h-full object-cover object-center"
               initial={{ scale: 1, opacity: 1 }}
@@ -397,7 +397,7 @@ const Popwave = () => {
                 className="client-project-design-goal-image"
                 src={pwCharacter}
                 alt="Popwave character holding gun"
-                title="Popwave character"
+                title="Popwave Character"
                 loading="eager"
                 ref={heroRef}
                 initial={{ opacity: 0 }}
@@ -415,7 +415,7 @@ const Popwave = () => {
                 className="client-project-draft-selection-image"
                 src={popwaveData.SketchShortlistCover.src}
                 alt="Popwave illustration drafts sheet"
-                title="Popwave illustration drafts sheet"
+                title="Popwave Illustration Drafts Sheet"
                 loading="lazy"
                 ref={pwDraftSelectionRef}
                 initial={{ opacity: 0 }}
@@ -463,7 +463,7 @@ const Popwave = () => {
                   <motion.img
                     src={popwaveData.SketchedComicPanel.src}
                     alt={popwaveData.SketchedComicPanel.alt}
-                    title={popwaveData.SketchedComicPanel.alt}
+                    title={popwaveData.SketchedComicPanel.title}
                     loading="lazy"
                     className="mb-2"
                     ref={pwSketchedComicPanelRef}
@@ -556,7 +556,7 @@ const Popwave = () => {
                 className="client-project-tshirt-live"
                 src={pwTshirtLive}
                 alt="Popwave Star logo T-shirt on a model"
-                title="Popwave Star logo T-shirt on a model"
+                title="Popwave Star Logo Printed"
                 loading="lazy"
               />
             </figure>
@@ -565,7 +565,7 @@ const Popwave = () => {
                 className="client-project-tshirt-mockup"
                 src={pwTshirtMockup}
                 alt="Popwave Star logo T-shirt mockup"
-                title="Popwave Star logo T-shirt mockup"
+                title="Popwave Star Logo T-shirt Mockup"
                 loading="lazy"
               />
             </figure>
@@ -576,7 +576,7 @@ const Popwave = () => {
                 className="client-project-logo-1"
                 src={pwStar1}
                 alt="Popwave Star logo: Black"
-                title="Popwave Star logo: Black"
+                title="Popwave Star Logo: Black"
                 loading="lazy"
               />
             </figure>
@@ -585,7 +585,7 @@ const Popwave = () => {
                 className="client-project-logo-2"
                 src={pwStar2}
                 alt="Popwave Star logo: Black and Yellow"
-                title="Popwave Star logo: Black and Yellow"
+                title="Popwave Star Logo: Black and Yellow"
                 loading="lazy"
               />
             </figure>
@@ -594,7 +594,7 @@ const Popwave = () => {
                 className="client-project-logo-3"
                 src={pwStar3}
                 alt="Popwave Star logo: White"
-                title="Popwave Star logo: White"
+                title="Popwave Star Logo: White"
                 loading="lazy"
               />
             </figure>

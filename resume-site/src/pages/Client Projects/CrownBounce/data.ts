@@ -27,7 +27,7 @@ const splitProjectDetailData = {
   VisualiserIllustration: {
     src: cbVisualiserEye,
     alt: "A close up illustration of a woman's eye",
-    title: 'Crown Bounce Visualiser Illustation',
+    title: 'Crown Bounce Visualiser Illustration',
     year: '(2024)',
     header: 'Visualiser Illustration',
     paragraph: '',

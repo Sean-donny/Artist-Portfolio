@@ -150,7 +150,7 @@ const Mowalola = () => {
             <img
               src={bannerSource[bannerIndex]}
               alt="spinning 3d model of a Mowalola logo"
-              title="spinning 3d model of a Mowalola logo"
+              title="Mowalola 3D Logo"
               loading="eager"
               className="mowalola-spinner-gif h-auto w-auto cursor-pointer"
               onClick={bannerShuffle}
@@ -183,7 +183,7 @@ const Mowalola = () => {
               <motion.img
                 src={mowaRepost}
                 alt="instagram repost of Mowalola 3D logo"
-                title="instagram repost of Mowalola 3D logo"
+                title="Mowalola 3D logo Instagram Repost"
                 loading="eager"
                 ref={mowaScreenshotRef}
                 className="mowalola-ig-repost-screenshot-image w-auto h-[300px] md:h-[660px] cursor-grab"

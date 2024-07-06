@@ -280,7 +280,7 @@ const Music = () => {
             <motion.img
               src={cmBanner}
               alt="An illustration playboi carti engulfed in black flames against a red backdrop"
-              title="An illustration playboi carti engulfed in black flames against a red backdrop"
+              title="Playboi Carti: Music Album Concept"
               loading="eager"
               className="personal-project-hero-image w-full h-full object-cover object-center"
               initial={{ scale: 1, opacity: 1 }}
@@ -298,7 +298,7 @@ const Music = () => {
                   <motion.img
                     src={musicData.Cover1.src}
                     alt={musicData.Cover1.alt}
-                    title={musicData.Cover1.alt}
+                    title={musicData.Cover1.title}
                     loading="eager"
                     className="mb-2"
                     ref={cmCover1Ref}
@@ -344,7 +344,7 @@ const Music = () => {
                   <motion.img
                     src={musicData.Cover2.src}
                     alt={musicData.Cover2.alt}
-                    title={musicData.Cover2.alt}
+                    title={musicData.Cover2.title}
                     loading="eager"
                     className="mb-2"
                     ref={cmCover2Ref}
@@ -392,7 +392,7 @@ const Music = () => {
                   <motion.img
                     src={musicData.Cover3.src}
                     alt={musicData.Cover3.alt}
-                    title={musicData.Cover3.alt}
+                    title={musicData.Cover3.title}
                     loading="eager"
                     className="mb-2"
                     ref={cmCover3Ref}

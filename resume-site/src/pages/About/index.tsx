@@ -60,7 +60,7 @@ const About = () => {
               src={headShot}
               className="about-sean-donny-image h-auto w-[475px] min-w-[100px]"
               alt="Head shot of artist Sean Donny against an orange background"
-              title="Sean Donny head shot"
+              title="Sean Donny"
               loading="eager"
             />
           </figure>

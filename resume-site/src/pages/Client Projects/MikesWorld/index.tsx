@@ -367,7 +367,7 @@ const MikesWrld = () => {
         title="Mike's World | Client Projects"
         description="Explore a client project for Mike's World by contemporary artist Sean Donny, showcasing his creative direction expertise."
         type="article"
-        url="https://www.seandonny.com/client-projects/mikes-world"
+        url="https://seandonny.com/client-projects/mikes-world"
         image={mkWrldBanner2}
       />
       {modalOpen && (

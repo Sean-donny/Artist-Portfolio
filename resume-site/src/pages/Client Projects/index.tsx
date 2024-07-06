@@ -66,7 +66,7 @@ const ClientProjects = () => {
         title={componentTitle}
         description="Explore a curated selection of client projects by contemporary artist Sean Donny, showcasing his creative range."
         type="website"
-        url="https://www.seandonny.com/client-projects"
+        url="https://seandonny.com/client-projects"
         image={mnctlk}
       />
       <div

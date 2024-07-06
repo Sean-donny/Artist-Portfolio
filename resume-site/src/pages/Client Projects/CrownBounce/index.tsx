@@ -334,7 +334,7 @@ const CrownBounce = () => {
         title="Crown Bounce | Client Projects"
         description="Explore a client project for Odunsi (The Engine) by contemporary artist Sean Donny, showcasing his creative direction expertise."
         type="article"
-        url="https://www.seandonny.com/client-projects/crown-bounce"
+        url="https://seandonny.com/client-projects/crown-bounce"
         image={cbHeroBanner}
       />
       {modalOpen && (

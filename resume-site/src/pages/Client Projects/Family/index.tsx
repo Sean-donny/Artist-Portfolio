@@ -297,7 +297,7 @@ const Family = () => {
         title="Family | Client Projects"
         description="Explore a client project for Smada by contemporary artist Sean Donny, showcasing his creative direction expertise."
         type="article"
-        url="https://www.seandonny.com/client-projects/family"
+        url="https://seandonny.com/client-projects/family"
         image={fmBanner}
       />
       {modalOpen && (

@@ -261,7 +261,7 @@ const Music = () => {
         title="Music | Personal Projects"
         description="Explore a Playboi Carti album concept project by contemporary artist Sean Donny, showcasing his creative direction skills."
         type="article"
-        url="https://www.seandonny.com/personal-projects/music"
+        url="https://seandonny.com/personal-projects/music"
         image={cmBanner}
       />
       {modalOpen && (

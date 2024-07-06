@@ -49,7 +49,7 @@ const Gallery = () => {
           title="Gallery"
           description="Explore a curated selection of works by contemporary artist Sean Donny, showcasing his creative range."
           type="website"
-          url="https://www.seandonny.com/gallery"
+          url="https://seandonny.com/gallery"
           image={Wdylmh}
         />
         <AnimatePresence initial={false} mode="wait">

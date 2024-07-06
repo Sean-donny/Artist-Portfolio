@@ -430,7 +430,7 @@ const YeAnthem = () => {
         title="Ye Anthem | Client Projects"
         description="Explore a client project for Smada by contemporary artist Sean Donny, showcasing his creative direction expertise."
         type="article"
-        url="https://www.seandonny.com/client-projects/ye-anthem"
+        url="https://seandonny.com/client-projects/ye-anthem"
         image={yaBanner}
       />
       {modalOpen && (

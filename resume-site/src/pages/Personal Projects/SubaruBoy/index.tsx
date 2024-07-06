@@ -229,7 +229,7 @@ const SubaruBoy = () => {
         title="Subaru Boy | Personal Projects"
         description="Explore a collection of Cruel Santino inspired works by contemporary artist Sean Donny, showcasing his character design skills."
         type="article"
-        url="https://www.seandonny.com/personal-projects/subaru-boy"
+        url="https://seandonny.com/personal-projects/subaru-boy"
         image={sbBanner}
       />
       <div className="personal-project-sections w-full h-auto flex flex-col items-center justify-center relative">

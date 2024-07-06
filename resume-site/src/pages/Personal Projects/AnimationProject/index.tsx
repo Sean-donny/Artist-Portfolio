@@ -85,7 +85,7 @@ const AnimationProject = () => {
         title="Animation Project | Personal Projects"
         description="Explore a charatcer design and animation project by contemporary artist Sean Donny, showcasing his animation development skills."
         type="article"
-        url="https://www.seandonny.com/personal-projects/animation-project"
+        url="https://seandonny.com/personal-projects/animation-project"
         image={sdExpressionSheet}
       />
       {modalOpen && (

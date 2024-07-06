@@ -291,7 +291,7 @@ const Popwave = () => {
         title="Popwave | Client Projects"
         description="Explore a client project for Popwave by contemporary artist Sean Donny, showcasing his creative direction expertise."
         type="article"
-        url="https://www.seandonny.com/client-projects/popwave"
+        url="https://seandonny.com/client-projects/popwave"
         image={pwBanner}
       />
       {modalOpen && (

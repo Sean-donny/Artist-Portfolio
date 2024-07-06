@@ -589,8 +589,8 @@ const YeAnthem = () => {
               >
                 <img
                   src={yaReference1}
-                  alt="MHA reference image"
-                  title="MHA reference image"
+                  alt="King Perryy Reference"
+                  title="King Perryy Reference"
                   loading="lazy"
                   className="client-project-reference-image-1"
                   style={{ zIndex: 1, border: 'solid black 1px' }}
@@ -599,8 +599,8 @@ const YeAnthem = () => {
               <motion.figure className="client-project-reference-image-container-2 h-auto w-1/3 flex flex-col items-center justify-center">
                 <img
                   src={yaReference2}
-                  alt="Holding Earth reference image"
-                  title="Holding Earth reference image"
+                  alt="Smada Reference"
+                  title="Smada Reference"
                   loading="lazy"
                   className="client-project-referencei-image-2"
                   style={{ zIndex: 3, border: 'solid black 1px' }}
@@ -615,8 +615,8 @@ const YeAnthem = () => {
               >
                 <img
                   src={yaReference3}
-                  alt="Mike reference image"
-                  title="Mike reference image"
+                  alt="Toyé Reference"
+                  title="Toyé Reference"
                   loading="lazy"
                   className="client-project-reference-image-3"
                   style={{ zIndex: 2, border: 'solid black 1px' }}

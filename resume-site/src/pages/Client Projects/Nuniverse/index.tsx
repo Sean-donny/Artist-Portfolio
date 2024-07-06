@@ -508,8 +508,8 @@ const Nuniverse = () => {
               >
                 <img
                   src={nuReference3}
-                  alt="The Incredible Hulk breaking out of chains against a bright background illustrated by Alex Ross"
-                  title="The Incredible Hulk by Alex Ross"
+                  alt="The Immortal Hulk breaking out of chains against a bright background illustrated by Alex Ross"
+                  title="The Immortal Hulk by Alex Ross"
                   loading="lazy"
                   className="client-project-reference-image-3"
                   style={{ zIndex: 2, border: 'solid black 1px' }}

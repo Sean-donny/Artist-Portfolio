@@ -334,7 +334,7 @@ const Nuniverse = () => {
         title="NüNiverse | Client Projects"
         description="Explore a client project for Smada by contemporary artist Sean Donny, showcasing his creative direction expertise."
         type="article"
-        url="https://seandonny.com/client-projects/nuniverse"
+        url="https://www.seandonny.com/client-projects/nuniverse"
         image={nuBanner}
       />
       {modalOpen && (

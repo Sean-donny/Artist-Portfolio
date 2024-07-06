@@ -13,7 +13,7 @@ const Home = () => {
         title="Home"
         description="Discover the captivating art of Sean Donny, a contemporary artist in England, UK. Explore his portfolio of personal & client projects, and gallery."
         type="website"
-        url="https://seandonny.com/"
+        url="https://www.seandonny.com/"
         image={SeanPortrait}
       />
       <article>

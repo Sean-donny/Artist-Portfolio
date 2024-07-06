@@ -50,7 +50,7 @@ const About = () => {
         title="About"
         description="A biography of the contemporary artist Sean Donny based in England, UK."
         type="article"
-        url="https://seandonny.com/about"
+        url="https://www.seandonny.com/about"
         image={headShot}
       />
       <main>

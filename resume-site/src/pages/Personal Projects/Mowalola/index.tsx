@@ -138,7 +138,7 @@ const Mowalola = () => {
         title="Mowalola | Personal Projects"
         description="Explore a 3D logo project by contemporary artist Sean Donny, showcasing his 3D modelling and design skills."
         type="article"
-        url="https://seandonny.com/personal-projects/mowalola"
+        url="https://www.seandonny.com/personal-projects/mowalola"
         image={mowaLogo}
       />
       <main>

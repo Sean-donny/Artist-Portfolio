@@ -343,7 +343,7 @@ const MenaceTalk = () => {
         title="Menace Talk | Client Projects"
         description="Explore a client project for Trill Tega by contemporary artist Sean Donny, showcasing his creative direction expertise."
         type="article"
-        url="https://seandonny.com/client-projects/menace-talk"
+        url="https://www.seandonny.com/client-projects/menace-talk"
         image={mtHeroBanner}
       />
       {modalOpen && (

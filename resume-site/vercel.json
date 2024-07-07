@@ -1,3 +1,9 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://seandonny.com/$1",
+      "permanent": true
+    }
+  ]
 }

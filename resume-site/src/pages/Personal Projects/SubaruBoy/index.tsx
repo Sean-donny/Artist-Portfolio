@@ -244,8 +244,8 @@ const SubaruBoy = () => {
           >
             <motion.img
               src={sbBanner}
-              alt="A tight close up of Smada performing"
-              title="A tight close up of Smada performing"
+              alt="An illustation of Cruel Santino against an orange background with writing"
+              title="Subaru Boy"
               loading="eager"
               className="personal-project-hero-image w-full h-full object-cover object-center"
               initial={{ scale: 1, opacity: 1 }}

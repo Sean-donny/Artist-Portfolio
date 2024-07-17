@@ -34,7 +34,7 @@ export default {
       },
       screens: {
         xl: { raw: '(min-width: 3800px)' },
-        hd: { raw: '(min-width: 1400px)' },
+        hd: { raw: '(min-width: 1024px)' },
       },
     },
   },

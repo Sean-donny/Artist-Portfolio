@@ -74,10 +74,22 @@ const About = () => {
               <br />
               Sean has played a pivotal role in shaping the creative direction
               of diverse musical projects, collaborating with artists such as
-              Odunsi &#40;The Engine&#41;, PsychoYp, Trill&nbsp;Tega, and more.
-              Additionally, he is the Creative Director at the fashion label
-              "Blvckfire" and has made notable contributions to other fashion
-              projects, including Avera, Popwave, and Cruise Gang.
+              Odunsi &#40;The Engine&#41;, Tolaní Otedola, PsychoYp,
+              Trill&nbsp;Tega, and more. Additionally, he is the Creative
+              Director at the fashion label "Blvckfire" and has made notable
+              contributions to other fashion projects, including Avera, Popwave,
+              and Cruise Gang.
+              <br />
+              <br />
+              Read more about me in this{' '}
+              <a
+                href="https://yonkiabuja.com/from-hand-drawn-to-digital-the-artistic-evolution-of-sean-patrick/"
+                target="_blank"
+                className="underline"
+              >
+                amazing article
+              </a>{' '}
+              featured in <i>Yonki Abuja</i>, written by Ngumimi Koughna.
             </p>
           </div>
         </article>

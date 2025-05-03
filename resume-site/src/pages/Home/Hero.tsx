@@ -2,9 +2,10 @@ import { useState } from 'react';
 import Slideshow from '../../components/Slideshow';
 import Images from './HeroImages';
 import Titles from './HeroTitles';
+import { use3DTilt } from '../../Hooks/use3DTilt';
 
 // Image imports
-import SeanPortrait from '/optimised/sean_donny_portrait.jpg';
+import SeanPortrait from '/optimised/sean_donny_hero_image.png';
 
 const Hero = () => {
   const [bgColorIndex, setBgColorIndex] = useState(0);
@@ -14,6 +15,8 @@ const Hero = () => {
   const bgShuffle = () => {
     setBgColorIndex(prevIndex => (prevIndex + 1) % bgColors.length);
   };
+
+  const { ref, style } = use3DTilt(10);
   return (
     <div className="box-border">
       <div
@@ -36,7 +39,16 @@ const Hero = () => {
           </div>
         </div>
         <div className="hero-image-container flex-grow md:w-2/5 md:flex-none p-2">
-          <figure className="flex items-center justify-center h-full overflow-hidden">
+          <figure
+            className="hero-image-parent flex items-center justify-center h-full overflow-hidden"
+            ref={ref}
+            style={{
+              ...style,
+              transition: 'transform 0.1s ease-out',
+              transformStyle: 'preserve-3d',
+              perspective: '1000px',
+            }}
+          >
             <img
               src={SeanPortrait}
               alt="Sean Donny"

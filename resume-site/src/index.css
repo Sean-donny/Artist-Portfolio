@@ -81,3 +81,22 @@ body {
   aspect-ratio: 16 / 9;
   width: 100%;
 }
+
+.hero-image-container {
+  perspective: 1000px;
+}
+
+.hero-image-parent {
+  transition: transform 0.1s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  overflow: visible;
+}
+.hero-image:hover {
+  cursor: url('optimised/sean-donny-skull.cur'), auto;
+  /* background: linear-gradient(
+    to bottom,
+    rgba(1, 2, 3, 1) 30%,
+    rgba(1, 222, 34, 0.4)
+  ); */
+}

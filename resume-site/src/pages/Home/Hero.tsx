@@ -44,7 +44,6 @@ const Hero = () => {
             ref={ref}
             style={{
               ...style,
-              transition: 'transform 0.1s ease-out',
               transformStyle: 'preserve-3d',
               perspective: '1000px',
             }}

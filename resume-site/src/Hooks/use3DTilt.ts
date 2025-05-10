@@ -20,6 +20,7 @@ export function use3DTilt(maxAngle = 20) {
 
       setStyle({
         transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
+        transition: 'transform 0.1s ease-out',
       });
     },
     [maxAngle],
@@ -28,6 +29,7 @@ export function use3DTilt(maxAngle = 20) {
   const handleMouseLeave = useCallback(() => {
     setStyle({
       transform: `rotateX(0deg) rotateY(0deg)`,
+      transition: 'transform 0.7s ease-out',
     });
   }, []);
 

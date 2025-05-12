@@ -1,6 +1,9 @@
 // import { useRef, useState, useEffect, useCallback } from 'react';
 // import { motion } from 'framer-motion';
 
+import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+
 interface SlideshowProps {
   images: string[];
   titles: string[];
@@ -53,47 +56,67 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
   //   },
   // };
 
-  const repeatCount = 9;
+  const repeatCount = 2;
+
+  const navigate = useNavigate();
+
+  const handleNavigate = (path: string) => {
+    window.scrollTo(0, 0);
+    navigate(`/${path}`);
+  };
 
   return (
-    <div className="carousel-container pointer-events-none">
+    <div className="carousel-container">
       <div
         // key={containerKey}
         // id={slideshowId}
         // ref={slideshowRef}
-        className="carousel-body overflow-hidden pointer-events-none"
+        className="carousel-body"
       >
         <div
-          className="inner-carousel flex pointer-events-none"
+          className="inner-carousel flex"
           // variants={carouselVariants}
           // initial="initial"
           // animate="animate"
         >
           {images.map((image, index) => (
             <figure className="min-h-slide2 min-w-slide2 px-2" key={image}>
-              <img
+              <motion.img
                 src={image}
                 alt={titles[index]}
-                className="pointer-events-none"
+                className=""
                 title={titles[index]}
                 loading="eager"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => {
+                  handleNavigate('gallery');
+                }}
               />
             </figure>
           ))}
           {[...Array(repeatCount)].map((_, repeatIndex) =>
             images.map((image, index) => (
-              <div
+              <figure
                 className="min-h-slide2 min-w-slide2 px-2"
                 key={`${image}-${repeatIndex}-${index}`}
+                onClick={() => {
+                  handleNavigate('gallery');
+                }}
               >
-                <img
+                <motion.img
                   src={image}
                   alt={titles[index]}
-                  className="pointer-events-none"
+                  className=""
                   title={titles[index]}
                   loading="eager"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => {
+                    handleNavigate('gallery');
+                  }}
                 />
-              </div>
+              </figure>
             )),
           )}
         </div>

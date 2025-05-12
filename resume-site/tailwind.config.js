@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         custom: ['Urbanist', 'sans-serif'],
+        loud: ['Staatliches', 'sans-serif'],
       },
       colors: {
         orangutan: '#fc7200',
@@ -16,9 +17,11 @@ export default {
       },
       fontSize: {
         massive1: '4rem',
+        massive2: '4.5rem',
       },
       lineHeight: {
         massive1: '4.5rem',
+        massive2: '5rem',
       },
       minHeight: {
         slide1: '28.5rem',

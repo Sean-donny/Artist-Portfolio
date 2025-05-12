@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,200;0,400;0,600;0,900;1,100;1,200;1,400;1,600;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -69,12 +70,12 @@ body {
     -webkit-transform: translateX(0) translateZ(0);
   }
   to {
-    -webkit-transform: translateX(-19200px) translateZ(0);
+    -webkit-transform: translateX(-1920px) translateZ(0);
   }
 }
 
 .inner-carousel {
-  animation: 128s carousel-slide infinite linear;
+  animation: 12.8s carousel-slide infinite linear;
 }
 
 .youtube-video {
@@ -99,4 +100,9 @@ body {
     rgba(1, 2, 3, 1) 30%,
     rgba(1, 222, 34, 0.4)
   ); */
+}
+
+.hero-bio ::selection {
+  color: rgb(255, 248, 111);
+  background: black;
 }

@@ -15,6 +15,7 @@ import Mowalola from './pages/Personal Projects/Mowalola';
 import ClientProjects from './pages/Client Projects';
 // Client Projects sub pages
 import CrownBounce from './pages/Client Projects/CrownBounce';
+import SeeGbedu from './pages/Client Projects/SeeGbedu';
 import MenaceTalk from './pages/Client Projects/MenaceTalk';
 import YeAnthem from './pages/Client Projects/YeAnthem';
 import Nuniverse from './pages/Client Projects/Nuniverse';
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: '/client-projects',
         element: <ClientProjects />,
+      },
+      {
+        path: '/client-projects/see-gbedu',
+        element: <SeeGbedu />,
       },
       {
         path: '/client-projects/crown-bounce',

@@ -6,8 +6,17 @@ import nnvrs from '/optimised/client_project_nv.jpg';
 import fmly from '/optimised/client_project_fm.jpg';
 import pwv from '/optimised/client_project_pw.png';
 import mkswrld from '/optimised/client_project_mw.png';
+import sgbd from '/optimised/client_project_sg.jpg';
 
 const clientProjectsData = {
+  illustration8: {
+    src: sgbd,
+    alt: 'An illustation of Len for See Gbedu',
+    title: 'See Gbedu',
+    year: '(2025)',
+    style: 'hd:w-1/6 w-1/2 md:w-1/3',
+    navigate: 'client-projects/see-gbedu',
+  },
   illustration7: {
     src: crwnbnc,
     alt: 'An illustation of Odunsi dancing with Minz, Elias, and friends',

@@ -8,11 +8,11 @@ import { ModalContent } from '../../../interfaces/ModalContent';
 import { useNavigate } from 'react-router-dom';
 
 // Image imports
-import cbHeroBanner from '/optimised/odunsi_the_engine_crown_bounce_banner.jpg';
-import odunsiMecha from '/optimised/odunsi_mecha_illustration.png';
+import sgHeroBanner from '/optimised/len_banner.jpg';
+import goldenboyLen from '/optimised/len_illustration.png';
 import SEO from '../../../components/SEO/SEO';
 
-const CrownBounce = () => {
+const SeeGbedu = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<ModalContent>({
     src: undefined,
@@ -87,181 +87,181 @@ const CrownBounce = () => {
   }, []);
 
   // Declarations required for page section effects
-  const odunsiMechaRef = useRef(null);
-  const odunsiMechaInView = useInView(odunsiMechaRef, { once: true });
-  const [odunsiMechaOpacity, setodunsiMechaOpacity] = useState(0);
-  const [odunsiMechaPosition, setodunsiMechaPosition] = useState(20);
+  const goldenboyLenRef = useRef(null);
+  const goldenboyLenInView = useInView(goldenboyLenRef, { once: true });
+  const [goldenboyLenOpacity, setgoldenboyLenOpacity] = useState(0);
+  const [goldenboyLenPosition, setgoldenboyLenPosition] = useState(20);
 
   useEffect(() => {
-    if (odunsiMechaInView && scrollY > parallaxValue / 2.5) {
+    if (goldenboyLenInView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
-        setodunsiMechaOpacity(1);
-        setodunsiMechaPosition(0);
+        setgoldenboyLenOpacity(1);
+        setgoldenboyLenPosition(0);
       }, 50);
     } else {
-      setodunsiMechaOpacity(0);
-      setodunsiMechaPosition(20);
+      setgoldenboyLenOpacity(0);
+      setgoldenboyLenPosition(20);
     }
-  }, [odunsiMechaInView, scrollY]);
+  }, [goldenboyLenInView, scrollY]);
 
-  const odunsiMechaHeaderRef = useRef(null);
-  const odunsiMechaHeaderInView = useInView(odunsiMechaHeaderRef, {
+  const goldenboyLenHeaderRef = useRef(null);
+  const goldenboyLenHeaderInView = useInView(goldenboyLenHeaderRef, {
     once: true,
   });
-  const [odunsiMechaHeaderOpacity, setodunsiMechaHeaderOpacity] = useState(0);
-  const [odunsiMechaHeaderPosition, setodunsiMechaHeaderPosition] =
+  const [goldenboyLenHeaderOpacity, setgoldenboyLenHeaderOpacity] = useState(0);
+  const [goldenboyLenHeaderPosition, setgoldenboyLenHeaderPosition] =
     useState(20);
 
   useEffect(() => {
-    if (odunsiMechaHeaderInView && scrollY > parallaxValue / 2.5) {
-      setodunsiMechaHeaderOpacity(1);
-      setodunsiMechaHeaderPosition(0);
+    if (goldenboyLenHeaderInView && scrollY > parallaxValue / 2.5) {
+      setgoldenboyLenHeaderOpacity(1);
+      setgoldenboyLenHeaderPosition(0);
     } else {
-      setodunsiMechaHeaderOpacity(0);
-      setodunsiMechaHeaderPosition(20);
+      setgoldenboyLenHeaderOpacity(0);
+      setgoldenboyLenHeaderPosition(20);
     }
-  }, [odunsiMechaHeaderInView, scrollY]);
+  }, [goldenboyLenHeaderInView, scrollY]);
 
-  const odunsiMechaP1Ref = useRef(null);
-  const odunsiMechaP1InView = useInView(odunsiMechaP1Ref, {
+  const goldenboyLenP1Ref = useRef(null);
+  const goldenboyLenP1InView = useInView(goldenboyLenP1Ref, {
     once: true,
   });
-  const [odunsiMechaP1Opacity, setodunsiMechaP1Opacity] = useState(0);
-  const [odunsiMechaP1Position, setodunsiMechaP1Position] = useState(20);
+  const [goldenboyLenP1Opacity, setgoldenboyLenP1Opacity] = useState(0);
+  const [goldenboyLenP1Position, setgoldenboyLenP1Position] = useState(20);
 
   useEffect(() => {
-    if (odunsiMechaP1InView && scrollY > parallaxValue / 2.5) {
+    if (goldenboyLenP1InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
-        setodunsiMechaP1Opacity(1);
-        setodunsiMechaP1Position(0);
+        setgoldenboyLenP1Opacity(1);
+        setgoldenboyLenP1Position(0);
       }, 50);
     } else {
-      setodunsiMechaP1Opacity(0);
-      setodunsiMechaP1Position(20);
+      setgoldenboyLenP1Opacity(0);
+      setgoldenboyLenP1Position(20);
     }
-  }, [odunsiMechaP1InView, scrollY]);
+  }, [goldenboyLenP1InView, scrollY]);
 
-  const odunsiMechaP2Ref = useRef(null);
-  const odunsiMechaP2InView = useInView(odunsiMechaP2Ref, {
+  const goldenboyLenP2Ref = useRef(null);
+  const goldenboyLenP2InView = useInView(goldenboyLenP2Ref, {
     once: true,
   });
-  const [odunsiMechaP2Opacity, setodunsiMechaP2Opacity] = useState(0);
-  const [odunsiMechaP2Position, setodunsiMechaP2Position] = useState(20);
+  const [goldenboyLenP2Opacity, setgoldenboyLenP2Opacity] = useState(0);
+  const [goldenboyLenP2Position, setgoldenboyLenP2Position] = useState(20);
 
   useEffect(() => {
-    if (odunsiMechaP2InView && scrollY > parallaxValue / 2.5) {
+    if (goldenboyLenP2InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
-        setodunsiMechaP2Opacity(1);
-        setodunsiMechaP2Position(0);
+        setgoldenboyLenP2Opacity(1);
+        setgoldenboyLenP2Position(0);
       }, 50);
     } else {
-      setodunsiMechaP2Opacity(0);
-      setodunsiMechaP2Position(20);
+      setgoldenboyLenP2Opacity(0);
+      setgoldenboyLenP2Position(20);
     }
-  }, [odunsiMechaP2InView, scrollY]);
+  }, [goldenboyLenP2InView, scrollY]);
 
-  const odunsiMechaP3Ref = useRef(null);
-  const odunsiMechaP3InView = useInView(odunsiMechaP3Ref, {
+  const goldenboyLenP3Ref = useRef(null);
+  const goldenboyLenP3InView = useInView(goldenboyLenP3Ref, {
     once: true,
   });
-  const [odunsiMechaP3Opacity, setodunsiMechaP3Opacity] = useState(0);
-  const [odunsiMechaP3Position, setodunsiMechaP3Position] = useState(20);
+  const [goldenboyLenP3Opacity, setgoldenboyLenP3Opacity] = useState(0);
+  const [goldenboyLenP3Position, setgoldenboyLenP3Position] = useState(20);
 
   useEffect(() => {
-    if (odunsiMechaP3InView && scrollY > parallaxValue / 2.5) {
+    if (goldenboyLenP3InView && scrollY > parallaxValue / 2.5) {
       setTimeout(() => {
-        setodunsiMechaP3Opacity(1);
-        setodunsiMechaP3Position(0);
+        setgoldenboyLenP3Opacity(1);
+        setgoldenboyLenP3Position(0);
       }, 50);
     } else {
-      setodunsiMechaP3Opacity(0);
-      setodunsiMechaP3Position(20);
+      setgoldenboyLenP3Opacity(0);
+      setgoldenboyLenP3Position(20);
     }
-  }, [odunsiMechaP3InView, scrollY]);
+  }, [goldenboyLenP3InView, scrollY]);
 
   // Uses custom hook to generate ref, and states for opacity & position values
   const {
-    ref: odunsiVisualiserDraftRef,
-    opacity: odunsiVisualiserDraftOpacity,
-    position: odunsiVisualiserDraftPosition,
+    ref: lenVisualiserRef,
+    opacity: lenVisualiserOpacity,
+    position: lenVisualiserPosition,
   } = useInViewAnimation();
 
   const {
-    ref: odunsiVisualiserDraftHeaderRef,
-    opacity: odunsiVisualiserDraftHeaderOpacity,
-    position: odunsiVisualiserDraftHeaderPosition,
+    ref: lenVisualiserHeaderRef,
+    opacity: lenVisualiserHeaderOpacity,
+    position: lenVisualiserHeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: odunsiAlbumDraft1Ref,
-    opacity: odunsiAlbumDraft1Opacity,
-    position: odunsiAlbumDraft1Position,
+    ref: lenInspoRef,
+    opacity: lenInspoOpacity,
+    position: lenInspoPosition,
   } = useInViewAnimation();
 
   const {
-    ref: odunsiAlbumDraft1DescriptionHeaderRef,
-    opacity: odunsiAlbumDraft1DescriptionHeaderOpacity,
-    position: odunsiAlbumDraft1DescriptionHeaderPosition,
+    ref: lenInspoDescriptionHeaderRef,
+    opacity: lenInspoDescriptionHeaderOpacity,
+    position: lenInspoDescriptionHeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: odunsiAlbumDraft1DescriptionParagraphRef,
-    opacity: odunsiAlbumDraft1DescriptionParagraphOpacity,
-    position: odunsiAlbumDraft1DescriptionParagraphPosition,
+    ref: lenInspoDescriptionParagraphRef,
+    opacity: lenInspoDescriptionParagraphOpacity,
+    position: lenInspoDescriptionParagraphPosition,
   } = useInViewAnimation();
 
   const {
-    ref: odunsiSingleDraft1Ref,
-    opacity: odunsiSingleDraft1Opacity,
-    position: odunsiSingleDraft1Position,
+    ref: lenMBSAPosterRef,
+    opacity: lenMBSAPosterOpacity,
+    position: lenMBSAPosterPosition,
   } = useInViewAnimation();
 
   const {
-    ref: odunsiSingleDraft1DescriptionHeaderRef,
-    opacity: odunsiSingleDraft1DescriptionHeaderOpacity,
-    position: odunsiSingleDraft1DescriptionHeaderPosition,
+    ref: lenMBSAPosterDescriptionHeaderRef,
+    opacity: lenMBSAPosterDescriptionHeaderOpacity,
+    position: lenMBSAPosterDescriptionHeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: odunsiSingleDraft1DescriptionParagraphRef,
-    opacity: odunsiSingleDraft1DescriptionParagraphOpacity,
-    position: odunsiSingleDraft1DescriptionParagraphPosition,
+    ref: lenMBSAPosterDescriptionParagraphRef,
+    opacity: lenMBSAPosterDescriptionParagraphOpacity,
+    position: lenMBSAPosterDescriptionParagraphPosition,
   } = useInViewAnimation();
 
   const {
-    ref: odunsiFinalOriginalCoverRef,
-    opacity: odunsiFinalOriginalCoverOpacity,
-    position: odunsiFinalOriginalCoverPosition,
+    ref: lenCoverDraftRef,
+    opacity: lenCoverDraftOpacity,
+    position: lenCoverDraftPosition,
   } = useInViewAnimation();
 
   const {
-    ref: odunsiFinalOriginalCoverHeaderRef,
-    opacity: odunsiFinalOriginalCoverHeaderOpacity,
-    position: odunsiFinalOriginalCoverHeaderPosition,
+    ref: lenCoverDraftHeaderRef,
+    opacity: lenCoverDraftHeaderOpacity,
+    position: lenCoverDraftHeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: odunsiFinalOriginalCoverParagraphRef,
-    opacity: odunsiFinalOriginalCoverParagraphOpacity,
-    position: odunsiFinalOriginalCoverParagraphPosition,
+    ref: lenCoverDraftParagraphRef,
+    opacity: lenCoverDraftParagraphOpacity,
+    position: lenCoverDraftParagraphPosition,
   } = useInViewAnimation();
 
   const {
-    ref: odunsiAlbumRemixCoverRef,
-    opacity: odunsiAlbumRemixCoverOpacity,
-    position: odunsiAlbumRemixCoverPosition,
+    ref: lenCoverRef,
+    opacity: lenCoverOpacity,
+    position: lenCoverPosition,
   } = useInViewAnimation();
 
   const {
-    ref: odunsiAlbumRemixCoverHeaderRef,
-    opacity: odunsiAlbumRemixCoverHeaderOpacity,
-    position: odunsiAlbumRemixCoverHeaderPosition,
+    ref: lenCoverHeaderRef,
+    opacity: lenCoverHeaderOpacity,
+    position: lenCoverHeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: odunsiAlbumRemixCoverParagraphRef,
-    opacity: odunsiAlbumRemixCoverParagraphOpacity,
-    position: odunsiAlbumRemixCoverParagraphPosition,
+    ref: lenCoverParagraphRef,
+    opacity: lenCoverParagraphOpacity,
+    position: lenCoverParagraphPosition,
   } = useInViewAnimation();
 
   // Declarations for Project Deliverables section
@@ -292,13 +292,7 @@ const CrownBounce = () => {
   const projectDeliverables = [
     'Single Cover',
 
-    'Remix Cover',
-
-    'YouTube Visualiser',
-
-    'Spotify Canvas Video',
-
-    'TikTok Promotional Video',
+    'Visualiser - Personal Exploration',
   ];
 
   // Declarations for Project Navigate section
@@ -307,8 +301,8 @@ const CrownBounce = () => {
 
   const projectNavigateScope = useMenuAnimation(projectNavigateInView);
 
-  const previousProject = 'See Gbedu';
-  const nextProject = 'Menace Talk';
+  const previousProject = "Mike's World";
+  const nextProject = 'Crown Bounce';
 
   const navigate = useNavigate();
 
@@ -328,14 +322,26 @@ const CrownBounce = () => {
     setIsGrayscale(false);
   };
 
+  useEffect(() => {
+    // Load TikTok embed script dynamically if not already loaded
+    const scriptId = 'tiktok-embed';
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement('script');
+      script.id = scriptId;
+      script.src = 'https://www.tiktok.com/embed.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
   return (
     <div className="client-project-container bg-black w-full h-auto">
       <SEO
-        title="Crown Bounce | Client Projects"
-        description="Explore a client project for Odunsi (The Engine) by contemporary artist Sean Donny, showcasing his creative direction expertise."
+        title="See Gbedu | Client Projects"
+        description="Explore a client project for Len by contemporary artist Sean Donny, showcasing his creative direction expertise."
         type="article"
-        url="https://seandonny.com/client-projects/crown-bounce"
-        image={cbHeroBanner}
+        url="https://seandonny.com/client-projects/see-gbedu"
+        image={sgHeroBanner}
       />
       {modalOpen && (
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
@@ -351,9 +357,9 @@ const CrownBounce = () => {
             }}
           >
             <motion.img
-              src={cbHeroBanner}
-              alt="Odunsi and friends dancing"
-              title="Crown Bounce Dance Scene"
+              src={sgHeroBanner}
+              alt="Len dancing to See Gbedu"
+              title="See Gbedu Dance Scene"
               loading="eager"
               className="client-project-hero-image w-full h-full object-cover object-center"
               initial={{ scale: 1, opacity: 1 }}
@@ -364,86 +370,85 @@ const CrownBounce = () => {
           <div className={`client-project-hero-safe-space h-[400px] w-full`}>
             &nbsp;
           </div>
-          <article className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-fuchsia-600 selection:text-zinc-200">
+          <article className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-[#c5a554] selection:text-black">
             <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
               <motion.h1
-                ref={odunsiMechaHeaderRef}
+                ref={goldenboyLenHeaderRef}
                 className="client-project-design-goal-description-header text-zinc-200 font-custom font-semibold italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mb-5"
                 initial={{ opacity: 0 }}
                 animate={{
-                  translateY: odunsiMechaHeaderPosition,
-                  opacity: odunsiMechaHeaderOpacity,
+                  translateY: goldenboyLenHeaderPosition,
+                  opacity: goldenboyLenHeaderOpacity,
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                Odunsi hit me on IG: "Let's do one together"
+                Len hit me on Twitter: "yoo&nbsp;brodie"
               </motion.h1>
               <motion.p
                 className="client-project-design-goal-description-paragraph-1 text-zinc-400 font-custom font-medium italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-                ref={odunsiMechaP1Ref}
+                ref={goldenboyLenP1Ref}
                 initial={{ opacity: 0 }}
                 animate={{
-                  translateY: odunsiMechaP1Position,
-                  opacity: odunsiMechaP1Opacity,
+                  translateY: goldenboyLenP1Position,
+                  opacity: goldenboyLenP1Opacity,
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                "I want something sexy, with a lot of motion"...
+                "i really fw that cover you made"...
               </motion.p>
               <motion.p
                 className="client-project-design-goal-description-paragraph-2 text-zinc-400 font-custom font-normal italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-                ref={odunsiMechaP2Ref}
+                ref={goldenboyLenP2Ref}
                 initial={{ opacity: 0 }}
                 animate={{
-                  translateY: odunsiMechaP2Position,
-                  opacity: odunsiMechaP2Opacity,
+                  translateY: goldenboyLenP2Position,
+                  opacity: goldenboyLenP2Opacity,
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                "So I've got this record with Minz & Elias called Crown Bounce.
-                I need you to take some inspo from the{' '}
-                <mark className="bg-fuchsia-600 text-zinc-200">
+                "i was wondering if you can make it square + put{' '}
+                <mark className="bg-[#c5a554] text-zinc-200">
                   <a
-                    href="https://youtu.be/wigZvnfIue4?si=VqH23VPgwPapxgXY"
+                    href="https://genius.com/Len-uk-see-gbedu-lyrics#:~:text=from%20the%20top%20like%20a%20drum%20kit%20(C%27mon)-,See%20gbedu%2C%20gbedu%2C%20gbedu%20(Hey%2C%20hey),-See%20gbedu%2C%20gbedu%2C%20gbedu%20(Uh%2Dhuh)%0A%0A%5BVerse"
                     target="_blank"
                     className="hover:underline"
                   >
-                    music&nbsp;video
+                    SEE&nbsp;GBEDU
                   </a>
                 </mark>{' '}
-                and work some magic"...
+                at the bottom"...
               </motion.p>
               <motion.p
                 className="client-project-design-goal-description-paragraph-3 text-zinc-400 font-custom font-extralight italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
-                ref={odunsiMechaP3Ref}
+                ref={goldenboyLenP3Ref}
                 initial={{ opacity: 0 }}
                 animate={{
-                  translateY: odunsiMechaP3Position,
-                  opacity: odunsiMechaP3Opacity,
+                  translateY: goldenboyLenP3Position,
+                  opacity: goldenboyLenP3Opacity,
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                "I want the attention centred on the girls"
+                "i wanna use it for the next single"
               </motion.p>
             </div>
             <figure className="client-project-design-goal-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
               <motion.img
                 className="client-project-design-goal-image"
-                src={odunsiMecha}
-                alt="Odunsi (The Engine) Mecha"
-                title="Odunsi (The Engine) Mecha"
+                src={goldenboyLen}
+                alt="Goldenboy Len"
+                title="Goldenboy Len"
                 loading="eager"
-                ref={odunsiMechaRef}
+                ref={goldenboyLenRef}
                 initial={{ opacity: 0 }}
                 animate={{
-                  translateY: odunsiMechaPosition,
-                  opacity: odunsiMechaOpacity,
+                  translateY: goldenboyLenPosition,
+                  opacity: goldenboyLenOpacity,
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               />
             </figure>
           </article>
-          <div className="client-project-initial-concepts-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-fuchsia-600 selection:text-zinc-200">
+          <div className="client-project-initial-concepts-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-[#c5a554] selection:text-black">
             <div className="client-project-initial-concepts-album-cover h-full w-full hd:w-1/2">
               <article className="client-project-initial-concepts-album-cover-concept-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
                 <figure className="client-project-initial-concepts-album-cover-concept-artwork h-3/5 w-full flex flex-col items-center justify-center">
@@ -453,11 +458,11 @@ const CrownBounce = () => {
                     title={splitProjectDetailData.Draft1.title}
                     loading="lazy"
                     className="mb-2"
-                    ref={odunsiAlbumDraft1Ref}
+                    ref={lenInspoRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: odunsiAlbumDraft1Position,
-                      opacity: odunsiAlbumDraft1Opacity,
+                      translateY: lenInspoPosition,
+                      opacity: lenInspoOpacity,
                     }}
                     onClick={handleImageFocus(splitProjectDetailData.Draft1)}
                     whileHover={{ scale: 1.01 }}
@@ -467,22 +472,22 @@ const CrownBounce = () => {
                 <div className="client-project-initial-concepts-album-cover-concept-description h-2/5 w-full flex flex-col items-center justify-center">
                   <motion.h2
                     className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                    ref={odunsiAlbumDraft1DescriptionHeaderRef}
+                    ref={lenInspoDescriptionHeaderRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: odunsiAlbumDraft1DescriptionHeaderPosition,
-                      opacity: odunsiAlbumDraft1DescriptionHeaderOpacity,
+                      translateY: lenInspoDescriptionHeaderPosition,
+                      opacity: lenInspoDescriptionHeaderOpacity,
                     }}
                   >
                     {splitProjectDetailData.Draft1.header}
                   </motion.h2>
                   <motion.p
                     className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                    ref={odunsiAlbumDraft1DescriptionParagraphRef}
+                    ref={lenInspoDescriptionParagraphRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: odunsiAlbumDraft1DescriptionParagraphPosition,
-                      opacity: odunsiAlbumDraft1DescriptionParagraphOpacity,
+                      translateY: lenInspoDescriptionParagraphPosition,
+                      opacity: lenInspoDescriptionParagraphOpacity,
                     }}
                   >
                     {splitProjectDetailData.Draft1.paragraph}
@@ -499,11 +504,11 @@ const CrownBounce = () => {
                     title={splitProjectDetailData.Draft2.title}
                     loading="lazy"
                     className="mb-2"
-                    ref={odunsiSingleDraft1Ref}
+                    ref={lenMBSAPosterRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: odunsiSingleDraft1Position,
-                      opacity: odunsiSingleDraft1Opacity,
+                      translateY: lenMBSAPosterPosition,
+                      opacity: lenMBSAPosterOpacity,
                     }}
                     onClick={handleImageFocus(splitProjectDetailData.Draft2)}
                     whileHover={{ scale: 1.01 }}
@@ -513,23 +518,23 @@ const CrownBounce = () => {
                 <div className="client-project-initial-concepts-single-cover-concept-description h-2/5 w-full flex flex-col items-center justify-center">
                   <motion.h2
                     className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                    ref={odunsiSingleDraft1DescriptionHeaderRef}
+                    ref={lenMBSAPosterDescriptionHeaderRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: odunsiSingleDraft1DescriptionHeaderPosition,
-                      opacity: odunsiSingleDraft1DescriptionHeaderOpacity,
+                      translateY: lenMBSAPosterDescriptionHeaderPosition,
+                      opacity: lenMBSAPosterDescriptionHeaderOpacity,
                     }}
                   >
                     {splitProjectDetailData.Draft2.header}
                   </motion.h2>
                   <motion.p
                     className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                    ref={odunsiSingleDraft1DescriptionParagraphRef}
+                    ref={lenMBSAPosterDescriptionParagraphRef}
+                    style={{ whiteSpace: 'pre-line' }}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY:
-                        odunsiSingleDraft1DescriptionParagraphPosition,
-                      opacity: odunsiSingleDraft1DescriptionParagraphOpacity,
+                      translateY: lenMBSAPosterDescriptionParagraphPosition,
+                      opacity: lenMBSAPosterDescriptionParagraphOpacity,
                     }}
                   >
                     {splitProjectDetailData.Draft2.paragraph}
@@ -540,7 +545,7 @@ const CrownBounce = () => {
           </div>
           <section
             className={`client-project-visualiser-single-cover-container h-auto w-full p-5 ${
-              isGrayscale ? 'bg-black' : 'bg-fuchsia-600 selection:bg-black'
+              isGrayscale ? 'bg-black' : 'bg-[#c5a554] selection:bg-black'
             } transition-all`}
           >
             <div className="client-project-visualiser-single-cover-items flex flex-col hd:flex-row h-auto w-full items-center justify-center">
@@ -556,11 +561,11 @@ const CrownBounce = () => {
                     alt={splitProjectDetailData.VisualiserIllustration.alt}
                     title={splitProjectDetailData.VisualiserIllustration.title}
                     loading="lazy"
-                    ref={odunsiVisualiserDraftRef}
+                    ref={lenVisualiserRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: odunsiVisualiserDraftPosition,
-                      opacity: odunsiVisualiserDraftOpacity,
+                      translateY: lenVisualiserPosition,
+                      opacity: lenVisualiserOpacity,
                     }}
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
@@ -574,11 +579,11 @@ const CrownBounce = () => {
                   />
                   <div className="client-project-visualiser-single-cover-image-description w-full h-1/5">
                     <motion.h2
-                      ref={odunsiVisualiserDraftHeaderRef}
+                      ref={lenVisualiserHeaderRef}
                       initial={{ opacity: 0 }}
                       animate={{
-                        translateY: odunsiVisualiserDraftHeaderPosition,
-                        opacity: odunsiVisualiserDraftHeaderOpacity,
+                        translateY: lenVisualiserHeaderPosition,
+                        opacity: lenVisualiserHeaderOpacity,
                       }}
                       className="client-project-visualiser-single-cover-image-description-text font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold"
                     >
@@ -589,7 +594,7 @@ const CrownBounce = () => {
               </div>
             </div>
           </section>
-          <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-fuchsia-600 selection:text-zinc-200">
+          <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-[#c5a554] selection:text-black">
             <div className="client-project-final-album-cover h-full w-full hd:w-1/2">
               <article className="client-project-final-album-cover-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
                 <figure className="client-project-final-album-cover-artwork h-3/5 w-full flex flex-col items-center justify-center">
@@ -599,11 +604,11 @@ const CrownBounce = () => {
                     title={splitProjectDetailData.OriginalCover.title}
                     loading="lazy"
                     className="mb-2"
-                    ref={odunsiFinalOriginalCoverRef}
+                    ref={lenCoverDraftRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: odunsiFinalOriginalCoverPosition,
-                      opacity: odunsiFinalOriginalCoverOpacity,
+                      translateY: lenCoverDraftPosition,
+                      opacity: lenCoverDraftOpacity,
                     }}
                     onClick={handleImageFocus(
                       splitProjectDetailData.OriginalCover,
@@ -615,22 +620,22 @@ const CrownBounce = () => {
                 <div className="client-project-final-album-cover-description h-2/5 w-full flex flex-col items-center justify-center">
                   <motion.h2
                     className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                    ref={odunsiFinalOriginalCoverHeaderRef}
+                    ref={lenCoverDraftHeaderRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: odunsiFinalOriginalCoverHeaderPosition,
-                      opacity: odunsiFinalOriginalCoverHeaderOpacity,
+                      translateY: lenCoverDraftHeaderPosition,
+                      opacity: lenCoverDraftHeaderOpacity,
                     }}
                   >
                     {splitProjectDetailData.OriginalCover.header}
                   </motion.h2>
                   <motion.p
                     className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                    ref={odunsiFinalOriginalCoverParagraphRef}
+                    ref={lenCoverDraftParagraphRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: odunsiFinalOriginalCoverParagraphPosition,
-                      opacity: odunsiFinalOriginalCoverParagraphOpacity,
+                      translateY: lenCoverDraftParagraphPosition,
+                      opacity: lenCoverDraftParagraphOpacity,
                     }}
                   >
                     {splitProjectDetailData.OriginalCover.paragraph}
@@ -647,11 +652,11 @@ const CrownBounce = () => {
                     title={splitProjectDetailData.RemixCover.title}
                     loading="lazy"
                     className="mb-2"
-                    ref={odunsiAlbumRemixCoverRef}
+                    ref={lenCoverRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: odunsiAlbumRemixCoverPosition,
-                      opacity: odunsiAlbumRemixCoverOpacity,
+                      translateY: lenCoverPosition,
+                      opacity: lenCoverOpacity,
                     }}
                     onClick={handleImageFocus(
                       splitProjectDetailData.RemixCover,
@@ -663,22 +668,23 @@ const CrownBounce = () => {
                 <div className="client-project-final-tracklist-description h-2/5 w-full flex flex-col items-center justify-center">
                   <motion.h2
                     className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                    ref={odunsiAlbumRemixCoverHeaderRef}
+                    ref={lenCoverHeaderRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: odunsiAlbumRemixCoverHeaderPosition,
-                      opacity: odunsiAlbumRemixCoverHeaderOpacity,
+                      translateY: lenCoverHeaderPosition,
+                      opacity: lenCoverHeaderOpacity,
                     }}
                   >
                     {splitProjectDetailData.RemixCover.header}
                   </motion.h2>
                   <motion.p
                     className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                    ref={odunsiAlbumRemixCoverParagraphRef}
+                    ref={lenCoverParagraphRef}
+                    style={{ whiteSpace: 'pre-line' }}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: odunsiAlbumRemixCoverParagraphPosition,
-                      opacity: odunsiAlbumRemixCoverParagraphOpacity,
+                      translateY: lenCoverParagraphPosition,
+                      opacity: lenCoverParagraphOpacity,
                     }}
                   >
                     {splitProjectDetailData.RemixCover.paragraph}
@@ -689,18 +695,60 @@ const CrownBounce = () => {
           </div>
           <section className="client-project-visualiser-video-container h-auto w-full py-5">
             <div className="client-project-visualiser-video h-auto w-full flex flex-col items-center justify-center p-5">
-              <iframe
-                className="youtube-video"
-                src="https://www.youtube.com/embed/ff-XcLz22Bs?si=fMpl3eFiKmldRP2s"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              ></iframe>
+              <blockquote
+                className="tiktok-embed"
+                cite="https://www.tiktok.com/@sean.donny/video/7499014545466232070"
+                data-video-id="7499014545466232070"
+                style={{ maxWidth: '307px', minWidth: '307px' }}
+              >
+                <section>
+                  <a
+                    target="_blank"
+                    title="@sean.donny"
+                    href="https://www.tiktok.com/@sean.donny?refer=embed"
+                    rel="noopener noreferrer"
+                  >
+                    @sean.donny
+                  </a>{' '}
+                  Had the opportunity to work on the cover art for Len’s latest
+                  single “See Gbedu” 🇬🇧⚜️
+                  <a
+                    title="len"
+                    target="_blank"
+                    href="https://www.tiktok.com/tag/len?refer=embed"
+                    rel="noopener noreferrer"
+                  >
+                    #len
+                  </a>{' '}
+                  <a
+                    title="animation"
+                    target="_blank"
+                    href="https://www.tiktok.com/tag/animation?refer=embed"
+                    rel="noopener noreferrer"
+                  >
+                    #animation
+                  </a>{' '}
+                  <a
+                    title="artistsoftiktok"
+                    target="_blank"
+                    href="https://www.tiktok.com/tag/artistsoftiktok?refer=embed"
+                    rel="noopener noreferrer"
+                  >
+                    #artistsoftiktok
+                  </a>{' '}
+                  <a
+                    target="_blank"
+                    title="♬ original sound - Sean"
+                    href="https://www.tiktok.com/music/original-sound-7499014551761881862?refer=embed"
+                    rel="noopener noreferrer"
+                  >
+                    ♬ original sound - Sean
+                  </a>
+                </section>
+              </blockquote>
             </div>
           </section>
-          <section className="client-project-deliverables-container h-auto w-full bg-fuchsia-600 selection:bg-black selection:text-zinc-200 p-5">
+          <section className="client-project-deliverables-container h-auto w-full bg-[#c5a554] selection:bg-black selection:text-black p-5">
             <div className="client-project-deliverables flex flex-col items-start justify-center">
               <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
                 <motion.h2
@@ -746,7 +794,7 @@ const CrownBounce = () => {
             </div>
           </section>
         </main>
-        <nav className="client-project-navigate h-[468px] w-full bg-[#c5a554] selection:bg-black selection:text-zinc-200 p-5">
+        <nav className="client-project-navigate h-[468px] w-full bg-red-600 selection:bg-black selection:text-black p-5">
           <ul
             className="client-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"
             ref={projectNavigateScope}
@@ -754,7 +802,7 @@ const CrownBounce = () => {
             <li
               className="client-project-navigate-previous h-full w-2/5 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
               onClick={() => {
-                handleNavigate('client-projects/see-gbedu');
+                handleNavigate('client-projects/mikes-world');
               }}
             >
               <p className="client-project-navigate-previous-title font-custom text-2xl text-left text-black w-full font-normal">
@@ -771,7 +819,7 @@ const CrownBounce = () => {
             <li
               className="client-project-navigate-next h-full w-2/5 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
               onClick={() => {
-                handleNavigate('client-projects/menace-talk');
+                handleNavigate('client-projects/crown-bounce');
               }}
             >
               <p className="client-project-navigate-next-title font-custom text-2xl text-right text-black w-full font-normal">
@@ -791,4 +839,4 @@ const CrownBounce = () => {
   );
 };
 
-export default CrownBounce;
+export default SeeGbedu;

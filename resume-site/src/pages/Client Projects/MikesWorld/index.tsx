@@ -305,7 +305,7 @@ const MikesWrld = () => {
   const projectNavigateScope = useMenuAnimation(projectNavigateInView);
 
   const previousProject = 'Popwave';
-  const nextProject = 'Crown Bounce';
+  const nextProject = 'See Gbedu';
 
   const navigate = useNavigate();
 
@@ -804,7 +804,7 @@ const MikesWrld = () => {
             </div>
           </section>
         </main>
-        <nav className="client-project-navigate h-[468px] w-full bg-purple-600 selection:bg-black selection:text-zinc-200 p-5">
+        <nav className="client-project-navigate h-[468px] w-full bg-orange-600 selection:bg-black selection:text-zinc-200 p-5">
           <ul
             className="client-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"
             ref={projectNavigateScope}
@@ -829,7 +829,7 @@ const MikesWrld = () => {
             <li
               className="client-project-navigate-next h-full w-2/5 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
               onClick={() => {
-                handleNavigate('client-projects/crown-bounce');
+                handleNavigate('client-projects/see-gbedu');
               }}
             >
               <p className="client-project-navigate-next-title font-custom text-2xl text-right text-black w-full font-normal">

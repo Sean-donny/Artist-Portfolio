@@ -7,6 +7,7 @@ import Gallery from './pages/Gallery';
 
 import PersonalProjects from './pages/Personal Projects';
 // Personal Projects sub pages
+import YouTubers from './pages/Personal Projects/YouTubers';
 import AnimationProject from './pages/Personal Projects/AnimationProject';
 import SubaruBoy from './pages/Personal Projects/SubaruBoy';
 import Music from './pages/Personal Projects/Music';
@@ -14,8 +15,8 @@ import Mowalola from './pages/Personal Projects/Mowalola';
 
 import ClientProjects from './pages/Client Projects';
 // Client Projects sub pages
-import CrownBounce from './pages/Client Projects/CrownBounce';
 import SeeGbedu from './pages/Client Projects/SeeGbedu';
+import CrownBounce from './pages/Client Projects/CrownBounce';
 import MenaceTalk from './pages/Client Projects/MenaceTalk';
 import YeAnthem from './pages/Client Projects/YeAnthem';
 import Nuniverse from './pages/Client Projects/Nuniverse';
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: '/personal-projects',
         element: <PersonalProjects />,
+      },
+      {
+        path: '/personal-projects/youtubers',
+        element: <YouTubers />,
       },
       {
         path: '/personal-projects/animation-project',

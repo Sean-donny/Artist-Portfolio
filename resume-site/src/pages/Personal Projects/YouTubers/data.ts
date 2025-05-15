@@ -92,7 +92,7 @@ const YouTubersData = {
     subscribers: '1.08M',
     datePosted: '4 months ago',
     suggested1: 'For You',
-    suggested2: 'thumbnail Essays',
+    suggested2: 'Video Essays',
     suggested3: 'Philosophical debates',
   },
   Youtuber6: {
@@ -105,7 +105,7 @@ const YouTubersData = {
     subscribers: '271K',
     datePosted: '5 days ago',
     suggested1: 'Streetwear',
-    suggested2: 'Related thumbnails',
+    suggested2: 'Related Videos',
     suggested3: 'Margiela',
   },
   Youtuber7: {
@@ -118,7 +118,7 @@ const YouTubersData = {
     subscribers: '6.44M',
     datePosted: '5 months ago',
     suggested1: 'Flights',
-    suggested2: 'Related thumbnails',
+    suggested2: 'Related Videos',
     suggested3: 'Computer Science',
   },
   Youtuber8: {
@@ -131,7 +131,7 @@ const YouTubersData = {
     subscribers: '86K',
     datePosted: '2 months ago',
     suggested1: 'Vuja De',
-    suggested2: 'Related thumbnails',
+    suggested2: 'Related Videos',
     suggested3: 'Issey Pleats',
   },
   Youtuber9: {
@@ -144,7 +144,7 @@ const YouTubersData = {
     subscribers: '121K',
     datePosted: '10 days ago',
     suggested1: 'Luxury Goods',
-    suggested2: 'Related thumbnails',
+    suggested2: 'Related Videos',
     suggested3: 'Fashion Business',
   },
   Youtuber10: {
@@ -196,7 +196,7 @@ const YouTubersData = {
     subscribers: '15.1M',
     datePosted: '8 days ago',
     suggested1: 'The Strangers',
-    suggested2: 'Related',
+    suggested2: 'Related Videos',
     suggested3: 'Moist Meter',
   },
   Youtuber14: {
@@ -209,7 +209,7 @@ const YouTubersData = {
     subscribers: '41',
     datePosted: '2 months ago',
     suggested1: 'Memories',
-    suggested2: 'Related',
+    suggested2: 'Related Videos',
     suggested3: 'Art',
   },
 };

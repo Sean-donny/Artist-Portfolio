@@ -120,3 +120,15 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.scroll-area::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-area {
+  scrollbar-width: none;
+}
+
+.fade-right {
+  background: linear-gradient(to left, #17140b, #17140b00);
+}

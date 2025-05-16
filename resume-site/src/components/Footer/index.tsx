@@ -1,10 +1,15 @@
 const Footer = () => {
+  const getCurrentYear = () => {
+    const d = new Date();
+    const year = d.getFullYear();
+    return year.toString();
+  };
   return (
     <footer className="w-full px-5 py-2 z-40 bg-black">
       <ul className="flex justify-between flex-col-reverse sm:flex-row">
         <li className="mt-5 flex justify-center items-end sm:mt-0">
           <span className="font-custom text-gray-600 tracking-tight text-base">
-            &#169;2024
+            &#169;{getCurrentYear()}
           </span>
         </li>
         <li className="flex justify-center items-end">

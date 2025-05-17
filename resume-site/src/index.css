@@ -132,3 +132,25 @@ body {
 .fade-right {
   background: linear-gradient(to left, #17140b, #17140b00);
 }
+
+.suggested-topics {
+  scroll-snap-type: x proximity;
+}
+
+.suggested-topic {
+  scroll-snap-align: center;
+}
+
+/* .inner-carousel:hover .carousel-image:not(:hover) {
+  filter: grayscale(100%);
+}
+
+.carousel-image {
+  transition-property: filter, -webkit-filter;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+} */
+
+.hero-bio-text-container {
+  overflow-y: hidden;
+}

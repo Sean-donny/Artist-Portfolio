@@ -84,7 +84,7 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
               <motion.img
                 src={image}
                 alt={titles[index]}
-                className=""
+                className="carousel-image"
                 title={titles[index]}
                 loading="eager"
                 whileHover={{ scale: 1.05 }}
@@ -107,7 +107,7 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
                 <motion.img
                   src={image}
                   alt={titles[index]}
-                  className=""
+                  className="carousel-image"
                   title={titles[index]}
                   loading="eager"
                   whileHover={{ scale: 1.05 }}

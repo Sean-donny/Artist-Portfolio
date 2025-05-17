@@ -6,6 +6,7 @@ import { use3DTilt } from '../../Hooks/use3DTilt';
 
 // Image imports
 import SeanPortrait from '/optimised/sean_donny_hero_image.png';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   const [bgColorIndex, setBgColorIndex] = useState(0);
@@ -31,16 +32,36 @@ const Hero = () => {
       >
         <div className="hero-carousel-and-bio-container flex-grow md:w-3/5 md:flex-none">
           <div className="hero-carousel-and-bio flex flex-col h-auto md:h-full p-2">
-            <div className="hero-carousel w-full h-1/2 overflow-x-clip">
+            <motion.div
+              className="hero-carousel w-full h-1/2 overflow-x-clip"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{
+                type: 'spring',
+                bounce: 0.3,
+                duration: 0.6,
+                delay: 0.5,
+              }}
+            >
               <Slideshow images={Images} titles={Titles} />
-            </div>
+            </motion.div>
             <div className="hero-bio w-full h-auto md:h-full">
               <article className="hero-bio-text-container h-full w-auto flex items-end overflow-clip">
-                <h1 className="hero-bio-text font-loud uppercase tracking-tight text-aquatic py-2 lg:pb-5 lg:pl-5 lg:text-massive2 text-4xl lg:leading-massive2">
+                <motion.h1
+                  className="hero-bio-text font-loud uppercase tracking-tight text-aquatic py-2 lg:pb-5 lg:pl-5 lg:text-massive2 text-4xl lg:leading-massive2"
+                  initial={{ translateY: '300px' }}
+                  animate={{ translateY: '0px' }}
+                  transition={{
+                    type: 'spring',
+                    bounce: 0.3,
+                    duration: 0.6,
+                    delay: 0.5,
+                  }}
+                >
                   Sean Donny is a <br />
                   contemporary artist <br />
                   based in England, UK.
-                </h1>
+                </motion.h1>
               </article>
             </div>
           </div>
@@ -55,13 +76,21 @@ const Hero = () => {
               perspective: '1000px',
             }}
           >
-            <img
+            <motion.img
               src={SeanPortrait}
               alt="Sean Donny"
               title="Sean Donny - Click to change my background colour ;)"
               loading="eager"
               className="hero-image object-center h-auto w-full cursor-pointer md:pt-0"
               onClick={bgShuffle}
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{
+                type: 'spring',
+                bounce: 0.3,
+                duration: 0.6,
+                delay: 0.5,
+              }}
             />
           </figure>
         </div>

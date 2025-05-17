@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import YouTubersData from './data';
 import { YoutuberDataItem } from '../../../interfaces/YoutuberData';
 
@@ -163,27 +163,27 @@ const YouTubers = () => {
       </div>
       <div className="w-full h-auto lg:w-[30.5%] pt-2 lg:pt-10 px-0">
         <div className="relative pl-5 lg:pl-0">
-          <div className="suggested-topics scroll-area flex space-x-2 overflow-x-auto lg:px-2 pt-2">
+          <div className="suggested-topics scroll-area flex space-x-2 overflow-x-scroll lg:px-2 pt-2">
             {/* 'All' Tab */}
-            <div className="flex-shrink-0 h-8 bg-slate-100 px-3 flex items-center justify-center rounded-lg cursor-pointer">
+            <div className="suggested-topic flex-shrink-0 h-8 bg-slate-100 px-3 flex items-center justify-center rounded-lg cursor-pointer">
               <p className="text-base font-custom tracking-normal font-normal antialiased text-black whitespace-nowrap">
                 All
               </p>
             </div>
             {/* Suggested 1 */}
-            <div className="flex-shrink-0 h-8 max-w-xs bg-[rgba(240,240,240,0.4)] hover:bg-[rgba(240,240,240,0.6)] px-3 flex items-center justify-center rounded-lg cursor-pointer">
+            <div className="suggested-topic flex-shrink-0 h-8 max-w-xs bg-[rgba(240,240,240,0.4)] hover:bg-[rgba(240,240,240,0.6)] px-3 flex items-center justify-center rounded-lg cursor-pointer">
               <p className="text-base font-custom tracking-normal font-normal antialiased text-slate-100 truncate">
                 {current.suggested1}
               </p>
             </div>
             {/* Suggested 2 */}
-            <div className="flex-shrink-0 h-8 max-w-xs bg-[rgba(240,240,240,0.4)] hover:bg-[rgba(240,240,240,0.6)] px-3 flex items-center justify-center rounded-lg cursor-pointer">
+            <div className="suggested-topic flex-shrink-0 h-8 max-w-xs bg-[rgba(240,240,240,0.4)] hover:bg-[rgba(240,240,240,0.6)] px-3 flex items-center justify-center rounded-lg cursor-pointer">
               <p className="text-base font-custom tracking-normal font-normal antialiased text-slate-100 truncate">
                 {current.suggested2}
               </p>
             </div>
             {/* Suggested 3 */}
-            <div className="flex-shrink-0 h-8 max-w-xs bg-[rgba(240,240,240,0.4)] hover:bg-[rgba(240,240,240,0.6)] px-3 flex items-center justify-center rounded-lg cursor-pointer">
+            <div className="suggested-topic flex-shrink-0 h-8 max-w-xs bg-[rgba(240,240,240,0.4)] hover:bg-[rgba(240,240,240,0.6)] px-3 flex items-center justify-center rounded-lg cursor-pointer">
               <p className="text-base font-custom tracking-normal font-normal antialiased text-slate-100 truncate">
                 {current.suggested3}
               </p>
@@ -197,7 +197,7 @@ const YouTubers = () => {
             <button
               key={suggestion.name}
               onClick={() => handleSuggestionClick(suggestion)}
-              className="flex flex-col lg:flex-row gap-3 w-screen lg:w-full text-left hover:bg-[rgba(240,240,240,0.2)] lg:p-2 rounded"
+              className="suggested-video flex flex-col lg:flex-row gap-3 w-screen lg:w-full text-left hover:bg-[rgba(240,240,240,0.2)] lg:p-2 rounded"
               style={{
                 transition:
                   'background-color 50ms cubic-bezier(0.65, 0, 0.35, 1)',

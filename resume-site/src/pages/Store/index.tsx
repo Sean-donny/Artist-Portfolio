@@ -1,0 +1,144 @@
+import { useEffect, useRef, useState } from 'react';
+import { PosterDataItem } from '../../interfaces/PosterData';
+import posterData from './data';
+import { motion } from 'framer-motion';
+
+const Store = () => {
+  const numberOfItems = Object.keys(posterData).length;
+  const posters: PosterDataItem[] = Object.values(posterData);
+
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const scrollListenerRef = useRef<HTMLDivElement>(null);
+  const currentIndexRef = useRef(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const anglePerPoster = 360 / numberOfItems;
+  const scrollIncrement = 171.25;
+  const scrollHeight = scrollIncrement * numberOfItems;
+
+  useEffect(() => {
+    let scrollTimeout: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      //   const pageHeight = document.body.scrollHeight;
+      const scrollLimit = scrollHeight - viewportHeight;
+
+      const rawRotation =
+        (scrollTop / scrollLimit) * numberOfItems * anglePerPoster;
+
+      if (rawRotation > 350) {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        return;
+      }
+
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const snappedIndex = Math.round(rawRotation / anglePerPoster);
+        const snappedRotation = snappedIndex * anglePerPoster;
+
+        currentIndexRef.current = snappedIndex;
+        setCurrentIndex(Math.min(snappedIndex, numberOfItems - 1)); // trigger UI update
+
+        if (sliderRef.current) {
+          sliderRef.current.style.transition = 'transform 0.5s ease';
+          sliderRef.current.style.transform = `perspective(2000px) rotateY(${-snappedRotation}deg)`;
+
+          setTimeout(() => {
+            if (sliderRef.current) {
+              sliderRef.current.style.transition = '';
+            }
+          }, 500);
+        }
+      }, 150);
+    };
+
+    const handleResize = () => {
+      // Optional: trigger a reflow or re-snap based on new viewport
+      handleScroll();
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(scrollTimeout);
+    };
+  }, [numberOfItems, anglePerPoster, scrollHeight]);
+
+  const sliderStyle = { '--quantity': numberOfItems } as React.CSSProperties;
+
+  return (
+    <div className="store-gallery-container w-full h-full overflow-hidden relative store-page bg-zima">
+      {/* Scroll-driving invisible div */}
+      <div
+        className="store-gallery-scroll-wrapper w-full relative"
+        style={{ height: `${scrollHeight}px` }}
+        ref={scrollListenerRef}
+      ></div>
+
+      {/* Dots Navigation */}
+      <nav className="store-gallery-quick-navigation-indicator fixed right-3 lg:right-8 top-1/2 transform -translate-y-1/2 z-10">
+        {posters.map((_, i) => (
+          <div
+            key={i}
+            className={`h-2 w-2 rounded-full my-2 cursor-pointer ${
+              i === currentIndex ? 'bg-orangutan' : 'bg-slate-300'
+            }`}
+            onClick={() => {
+              const scrollTarget =
+                (scrollHeight - window.innerHeight) * (i / numberOfItems);
+              window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+            }}
+          ></div>
+        ))}
+      </nav>
+
+      {/* Poster Title */}
+      <div className="store-gallery-title font-loud text-slate-100 z-50 fixed top-16 left-0 right-0 text-center text-massive2">
+        <h1>{posters[Math.min(currentIndex, numberOfItems - 1)].title}</h1>
+      </div>
+
+      {/* Carousel */}
+      <section className="store-gallery-banner-container w-full h-screen fixed top-0 left-0">
+        <div className="store-gallery-banner">
+          <div
+            className="store-gallery-slider"
+            style={sliderStyle}
+            ref={sliderRef}
+          >
+            {posters.map((poster, i) => (
+              <figure
+                className="store-gallery-item"
+                key={i}
+                style={{ '--i': i } as React.CSSProperties}
+              >
+                <motion.img
+                  className="store-gallery-image cursor-pointer"
+                  src={poster.src}
+                  alt={poster.title}
+                  width={poster.width / 4}
+                  height={poster.height / 4}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.9 }}
+                />
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom Info */}
+      <div className="store-gallery-poster-number-container fixed bottom-8 md:bottom-16 lg:bottom-24 left-0 right-0 text-center">
+        <p className="store-gallery-poster-number font-custom font-semibold inline-block text-slate-200">
+          {currentIndex + 1}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Store;

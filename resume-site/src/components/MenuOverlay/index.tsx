@@ -78,12 +78,12 @@ const MenuOverlay = ({
                 }`}
                 onMouseEnter={() => focus(1)}
                 onMouseLeave={unFocus}
-                onClick={() => handleNavigate('personal-projects')}
+                onClick={() => handleNavigate('store')}
                 style={{
                   transition: hoverEffect,
                 }}
               >
-                PERSONAL PROJECTS
+                STORE&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;
               </li>
 
               <li
@@ -94,12 +94,12 @@ const MenuOverlay = ({
                 }`}
                 onMouseEnter={() => focus(2)}
                 onMouseLeave={unFocus}
-                onClick={() => handleNavigate('client-projects')}
+                onClick={() => handleNavigate('personal-projects')}
                 style={{
                   transition: hoverEffect,
                 }}
               >
-                CLIENT PROJECTS&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;
+                PERSONAL PROJECTS
               </li>
 
               <li
@@ -109,6 +109,23 @@ const MenuOverlay = ({
                     : 'opacity-100'
                 }`}
                 onMouseEnter={() => focus(3)}
+                onMouseLeave={unFocus}
+                onClick={() => handleNavigate('client-projects')}
+                style={{
+                  transition: hoverEffect,
+                }}
+              >
+                CLIENT
+                PROJECTS&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;
+              </li>
+
+              <li
+                className={`${
+                  isFocused && highlightedIndex !== 4
+                    ? 'opacity-20'
+                    : 'opacity-100'
+                }`}
+                onMouseEnter={() => focus(4)}
                 onMouseLeave={unFocus}
                 onClick={() => handleNavigate('about')}
                 style={{

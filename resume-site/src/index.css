@@ -112,14 +112,14 @@ body {
   animation-timeline: view();
 } */
 
-@keyframes autoRotate {
+/* @keyframes autoRotate {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 .scroll-area::-webkit-scrollbar {
   display: none;
@@ -153,4 +153,53 @@ body {
 
 .hero-bio-text-container {
   overflow-y: hidden;
+}
+
+/* Fixed centered carousel */
+.store-gallery-banner {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  /* top: 0%; */
+  /* left: 0%; */
+  /* text-align: center; */
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Carousel core styles */
+.store-gallery-slider {
+  position: absolute;
+  width: calc(926px / 4);
+  height: calc(1158px / 4);
+  top: calc(50% - ((1158px / 4) / 2));
+  left: calc(50% - ((926px / 4) / 2));
+  transform-style: preserve-3d;
+  transform: perspective(2000px);
+  background-image: url('/optimised/sean_donny_skull_logo.png');
+  background-size: contain;
+}
+
+/* Poster placement in 3D space */
+.store-gallery-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: rotateY(calc(var(--i) * 360deg / var(--quantity)))
+    translateZ(800px);
+  /* backface-visibility: hidden; */
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Poster images */
+.store-gallery-item img {
+  image-rendering: auto;
+  transform: translateZ(1px) scale(0.98);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

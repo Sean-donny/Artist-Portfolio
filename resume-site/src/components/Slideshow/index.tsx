@@ -90,7 +90,7 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => {
-                  handleNavigate('gallery');
+                  handleNavigate('store');
                 }}
               />
             </figure>
@@ -100,9 +100,6 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
               <figure
                 className="min-h-slide2 min-w-slide2 px-2"
                 key={`${image}-${repeatIndex}-${index}`}
-                onClick={() => {
-                  handleNavigate('gallery');
-                }}
               >
                 <motion.img
                   src={image}
@@ -113,7 +110,7 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => {
-                    handleNavigate('gallery');
+                    handleNavigate('store');
                   }}
                 />
               </figure>

@@ -1,11 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
-import { PosterDataItem } from '../../interfaces/PosterData';
-import posterData from './data';
+import { Poster } from '../../interfaces/Poster';
+import richPosterData from './data';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const Store = () => {
-  const numberOfItems = Object.keys(posterData).length;
-  const posters: PosterDataItem[] = Object.values(posterData);
+  const navigate = useNavigate();
+
+  const handleNavigate = (path: string) => {
+    window.scrollTo(0, 0);
+    navigate(`/store/${path}`);
+  };
+  const numberOfItems = Object.keys(richPosterData).length;
+  const posters: Poster[] = Object.values(richPosterData);
 
   const sliderRef = useRef<HTMLDivElement>(null);
   const scrollListenerRef = useRef<HTMLDivElement>(null);
@@ -124,6 +131,9 @@ const Store = () => {
                   height={poster.height / 4}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.9 }}
+                  onClick={() => {
+                    handleNavigate(poster.slug);
+                  }}
                 />
               </figure>
             ))}

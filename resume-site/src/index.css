@@ -203,3 +203,32 @@ body {
   transform: translateZ(1px) scale(0.98);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* Hide spinner buttons in number input */
+.product-quantity-options-container
+  input[type='number']::-webkit-inner-spin-button,
+.product-quantity-options-container
+  input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.product-quantity-options-container input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
+  background-color: transparent;
+  text-align: center;
+}
+
+@keyframes subtle-flash {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.hover-flash:hover {
+  animation: subtle-flash 1.2s ease-in-out infinite;
+}

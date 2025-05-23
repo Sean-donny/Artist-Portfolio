@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Gallery from './pages/Gallery';
 
 import Store from './pages/Store';
+import Product from './pages/Store/Product';
 
 import PersonalProjects from './pages/Personal Projects';
 // Personal Projects sub pages
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: '/store',
         element: <Store />,
+      },
+      {
+        path: '/store/:slug',
+        element: <Product />,
       },
       {
         path: '/personal-projects',

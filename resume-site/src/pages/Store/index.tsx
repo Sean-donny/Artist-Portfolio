@@ -78,6 +78,13 @@ const Store = () => {
 
   const sliderStyle = { '--quantity': numberOfItems } as React.CSSProperties;
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>, path: string) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault(); // Prevent spacebar from scrolling
+      handleNavigate(path);
+    }
+  };
+
   return (
     <div className="store-gallery-container w-full h-full overflow-hidden relative store-page bg-zima">
       {/* Scroll-driving invisible div */}
@@ -116,15 +123,25 @@ const Store = () => {
             className="store-gallery-slider"
             style={sliderStyle}
             ref={sliderRef}
+            aria-hidden={true}
           >
             {posters.map((poster, i) => (
               <figure
                 className="store-gallery-item"
                 key={i}
                 style={{ '--i': i } as React.CSSProperties}
+                onFocus={() => {
+                  const scrollTarget =
+                    (scrollHeight - window.innerHeight) * (i / numberOfItems);
+                  window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+                }}
+                onKeyDown={e => handleKeyDown(e, poster.slug)}
               >
                 <motion.img
                   className="store-gallery-image cursor-pointer"
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`View poster ${poster.title}`}
                   src={poster.src}
                   alt={poster.title}
                   width={poster.width / 4}

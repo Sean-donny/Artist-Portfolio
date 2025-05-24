@@ -232,3 +232,14 @@ body {
 .hover-flash:hover {
   animation: subtle-flash 1.2s ease-in-out infinite;
 }
+
+/* For the scroll container inside CartPanel */
+.cart-scroll-container {
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.cart-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

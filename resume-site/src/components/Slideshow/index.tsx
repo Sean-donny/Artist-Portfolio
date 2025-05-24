@@ -1,6 +1,3 @@
-// import { useRef, useState, useEffect, useCallback } from 'react';
-// import { motion } from 'framer-motion';
-
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,52 +7,6 @@ interface SlideshowProps {
 }
 
 const Slideshow = ({ images, titles }: SlideshowProps) => {
-  // const [translateWidth, setTranslateWidth] = useState(0);
-  // const [containerKey, setContainerKey] = useState(0);
-
-  // const slideshowId = 'slideshow-container';
-  // const slideshowRef = useRef<HTMLDivElement>(null);
-
-  // const handleTranslateWidth = useCallback(() => {
-  //   if (slideshowRef.current) {
-  //     const innerCarouselWidth =
-  //       slideshowRef.current.querySelector('.inner-carousel')?.scrollWidth || 0;
-
-  //     setTranslateWidth(innerCarouselWidth);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   handleTranslateWidth();
-  // }, [handleTranslateWidth]);
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setContainerKey(prev => prev + 1);
-  //     handleTranslateWidth();
-  //   };
-
-  //   window.addEventListener('resize', handleResize);
-
-  //   return () => {
-  //     window.removeEventListener('resize', handleResize);
-  //   };
-  // }, [handleTranslateWidth]);
-
-  // const carouselVariants = {
-  //   initial: {
-  //     x: 0,
-  //   },
-  //   animate: {
-  //     x: -translateWidth,
-  //     transition: {
-  //       duration: 12.8,
-  //       ease: 'linear',
-  //       repeat: Infinity,
-  //     },
-  //   },
-  // };
-
   const repeatCount = 2;
 
   const navigate = useNavigate();
@@ -65,25 +16,29 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
     navigate(`/${path}`);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleNavigate('store');
+    }
+  };
+
   return (
     <div className="carousel-container">
       <div
-        // key={containerKey}
-        // id={slideshowId}
-        // ref={slideshowRef}
         className="carousel-body"
+        tabIndex={0}
+        role="region"
+        aria-label="Featured artworks carousel pointing towards print store"
+        onKeyDown={handleKeyDown}
       >
-        <div
-          className="inner-carousel flex"
-          // variants={carouselVariants}
-          // initial="initial"
-          // animate="animate"
-        >
+        <div className="inner-carousel flex">
           {images.map((image, index) => (
             <figure className="min-h-slide2 min-w-slide2 px-2" key={image}>
               <motion.img
                 src={image}
                 alt={titles[index]}
+                tabIndex={-1}
+                aria-hidden={true}
                 className="carousel-image"
                 title={titles[index]}
                 loading="eager"
@@ -104,6 +59,8 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
                 <motion.img
                   src={image}
                   alt={titles[index]}
+                  tabIndex={-1}
+                  aria-hidden={true}
                   className="carousel-image"
                   title={titles[index]}
                   loading="eager"
@@ -117,14 +74,6 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
             )),
           )}
         </div>
-        {/* <div
-          className="inner-carousel flex"
-          // variants={carouselVariants}
-          // initial="initial"
-          // animate="animate"
-        >
-          
-        </div> */}
       </div>
     </div>
   );

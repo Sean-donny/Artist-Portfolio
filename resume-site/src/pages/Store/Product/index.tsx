@@ -4,6 +4,7 @@ import { PosterSize } from '../../../interfaces/Poster';
 import richPosterData from '../data';
 import { CartItem } from '../../../interfaces/CartItem';
 import { shuffleArray } from '../../../utils/ShuffleArray';
+import { useCart } from '../../../context/useCart';
 
 const Product = () => {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ const Product = () => {
     window.scrollTo(0, 0);
     navigate(`/${path}`);
   };
+  const { setCart } = useCart();
   const { slug } = useParams();
 
   const poster = richPosterData[slug as string];
@@ -67,10 +69,13 @@ const Product = () => {
         quantity: safeQuantity,
         price: selectedSizeData.price,
         stripePriceId: selectedSizeData.stripePriceId,
+        thumbnail: poster.src,
       });
     }
 
     localStorage.setItem(cartKey, JSON.stringify(cart));
+    setCart(cart); // Update the cart context state immediately
+
     console.log('Cart updated:', cart);
   };
 

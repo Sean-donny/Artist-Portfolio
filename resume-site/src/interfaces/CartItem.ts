@@ -5,5 +5,6 @@ export interface CartItem {
   size: PosterSize;
   quantity: number;
   stripePriceId: string;
-  price: number; // optional, for displaying total in cart
+  price: number;
+  thumbnail?: string;
 }

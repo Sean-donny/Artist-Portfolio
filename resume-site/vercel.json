@@ -1,9 +1,9 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
   "version": 2,
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
   "functions": {
     "api/**/*.ts": {
-      "runtime": "vercel/node@22.x"
+      "runtime": "nodejs20.x"
     }
   }
 }

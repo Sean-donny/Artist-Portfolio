@@ -56,6 +56,21 @@ const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
+  const handleCheckout = async () => {
+    const res = await fetch('/api/checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ cartItems: cart }),
+    });
+
+    const data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      alert('Checkout failed');
+    }
+  };
+
   return (
     <motion.aside
       className="fixed top-0 right-0 w-80 h-full bg-black text-slate-100 shadow-lg z-[3000] p-4 overflow-y-auto flex flex-col font-custom"
@@ -110,17 +125,14 @@ const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                     </p>
                   </div>
 
+                  <button
+                    onClick={() => removeItem(item.title, item.size)}
+                    aria-label={`Remove ${item.title} from cart`}
+                    className=" text-white px-2 py-1 rounded text-sm hover:bg-red-600  transition"
+                  >
+                    ✕
+                  </button>
                   <div className="flex items-center space-x-2 ml-3">
-                    <button
-                      onClick={() => increment(item)}
-                      aria-label={`Decrease quantity of ${item.title}`}
-                      className=" text-white px-2 py-1 rounded text-sm hover:bg-white hover:text-black transition disabled:opacity-50"
-                    >
-                      +
-                    </button>
-                    <span className="text-white text-sm min-w-[1.5rem] text-center">
-                      {item.quantity}
-                    </span>
                     <button
                       onClick={() => decrement(item)}
                       disabled={item.quantity >= MAX_QUANTITY}
@@ -129,12 +141,15 @@ const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                     >
                       -
                     </button>
+                    <span className="text-white text-sm min-w-[1.5rem] text-center">
+                      {item.quantity}
+                    </span>
                     <button
-                      onClick={() => removeItem(item.title, item.size)}
-                      aria-label={`Remove ${item.title} from cart`}
-                      className=" text-white px-2 py-1 rounded text-sm hover:bg-red-600  transition"
+                      onClick={() => increment(item)}
+                      aria-label={`Decrease quantity of ${item.title}`}
+                      className=" text-white px-2 py-1 rounded text-sm hover:bg-white hover:text-black transition disabled:opacity-50"
                     >
-                      ✕
+                      +
                     </button>
                   </div>
                 </li>
@@ -147,7 +162,7 @@ const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
               </p>
               <button
                 className="w-full mt-3 bg-white text-black py-2 rounded hover:bg-gray-200 transition"
-                onClick={() => alert('Checkout flow coming soon!')}
+                onClick={handleCheckout}
                 aria-label="Checkout"
               >
                 Checkout

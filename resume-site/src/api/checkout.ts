@@ -6,10 +6,10 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2025-04-30.basil',
 });
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).send('Method Not Allowed');
-  }
+export default async function POST(req: VercelRequest, res: VercelResponse) {
+  //   if (req.method !== 'POST') {
+  //     return res.status(405).send('Method Not Allowed');
+  //   }
 
   try {
     const { cart } = req.body;

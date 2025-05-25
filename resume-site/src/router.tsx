@@ -30,6 +30,7 @@ import MikesWrld from './pages/Client Projects/MikesWorld';
 import About from './pages/About';
 
 import Error404 from './pages/Error 404';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const router = createBrowserRouter([
   {
@@ -47,11 +48,19 @@ const router = createBrowserRouter([
       },
       {
         path: '/store',
-        element: <Store />,
+        element: (
+          <ProtectedRoute requiredPassword="TAMUNO">
+            <Store />
+          </ProtectedRoute>
+        ),
       },
       {
         path: '/store/:slug',
-        element: <Product />,
+        element: (
+          <ProtectedRoute requiredPassword="TAMUNO">
+            <Product />
+          </ProtectedRoute>
+        ),
       },
       {
         path: '/personal-projects',

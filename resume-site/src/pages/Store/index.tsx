@@ -6,6 +6,43 @@ import { useNavigate } from 'react-router-dom';
 
 const Store = () => {
   const navigate = useNavigate();
+  // Add tooltipVisible state, defaulting to true (or false as needed)
+  const [tooltipVisible, setTooltipVisible] = useState(true);
+
+  // Responsive scroll increment and snap delay
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+  const scrollIncrement = isMobile ? 120 : 140;
+  const snapDelay = isMobile ? 80 : 120;
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    if (window.innerWidth >= 640) return;
+
+    let touchStartY = 0;
+    let touchMoved = false;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY = e.touches[0].clientY;
+      touchMoved = false;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      const deltaY = Math.abs(e.touches[0].clientY - touchStartY);
+      if (deltaY > 10 && !touchMoved) {
+        setTooltipVisible(false);
+        touchMoved = true;
+      }
+    };
+
+    window.addEventListener('touchstart', handleTouchStart);
+    window.addEventListener('touchmove', handleTouchMove);
+
+    return () => {
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
 
   const handleNavigate = (path: string) => {
     window.scrollTo(0, 0);
@@ -20,7 +57,6 @@ const Store = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const anglePerPoster = 360 / numberOfItems;
-  const scrollIncrement = 171.25;
   const scrollHeight = scrollIncrement * numberOfItems;
 
   useEffect(() => {
@@ -29,7 +65,6 @@ const Store = () => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const viewportHeight = window.innerHeight;
-      //   const pageHeight = document.body.scrollHeight;
       const scrollLimit = scrollHeight - viewportHeight;
 
       const rawRotation =
@@ -58,7 +93,7 @@ const Store = () => {
             }
           }, 500);
         }
-      }, 150);
+      }, snapDelay);
     };
 
     const handleResize = () => {
@@ -74,7 +109,7 @@ const Store = () => {
       window.removeEventListener('resize', handleResize);
       clearTimeout(scrollTimeout);
     };
-  }, [numberOfItems, anglePerPoster, scrollHeight]);
+  }, [numberOfItems, anglePerPoster, scrollHeight, snapDelay]);
 
   const sliderStyle = { '--quantity': numberOfItems } as React.CSSProperties;
 
@@ -164,6 +199,25 @@ const Store = () => {
           {currentIndex + 1}
         </p>
       </div>
+
+      {window.innerWidth < 640 && (
+        <div
+          className="fixed bottom-24 left-1/2 transform -translate-x-1/2 z-50 text-slate-300 text-sm flex flex-col items-center pointer-events-none"
+          id="store-navigation-tooltip"
+          style={{ display: tooltipVisible ? 'flex' : 'none' }}
+        >
+          <span>Swipe up/down</span>
+          <svg
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path d="M12 5v14M12 19l-4-4m4 4l4-4" />
+          </svg>
+        </div>
+      )}
     </div>
   );
 };

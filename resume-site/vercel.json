@@ -1,8 +1,9 @@
 {
   "rewrites": [{ "source": "/(.*)", "destination": "/" }],
+  "version": 2,
   "functions": {
     "api/**/*.ts": {
-      "runtime": "nodejs18.x"
+      "runtime": "vercel/node@22.x"
     }
   }
 }

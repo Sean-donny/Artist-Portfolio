@@ -30,8 +30,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       payment_method_types: ['card'],
       mode: 'payment',
       line_items,
-      success_url: `${process.env.PUBLIC_BASE_URL}/store`,
-      cancel_url: `${process.env.PUBLIC_BASE_URL}/store`,
+      success_url: 'https://seandonny.com/store',
+      cancel_url: 'https://seandonny.com/store',
       metadata: {
         cart: JSON.stringify(cart),
       },

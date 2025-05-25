@@ -12,6 +12,7 @@
   "dependencies": {
     "@cloudinary/react": "^1.11.2",
     "@cloudinary/url-gen": "^1.14.0",
+    "@stripe/stripe-js": "^7.3.0",
     "focus-trap-react": "^11.0.3",
     "framer-motion": "^10.16.5",
     "localforage": "^1.10.0",

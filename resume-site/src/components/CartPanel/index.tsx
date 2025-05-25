@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useCart } from '../../context/useCart';
 import { CartItem } from '../../interfaces/CartItem';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { loadStripe } from '@stripe/stripe-js';
 
 interface CartPanelProps {
   isOpen: boolean;
@@ -57,16 +58,33 @@ const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   const handleCheckout = async () => {
-    const res = await fetch('/api/checkout', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ cartItems: cart }),
-    });
+    try {
+      const res = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ cart: cart }),
+      });
 
-    const data = await res.json();
-    if (data.url) {
-      window.location.href = data.url;
-    } else {
+      const data = await res.json();
+
+      if (data.sessionId) {
+        // Redirect to Stripe Checkout
+        const stripeKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
+        if (!stripeKey) {
+          throw new Error('Stripe publishable key is not defined');
+        }
+        const stripe = await loadStripe(stripeKey);
+        if (stripe) {
+          await stripe.redirectToCheckout({ sessionId: data.sessionId });
+        } else {
+          alert('Stripe failed to load');
+        }
+      } else {
+        console.error('Checkout error:', data);
+        alert('Checkout failed');
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
       alert('Checkout failed');
     }
   };
@@ -164,6 +182,7 @@ const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                 className="w-full mt-3 bg-white text-black py-2 rounded hover:bg-gray-200 transition"
                 onClick={handleCheckout}
                 aria-label="Checkout"
+                disabled={cart.length === 0}
               >
                 Checkout
               </button>

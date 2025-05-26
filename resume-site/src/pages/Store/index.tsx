@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import { Poster } from '../../interfaces/Poster';
 import richPosterData from './data';
 import { motion } from 'framer-motion';
@@ -6,12 +6,11 @@ import { useNavigate } from 'react-router-dom';
 
 const Store = () => {
   const navigate = useNavigate();
-  // Add tooltipVisible state, defaulting to true (or false as needed)
   const [tooltipVisible, setTooltipVisible] = useState(true);
 
   // Responsive scroll increment and snap delay
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
-  const scrollIncrement = isMobile ? 135 : 140;
+  const scrollIncrement = isMobile ? 160 : 140;
   const snapDelay = isMobile ? 100 : 120;
 
   useEffect(() => {
@@ -48,6 +47,7 @@ const Store = () => {
     window.scrollTo(0, 0);
     navigate(`/store/${path}`);
   };
+
   const numberOfItems = Object.keys(richPosterData).length;
   const posters: Poster[] = Object.values(richPosterData);
 
@@ -56,69 +56,247 @@ const Store = () => {
   const currentIndexRef = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Add refs for discrete scrolling
+  const lastScrollTime = useRef(0);
+  const scrollAccumulator = useRef(0);
+  const isScrollingRef = useRef(false);
+
   const anglePerPoster = 360 / numberOfItems;
   const scrollHeight = scrollIncrement * numberOfItems;
+
+  // Function to update carousel position
+  const updateCarouselPosition = useCallback(
+    (index: number) => {
+      const rotation = index * anglePerPoster;
+
+      if (sliderRef.current) {
+        sliderRef.current.style.transition = 'transform 0.5s ease';
+        sliderRef.current.style.transform = `perspective(2000px) rotateY(${-rotation}deg)`;
+
+        setTimeout(() => {
+          if (sliderRef.current) {
+            sliderRef.current.style.transition = '';
+          }
+        }, 500);
+      }
+    },
+    [anglePerPoster],
+  );
+
+  // Function to go to specific index with infinite scroll support
+  const goToIndex = useCallback(
+    (newIndex: number) => {
+      let targetIndex = newIndex;
+
+      // Handle infinite scroll wraparound
+      if (newIndex >= numberOfItems) {
+        // Going forward past the last item - wrap to first
+        targetIndex = 0;
+      } else if (newIndex < 0) {
+        // Going backward past the first item - wrap to last
+        targetIndex = numberOfItems - 1;
+      }
+
+      if (targetIndex !== currentIndexRef.current) {
+        currentIndexRef.current = targetIndex;
+        setCurrentIndex(targetIndex);
+        updateCarouselPosition(targetIndex);
+
+        // Update scroll position to match
+        const targetScroll =
+          (scrollHeight - window.innerHeight) *
+          (targetIndex / (numberOfItems - 1));
+        window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+      }
+    },
+    [numberOfItems, scrollHeight, updateCarouselPosition],
+  );
 
   useEffect(() => {
     let scrollTimeout: NodeJS.Timeout;
 
-    const handleScroll = () => {
+    const handleScroll = (e: Event) => {
+      const now = Date.now();
+
+      // Prevent default scroll behavior on mobile for discrete control
+      if (isMobile && e.cancelable) {
+        e.preventDefault();
+      }
+
+      // Throttle scroll events
+      if (now - lastScrollTime.current < 50) return;
+      lastScrollTime.current = now;
+
       const scrollTop = window.scrollY;
       const viewportHeight = window.innerHeight;
       const scrollLimit = scrollHeight - viewportHeight;
 
-      const rawRotation =
-        (scrollTop / scrollLimit) * numberOfItems * anglePerPoster;
+      // For desktop, use existing smooth scroll behavior
+      if (!isMobile) {
+        const rawRotation =
+          (scrollTop / scrollLimit) * numberOfItems * anglePerPoster;
 
-      if (rawRotation > 350) {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-        return;
+        if (rawRotation > 350) {
+          window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+          return;
+        }
+
+        if (scrollTimeout) clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          const snappedIndex = Math.round(rawRotation / anglePerPoster);
+          // const snappedRotation = snappedIndex * anglePerPoster;
+
+          currentIndexRef.current = snappedIndex;
+          setCurrentIndex(Math.min(snappedIndex, numberOfItems - 1));
+          updateCarouselPosition(snappedIndex);
+        }, snapDelay);
+      }
+    };
+
+    // Mobile-specific wheel/touch scroll handler for discrete navigation
+    const handleDiscreteScroll = (e: WheelEvent) => {
+      if (!isMobile) return;
+
+      e.preventDefault();
+
+      if (isScrollingRef.current) return;
+
+      const deltaY = e.deltaY;
+
+      // Accumulate small scroll movements
+      scrollAccumulator.current += deltaY;
+
+      // Only trigger navigation when we've accumulated enough movement
+      const threshold = 50;
+
+      if (Math.abs(scrollAccumulator.current) >= threshold) {
+        isScrollingRef.current = true;
+
+        const direction = scrollAccumulator.current > 0 ? 1 : -1;
+        const newIndex = currentIndexRef.current + direction;
+
+        // Reset accumulator
+        scrollAccumulator.current = 0;
+
+        // Navigate to next/previous item
+        goToIndex(newIndex);
+
+        // Reset scrolling flag after animation
+        setTimeout(() => {
+          isScrollingRef.current = false;
+        }, 600);
+      }
+    };
+
+    // Touch handling for discrete navigation
+    let touchStartY = 0;
+    let touchCurrentY = 0;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      if (!isMobile) return;
+      touchStartY = e.touches[0].clientY;
+      touchCurrentY = touchStartY;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isMobile || isScrollingRef.current) return;
+
+      touchCurrentY = e.touches[0].clientY;
+      const deltaY = touchStartY - touchCurrentY;
+
+      // Accumulate touch movement
+      scrollAccumulator.current = deltaY;
+    };
+
+    const handleTouchEnd = () => {
+      if (!isMobile || isScrollingRef.current) return;
+
+      const deltaY = touchStartY - touchCurrentY;
+      const threshold = 50;
+
+      if (Math.abs(deltaY) >= threshold) {
+        isScrollingRef.current = true;
+
+        const direction = deltaY > 0 ? 1 : -1;
+        const newIndex = currentIndexRef.current + direction;
+
+        goToIndex(newIndex);
+
+        setTimeout(() => {
+          isScrollingRef.current = false;
+        }, 600);
       }
 
-      if (scrollTimeout) clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        const snappedIndex = Math.round(rawRotation / anglePerPoster);
-        const snappedRotation = snappedIndex * anglePerPoster;
-
-        currentIndexRef.current = snappedIndex;
-        setCurrentIndex(Math.min(snappedIndex, numberOfItems - 1)); // trigger UI update
-
-        if (sliderRef.current) {
-          sliderRef.current.style.transition = 'transform 0.5s ease';
-          sliderRef.current.style.transform = `perspective(2000px) rotateY(${-snappedRotation}deg)`;
-
-          setTimeout(() => {
-            if (sliderRef.current) {
-              sliderRef.current.style.transition = '';
-            }
-          }, 500);
-        }
-      }, snapDelay);
+      // Reset accumulator
+      scrollAccumulator.current = 0;
     };
 
     const handleResize = () => {
-      // Optional: trigger a reflow or re-snap based on new viewport
-      handleScroll();
+      handleScroll(new Event('scroll'));
     };
 
+    // Add event listeners
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
+
+    if (isMobile) {
+      window.addEventListener('wheel', handleDiscreteScroll, {
+        passive: false,
+      });
+      window.addEventListener('touchstart', handleTouchStart, {
+        passive: true,
+      });
+      window.addEventListener('touchmove', handleTouchMove, { passive: false });
+      window.addEventListener('touchend', handleTouchEnd, { passive: true });
+    }
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
+
+      if (isMobile) {
+        window.removeEventListener('wheel', handleDiscreteScroll);
+        window.removeEventListener('touchstart', handleTouchStart);
+        window.removeEventListener('touchmove', handleTouchMove);
+        window.removeEventListener('touchend', handleTouchEnd);
+      }
+
       clearTimeout(scrollTimeout);
     };
-  }, [numberOfItems, anglePerPoster, scrollHeight, snapDelay]);
+  }, [
+    numberOfItems,
+    anglePerPoster,
+    scrollHeight,
+    snapDelay,
+    isMobile,
+    updateCarouselPosition,
+    goToIndex,
+  ]);
 
   const sliderStyle = { '--quantity': numberOfItems } as React.CSSProperties;
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>, path: string) => {
     if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault(); // Prevent spacebar from scrolling
+      e.preventDefault();
       handleNavigate(path);
     }
   };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        goToIndex(currentIndexRef.current - 1);
+      } else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        goToIndex(currentIndexRef.current + 1);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [goToIndex]);
 
   return (
     <div className="store-gallery-container w-full h-full overflow-hidden relative store-page bg-zima">
@@ -137,11 +315,7 @@ const Store = () => {
             className={`h-2 w-2 rounded-full my-2 cursor-pointer ${
               i === currentIndex ? 'bg-orangutan' : 'bg-slate-300'
             }`}
-            onClick={() => {
-              const scrollTarget =
-                (scrollHeight - window.innerHeight) * (i / numberOfItems);
-              window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
-            }}
+            onClick={() => goToIndex(i)}
           ></div>
         ))}
       </nav>
@@ -165,11 +339,7 @@ const Store = () => {
                 className="store-gallery-item"
                 key={i}
                 style={{ '--i': i } as React.CSSProperties}
-                onFocus={() => {
-                  const scrollTarget =
-                    (scrollHeight - window.innerHeight) * (i / numberOfItems);
-                  window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
-                }}
+                onFocus={() => goToIndex(i)}
                 onKeyDown={e => handleKeyDown(e, poster.slug)}
               >
                 <motion.img
@@ -200,7 +370,41 @@ const Store = () => {
         </p>
       </div>
 
-      {window.innerWidth < 640 && (
+      {/* Navigation buttons for mobile */}
+      {isMobile && (
+        <>
+          <button
+            className="fixed left-4 top-1/2 transform -translate-y-1/2 z-50 bg-slate-800 bg-opacity-50 text-white p-3 rounded-full"
+            onClick={() => goToIndex(currentIndex - 1)}
+          >
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button
+            className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 bg-slate-800 bg-opacity-50 text-white p-3 rounded-full"
+            onClick={() => goToIndex(currentIndex + 1)}
+          >
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </>
+      )}
+
+      {isMobile && (
         <div
           className="fixed bottom-24 left-1/2 transform -translate-x-1/2 z-50 text-slate-300 text-sm flex flex-col items-center pointer-events-none"
           id="store-navigation-tooltip"

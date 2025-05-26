@@ -11,8 +11,8 @@ const Store = () => {
 
   // Responsive scroll increment and snap delay
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
-  const scrollIncrement = isMobile ? 120 : 140;
-  const snapDelay = isMobile ? 80 : 120;
+  const scrollIncrement = isMobile ? 135 : 140;
+  const snapDelay = isMobile ? 100 : 120;
 
   useEffect(() => {
     if (typeof window === 'undefined') return;

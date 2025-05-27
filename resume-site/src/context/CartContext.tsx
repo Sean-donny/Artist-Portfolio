@@ -9,6 +9,7 @@ interface CartContextType {
   removeItem: (title: string, size: string) => void;
   incrementItem: (title: string, size: string) => void;
   decrementItem: (title: string, size: string) => void;
+  clearCart: () => void;
 }
 
 export const CartContext = createContext<CartContextType | undefined>(
@@ -91,6 +92,11 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     );
   };
 
+  const clearCart = () => {
+    setCartState([]); // Clear cart here
+    localStorage.removeItem(localKey);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -101,6 +107,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         removeItem,
         incrementItem,
         decrementItem,
+        clearCart,
       }}
     >
       {children}

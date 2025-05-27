@@ -6,6 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import MenuOverlay from '../components/MenuOverlay';
 import { CartProvider } from '../context/CartContext';
 import CartPanel from '../components/CartPanel';
+import { Toaster } from 'react-hot-toast';
 
 const AppLayout = () => {
   const [menuOverlayOpen, setMenuOverlayOpen] = useState(false);
@@ -34,6 +35,7 @@ const AppLayout = () => {
   return (
     <>
       <CartProvider>
+        <Toaster position="top-center" />
         <Navbar
           menuOverlayOpen={menuOverlayOpen}
           setMenuOverlayOpen={setMenuOverlayOpen}

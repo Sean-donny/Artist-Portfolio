@@ -1,7 +1,7 @@
 import Stripe from 'stripe';
 import { buffer } from 'micro';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { db } from './firebaseAdmin';
+import { db } from '../lib/firebaseAdmin';
 import { resend } from './resend';
 import { render } from '@react-email/render';
 import {

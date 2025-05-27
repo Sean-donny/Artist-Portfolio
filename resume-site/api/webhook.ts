@@ -1,7 +1,7 @@
 import Stripe from 'stripe';
 import { buffer } from 'micro';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { db } from '../lib/firebaseAdmin';
+// import { db } from '../lib/firebaseAdmin';
 import { resend } from './resend';
 import { render } from '@react-email/render';
 import {
@@ -15,6 +15,20 @@ if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_WEBHOOK_SECRET) {
 }
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+
+import * as admin from 'firebase-admin';
+
+if (!admin.apps.length) {
+  admin.initializeApp({
+    credential: admin.credential.cert({
+      projectId: process.env.FIREBASE_PROJECT_ID,
+      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+      privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+    }),
+  });
+}
+
+export const db = admin.firestore();
 
 export const config = {
   api: { bodyParser: false },

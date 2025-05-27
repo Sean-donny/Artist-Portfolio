@@ -2,7 +2,7 @@ import Stripe from 'stripe';
 import { buffer } from 'micro';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 // import { db } from '../lib/firebaseAdmin';
-import { resend } from './resend';
+// import { resend } from './resend';
 import { render } from '@react-email/render';
 import {
   AdminOrderEmail,
@@ -16,6 +16,7 @@ if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_WEBHOOK_SECRET) {
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
+// Firebase
 import * as admin from 'firebase-admin';
 
 if (!admin.apps.length) {
@@ -29,6 +30,11 @@ if (!admin.apps.length) {
 }
 
 export const db = admin.firestore();
+
+// Resend
+import { Resend } from 'resend';
+
+export const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const config = {
   api: { bodyParser: false },

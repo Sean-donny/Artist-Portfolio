@@ -62,7 +62,7 @@ function formatCartItems(cart: CartItem[]): string {
       (item: CartItem) => `
       <div style="margin-bottom:10px;border-bottom:1px solid #eee;padding-bottom:10px;">
         <strong>${item.title || 'Unknown item'}</strong><br/>
-        Quantity: ${item.quantity || 1} × $${(item.price || 0).toFixed(2)}
+        Quantity: ${item.quantity || 1} × £${(item.price || 0).toFixed(2)}
       </div>`,
     )
     .join('');
@@ -103,18 +103,16 @@ function generateEmailHTML(
     <h2>${isCustomer ? '🧾 Thank you for your order!' : '🛒 New Order Received'}</h2>
     ${
       isCustomer
-        ? `<p>Hello ${data.name}, thank you for your purchase! Here are your order details:</p>`
+        ? `<p>Heyyy ${data.name}, thank you for your purchase! Here are your order details:</p>`
         : ''
     }
 
     <div style="padding:10px;background:#f9f9f9;border-radius:8px;margin:20px 0;">
-      <p><strong>Order ID:</strong> ${data.sessionId}</p>
-      <p><strong>Customer:</strong> ${data.name}</p>
       <p><strong>Email:</strong> ${data.email}</p>
       <p><strong>Payment Status:</strong> <span style="color:${
         data.paymentStatus === 'paid' ? '#22c55e' : '#f59e0b'
       };">${data.paymentStatus}</span></p>
-      <p><strong>Total Amount:</strong> $${data.amountTotal.toFixed(2)} ${data.currency.toUpperCase()}</p>
+      <p><strong>Total Amount:</strong> £${data.amountTotal.toFixed(2)} ${data.currency.toUpperCase()}</p>
       <p><strong>Date:</strong> ${new Date(data.date).toLocaleString()}</p>
     </div>
 
@@ -131,7 +129,7 @@ function generateEmailHTML(
     ${
       isCustomer
         ? `<div style="margin-top:30px;padding:20px;background:#f0f9ff;border-radius:8px;">
-            <p style="color:#1e40af;">📦 We'll send you a tracking number once your items ship. Thank you for your business!</p>
+            <p style="color:#1e40af;">📦 We'll send you a tracking number once your items ship. Thank you so much</p>
           </div>`
         : ''
     }

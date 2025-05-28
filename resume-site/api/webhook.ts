@@ -195,12 +195,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     let parsedCart = null;
-    if (session.metadata?.cart) {
+    if (session.metadata?.cartId) {
       try {
-        parsedCart = JSON.parse(session.metadata.cart);
-      } catch (parseError) {
-        console.warn('Failed to parse cart metadata:', parseError);
-        parsedCart = session.metadata.cart;
+        const db = initializeFirebase();
+        const cartDoc = await db
+          .collection('carts')
+          .doc(session.metadata.cartId)
+          .get();
+        if (cartDoc.exists) {
+          parsedCart = cartDoc.data()?.cart || null;
+        } else {
+          console.warn('Cart ID not found in Firestore');
+        }
+      } catch (error) {
+        console.error('Failed to retrieve cart from Firestore:', error);
       }
     }
 

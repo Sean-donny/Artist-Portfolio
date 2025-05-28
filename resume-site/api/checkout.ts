@@ -1,8 +1,42 @@
 import Stripe from 'stripe';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { CartItem } from '../src/interfaces/CartItem';
+import admin from 'firebase-admin';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+
+// Initialize Firebase Admin - moved to function to avoid module-level errors
+function initializeFirebase(): admin.firestore.Firestore {
+  try {
+    // Check if Firebase is already initialized
+    if (admin.apps.length > 0) {
+      return admin.firestore();
+    }
+
+    // Validate required environment variables
+    const projectId = process.env.FIREBASE_PROJECT_ID;
+    const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
+    const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
+
+    if (!projectId || !clientEmail || !privateKey) {
+      throw new Error('Missing Firebase configuration environment variables');
+    }
+
+    // Initialize Firebase
+    admin.initializeApp({
+      credential: admin.credential.cert({
+        projectId,
+        clientEmail,
+        privateKey,
+      }),
+    });
+
+    return admin.firestore();
+  } catch (error) {
+    console.error('Firebase initialization error:', error);
+    throw error;
+  }
+}
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
@@ -284,6 +318,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     console.log('Line items:', line_items);
 
+    // Save the cart to Firestore
+    const db = initializeFirebase();
+    const cartRef = await db
+      .collection('carts')
+      .add({ cart, createdAt: new Date() });
+    const cartId = cartRef.id;
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items,
@@ -296,7 +337,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       success_url: 'https://seandonny.com/store?status=success',
       cancel_url: 'https://seandonny.com/store?cart=open&status=cancel',
       metadata: {
-        cart: JSON.stringify(cart),
+        cartId,
       },
     });
 

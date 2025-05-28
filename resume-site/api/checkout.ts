@@ -292,6 +292,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       shipping_options: shipping_options,
       mode: 'payment',
       customer_creation: 'always',
+      allow_promotion_codes: true,
       success_url: 'https://seandonny.com/store?status=success',
       cancel_url: 'https://seandonny.com/store?cart=open&status=cancel',
       metadata: {

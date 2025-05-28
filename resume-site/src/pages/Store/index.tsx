@@ -60,6 +60,8 @@ const Store = () => {
   const currentIndexRef = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const [standardView, setStandardView] = useState(false);
+
   // Add refs for discrete scrolling
   const lastScrollTime = useRef(0);
   const scrollAccumulator = useRef(0);
@@ -130,6 +132,7 @@ const Store = () => {
   );
 
   useEffect(() => {
+    if (standardView) return;
     let scrollTimeout: NodeJS.Timeout;
 
     const handleScroll = () => {
@@ -265,6 +268,7 @@ const Store = () => {
     isMobile,
     updateCarouselPosition,
     goToIndex,
+    standardView,
   ]);
 
   const sliderStyle = { '--quantity': numberOfItems } as React.CSSProperties;
@@ -362,126 +366,187 @@ const Store = () => {
         url="https://seandonny.com/store"
         image={seoImage}
       />
-      {/* Scroll-driving invisible div */}
-      <div
-        className="store-gallery-scroll-wrapper w-full relative"
-        style={{ height: `${scrollHeight}px` }}
-        ref={scrollListenerRef}
-      ></div>
-
-      {/* Dots Navigation */}
-      <nav className="store-gallery-quick-navigation-indicator fixed right-3 lg:right-8 top-1/2 transform -translate-y-1/2 z-10">
-        {posters.map((_, i) => (
+      <button
+        className="fixed left-5 bottom-4 lg:left-8 lg:bottom-8 pb-[0.125rem] w-12 h-12 bg-black hover:bg-orangutan text-slate-100 rounded-full shadow-lg transition-all duration-200 flex items-center justify-center z-10"
+        onClick={() => {
+          window.scrollTo(0, 0);
+          goToIndex(0);
+          setStandardView(prev => !prev);
+        }}
+        aria-label={
+          standardView ? 'Switch to carousel view' : 'Switch to standard view'
+        }
+      >
+        {standardView ? '⊟' : '⊞'}
+      </button>
+      {!standardView && (
+        <div>
+          {/* Scroll-driving invisible div */}
           <div
-            key={i}
-            className={`h-2 w-2 rounded-full my-2 cursor-pointer ${
-              i === currentIndex ? 'bg-orangutan' : 'bg-slate-300'
-            }`}
-            onClick={() => goToIndex(i)}
+            className="store-gallery-scroll-wrapper w-full relative"
+            style={{ height: `${scrollHeight}px` }}
+            ref={scrollListenerRef}
           ></div>
-        ))}
-      </nav>
-
-      {/* Poster Title */}
-      <div className="store-gallery-title font-loud text-slate-100 z-50 fixed top-16 left-0 right-0 text-center text-massive2">
-        <h1>{posters[Math.min(currentIndex, numberOfItems - 1)].title}</h1>
-      </div>
-
-      {/* Carousel */}
-      <section className="store-gallery-banner-container w-full h-screen fixed top-0 left-0">
-        <div className="store-gallery-banner">
-          <div
-            className="store-gallery-slider"
-            style={sliderStyle}
-            ref={sliderRef}
-            aria-hidden={true}
-          >
-            {posters.map((poster, i) => (
-              <figure
-                className="store-gallery-item"
+          {/* Dots Navigation */}
+          <nav className="store-gallery-quick-navigation-indicator fixed right-3 lg:right-8 top-1/2 transform -translate-y-1/2 z-10">
+            {posters.map((_, i) => (
+              <div
                 key={i}
-                style={{ '--i': i } as React.CSSProperties}
-                onFocus={() => goToIndex(i)}
+                className={`h-2 w-2 rounded-full my-2 cursor-pointer ${
+                  i === currentIndex ? 'bg-orangutan' : 'bg-slate-300'
+                }`}
+                onClick={() => goToIndex(i)}
+              ></div>
+            ))}
+          </nav>
+          {/* Poster Title */}
+          <div className="store-gallery-title font-loud text-slate-100 z-50 fixed top-16 left-0 right-0 text-center text-massive2">
+            <h1>{posters[Math.min(currentIndex, numberOfItems - 1)].title}</h1>
+          </div>
+          {/* Carousel */}
+          <section className="store-gallery-banner-container w-full h-screen fixed top-0 left-0">
+            <div className="store-gallery-banner">
+              <div
+                className="store-gallery-slider"
+                style={sliderStyle}
+                ref={sliderRef}
+                aria-hidden={true}
+              >
+                {posters.map((poster, i) => (
+                  <figure
+                    className="store-gallery-item"
+                    key={i}
+                    style={{ '--i': i } as React.CSSProperties}
+                    onFocus={() => goToIndex(i)}
+                    onKeyDown={e => handleKeyDown(e, poster.slug)}
+                  >
+                    <motion.img
+                      className="store-gallery-image cursor-pointer"
+                      tabIndex={0}
+                      role="button"
+                      aria-label={`View poster ${poster.title}`}
+                      src={poster.src}
+                      alt={poster.title}
+                      width={poster.width / 4}
+                      height={poster.height / 4}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.9 }}
+                      onClick={() => {
+                        handleNavigate(poster.slug);
+                      }}
+                    />
+                  </figure>
+                ))}
+              </div>
+            </div>
+          </section>
+          {/* Bottom Info */}
+          <div className="store-gallery-poster-number-container fixed bottom-8 md:bottom-16 lg:bottom-24 left-0 right-0 text-center">
+            <p className="store-gallery-poster-number font-custom font-semibold inline-block text-slate-200">
+              {currentIndex + 1}
+            </p>
+          </div>
+          {/* Navigation buttons for mobile */}
+          {isMobile && (
+            <>
+              <button
+                className="fixed left-4 top-1/2 transform -translate-y-1/2 z-50 bg-slate-800 bg-opacity-50 text-white p-3 rounded-full"
+                onClick={() => goToIndex(currentIndex - 1)}
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button
+                className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 bg-slate-800 bg-opacity-50 text-white p-3 rounded-full"
+                onClick={() => goToIndex(currentIndex + 1)}
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </>
+          )}
+          {isMobile && (
+            <div
+              className="fixed bottom-[10%] left-1/2 transform -translate-x-1/2 z-50 text-slate-300 text-sm flex flex-col items-center pointer-events-none w-60 tooltip-suggestion"
+              id="store-navigation-tooltip"
+              style={{ display: tooltipVisible ? 'flex' : 'none' }}
+            >
+              <span>Swipe up/down or use buttons</span>
+              <svg
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M12 5v14M12 19l-4-4m4 4l4-4" />
+              </svg>
+            </div>
+          )}
+        </div>
+      )}
+      {standardView && (
+        <div className="store-standard-view max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 py-8 overflow-visible">
+          {/* Store Header */}
+          <div className="mb-8 mt-4">
+            <h1 className="text-3xl font-normal text-slate-100 mb-2 font-loud drop-shadow-sm">
+              Prints
+            </h1>
+            <p className="text-slate-100 font-custom text-sm drop-shadow-sm">
+              Discover a collection of high-quality posters
+            </p>
+          </div>
+
+          {/* Product Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {posters.map((poster, i) => (
+              <div
+                key={i}
+                className="group overflow-hidden flex flex-col items-center justify-center text-slate-100 hover:underline"
                 onKeyDown={e => handleKeyDown(e, poster.slug)}
               >
-                <motion.img
-                  className="store-gallery-image cursor-pointer"
-                  tabIndex={0}
-                  role="button"
-                  aria-label={`View poster ${poster.title}`}
-                  src={poster.src}
-                  alt={poster.title}
-                  width={poster.width / 4}
-                  height={poster.height / 4}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.9 }}
+                {/* Product Image Container */}
+                <div
+                  className="standard-store-image shadow-md hover:shadow-lg transition-shadow duration-300 "
                   onClick={() => {
                     handleNavigate(poster.slug);
                   }}
-                />
-              </figure>
+                >
+                  <motion.img
+                    className="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-300"
+                    tabIndex={0}
+                    role="button"
+                    aria-label={`View poster ${poster.title}`}
+                    src={poster.src}
+                    alt={poster.title}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  />
+                </div>
+
+                {/* Product Info */}
+                <div className="py-4">
+                  <h3 className="text-lg font-semibold text-slate-100 mb-2 line-clamp-2 font-custom drop-shadow-sm cursor-pointer">
+                    {poster.title}
+                  </h3>
+                </div>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Bottom Info */}
-      <div className="store-gallery-poster-number-container fixed bottom-8 md:bottom-16 lg:bottom-24 left-0 right-0 text-center">
-        <p className="store-gallery-poster-number font-custom font-semibold inline-block text-slate-200">
-          {currentIndex + 1}
-        </p>
-      </div>
-
-      {/* Navigation buttons for mobile */}
-      {isMobile && (
-        <>
-          <button
-            className="fixed left-4 top-1/2 transform -translate-y-1/2 z-50 bg-slate-800 bg-opacity-50 text-white p-3 rounded-full"
-            onClick={() => goToIndex(currentIndex - 1)}
-          >
-            <svg
-              width="24"
-              height="24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-          </button>
-          <button
-            className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 bg-slate-800 bg-opacity-50 text-white p-3 rounded-full"
-            onClick={() => goToIndex(currentIndex + 1)}
-          >
-            <svg
-              width="24"
-              height="24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </button>
-        </>
-      )}
-
-      {isMobile && (
-        <div
-          className="fixed bottom-[10%] left-1/2 transform -translate-x-1/2 z-50 text-slate-300 text-sm flex flex-col items-center pointer-events-none w-60 tooltip-suggestion"
-          id="store-navigation-tooltip"
-          style={{ display: tooltipVisible ? 'flex' : 'none' }}
-        >
-          <span>Swipe up/down or use buttons</span>
-          <svg
-            width="24"
-            height="24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M12 5v14M12 19l-4-4m4 4l4-4" />
-          </svg>
         </div>
       )}
     </div>

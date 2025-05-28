@@ -271,3 +271,20 @@ body {
 .tooltip-suggestion {
   animation: subtle-flash 1.2s ease-in-out infinite;
 }
+
+.standard-store-image {
+  width: calc(816px / 4);
+  height: calc(1158px / 4);
+}
+@media only screen and (max-width: 600px) {
+  .standard-store-image {
+    width: calc(816px / 5);
+    height: calc(1158px / 5);
+  }
+}
+@media only screen and (max-width: 300px) {
+  .standard-store-image {
+    width: calc(816px / 6);
+    height: calc(1158px / 6);
+  }
+}

@@ -1,48 +1,45 @@
 import Stripe from 'stripe';
 import { buffer } from 'micro';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import * as admin from 'firebase-admin';
+import admin from 'firebase-admin';
 import { Resend } from 'resend';
 import { CartItem } from '../src/interfaces/CartItem';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
-// Initialize Firebase Admin with better error handling
-let db: admin.firestore.Firestore;
-
-try {
-  // Check if Firebase is already initialized
-  if (admin.apps && admin.apps.length > 0) {
-    db = admin.firestore();
-  } else {
-    // Initialize Firebase
-    const firebaseConfig = {
-      projectId: process.env.FIREBASE_PROJECT_ID,
-      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-      privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-    };
+// Initialize Firebase Admin - moved to function to avoid module-level errors
+function initializeFirebase(): admin.firestore.Firestore {
+  try {
+    // Check if Firebase is already initialized
+    if (admin.apps.length > 0) {
+      return admin.firestore();
+    }
 
     // Validate required environment variables
-    if (
-      !firebaseConfig.projectId ||
-      !firebaseConfig.clientEmail ||
-      !firebaseConfig.privateKey
-    ) {
+    const projectId = process.env.FIREBASE_PROJECT_ID;
+    const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
+    const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
+
+    if (!projectId || !clientEmail || !privateKey) {
       throw new Error('Missing Firebase configuration environment variables');
     }
 
+    // Initialize Firebase
     admin.initializeApp({
-      credential: admin.credential.cert(firebaseConfig),
+      credential: admin.credential.cert({
+        projectId,
+        clientEmail,
+        privateKey,
+      }),
     });
 
-    db = admin.firestore();
+    return admin.firestore();
+  } catch (error) {
+    console.error('Firebase initialization error:', error);
+    throw error;
   }
-} catch (error) {
-  console.error('Firebase initialization error:', error);
-  throw error;
 }
 
-export { db };
 export const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const config = {
@@ -227,7 +224,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }).format(order.amountTotal);
 
     // Save to Firestore with better error handling
+    let db: admin.firestore.Firestore;
     try {
+      db = initializeFirebase();
       const orderRef = db.collection('orders').doc(sessionId);
       await db.runTransaction(async transaction => {
         const doc = await transaction.get(orderRef);

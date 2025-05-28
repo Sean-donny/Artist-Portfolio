@@ -7,6 +7,7 @@ import { shuffleArray } from '../../../utils/ShuffleArray';
 import { useCart } from '../../../context/useCart';
 import toast from 'react-hot-toast';
 import { CartContext } from '../../../context/CartContext';
+import SEO from '../../../components/SEO/SEO';
 
 const Product = () => {
   // Post Checkout flow
@@ -152,6 +153,13 @@ const Product = () => {
 
   return (
     <div className="product-page-container w-full h-auto bg-zima flex flex-col">
+      <SEO
+        title={`Store | ${poster.title}`}
+        description={`Explore a painting of ${poster.title} by artist Sean Donny.`}
+        type="article"
+        url={`https://seandonny.com/store/${poster.slug}`}
+        image={poster.src}
+      />
       <div className="product-wrapper w-full h-full max-w-7xl m-auto flex flex-col lg:flex-row relative pt-24">
         {/* Images: Carousel on small, column on large */}
         <div className="product-images w-full lg:w-1/2 overflow-x-auto lg:overflow-visible px-6 md:px-12 flex snap-x snap-mandatory lg:flex-col lg:snap-none scrollbar-hide">

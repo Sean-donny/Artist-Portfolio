@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import YouTubersData from './data';
 import { YoutuberDataItem } from '../../../interfaces/YoutuberData';
+import SEO from '../../../components/SEO/SEO';
+import seoImage from '/optimised/youtuber_sean_donny.jpg';
 
 const YouTubers = () => {
   const youtuberValues: YoutuberDataItem[] = Object.values(YouTubersData);
@@ -22,11 +24,13 @@ const YouTubers = () => {
     const [next, ...rest] = queue;
     setCurrent(next);
     setQueue([...rest, current]);
+    window.scrollTo(0, 0);
   };
 
   const handleSuggestionClick = (clicked: YoutuberDataItem) => {
     setQueue(prev => [...prev.filter(v => v.name !== clicked.name), current]);
     setCurrent(clicked);
+    window.scrollTo(0, 0);
   };
 
   const handleSubscribe = () => {
@@ -67,6 +71,13 @@ const YouTubers = () => {
 
   return (
     <div className="w-full h-auto min-h-screen bg-[#17140b] flex flex-col lg:flex-row">
+      <SEO
+        title="YouTube Project | Personal Projects"
+        description="Explore YouTube art project by contemporary artist Sean Donny, showcasing his character illustration skills."
+        type="article"
+        url="https://seandonny.com/personal-projects/youtubers"
+        image={seoImage}
+      />
       <div className="w-full h-auto px-5 lg:pr-3 pt-10 lg:pl-12 lg:w-[69.5%] lg:h-full">
         <div className="w-full h-auto flex flex-col items-center justify-start">
           <div className="w-screen lg:w-full h-auto shadow-2xl max-w-[120rem] max-h-[67.5rem]">

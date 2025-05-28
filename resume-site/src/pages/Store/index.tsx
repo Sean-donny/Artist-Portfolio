@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import toast from 'react-hot-toast';
+import SEO from '../../components/SEO/SEO';
+import seoImage from '/optimised/16x20_fashion_roadman.jpg';
 
 const Store = () => {
   const navigate = useNavigate();
@@ -353,6 +355,13 @@ const Store = () => {
 
   return (
     <div className="store-gallery-container w-full h-full overflow-hidden relative store-page bg-zima">
+      <SEO
+        title="Store"
+        description="Explore a Web Store of works by artist Sean Donny."
+        type="article"
+        url="https://seandonny.com/store"
+        image={seoImage}
+      />
       {/* Scroll-driving invisible div */}
       <div
         className="store-gallery-scroll-wrapper w-full relative"
@@ -459,7 +468,7 @@ const Store = () => {
 
       {isMobile && (
         <div
-          className="fixed bottom-24 left-1/2 transform -translate-x-1/2 z-50 text-slate-300 text-sm flex flex-col items-center pointer-events-none w-60 tooltip-suggestion"
+          className="fixed bottom-[10%] left-1/2 transform -translate-x-1/2 z-50 text-slate-300 text-sm flex flex-col items-center pointer-events-none w-60 tooltip-suggestion"
           id="store-navigation-tooltip"
           style={{ display: tooltipVisible ? 'flex' : 'none' }}
         >

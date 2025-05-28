@@ -5,10 +5,6 @@ import * as admin from 'firebase-admin';
 import { Resend } from 'resend';
 import { CartItem } from '../src/interfaces/CartItem';
 
-if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_WEBHOOK_SECRET) {
-  throw new Error('Missing required Stripe environment variables');
-}
-
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 if (!admin.apps.length) {
@@ -123,6 +119,14 @@ function generateEmailHTML(
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') return res.status(405).send('Method Not Allowed');
+
+  const stripeSecret = process.env.STRIPE_SECRET_KEY;
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+  if (!stripeSecret || !webhookSecret) {
+    console.error('Missing Stripe environment variables');
+    return res.status(500).send('Missing Stripe env vars');
+  }
 
   const buf = await buffer(req);
   const sig = req.headers['stripe-signature']!;

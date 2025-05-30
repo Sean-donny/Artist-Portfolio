@@ -44,12 +44,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    console.log('Request body:', req.body);
+    // console.log('Request body:', req.body);
 
     const { cart } = req.body;
 
     if (!cart || !Array.isArray(cart)) {
-      console.log('Invalid cart data:', cart);
+      // console.log('Invalid cart data:', cart);
       return res.status(400).json({ error: 'Invalid cart data' });
     }
 
@@ -316,7 +316,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         'ZW',
       ];
 
-    console.log('Line items:', line_items);
+    // console.log('Line items:', line_items);
 
     // Save the cart to Firestore
     const db = initializeFirebase();
@@ -341,7 +341,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       },
     });
 
-    console.log('Session created:', session.id);
+    // console.log('Session created:', session.id);
     res.status(200).json({ sessionId: session.id, url: session.url });
   } catch (error) {
     console.error('Checkout error:', error);

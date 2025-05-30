@@ -51,7 +51,7 @@ const YouTubers = () => {
           text: 'Check out this cool project!',
           url: window.location.href,
         });
-        console.log('Shared successfully');
+        // console.log('Shared successfully');
       } catch (error) {
         console.error('Sharing failed:', error);
       }

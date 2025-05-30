@@ -142,7 +142,7 @@ const Product = () => {
     localStorage.setItem(cartKey, JSON.stringify(cart));
     setCart(cart); // Update the cart context state immediately
 
-    console.log('Cart updated:', cart);
+    // console.log('Cart updated:', cart);
   };
 
   const otherPosters = Object.values(richPosterData).filter(

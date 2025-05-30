@@ -242,10 +242,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         }
         transaction.set(orderRef, order);
       });
-      console.log(`Order saved successfully: ${sessionId}`);
+      // console.log(`Order saved successfully: ${sessionId}`);
     } catch (error) {
       if (error instanceof Error && error.message === 'DUPLICATE_ORDER') {
-        console.log('Duplicate order detected, skipping...');
+        // console.log('Duplicate order detected, skipping...');
         return res.status(200).send('Duplicate order. Skipped.');
       }
       console.error('Firestore error:', error);
@@ -264,7 +264,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         subject: `🛒 New Order from ${order.name} - ${formattedAmount}`,
         html: adminHtml,
       });
-      console.log('Admin email sent successfully');
+      // console.log('Admin email sent successfully');
     } catch (e) {
       console.error('Failed to send admin email:', e);
     }
@@ -278,7 +278,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           subject: `🧾 Order Confirmation - ${formattedAmount}`,
           html: customerHtml,
         });
-        console.log('Customer email sent successfully');
+        // console.log('Customer email sent successfully');
       } catch (e) {
         console.error('Failed to send customer email:', e);
       }

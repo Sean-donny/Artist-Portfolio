@@ -16,7 +16,7 @@ const Hero = () => {
     'bg-aubergine',
     'bg-black',
     'bg-clover',
-    'bg-[#555223]',
+    // 'bg-[#555223]',
     `bg-gradient-to-b from-[rgba(1,2,3,1)] to-[rgba(1,222,34,0.4)] [background-position:30%]`,
   ];
 

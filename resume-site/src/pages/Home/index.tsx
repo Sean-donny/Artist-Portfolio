@@ -5,6 +5,7 @@ import SEO from '../../components/SEO/SEO';
 
 // Image imports
 import SeanPortrait from '/optimised/sean_donny_portrait.jpg';
+import Prints from './Prints';
 
 const Home = () => {
   return (
@@ -18,6 +19,12 @@ const Home = () => {
       />
       <article>
         <Hero />
+      </article>
+      <section>
+        <Marquee />
+      </section>
+      <article>
+        <Prints />
       </article>
       <section>
         <Marquee />

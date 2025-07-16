@@ -288,3 +288,29 @@ body {
     height: calc(1158px / 6);
   }
 }
+
+.chameleon:hover {
+  animation: chromatic 4s linear infinite;
+}
+
+@keyframes chromatic {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(360deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .art-spread {
+    display: none;
+  }
+}
+
+.prints-button:hover {
+  animation: subtle-flash 1.2s ease-in-out infinite;
+}

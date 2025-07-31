@@ -5,7 +5,9 @@ https://seandonny.com/personal-projects/animation-project
 https://seandonny.com/personal-projects/subaru-boy
 https://seandonny.com/personal-projects/music
 https://seandonny.com/personal-projects/mowalola
+https://seandonny.com/personal-projects/youtubers
 https://seandonny.com/client-projects
+https://seandonny.com/client-projects/see-gbedu
 https://seandonny.com/client-projects/crown-bounce
 https://seandonny.com/client-projects/menace-talk
 https://seandonny.com/client-projects/ye-anthem
@@ -14,3 +16,4 @@ https://seandonny.com/client-projects/family
 https://seandonny.com/client-projects/popwave
 https://seandonny.com/client-projects/mikes-world
 https://seandonny.com/about
+https://seandonny.com/store

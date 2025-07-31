@@ -22,7 +22,13 @@
     <loc>https://seandonny.com/personal-projects/mowalola</loc>
   </url>
   <url>
+    <loc>https://seandonny.com/personal-projects/youtubers</loc>
+  </url>
+  <url>
     <loc>https://seandonny.com/client-projects</loc>
+  </url>
+  <url>
+    <loc>https://seandonny.com/client-projects/see-gbedu</loc>
   </url>
   <url>
     <loc>https://seandonny.com/client-projects/crown-bounce</loc>
@@ -47,5 +53,8 @@
   </url>
   <url>
     <loc>https://seandonny.com/about</loc>
+  </url>
+  <url>
+    <loc>https://seandonny.com/store</loc>
   </url>
 </urlset>

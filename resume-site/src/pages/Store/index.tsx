@@ -60,7 +60,7 @@ const Store = () => {
   const currentIndexRef = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const [standardView, setStandardView] = useState(false);
+  const [standardView, setStandardView] = useState(true);
 
   // Add refs for discrete scrolling
   const lastScrollTime = useRef(0);

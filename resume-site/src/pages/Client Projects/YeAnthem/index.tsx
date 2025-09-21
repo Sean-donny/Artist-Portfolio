@@ -654,13 +654,14 @@ const YeAnthem = () => {
               className="client-project-reference-description-container w-full h-auto flex flex-col items-center justify-center py-5"
               ref={referenceBoard2ItemsRef}
             >
-              <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left md:text-center text-black font-normal">
+              <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left md:text-justify text-black font-normal leading-snug md:leading-relaxed">
                 Smada dropped the news: "It's gonna be an anthem, a Ye Anthem!"
                 So, I set the scene poolside, keeping the focus on the artists
                 and what's blowing their minds. Managing projects like this
                 comes with its challenges, especially making sure I capture the
                 likeness of the subjects, as well as conveying their emotions
                 accurately—like being utterly mesmerized by a gorgeous lady.
+                <br />
                 <br />
                 He sent in his photo reference, mainly to highlight his
                 hairstyle. As for the two featured artists, I had to search for
@@ -669,6 +670,7 @@ const YeAnthem = () => {
                 individual brands, especially when it's not their project, so
                 they are not really in the feedback loop during visual
                 development.
+                <br />
                 <br />I have found that taking references from their Instagram
                 feeds is the best bet, because if they feel confident in that
                 representation of themselves on there, I have a solid foundation

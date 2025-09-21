@@ -324,7 +324,7 @@ const MikesWrld = () => {
   const projectNavigateScope = useMenuAnimation(projectNavigateInView);
 
   const previousProject = 'Popwave';
-  const nextProject = 'See Gbedu';
+  const nextProject = 'Jaiye';
 
   const navigate = useNavigate();
 
@@ -612,7 +612,7 @@ const MikesWrld = () => {
               className="client-project-reference-description-container w-full h-auto flex flex-col items-center justify-center py-5"
               ref={referenceBoard2ItemsRef}
             >
-              <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left md:text-center text-black font-normal">
+              <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left md:text-justify text-black font-normal leading-snug md:leading-relaxed">
                 Mike provided detailed references for the cover, aiming to
                 capture his love for anime. He pointed to a picture of{' '}
                 <a
@@ -634,6 +634,7 @@ const MikesWrld = () => {
                 ." To provide further guidance, he added, "My character should
                 sport a red hoodie, akin to the one in this photo, and feature
                 my signature red braids."
+                <br />
                 <br />
                 Providing clear references is crucial for the visual development
                 process. My job is to take in the client's cues and deliver a
@@ -848,7 +849,7 @@ const MikesWrld = () => {
             <li
               className="client-project-navigate-next h-full w-2/5 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
               onClick={() => {
-                handleNavigate('client-projects/see-gbedu');
+                handleNavigate('client-projects/jaiye');
               }}
             >
               <p className="client-project-navigate-next-title font-custom text-2xl text-right text-black w-full font-normal">

@@ -1,5 +1,5 @@
 import { anticipate, motion, useAnimation, useInView } from 'framer-motion';
-import nuniverseData from './data';
+import txmmyilyData from './data';
 import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import GalleryModal from '../../../components/GalleryModal';
 import { useState, useEffect, useRef } from 'react';
@@ -8,14 +8,14 @@ import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 import { ModalContent } from '../../../interfaces/ModalContent';
 
 // Image imports
-import nuBanner from '/optimised/nuniverse_banner.jpg';
-import nuDraft from '/optimised/nuniverse_album_cover_draft.jpg';
-import nuReference1 from '/optimised/jan_matejko_warsaw_ascension_of_christ.jpg';
-import nuReference2 from '/optimised/nuniverse_album_cover_superman_reference.jpg';
-import nuReference3 from '/optimised/nuniverse_album_cover_hulk_inspo.jpg';
+import tmBanner from '/optimised/txmmyily_banner.jpg';
+import tmDraft from '/optimised/txmmyily_draft_illustration.png';
+import tmReference1 from '/optimised/txmmyily_cover_reference.jpg';
+import tmReference2 from '/optimised/txmmyily_outfit_reference.jpg';
+import tmReference3 from '/optimised/txmmyily_visual_reference.jpg';
 import SEO from '../../../components/SEO/SEO';
 
-const Nuniverse = () => {
+const Txmmyily = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<ModalContent>({
     src: undefined,
@@ -210,39 +210,39 @@ const Nuniverse = () => {
   // Uses custom hook to generate ref, and states for opacity & position values
 
   const {
-    ref: nuniverseFinalEpCoverRef,
-    opacity: nuniverseFinalEpCoverOpacity,
-    position: nuniverseFinalEpCoverPosition,
+    ref: txmmyilyCoverDraftRef,
+    opacity: txmmyilyCoverDraftOpacity,
+    position: txmmyilyCoverDraftPosition,
   } = useInViewAnimation();
 
   const {
-    ref: nuniverseFinalEpCoverHeaderRef,
-    opacity: nuniverseFinalEpCoverHeaderOpacity,
-    position: nuniverseFinalEpCoverHeaderPosition,
+    ref: txmmyilyCoverDraftHeaderRef,
+    opacity: txmmyilyCoverDraftHeaderOpacity,
+    position: txmmyilyCoverDraftHeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: nuniverseFinalEpCoverParagraphRef,
-    opacity: nuniverseFinalEpCoverParagraphOpacity,
-    position: nuniverseFinalEpCoverParagraphPosition,
+    ref: txmmyilyCoverDraftParagraphRef,
+    opacity: txmmyilyCoverDraftParagraphOpacity,
+    position: txmmyilyCoverDraftParagraphPosition,
   } = useInViewAnimation();
 
   const {
-    ref: nuniverseFinalEpTracklistCoverRef,
-    opacity: nuniverseFinalEpTracklistCoverOpacity,
-    position: nuniverseFinalEpTracklistCoverPosition,
+    ref: txmmyilyFinalCoverRef,
+    opacity: txmmyilyFinalCoverOpacity,
+    position: txmmyilyFinalCoverPosition,
   } = useInViewAnimation();
 
   const {
-    ref: nuniverseFinalEpTracklistCoverHeaderRef,
-    opacity: nuniverseFinalEpTracklistCoverHeaderOpacity,
-    position: nuniverseFinalEpTracklistCoverHeaderPosition,
+    ref: txmmyilyFinalCoverHeaderRef,
+    opacity: txmmyilyFinalCoverHeaderOpacity,
+    position: txmmyilyFinalCoverHeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: nuniverseFinalEpTracklistCoverParagraphRef,
-    opacity: nuniverseFinalEpTracklistCoverParagraphOpacity,
-    position: nuniverseFinalEpTracklistCoverParagraphPosition,
+    ref: txmmyilyFinalCoverParagraphRef,
+    opacity: txmmyilyFinalCoverParagraphOpacity,
+    position: txmmyilyFinalCoverParagraphPosition,
   } = useInViewAnimation();
 
   // Styling for embedded player
@@ -314,17 +314,7 @@ const Nuniverse = () => {
     projectDeliverablesItemsInView,
   );
 
-  const projectDeliverables = [
-    'EP Cover',
-
-    'Tracklist',
-
-    'Promotional Video',
-
-    'Branding Assets',
-
-    'World-building Materials',
-  ];
+  const projectDeliverables = ['Single Cover', 'Credits'];
 
   // Declarations for Project Navigate section
   const projectNavigateRef = useRef(null);
@@ -332,8 +322,8 @@ const Nuniverse = () => {
 
   const projectNavigateScope = useMenuAnimation(projectNavigateInView);
 
-  const previousProject = 'Ye Anthem';
-  const nextProject = 'Family';
+  const previousProject = "Mike's World";
+  const nextProject = 'PsychoYP';
 
   const navigate = useNavigate();
 
@@ -350,11 +340,11 @@ const Nuniverse = () => {
   return (
     <div className="client-project-container bg-black w-full h-auto">
       <SEO
-        title="NüNiverse | Client Projects"
-        description="Explore a client project for Smada by contemporary artist Sean Donny, showcasing his creative direction expertise."
+        title="Jaiye | Client Projects"
+        description="Explore a client project for TXMMYILY by contemporary artist Sean Donny, showcasing his creative direction expertise."
         type="article"
-        url="https://seandonny.com/client-projects/nuniverse"
-        image={nuBanner}
+        url="https://seandonny.com/client-projects/jaiye"
+        image={tmBanner}
       />
       {modalOpen && (
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
@@ -370,9 +360,9 @@ const Nuniverse = () => {
             }}
           >
             <motion.img
-              src={nuBanner}
-              alt="A wide shot of Smada's NüNiverse"
-              title="Smada's NüNiverse"
+              src={tmBanner}
+              alt="A party scene with TXMMYILY"
+              title="Jaiye"
               loading="eager"
               className="client-project-hero-image w-full h-full object-cover object-center"
               initial={{ scale: 1, opacity: 1 }}
@@ -383,7 +373,7 @@ const Nuniverse = () => {
           <div className={`client-project-hero-safe-space h-[400px] w-full`}>
             &nbsp;
           </div>
-          <article className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-rose-500 selection:text-zinc-200">
+          <article className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-[#02e2c5] selection:text-black">
             <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
               <motion.h1
                 ref={heroHeaderRef}
@@ -395,7 +385,7 @@ const Nuniverse = () => {
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                Smada hit me on iMessage: "Let's talk EP&nbsp;cover"
+                TXMMYILY hit me on Twitter: "Yo bro!!! Let's work"
               </motion.h1>
               <motion.p
                 className="client-project-design-goal-description-paragraph-1 text-zinc-400 font-custom font-medium italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
@@ -407,17 +397,7 @@ const Nuniverse = () => {
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                "I love what we did for{' '}
-                <mark className="bg-rose-500 text-zinc-200">
-                  <a
-                    href="https://music.apple.com/us/album/family/1579815445?i=1579815446"
-                    target="_blank"
-                    className="hover:underline"
-                  >
-                    Family
-                  </a>
-                </mark>
-                "...
+                "I love your work man"...
               </motion.p>
               <motion.p
                 className="client-project-design-goal-description-paragraph-2 text-zinc-400 font-custom font-normal italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
@@ -429,7 +409,17 @@ const Nuniverse = () => {
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                "Let's build on that to make a cover for my new NüNiverse EP"...
+                "I've got this new single called{' '}
+                <mark className="bg-[#02e2c5] text-black">
+                  <a
+                    href="https://music.apple.com/gb/album/jaiye-single/1836378594"
+                    target="_blank"
+                    className="hover:underline"
+                  >
+                    Jaiye
+                  </a>
+                </mark>
+                , i'm tryna get you to do the cover for it"...
               </motion.p>
               <motion.p
                 className="client-project-design-goal-description-paragraph-3 text-zinc-400 font-custom font-extralight italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
@@ -441,16 +431,17 @@ const Nuniverse = () => {
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                "I'd like you to work your magic and take the lead on this one;
-                I trust your vision"
+                "I want to be in a party scene, a fun vibe—that's what the song
+                is about. There's people around me just having a great time,
+                that sort of thing"
               </motion.p>
             </div>
-            <figure className="client-project-design-goal-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
+            <figure className="client-project-client-illustration-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
               <motion.img
-                className="client-project-design-goal-image"
-                src={nuDraft}
-                alt="A draft version of the NüNiverse tape"
-                title="NüNiverse Draft Cover"
+                className="client-project-client-illustration-image"
+                src={tmDraft}
+                alt="A rough character illustration of TXMMYILY"
+                title="TXMMYILY"
                 loading="eager"
                 ref={heroRef}
                 initial={{ opacity: 0 }}
@@ -462,7 +453,7 @@ const Nuniverse = () => {
               />
             </figure>
           </article>
-          <article className="client-project-references-container bg-rose-500 selection:bg-black selection:text-zinc-200 w-full h-auto flex flex-col items-center justify-center p-5 pt-10">
+          <article className="client-project-references-container bg-[#02e2c5] selection:bg-black selection:text-zinc-200 w-full h-auto flex flex-col items-center justify-center p-5 pt-10">
             <h2
               className="client-project-reference-board-title font-custom text-5xl text-center text-black w-full font-semibold mb-5"
               ref={referenceBoardItemsRef}
@@ -500,9 +491,9 @@ const Nuniverse = () => {
                 transition={{ duration: 1, ease: anticipate }}
               >
                 <img
-                  src={nuReference1}
-                  alt="Ascension of Christ reference painting by Jan Matejko"
-                  title="Ascension of Christ Reference"
+                  src={tmReference1}
+                  alt="An illustrated cover art for Rema's Holiday + Reason You single where he stands at the centre of a party scene with a fish eye lens, from a birds eye view"
+                  title="Holiday + Reason You single cover by Audrey(@_puppuppup__)"
                   loading="lazy"
                   className="client-project-reference-image-1"
                   style={{ zIndex: 1, border: 'solid black 1px' }}
@@ -510,9 +501,9 @@ const Nuniverse = () => {
               </motion.figure>
               <motion.figure className="client-project-reference-image-container-2 h-auto w-1/3 flex flex-col items-center justify-center">
                 <img
-                  src={nuReference2}
-                  alt="Superman breaking out of glowing green chains against a bright background illustrated by Alex Ross"
-                  title="Superman by Alex Ross"
+                  src={tmReference2}
+                  alt="A photo of TXMMYILY with a red hoodie, a white graphic tee, brown plaid 3/4 shorts, white socks, and sandal style slides"
+                  title="TXMMYILY"
                   loading="lazy"
                   className="client-project-referencei-image-2"
                   style={{ zIndex: 3, border: 'solid black 1px' }}
@@ -526,9 +517,9 @@ const Nuniverse = () => {
                 transition={{ duration: 1, ease: anticipate }}
               >
                 <img
-                  src={nuReference3}
-                  alt="The Immortal Hulk breaking out of chains against a bright background illustrated by Alex Ross"
-                  title="The Immortal Hulk by Alex Ross"
+                  src={tmReference3}
+                  alt="A full houseparty scene illuminated by a camera flash, capturing an energetic scene of people having a good time"
+                  title="Party scene posted on Twitter/X by @VsapxD"
                   loading="lazy"
                   className="client-project-reference-image-3"
                   style={{ zIndex: 2, border: 'solid black 1px' }}
@@ -548,148 +539,168 @@ const Nuniverse = () => {
               ref={referenceBoard2ItemsRef}
             >
               <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left md:text-justify text-black font-normal leading-snug md:leading-relaxed">
-                Building upon the galactic themes introduced in the Family
-                cover, I drew inspiration from the legendary{' '}
+                For the original reference, TXMMYILY cited{' '}
                 <a
-                  href="https://www.alexrossart.com/"
+                  href="https://www.instagram.com/p/Cou3NsePkQzUxX21sLKNdu_3X0xoe7_HdbV9kA0/?hl=en"
                   target="_blank"
                   className="hover:underline font-semibold"
                 >
-                  Alex&nbsp;Ross
-                </a>
-                , an exceptional comic book writer and artist known for his
-                contributions to Marvel and DC comics.
+                  Audrey's artwork
+                </a>{' '}
+                for Rema's Holiday + Reason You single release, highlighting his
+                appreciation for the colourful, vibrant scene it captured.
                 <br />
                 <br />
-                Inspired by Ross's use of light and vibrant colours to portray
-                characters as larger than life and backgrounds as tangible
-                places, I incorporated these elements into my design approach.
-                This influence guided the creation of a suit that encapsulated
-                Smada's essence, symbolized by energy beams emanating from
-                cracks in his suit and palms, reminiscent of Marvel's Black
-                Panther in his inaugural MCU appearance.
+                For styling, he provided a reference photo of himself in a red
+                hoodie and white graphic tee, emphasising his Chrome Hearts
+                glasses as a signature element of his look.
                 <br />
                 <br />
-                Another impactful reference was Jan Matejko's{' "'}
+                While working on drafts, I came across a photo on Twitter that
+                showed a lively, energetic party scene I really liked. The
+                single source of lighting, coming from the camera's point of
+                view, illuminated the space like a frozen moment in time — you
+                could almost feel how packed the room was.
+                <br />
+                <br />
+                The sharp shadows emphasised how close everyone was, while the
+                occlusion strengthened that POV effect, as if you were fixed in
+                one spot within the party. That photo also reminded me of{' '}
                 <a
-                  href="https://commons.wikimedia.org/wiki/File:Matejko_Ascension_of_Christ.jpg"
+                  href="https://www.erniebarnes.com/"
                   target="_blank"
                   className="hover:underline font-semibold"
                 >
-                  The Ascension of Christ
+                  Ernie&nbsp;Barnes'
+                </a>{' '}
+                incredible painting{' "'}
+                <a
+                  href="https://www.christies.com/en/lot/lot-6368793"
+                  target="_blank"
+                  className="hover:underline font-semibold"
+                >
+                  The&nbsp;Sugar&nbsp;Shack
                 </a>
-                {'" '}
-                inspiring the energetic gaze towards the top of the cover,
-                symbolizing a supernatural watch over Smada.
+                {'"'}, with its fluid motion and the sense that every figure in
+                the scene had their own story, contributing to the richness of
+                the whole composition. I first discovered Barnes' work after
+                watching the film{' '}
+                <a
+                  href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0LCsvz81LSTI1YPRiL87My0stKgYAYBEH_Q&q=sinners&oq=sinners&gs_lcrp=EgZjaHJvbWUqCggBEC4YsQMYgAQyBwgAEAAYjwIyCggBEC4YsQMYgAQyCggCEAAYsQMYgAQyBggDEAAYAzIKCAQQABixAxiABDIKCAUQABixAxiABDIGCAYQABgDMgcIBxAAGIAEMgoICBAAGLEDGIAEMgcICRAAGIAE0gEIMzExMWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8"
+                  target="_blank"
+                  className="hover:underline font-semibold"
+                >
+                  Sinners
+                </a>
+                , and learning how it influenced the juke joint scene.
               </p>
             </div>
           </article>
-          <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-rose-500 selection:text-zinc-200">
-            <div className="client-project-final-album-cover h-full w-full hd:w-1/2">
-              <article className="client-project-final-album-cover-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-                <figure className="client-project-final-album-cover-artwork h-3/5 w-full flex flex-col items-center justify-center">
+          <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-[#02e2c5] selection:text-black">
+            <div className="client-project-final-sketch h-full w-full hd:w-1/2">
+              <article className="client-project-final-sketch-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="client-project-final-sketch-artwork h-3/5 w-full flex flex-col items-center justify-center">
                   <motion.img
-                    src={nuniverseData.EpCover.src}
-                    alt={nuniverseData.EpCover.alt}
-                    title={nuniverseData.EpCover.title}
+                    src={txmmyilyData.CoverDraft.src}
+                    alt={txmmyilyData.CoverDraft.alt}
+                    title={txmmyilyData.CoverDraft.title}
                     loading="lazy"
                     className="mb-2"
-                    ref={nuniverseFinalEpCoverRef}
+                    ref={txmmyilyCoverDraftRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: nuniverseFinalEpCoverPosition,
-                      opacity: nuniverseFinalEpCoverOpacity,
+                      translateY: txmmyilyCoverDraftPosition,
+                      opacity: txmmyilyCoverDraftOpacity,
                     }}
-                    onClick={handleImageFocus(nuniverseData.EpCover)}
+                    onClick={handleImageFocus(txmmyilyData.CoverDraft)}
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.9 }}
                   />
                 </figure>
-                <div className="client-project-final-album-cover-description h-2/5 w-full flex flex-col items-center justify-center">
+                <div className="client-project-final-sketch-description h-2/5 w-full flex flex-col items-center justify-center">
                   <motion.h2
                     className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                    ref={nuniverseFinalEpCoverHeaderRef}
+                    ref={txmmyilyCoverDraftHeaderRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: nuniverseFinalEpCoverHeaderPosition,
-                      opacity: nuniverseFinalEpCoverHeaderOpacity,
+                      translateY: txmmyilyCoverDraftHeaderPosition,
+                      opacity: txmmyilyCoverDraftHeaderOpacity,
                     }}
                   >
-                    {nuniverseData.EpCover.header}
+                    {txmmyilyData.CoverDraft.header}
                   </motion.h2>
                   <motion.p
                     className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                    ref={nuniverseFinalEpCoverParagraphRef}
+                    ref={txmmyilyCoverDraftParagraphRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: nuniverseFinalEpCoverParagraphPosition,
-                      opacity: nuniverseFinalEpCoverParagraphOpacity,
+                      translateY: txmmyilyCoverDraftParagraphPosition,
+                      opacity: txmmyilyCoverDraftParagraphOpacity,
                     }}
                   >
-                    {nuniverseData.EpCover.paragraph}
+                    {txmmyilyData.CoverDraft.paragraph}
                   </motion.p>
                 </div>
               </article>
             </div>
-            <div className="client-project-final-tracklist h-full w-full hd:w-1/2">
-              <article className="client-project-final-tracklist-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-                <figure className="client-project-final-tracklist-artwork h-3/5 w-full flex flex-col items-center justify-center">
+            <div className="client-project-final-single-cover h-full w-full hd:w-1/2">
+              <article className="client-project-final-single-cover-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="client-project-final-single-cover-artwork h-3/5 w-full flex flex-col items-center justify-center">
                   <motion.img
-                    src={nuniverseData.TracklistCover.src}
-                    alt={nuniverseData.TracklistCover.alt}
-                    title={nuniverseData.TracklistCover.title}
+                    src={txmmyilyData.FinalCover.src}
+                    alt={txmmyilyData.FinalCover.alt}
+                    title={txmmyilyData.FinalCover.title}
                     loading="lazy"
                     className="mb-2"
-                    ref={nuniverseFinalEpTracklistCoverRef}
+                    ref={txmmyilyFinalCoverRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: nuniverseFinalEpTracklistCoverPosition,
-                      opacity: nuniverseFinalEpTracklistCoverOpacity,
+                      translateY: txmmyilyFinalCoverPosition,
+                      opacity: txmmyilyFinalCoverOpacity,
                     }}
-                    onClick={handleImageFocus(nuniverseData.TracklistCover)}
+                    onClick={handleImageFocus(txmmyilyData.FinalCover)}
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.9 }}
                   />
                 </figure>
-                <div className="client-project-final-tracklist-description h-2/5 w-full flex flex-col items-center justify-center">
+                <div className="client-project-final-single-cover-description h-2/5 w-full flex flex-col items-center justify-center">
                   <motion.h2
                     className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                    ref={nuniverseFinalEpTracklistCoverHeaderRef}
+                    ref={txmmyilyFinalCoverHeaderRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: nuniverseFinalEpTracklistCoverHeaderPosition,
-                      opacity: nuniverseFinalEpTracklistCoverHeaderOpacity,
+                      translateY: txmmyilyFinalCoverHeaderPosition,
+                      opacity: txmmyilyFinalCoverHeaderOpacity,
                     }}
                   >
-                    {nuniverseData.TracklistCover.header}
+                    {txmmyilyData.FinalCover.header}
                   </motion.h2>
                   <motion.p
                     className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                    ref={nuniverseFinalEpTracklistCoverParagraphRef}
+                    ref={txmmyilyFinalCoverParagraphRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY:
-                        nuniverseFinalEpTracklistCoverParagraphPosition,
-                      opacity: nuniverseFinalEpTracklistCoverParagraphOpacity,
+                      translateY: txmmyilyFinalCoverParagraphPosition,
+                      opacity: txmmyilyFinalCoverParagraphOpacity,
                     }}
                   >
-                    {nuniverseData.TracklistCover.paragraph}
+                    {txmmyilyData.FinalCover.paragraph}
                   </motion.p>
                 </div>
               </article>
             </div>
           </div>
-          <section className="client-project-streaming-preview w-full h-auto p-5 hd:py-20 hd:px-0 flex flex-col items-center justify-center bg-zinc-900 selection:bg-rose-500">
+          <section className="client-project-streaming-preview w-full h-auto p-5 hd:py-20 hd:px-0 flex flex-col items-center justify-center bg-zinc-900 selection:bg-[#02e2c5]">
             <iframe
               id="embedPlayer"
-              src="https://embed.music.apple.com/us/album/n%C3%BCniverse-ep/1597104199?app=music&amp;itsct=music_box_player&amp;itscg=30200&amp;ls=1&amp;theme=auto"
+              src="https://embed.music.apple.com/us/album/jaiye-single/1836378594?app=music&amp;itsct=music_box_player&amp;itscg=30200&amp;ls=1&amp;theme=auto"
               height="450px"
               sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
               allow="autoplay *; encrypted-media *; clipboard-write"
               style={embedStyle}
             ></iframe>
           </section>
-          <section className="client-project-deliverables-container h-auto w-full bg-green-400 selection:bg-black selection:text-zinc-200 p-5">
+          <section className="client-project-deliverables-container h-auto w-full bg-[#02e2c5] selection:bg-black selection:text-zinc-200 p-5">
             <div className="client-project-deliverables flex flex-col items-start justify-center">
               <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
                 <motion.h2
@@ -735,7 +746,7 @@ const Nuniverse = () => {
             </div>
           </section>
         </main>
-        <nav className="client-project-navigate h-[468px] w-full bg-blue-500 selection:bg-black selection:text-zinc-200 p-5">
+        <nav className="client-project-navigate h-[468px] w-full bg-red-600 selection:bg-black selection:text-zinc-200 p-5">
           <ul
             className="client-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"
             ref={projectNavigateScope}
@@ -743,7 +754,7 @@ const Nuniverse = () => {
             <li
               className="client-project-navigate-previous h-full w-2/5 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
               onClick={() => {
-                handleNavigate('client-projects/ye-anthem');
+                handleNavigate('client-projects/mikes-world');
               }}
             >
               <p className="client-project-navigate-previous-title font-custom text-2xl text-left text-black w-full font-normal">
@@ -760,7 +771,7 @@ const Nuniverse = () => {
             <li
               className="client-project-navigate-next h-full w-2/5 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
               onClick={() => {
-                handleNavigate('client-projects/family');
+                handleNavigate('client-projects/psychoyp');
               }}
             >
               <p className="client-project-navigate-next-title font-custom text-2xl text-right text-black w-full font-normal">
@@ -807,4 +818,4 @@ const Nuniverse = () => {
   );
 };
 
-export default Nuniverse;
+export default Txmmyily;

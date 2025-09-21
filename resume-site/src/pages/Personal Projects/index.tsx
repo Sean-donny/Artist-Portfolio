@@ -61,7 +61,7 @@ const PersonalProjects = () => {
   );
 
   return (
-    <div className="personal-projects-container w-full h-auto hd:h-screen">
+    <div className="personal-projects-container w-full h-auto hd:min-h-screen">
       <SEO
         title={componentTitle}
         description="Explore a curated selection of personal projects by contemporary artist Sean Donny, showcasing his creative range."
@@ -70,10 +70,10 @@ const PersonalProjects = () => {
         image={ani}
       />
       <div
-        className={`personal-projects-items w-full min-h-screen hd:h-screen ${bgColor} p-10 flex flex-col items-center justify-center`}
+        className={`personal-projects-items w-full min-h-screen ${bgColor} p-10 flex flex-col items-center justify-center`}
       >
         <div
-          className="personal-projects-title w-full h-24 hd:h-1/4 flex items-center justify-center"
+          className="personal-projects-title w-full h-24 hd:h-1/4 flex items-center justify-center py-16"
           ref={titleRef}
         >
           <motion.h1

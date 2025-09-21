@@ -1,4 +1,6 @@
 // Image imports
+import txmmyly from '/optimised/client_project_tm.png';
+import psychyp from '/optimised/client_project_yp.jpg';
 import crwnbnc from '/optimised/client_project_cb.jpg';
 import mnctlk from '/optimised/client_project_mt.png';
 import yeanthm from '/optimised/client_project_ya.png';
@@ -9,7 +11,23 @@ import mkswrld from '/optimised/client_project_mw.png';
 import sgbd from '/optimised/client_project_sg.jpg';
 
 const clientProjectsData = {
-  illustration8: {
+  project10: {
+    src: txmmyly,
+    alt: 'An illustation of TXMMYILY for Jaiye',
+    title: 'Jaiye',
+    year: '(2025)',
+    style: 'hd:w-1/6 w-1/2 md:w-1/3',
+    navigate: 'client-projects/jaiye',
+  },
+  project9: {
+    src: psychyp,
+    alt: 'An illustation of PsychoYP',
+    title: 'PsychoYP',
+    year: '(2020)',
+    style: 'hd:w-1/6 w-1/2 md:w-1/3',
+    navigate: 'client-projects/psychoyp',
+  },
+  project8: {
     src: sgbd,
     alt: 'An illustation of Len for See Gbedu',
     title: 'See Gbedu',
@@ -17,7 +35,7 @@ const clientProjectsData = {
     style: 'hd:w-1/6 w-1/2 md:w-1/3',
     navigate: 'client-projects/see-gbedu',
   },
-  illustration7: {
+  project7: {
     src: crwnbnc,
     alt: 'An illustation of Odunsi dancing with Minz, Elias, and friends',
     title: 'Crown Bounce',
@@ -25,7 +43,7 @@ const clientProjectsData = {
     style: 'hd:w-1/6 w-1/2 md:w-1/3',
     navigate: 'client-projects/crown-bounce',
   },
-  illustration1: {
+  project1: {
     src: mnctlk,
     alt: 'A floating chrome skull with purple eyes and horns',
     title: 'Menace Talk',
@@ -33,7 +51,7 @@ const clientProjectsData = {
     style: 'hd:w-1/6 w-1/2 md:w-1/3',
     navigate: 'client-projects/menace-talk',
   },
-  illustration2: {
+  project2: {
     src: yeanthm,
     alt: 'An illustration of three shocked men',
     title: 'Ye Anthem',
@@ -41,7 +59,7 @@ const clientProjectsData = {
     style: 'hd:w-1/6 w-1/2 md:w-1/3',
     navigate: 'client-projects/ye-anthem',
   },
-  illustration3: {
+  project3: {
     src: nnvrs,
     alt: 'An illustration of smada floating in space',
     title: 'NüNiverse',
@@ -49,7 +67,7 @@ const clientProjectsData = {
     style: 'hd:w-1/6 w-1/2 md:w-1/3',
     navigate: 'client-projects/nuniverse',
   },
-  illustration4: {
+  project4: {
     src: fmly,
     alt: "A close up of smada's eyes with the title family at the top centre",
     title: 'Family',
@@ -57,7 +75,7 @@ const clientProjectsData = {
     style: 'hd:w-1/6 w-1/2 md:w-1/3',
     navigate: 'client-projects/family',
   },
-  illustration5: {
+  project5: {
     src: pwv,
     alt: 'An illustration of a man pointing a gun with a star logo behind him',
     title: 'Popwave',
@@ -65,7 +83,7 @@ const clientProjectsData = {
     style: 'hd:w-1/6 w-1/2 md:w-1/3',
     navigate: 'client-projects/popwave',
   },
-  illustration6: {
+  project6: {
     src: mkswrld,
     alt: 'Custom typography with roses',
     title: "Mike's World",

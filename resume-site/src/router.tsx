@@ -18,6 +18,8 @@ import Mowalola from './pages/Personal Projects/Mowalola';
 
 import ClientProjects from './pages/Client Projects';
 // Client Projects sub pages
+import Jaiye from './pages/Client Projects/Txmmyily';
+import PsychoYP from './pages/Client Projects/Psychoyp';
 import SeeGbedu from './pages/Client Projects/SeeGbedu';
 import CrownBounce from './pages/Client Projects/CrownBounce';
 import MenaceTalk from './pages/Client Projects/MenaceTalk';
@@ -81,6 +83,14 @@ const router = createBrowserRouter([
       {
         path: '/client-projects',
         element: <ClientProjects />,
+      },
+      {
+        path: '/client-projects/jaiye',
+        element: <Jaiye />,
+      },
+      {
+        path: '/client-projects/psychoyp',
+        element: <PsychoYP />,
       },
       {
         path: '/client-projects/see-gbedu',

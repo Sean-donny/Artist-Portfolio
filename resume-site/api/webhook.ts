@@ -62,6 +62,7 @@ function formatCartItems(cart: CartItem[]): string {
       (item: CartItem) => `
       <div style="margin-bottom:10px;border-bottom:1px solid #eee;padding-bottom:10px;">
         <strong>${item.title || 'Unknown item'}</strong><br/>
+        Size: (${item.size})<br/>
         Quantity: ${item.quantity || 1} × £${(item.price || 0).toFixed(2)}
       </div>`,
     )
@@ -108,6 +109,7 @@ function generateEmailHTML(
     }
 
     <div style="padding:10px;background:#f9f9f9;border-radius:8px;margin:20px 0;">
+      <p><strong>Name:</strong> ${data.name}</p>
       <p><strong>Email:</strong> ${data.email}</p>
       <p><strong>Payment Status:</strong> <span style="color:${
         data.paymentStatus === 'paid' ? '#22c55e' : '#f59e0b'
@@ -275,7 +277,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         await resend.emails.send({
           from: 'sean@seandonny.com',
           to: [order.email],
-          subject: `🧾 Order Confirmation - ${formattedAmount}`,
+          subject: `🧾 Sean Donny Art Order Confirmation - ${formattedAmount}`,
           html: customerHtml,
         });
         // console.log('Customer email sent successfully');

@@ -507,7 +507,7 @@ const Store = () => {
               Prints
             </h1>
             <p className="text-slate-100 font-custom text-sm drop-shadow-sm">
-              Discover a collection of high-quality posters
+              Discover a collection of high quality posters
             </p>
           </div>
 

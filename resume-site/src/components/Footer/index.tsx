@@ -29,7 +29,7 @@ const Footer = () => {
           </a>
           <a
             className="font-custom text-aquatic tracking-tight cursor-pointer text-base ml-6 sm:ml-9 md:ml-12 lg:ml-4 opacity-80 hover:opacity-30"
-            href="mailto:seandonny333@gmail.com"
+            href="mailto:sean@seandonny.com"
             target="_blank"
           >
             Contact

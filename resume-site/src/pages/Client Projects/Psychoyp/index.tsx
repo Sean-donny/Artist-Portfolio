@@ -5,12 +5,14 @@ import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 import GalleryModal from '../../../components/GalleryModal';
 import { ModalContent } from '../../../interfaces/ModalContent';
-import { useNavigate } from 'react-router-dom';
 
 // Image imports
 import ypHeroBanner from '/optimised/psychoyp_banner.jpg';
 import bigYP from '/optimised/psychoyp_purple_susano.png';
 import SEO from '../../../components/SEO/SEO';
+import ScrollTooltip from '../../../components/ScrollTooltip';
+import ProjectNavigation from '../../../components/ProjectNavigationSection';
+import navigationMap from '../navigationMap';
 
 const PsychoYP = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -20,25 +22,6 @@ const PsychoYP = () => {
     title: undefined,
     year: undefined,
   });
-
-  const [tooltipVisible, setTooltipVisible] = useState(true);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const handleScroll = () => {
-      const hasntScrolled = window.scrollY < 30;
-      if (!hasntScrolled) {
-        setTooltipVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const handleImageFocus = (data: ModalContent) => {
     return () => {
@@ -316,22 +299,6 @@ const PsychoYP = () => {
 
     'Fan Art - Personal Projects',
   ];
-
-  // Declarations for Project Navigate section
-  const projectNavigateRef = useRef(null);
-  const projectNavigateInView = useInView(projectNavigateRef);
-
-  const projectNavigateScope = useMenuAnimation(projectNavigateInView);
-
-  const previousProject = 'Jaiye';
-  const nextProject = 'See Gbedu';
-
-  const navigate = useNavigate();
-
-  const handleNavigate = (path: string) => {
-    navigate(`/${path}`);
-    window.scrollTo(0, 0);
-  };
 
   // Controls greyscale effect applied to visualiser cover section
   const [isGrayscale, setIsGrayscale] = useState(false);
@@ -766,74 +733,16 @@ const PsychoYP = () => {
             </div>
           </section>
         </main>
-        <nav className="client-project-navigate h-[468px] w-full bg-[#c5a554] selection:bg-black selection:text-zinc-200 p-5">
-          <ul
-            className="client-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"
-            ref={projectNavigateScope}
-          >
-            <li
-              className="client-project-navigate-previous h-full w-2/5 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
-              onClick={() => {
-                handleNavigate('client-projects/jaiye');
-              }}
-            >
-              <p className="client-project-navigate-previous-title font-custom text-2xl text-left text-black w-full font-normal">
-                &larr;
-              </p>
-              <motion.p
-                className="client-project-navigate-previous-title font-custom text-2xl md:text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
-                whileTap={{ scaleY: 0.9 }}
-                ref={projectNavigateRef}
-              >
-                {previousProject}
-              </motion.p>
-            </li>
-            <li
-              className="client-project-navigate-next h-full w-2/5 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
-              onClick={() => {
-                handleNavigate('client-projects/see-gbedu');
-              }}
-            >
-              <p className="client-project-navigate-next-title font-custom text-2xl text-right text-black w-full font-normal">
-                &rarr;
-              </p>
-              <motion.p
-                className="client-project-navigate-next-title font-custom text-2xl md:text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
-                whileTap={{ scaleY: 0.9 }}
-              >
-                {nextProject}
-              </motion.p>
-            </li>
-          </ul>
-        </nav>
+        <ProjectNavigation
+          navColour={navigationMap.PsychoYP.navColour}
+          navPreviousTitle={navigationMap.PsychoYP.previousTitle}
+          navPreviousSrc={navigationMap.PsychoYP.previousSrc}
+          navNextTitle={navigationMap.PsychoYP.nextTitle}
+          navNextSrc={navigationMap.PsychoYP.nextSrc}
+        />
       </div>
 
-      {tooltipVisible && (
-        <div
-          className="fixed bottom-[5%] left-1/2 transform -translate-x-1/2 z-50 text-slate-300 text-sm lg:text-lg flex flex-col items-center pointer-events-none w-60 tooltip-suggestion font-custom font-semibold"
-          id="store-navigation-tooltip"
-          style={{ display: tooltipVisible ? 'flex' : 'none' }}
-        >
-          <span
-            style={{
-              color: 'white',
-              textShadow: '0px 2px 5px rgba(0,0,0,0.9)',
-              mixBlendMode: 'difference',
-            }}
-          >
-            Scroll to read
-          </span>
-          <svg
-            width="24"
-            height="24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M12 5v14M12 19l-4-4m4 4l4-4" />
-          </svg>
-        </div>
-      )}
+      <ScrollTooltip />
     </div>
   );
 };

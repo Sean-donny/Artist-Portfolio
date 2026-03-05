@@ -2,7 +2,6 @@ import { anticipate, motion, useAnimation, useInView } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import { ModalContent } from '../../../interfaces/ModalContent';
 import GalleryModal from '../../../components/GalleryModal';
-import { useNavigate } from 'react-router-dom';
 import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 import familyData from './data';
@@ -11,6 +10,10 @@ import familyData from './data';
 import fmBanner from '/optimised/smada_family_banner.jpg';
 import fmSketch from '/optimised/smada_family_sketch.jpg';
 import SEO from '../../../components/SEO/SEO';
+import ScrollTooltip from '../../../components/ScrollTooltip';
+import embeddedAppleMusicStyle from '../../../utils/embeddedAppleMusicStyle';
+import navigationMap from '../navigationMap';
+import ProjectNavigation from '../../../components/ProjectNavigationSection';
 
 const Family = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -20,25 +23,6 @@ const Family = () => {
     title: undefined,
     year: undefined,
   });
-
-  const [tooltipVisible, setTooltipVisible] = useState(true);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const handleScroll = () => {
-      const hasntScrolled = window.scrollY < 30;
-      if (!hasntScrolled) {
-        setTooltipVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const handleImageFocus = (data: ModalContent) => {
     return () => {
@@ -241,18 +225,6 @@ const Family = () => {
     position: fmFamilySingleMetricsPosition,
   } = useInViewAnimation();
 
-  // Styling for embedded player
-
-  const embedStyle = {
-    width: '100%',
-    maxWidth: '660px',
-    overflow: 'hidden',
-    borderRadius: '10px',
-    transform: 'translateZ(0px)',
-    animation: '2s ease 0s 6 normal none running loading-indicator',
-    backgroundColor: 'rgba(228, 228, 228, 0)',
-  };
-
   // Declarations for Project Deliverables section
   const {
     ref: projectDeliverablesHeaderRef,
@@ -289,22 +261,6 @@ const Family = () => {
 
     'World-building Materials',
   ];
-
-  // Declarations for Project Navigate section
-  const projectNavigateRef = useRef(null);
-  const projectNavigateInView = useInView(projectNavigateRef);
-
-  const projectNavigateScope = useMenuAnimation(projectNavigateInView);
-
-  const previousProject = 'NüNiverse';
-  const nextProject = 'Popwave';
-
-  const navigate = useNavigate();
-
-  const handleNavigate = (path: string) => {
-    navigate(`/${path}`);
-    window.scrollTo(0, 0);
-  };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -528,7 +484,7 @@ const Family = () => {
                 height="175px"
                 sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
                 allow="autoplay *; encrypted-media *; clipboard-write"
-                style={embedStyle}
+                style={embeddedAppleMusicStyle}
               ></iframe>
             </div>
             <figure className="client-project-streaming-metrics-container h-auto w-full hd:w-1/2 p-5 flex flex-col items-center justify-center">
@@ -596,74 +552,16 @@ const Family = () => {
             </div>
           </section>
         </main>
-        <nav className="client-project-navigate h-[468px] w-full bg-sky-500 selection:bg-black selection:text-zinc-200 p-5">
-          <ul
-            className="client-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"
-            ref={projectNavigateScope}
-          >
-            <li
-              className="client-project-navigate-previous h-full w-2/5 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
-              onClick={() => {
-                handleNavigate('client-projects/nuniverse');
-              }}
-            >
-              <p className="client-project-navigate-previous-title font-custom text-2xl text-left text-black w-full font-normal">
-                &larr;
-              </p>
-              <motion.p
-                className="client-project-navigate-previous-title font-custom text-2xl md:text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
-                whileTap={{ scaleY: 0.9 }}
-                ref={projectNavigateRef}
-              >
-                {previousProject}
-              </motion.p>
-            </li>
-            <li
-              className="client-project-navigate-next h-full w-2/5 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
-              onClick={() => {
-                handleNavigate('client-projects/popwave');
-              }}
-            >
-              <p className="client-project-navigate-next-title font-custom text-2xl text-right text-black w-full font-normal">
-                &rarr;
-              </p>
-              <motion.p
-                className="client-project-navigate-next-title font-custom text-2xl md:text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
-                whileTap={{ scaleY: 0.9 }}
-              >
-                {nextProject}
-              </motion.p>
-            </li>
-          </ul>
-        </nav>
+        <ProjectNavigation
+          navColour={navigationMap.Family.navColour}
+          navPreviousTitle={navigationMap.Family.previousTitle}
+          navPreviousSrc={navigationMap.Family.previousSrc}
+          navNextTitle={navigationMap.Family.nextTitle}
+          navNextSrc={navigationMap.Family.nextSrc}
+        />
       </div>
 
-      {tooltipVisible && (
-        <div
-          className="fixed bottom-[5%] left-1/2 transform -translate-x-1/2 z-50 text-slate-300 text-sm lg:text-lg flex flex-col items-center pointer-events-none w-60 tooltip-suggestion font-custom font-semibold"
-          id="store-navigation-tooltip"
-          style={{ display: tooltipVisible ? 'flex' : 'none' }}
-        >
-          <span
-            style={{
-              color: 'white',
-              textShadow: '0px 2px 5px rgba(0,0,0,0.9)',
-              mixBlendMode: 'difference',
-            }}
-          >
-            Scroll to read
-          </span>
-          <svg
-            width="24"
-            height="24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M12 5v14M12 19l-4-4m4 4l4-4" />
-          </svg>
-        </div>
-      )}
+      <ScrollTooltip />
     </div>
   );
 };

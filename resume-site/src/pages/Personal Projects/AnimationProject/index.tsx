@@ -1,7 +1,5 @@
-import { useInView, motion } from 'framer-motion';
-import { useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { ModalContent } from '../../../interfaces/ModalContent';
 import animationProjectData from './data';
 import useInViewAnimation from '../../../Hooks/useInViewAnimation';
@@ -11,6 +9,8 @@ import SEO from '../../../components/SEO/SEO';
 // image imports
 import sdCharacterSheet from '/optimised/sean_donny_animated_character_turnaround_sheet.jpg';
 import sdExpressionSheet from '/optimised/sean_donny_animated_character_expression_sheet.jpg';
+import ProjectNavigation from '../../../components/ProjectNavigationSection';
+import navigationMap from '../navigationMap';
 
 const AnimationProject = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -62,22 +62,6 @@ const AnimationProject = () => {
     opacity: sdExpressionSheetOpacity,
     position: sdExpressionSheetPosition,
   } = useInViewAnimation();
-
-  // Declarations for Project Navigate section
-  const projectNavigateRef = useRef(null);
-  const projectNavigateInView = useInView(projectNavigateRef);
-
-  const projectNavigateScope = useMenuAnimation(projectNavigateInView);
-
-  const previousProject = 'Mowalola';
-  const nextProject = 'Subaru Boy';
-
-  const navigate = useNavigate();
-
-  const handleNavigate = (path: string) => {
-    navigate(`/${path}`);
-    window.scrollTo(0, 0);
-  };
 
   return (
     <div className="personal-project-container bg-black flex flex-col items-center justify-center overflow-hidden min-h-screen">
@@ -217,46 +201,13 @@ const AnimationProject = () => {
             </div>
           </div>
         </main>
-        <nav className="personal-project-navigate h-[468px] w-full bg-pink-600 selection:bg-black selection:text-zinc-200 p-5">
-          <ul
-            className="personal-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"
-            ref={projectNavigateScope}
-          >
-            <li
-              className="personal-project-navigate-previous h-full w-2/5 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
-              onClick={() => {
-                handleNavigate('personal-projects/mowalola');
-              }}
-            >
-              <p className="personal-project-navigate-previous-title font-custom text-2xl text-left text-black w-full font-normal">
-                &larr;
-              </p>
-              <motion.p
-                className="personal-project-navigate-previous-title font-custom text-2xl md:text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
-                whileTap={{ scaleY: 0.9 }}
-                ref={projectNavigateRef}
-              >
-                {previousProject}
-              </motion.p>
-            </li>
-            <li
-              className="personal-project-navigate-next h-full w-2/5 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
-              onClick={() => {
-                handleNavigate('personal-projects/subaru-boy');
-              }}
-            >
-              <p className="personal-project-navigate-next-title font-custom text-2xl text-right text-black w-full font-normal">
-                &rarr;
-              </p>
-              <motion.p
-                className="personal-project-navigate-next-title font-custom text-2xl md:text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
-                whileTap={{ scaleY: 0.9 }}
-              >
-                {nextProject}
-              </motion.p>
-            </li>
-          </ul>
-        </nav>
+        <ProjectNavigation
+          navColour={navigationMap.AnimationProject.navColour}
+          navPreviousTitle={navigationMap.AnimationProject.previousTitle}
+          navPreviousSrc={navigationMap.AnimationProject.previousSrc}
+          navNextTitle={navigationMap.AnimationProject.nextTitle}
+          navNextSrc={navigationMap.AnimationProject.nextSrc}
+        />
       </div>
     </div>
   );

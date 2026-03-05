@@ -1,7 +1,5 @@
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 import GalleryModal from '../../../components/GalleryModal';
 import { ModalContent } from '../../../interfaces/ModalContent';
 
@@ -11,6 +9,8 @@ import sb3DModel from '/optimised/cruel_santino_subaru_boy_3d_model.jpg';
 import subaruData from './data';
 import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import SEO from '../../../components/SEO/SEO';
+import ProjectNavigation from '../../../components/ProjectNavigationSection';
+import navigationMap from '../navigationMap';
 
 const SubaruBoy = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -203,22 +203,6 @@ const SubaruBoy = () => {
     opacity: sbIllustration4Opacity,
     position: sbIllustration4Position,
   } = useInViewAnimation();
-
-  // Declarations for Project Navigate section
-  const projectNavigateRef = useRef(null);
-  const projectNavigateInView = useInView(projectNavigateRef);
-
-  const projectNavigateScope = useMenuAnimation(projectNavigateInView);
-
-  const previousProject = 'Animation Project';
-  const nextProject = 'Music';
-
-  const navigate = useNavigate();
-
-  const handleNavigate = (path: string) => {
-    navigate(`/${path}`);
-    window.scrollTo(0, 0);
-  };
 
   return (
     <div className="personal-project-container bg-black w-full h-auto">
@@ -441,46 +425,13 @@ const SubaruBoy = () => {
             </div>
           </div>
         </main>
-        <nav className="personal-project-navigate h-[468px] w-full bg-orange-600 selection:bg-black selection:text-zinc-200 p-5">
-          <ul
-            className="personal-project-navigate-list flex flex-row justify-between items-center h-full overflow-hidden"
-            ref={projectNavigateScope}
-          >
-            <li
-              className="personal-project-navigate-previous h-full w-2/5 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
-              onClick={() => {
-                handleNavigate('personal-projects/animation-project');
-              }}
-            >
-              <p className="personal-project-navigate-previous-title font-custom text-2xl text-left text-black w-full font-normal">
-                &larr;
-              </p>
-              <motion.p
-                className="personal-project-navigate-previous-title font-custom text-2xl md:text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
-                whileTap={{ scaleY: 0.9 }}
-                ref={projectNavigateRef}
-              >
-                {previousProject}
-              </motion.p>
-            </li>
-            <li
-              className="personal-project-navigate-next h-full w-2/5 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
-              onClick={() => {
-                handleNavigate('personal-projects/music');
-              }}
-            >
-              <p className="personal-project-navigate-next-title font-custom text-2xl text-right text-black w-full font-normal">
-                &rarr;
-              </p>
-              <motion.p
-                className="personal-project-navigate-next-title font-custom text-2xl md:text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
-                whileTap={{ scaleY: 0.9 }}
-              >
-                {nextProject}
-              </motion.p>
-            </li>
-          </ul>
-        </nav>
+        <ProjectNavigation
+          navColour={navigationMap.SubaruBoy.navColour}
+          navPreviousTitle={navigationMap.SubaruBoy.previousTitle}
+          navPreviousSrc={navigationMap.SubaruBoy.previousSrc}
+          navNextTitle={navigationMap.SubaruBoy.nextTitle}
+          navNextSrc={navigationMap.SubaruBoy.nextSrc}
+        />
       </div>
     </div>
   );

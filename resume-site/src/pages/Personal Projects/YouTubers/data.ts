@@ -41,6 +41,7 @@ const YouTubersData = {
     suggested1: 'iPad Pro Review',
     suggested2: 'Robot Arm',
     suggested3: 'VR Glasses',
+    channel: '@mkbhd',
   },
   Youtuber2: {
     name: 'Kyron Warrick',
@@ -54,6 +55,7 @@ const YouTubersData = {
     suggested1: 'Balenciaga',
     suggested2: 'New Pickups',
     suggested3: 'Fashion Basics',
+    channel: '@KyronWarrick',
   },
   Youtuber3: {
     name: 'Intranet Girl',
@@ -67,6 +69,7 @@ const YouTubersData = {
     suggested1: 'Landing Pages',
     suggested2: '3D Modelling',
     suggested3: 'Molten Lava Typography',
+    channel: '@intr4',
   },
   Youtuber4: {
     name: 'Frugal Aesthetic',
@@ -80,6 +83,7 @@ const YouTubersData = {
     suggested1: 'Uniform',
     suggested2: 'Styling',
     suggested3: 'Proportions',
+    channel: '@FrugalAesthetic',
   },
   Youtuber5: {
     name: 'oliSUNvia',
@@ -94,6 +98,7 @@ const YouTubersData = {
     suggested1: 'For You',
     suggested2: 'Video Essays',
     suggested3: 'Philosophical debates',
+    channel: '@oliSUNvia',
   },
   Youtuber6: {
     name: 'Bliss Foster',
@@ -107,6 +112,7 @@ const YouTubersData = {
     suggested1: 'Streetwear',
     suggested2: 'Related Videos',
     suggested3: 'Margiela',
+    channel: '@BlissFoster',
   },
   Youtuber7: {
     name: 'Tom Scott',
@@ -120,6 +126,7 @@ const YouTubersData = {
     suggested1: 'Flights',
     suggested2: 'Related Videos',
     suggested3: 'Computer Science',
+    channel: '@TomScottGo',
   },
   Youtuber8: {
     name: 'Kenijima',
@@ -133,6 +140,7 @@ const YouTubersData = {
     suggested1: 'Vuja De',
     suggested2: 'Related Videos',
     suggested3: 'Issey Pleats',
+    channel: '@iwantvag69',
   },
   Youtuber9: {
     name: 'Fashion Roadman',
@@ -146,6 +154,7 @@ const YouTubersData = {
     suggested1: 'Luxury Goods',
     suggested2: 'Related Videos',
     suggested3: 'Fashion Business',
+    channel: '@FashionRoadman',
   },
   Youtuber10: {
     name: 'Vsauce',
@@ -159,12 +168,13 @@ const YouTubersData = {
     suggested1: 'Media Theories',
     suggested2: 'Eulers Disk',
     suggested3: 'Infinity',
+    channel: '@Vsauce',
   },
   Youtuber11: {
     name: 'Jasmine Le',
     thumbnail: jasmineLe,
     profilePhoto: jasmineLeProfilePhoto,
-    title: `what i eat in a day 🍚 how i stay fit as someone who CANT'T cook (simple meals)`,
+    title: `what i eat in a day 🍚 how i stay fit as someone who CAN'T cook (simple meals)`,
     views: '64K',
     likes: '5.4k',
     subscribers: '985K',
@@ -172,6 +182,7 @@ const YouTubersData = {
     suggested1: 'Lunches',
     suggested2: 'New Apartment',
     suggested3: 'GRWM Makeup',
+    channel: '@jasminele',
   },
   Youtuber12: {
     name: 'Unbox Therapy',
@@ -185,6 +196,7 @@ const YouTubersData = {
     suggested1: 'Inventions',
     suggested2: 'Gadgets',
     suggested3: 'iPhone 6 Bend Test',
+    channel: '@unboxtherapy',
   },
   Youtuber13: {
     name: 'penguinz0',
@@ -198,6 +210,7 @@ const YouTubersData = {
     suggested1: 'The Strangers',
     suggested2: 'Related Videos',
     suggested3: 'Moist Meter',
+    channel: '@penguinz0',
   },
   Youtuber14: {
     name: 'Sean Donny',
@@ -211,6 +224,7 @@ const YouTubersData = {
     suggested1: 'Memories',
     suggested2: 'Related Videos',
     suggested3: 'Art',
+    channel: '@SeanDonny333',
   },
 };
 

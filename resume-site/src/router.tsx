@@ -18,6 +18,9 @@ import Mowalola from './pages/Personal Projects/Mowalola';
 
 import ClientProjects from './pages/Client Projects';
 // Client Projects sub pages
+import PartyScatta from './pages/Client Projects/PartyScatta';
+import HigherEducation from './pages/Client Projects/HigherEducation';
+import Dolore from './pages/Client Projects/Dolore';
 import Jaiye from './pages/Client Projects/Txmmyily';
 import PsychoYP from './pages/Client Projects/Psychoyp';
 import SeeGbedu from './pages/Client Projects/SeeGbedu';
@@ -83,6 +86,18 @@ const router = createBrowserRouter([
       {
         path: '/client-projects',
         element: <ClientProjects />,
+      },
+      {
+        path: '/client-projects/partyscatta',
+        element: <PartyScatta />,
+      },
+      {
+        path: '/client-projects/higher-education',
+        element: <HigherEducation />,
+      },
+      {
+        path: '/client-projects/dolore',
+        element: <Dolore />,
       },
       {
         path: '/client-projects/jaiye',

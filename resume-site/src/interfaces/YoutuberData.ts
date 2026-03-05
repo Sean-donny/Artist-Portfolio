@@ -10,6 +10,7 @@ export interface YoutuberDataItem {
   suggested1: string;
   suggested2: string;
   suggested3: string;
+  channel: string;
 }
 
 export interface YoutuberData {

@@ -2,7 +2,7 @@
 import tmCoverDraft from '/optimised/txmmyily_cover_draft.jpg';
 import tmFinalCover from '/optimised/txmmyily_cover_final.jpg';
 
-const txmmyilyData = {
+const patryScattaData = {
   CoverDraft: {
     src: tmCoverDraft,
     alt: "A rough sketch of TXMMYILY's cover art with people having fun in a party",
@@ -23,4 +23,4 @@ const txmmyilyData = {
   },
 };
 
-export default txmmyilyData;
+export default patryScattaData;

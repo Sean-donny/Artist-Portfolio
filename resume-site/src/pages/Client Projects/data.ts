@@ -1,4 +1,7 @@
 // Image imports
+import rwdyb from '/optimised/client_project_rb.jpg';
+import cshmnny from '/optimised/client_project_cm.jpg';
+import jddlr from '/optimised/client_project_jd.jpg';
 import txmmyly from '/optimised/client_project_tm.png';
 import psychyp from '/optimised/client_project_yp.jpg';
 import crwnbnc from '/optimised/client_project_cb.jpg';
@@ -11,6 +14,30 @@ import mkswrld from '/optimised/client_project_mw.png';
 import sgbd from '/optimised/client_project_sg.jpg';
 
 const clientProjectsData = {
+  project13: {
+    src: rwdyb,
+    alt: 'A photo of Rowdy B over the sketch for his single cover',
+    title: 'PARTYSCATTA',
+    year: '(2026)',
+    style: 'hd:w-1/6 w-1/2 md:w-1/3',
+    navigate: 'client-projects/partyscatta',
+  },
+  project12: {
+    src: cshmnny,
+    alt: 'An illustation of Cashmanny reaching for a portal',
+    title: 'Higher Education',
+    year: '(2025)',
+    style: 'hd:w-1/6 w-1/2 md:w-1/3',
+    navigate: 'client-projects/higher-education',
+  },
+  project11: {
+    src: jddlr,
+    alt: 'An illustation of Jude Dolore',
+    title: 'Dolore',
+    year: '(2025)',
+    style: 'hd:w-1/6 w-1/2 md:w-1/3',
+    navigate: 'client-projects/dolore',
+  },
   project10: {
     src: txmmyly,
     alt: 'An illustation of TXMMYILY for Jaiye',

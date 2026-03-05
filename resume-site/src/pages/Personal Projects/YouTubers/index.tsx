@@ -3,6 +3,8 @@ import YouTubersData from './data';
 import { YoutuberDataItem } from '../../../interfaces/YoutuberData';
 import SEO from '../../../components/SEO/SEO';
 import seoImage from '/optimised/youtuber_sean_donny.jpg';
+import ProjectNavigation from '../../../components/ProjectNavigationSection';
+import navigationMap from '../navigationMap';
 
 const YouTubers = () => {
   const youtuberValues: YoutuberDataItem[] = Object.values(YouTubersData);
@@ -60,6 +62,11 @@ const YouTubers = () => {
     }
   };
 
+  const handleViewYoutuber = () => {
+    const youtuberChannelURL = `https://www.youtube.com/${current.channel}`;
+    window.open(youtuberChannelURL, '_blank');
+  };
+
   const videoDescription = `I drew 14 of my favourite youtubers in different style for fun, and to also learn a variety of techniques needed to execute them. It was a fun project, at least 7 out of them saw it and commented, which was nice.
   \nFull list of Youtubers:
   \n${youtuberValues.map(y => `${y.name}`).join('\n')}
@@ -70,171 +77,181 @@ const YouTubers = () => {
 \nUt quis aliquet est, sed rutrum velit. Suspendisse in augue non lectus eleifend maximus. Sed lobortis volutpat vehicula. Etiam finibus sodales nunc nec luctus. Quisque sollicitudin sapien in ullamcorper porttitor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras quis auctor enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Phasellus cursus leo non tellus vulputate mattis. Ut finibus id justo eget semper. Praesent sed pulvinar libero. Ut faucibus sit amet leo ut congue.`;
 
   return (
-    <div className="w-full h-auto min-h-screen bg-[#17140b] flex flex-col lg:flex-row">
-      <SEO
-        title="YouTube Project | Personal Projects"
-        description="Explore YouTube art project by contemporary artist Sean Donny, showcasing his character illustration skills."
-        type="article"
-        url="https://seandonny.com/personal-projects/youtubers"
-        image={seoImage}
-      />
-      <div className="w-full h-auto px-5 lg:pr-3 pt-10 lg:pl-12 lg:w-[69.5%] lg:h-full">
-        <div className="w-full h-auto flex flex-col items-center justify-start">
-          <div className="w-screen lg:w-full h-auto shadow-2xl max-w-[120rem] max-h-[67.5rem]">
-            <img
-              className="h-auto w-screen lg:w-full lg:rounded-2xl"
-              src={current.thumbnail}
-              alt={current.name}
-              title={current.name}
-            />
-          </div>
-          <div className="flex flex-row items-start justify-start w-full h-auto pt-5 text-base sm:text-2xl font-custom tracking-tight font-bold antialiased text-slate-100">
-            <p>{current.title}</p>
-          </div>
-          <div className="profile-and-interactions-container flex flex-col lg:flex-row items-start justify-start w-full h-auto pt-3">
-            <div className="profile-and-subscribe-button-container flex items-start justify-between lg:justify-start w-full lg:w-auto h-auto">
-              <div className="profile-photo-and-name-container flex flex-row items-start justify-start w-auto h-auto">
-                <img
-                  className="profile-photo rounded-full h-12 mr-4 cursor-pointer"
-                  src={current.profilePhoto}
-                  alt={current.name}
-                  title={current.name}
-                />
-                <div className="profile-name-and-subscribers-container w-auto h-12 mr-4 flex flex-col items-start justify-center">
-                  <p className="profile-name text-xs sm:text-xl font-custom tracking-tight font-bold antialiased text-slate-100">
-                    {current.name}
-                  </p>
-                  <p className="profile-subscribers text-[0.5rem] sm:text-base font-custom tracking-normal font-semibold antialiased text-gray-400">
-                    {current.subscribers} subscribers
+    <>
+      <div className="w-full h-auto min-h-screen bg-[#17140b] flex flex-col lg:flex-row">
+        <SEO
+          title="YouTube Project | Personal Projects"
+          description="Explore YouTube art project by contemporary artist Sean Donny, showcasing his character illustration skills."
+          type="article"
+          url="https://seandonny.com/personal-projects/youtubers"
+          image={seoImage}
+        />
+        <div className="w-full h-auto px-5 lg:pr-3 pt-10 lg:pl-12 lg:w-[69.5%] lg:h-full">
+          <div className="w-full h-auto flex flex-col items-center justify-start">
+            <div className="w-screen lg:w-full h-auto shadow-2xl max-w-[120rem] max-h-[67.5rem]">
+              <img
+                className="h-auto w-screen lg:w-full lg:rounded-2xl"
+                src={current.thumbnail}
+                alt={current.name}
+                title={current.name}
+              />
+            </div>
+            <div className="flex flex-row items-start justify-start w-full h-auto pt-5 text-base sm:text-2xl font-custom tracking-tight font-bold antialiased text-slate-100">
+              <p>{current.title}</p>
+            </div>
+            <div className="profile-and-interactions-container flex flex-col lg:flex-row items-start justify-start w-full h-auto pt-3">
+              <div className="profile-and-subscribe-button-container flex items-start justify-between lg:justify-start w-full lg:w-auto h-auto">
+                <div className="profile-photo-and-name-container flex flex-row items-start justify-start w-auto h-auto">
+                  <img
+                    className="profile-photo rounded-full h-12 mr-4 cursor-pointer"
+                    src={current.profilePhoto}
+                    alt={current.name}
+                    title={current.name}
+                    onClick={handleViewYoutuber}
+                  />
+                  <div className="profile-name-and-subscribers-container w-auto h-12 mr-4 flex flex-col items-start justify-center">
+                    <p className="profile-name text-xs sm:text-xl font-custom tracking-tight font-bold antialiased text-slate-100">
+                      {current.name}
+                    </p>
+                    <p className="profile-subscribers text-[0.5rem] sm:text-base font-custom tracking-normal font-semibold antialiased text-gray-400">
+                      {current.subscribers} subscribers
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className="w-auto h-12 rounded-3xl bg-[rgba(240,240,240,1)] hover:bg-[rgba(240,240,240,0.8)] flex flex-col items-center justify-center p-4 cursor-pointer"
+                  id="subscribe-button"
+                  onClick={handleSubscribe}
+                >
+                  <p
+                    className="text-xs sm:text-base font-custom tracking-tight font-semibold antialiased text-gray-900"
+                    id="subscribe-button-text"
+                  >
+                    Subscribed
                   </p>
                 </div>
               </div>
-              <div
-                className="w-auto h-12 rounded-3xl bg-[rgba(240,240,240,1)] hover:bg-[rgba(240,240,240,0.8)] flex flex-col items-center justify-center p-4 cursor-pointer"
-                id="subscribe-button"
-                onClick={handleSubscribe}
-              >
-                <p
-                  className="text-xs sm:text-base font-custom tracking-tight font-semibold antialiased text-gray-900"
-                  id="subscribe-button-text"
+              <div className="w-full lg:w-auto lg:max-w-[43%] h-12 ml-auto mr-0 flex flex-row justify-between sm:justify-start gap-4 mt-5 lg:mt-0 overflow-hidden lg:justify-end">
+                <div className="w-28 h-12 rounded-3xl bg-[rgba(240,240,240,0.4)] hover:bg-[rgba(240,240,240,0.6)] flex flex-col items-center justify-center p-4 cursor-pointer">
+                  <p className="text-xs sm:text-base font-custom tracking-tight font-semibold antialiased text-slate-100">
+                    {current.likes} likes
+                  </p>
+                </div>
+                <div
+                  className="w-28 h-12 rounded-3xl bg-[rgba(240,240,240,0.4)] hover:bg-[rgba(240,240,240,0.6)] flex flex-col items-center justify-center p-4 cursor-pointer"
+                  onClick={handleShare}
                 >
-                  Subscribed
+                  <p className="text-xs sm:text-base font-custom tracking-tight font-semibold antialiased text-slate-100">
+                    Share
+                  </p>
+                </div>
+                <div
+                  className="w-28 h-12 rounded-3xl bg-[rgba(240,240,240,0.4)] hover:bg-[#ff1a47] flex flex-col items-center justify-center p-4 cursor-pointer"
+                  onClick={handleNext}
+                  style={{
+                    transition:
+                      'background-color 300ms cubic-bezier(0.65, 0, 0.35, 1)',
+                  }}
+                >
+                  <p className="text-xs sm:text-base font-custom tracking-tight font-semibold antialiased text-slate-100">
+                    Next
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="video-description w-full h-auto rounded-2xl p-3 flex flex-col items-start justify-start bg-[#464241] mt-5 lg:mb-10">
+              <div className="video-description-date-and-views-container w-full h-8 flex flex-row items-start justify-start">
+                <span className="text-xs sm:text-base font-custom tracking-normal font-semibold antialiased text-slate-100">
+                  {current.views}&nbsp;views&nbsp;&nbsp;{current.datePosted}
+                </span>
+              </div>
+              <div className="w-full h-auto flex flex-col items-start justify-start">
+                <p
+                  onClick={toggleDescription}
+                  className={`text-xs sm:text-base font-custom tracking-normal font-normal antialiased text-slate-100 text-justify cursor-pointer ${
+                    expanded
+                      ? ''
+                      : 'truncate line-clamp-4 lg:truncate-none lg:line-clamp-none'
+                  }`}
+                  style={{ whiteSpace: 'pre-line' }}
+                >
+                  {videoDescription}
                 </p>
               </div>
             </div>
-            <div className="w-full lg:w-auto lg:max-w-[43%] h-12 ml-auto mr-0 flex flex-row justify-between sm:justify-start gap-4 mt-5 lg:mt-0 overflow-hidden lg:justify-end">
-              <div className="w-28 h-12 rounded-3xl bg-[rgba(240,240,240,0.4)] hover:bg-[rgba(240,240,240,0.6)] flex flex-col items-center justify-center p-4 cursor-pointer">
-                <p className="text-xs sm:text-base font-custom tracking-tight font-semibold antialiased text-slate-100">
-                  {current.likes} likes
+          </div>
+        </div>
+        <div className="w-full h-auto lg:w-[30.5%] pt-2 lg:pt-10 px-0">
+          <div className="relative pl-5 lg:pl-0">
+            <div className="suggested-topics scroll-area flex space-x-2 overflow-x-scroll lg:px-2 pt-2">
+              {/* 'All' Tab */}
+              <div className="suggested-topic flex-shrink-0 h-8 bg-slate-100 px-3 flex items-center justify-center rounded-lg cursor-pointer">
+                <p className="text-base font-custom tracking-normal font-normal antialiased text-black whitespace-nowrap">
+                  All
                 </p>
               </div>
-              <div
-                className="w-28 h-12 rounded-3xl bg-[rgba(240,240,240,0.4)] hover:bg-[rgba(240,240,240,0.6)] flex flex-col items-center justify-center p-4 cursor-pointer"
-                onClick={handleShare}
-              >
-                <p className="text-xs sm:text-base font-custom tracking-tight font-semibold antialiased text-slate-100">
-                  Share
+              {/* Suggested 1 */}
+              <div className="suggested-topic flex-shrink-0 h-8 max-w-xs bg-[rgba(240,240,240,0.4)] hover:bg-[rgba(240,240,240,0.6)] px-3 flex items-center justify-center rounded-lg cursor-pointer">
+                <p className="text-base font-custom tracking-normal font-normal antialiased text-slate-100 truncate">
+                  {current.suggested1}
                 </p>
               </div>
-              <div
-                className="w-28 h-12 rounded-3xl bg-[rgba(240,240,240,0.4)] hover:bg-[#ff1a47] flex flex-col items-center justify-center p-4 cursor-pointer"
-                onClick={handleNext}
+              {/* Suggested 2 */}
+              <div className="suggested-topic flex-shrink-0 h-8 max-w-xs bg-[rgba(240,240,240,0.4)] hover:bg-[rgba(240,240,240,0.6)] px-3 flex items-center justify-center rounded-lg cursor-pointer">
+                <p className="text-base font-custom tracking-normal font-normal antialiased text-slate-100 truncate">
+                  {current.suggested2}
+                </p>
+              </div>
+              {/* Suggested 3 */}
+              <div className="suggested-topic flex-shrink-0 h-8 max-w-xs bg-[rgba(240,240,240,0.4)] hover:bg-[rgba(240,240,240,0.6)] px-3 flex items-center justify-center rounded-lg cursor-pointer">
+                <p className="text-base font-custom tracking-normal font-normal antialiased text-slate-100 truncate">
+                  {current.suggested3}
+                </p>
+              </div>
+            </div>
+            <div className="fade-right pointer-events-none absolute right-0 top-0 h-full w-10"></div>
+          </div>
+
+          <div className="suggested-videos mt-5 w-full h-auto">
+            {queue.map(suggestion => (
+              <button
+                key={suggestion.name}
+                onClick={() => handleSuggestionClick(suggestion)}
+                className="suggested-video flex flex-col lg:flex-row gap-3 w-screen lg:w-full text-left hover:bg-[rgba(240,240,240,0.2)] lg:p-2 rounded"
                 style={{
                   transition:
-                    'background-color 300ms cubic-bezier(0.65, 0, 0.35, 1)',
+                    'background-color 50ms cubic-bezier(0.65, 0, 0.35, 1)',
                 }}
               >
-                <p className="text-xs sm:text-base font-custom tracking-tight font-semibold antialiased text-slate-100">
-                  Next
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="video-description w-full h-auto rounded-2xl p-3 flex flex-col items-start justify-start bg-[#464241] mt-5 lg:mb-10">
-            <div className="video-description-date-and-views-container w-full h-8 flex flex-row items-start justify-start">
-              <span className="text-xs sm:text-base font-custom tracking-normal font-semibold antialiased text-slate-100">
-                {current.views}&nbsp;views&nbsp;&nbsp;{current.datePosted}
-              </span>
-            </div>
-            <div className="w-full h-auto flex flex-col items-start justify-start">
-              <p
-                onClick={toggleDescription}
-                className={`text-xs sm:text-base font-custom tracking-normal font-normal antialiased text-slate-100 text-justify cursor-pointer ${
-                  expanded
-                    ? ''
-                    : 'truncate line-clamp-4 lg:truncate-none lg:line-clamp-none'
-                }`}
-                style={{ whiteSpace: 'pre-line' }}
-              >
-                {videoDescription}
-              </p>
-            </div>
+                <img
+                  src={suggestion.thumbnail}
+                  alt={suggestion.title}
+                  className="w-screen h-auto lg:w-[12rem] lg:h-[8rem] object-cover rounded"
+                />
+                <div className="flex flex-col gap-1 text-xl lg:text-sm pl-5 lg:pl-0 pb-5 lg:pb-0">
+                  <p className="font-custom text-slate-100 font-semibold line-clamp-2 mb-1">
+                    {suggestion.title}
+                  </p>
+                  <span className="font-custom text-[#8b8c8e] text-base font-semibold lg:text-xs">
+                    {suggestion.name}
+                  </span>
+                  <p className="font-custom text-[#8b8c8e] text-base font-semibold lg:text-xs">
+                    {suggestion.views}&nbsp;views • {suggestion.datePosted}
+                  </p>
+                </div>
+              </button>
+            ))}
           </div>
         </div>
       </div>
-      <div className="w-full h-auto lg:w-[30.5%] pt-2 lg:pt-10 px-0">
-        <div className="relative pl-5 lg:pl-0">
-          <div className="suggested-topics scroll-area flex space-x-2 overflow-x-scroll lg:px-2 pt-2">
-            {/* 'All' Tab */}
-            <div className="suggested-topic flex-shrink-0 h-8 bg-slate-100 px-3 flex items-center justify-center rounded-lg cursor-pointer">
-              <p className="text-base font-custom tracking-normal font-normal antialiased text-black whitespace-nowrap">
-                All
-              </p>
-            </div>
-            {/* Suggested 1 */}
-            <div className="suggested-topic flex-shrink-0 h-8 max-w-xs bg-[rgba(240,240,240,0.4)] hover:bg-[rgba(240,240,240,0.6)] px-3 flex items-center justify-center rounded-lg cursor-pointer">
-              <p className="text-base font-custom tracking-normal font-normal antialiased text-slate-100 truncate">
-                {current.suggested1}
-              </p>
-            </div>
-            {/* Suggested 2 */}
-            <div className="suggested-topic flex-shrink-0 h-8 max-w-xs bg-[rgba(240,240,240,0.4)] hover:bg-[rgba(240,240,240,0.6)] px-3 flex items-center justify-center rounded-lg cursor-pointer">
-              <p className="text-base font-custom tracking-normal font-normal antialiased text-slate-100 truncate">
-                {current.suggested2}
-              </p>
-            </div>
-            {/* Suggested 3 */}
-            <div className="suggested-topic flex-shrink-0 h-8 max-w-xs bg-[rgba(240,240,240,0.4)] hover:bg-[rgba(240,240,240,0.6)] px-3 flex items-center justify-center rounded-lg cursor-pointer">
-              <p className="text-base font-custom tracking-normal font-normal antialiased text-slate-100 truncate">
-                {current.suggested3}
-              </p>
-            </div>
-          </div>
-          <div className="fade-right pointer-events-none absolute right-0 top-0 h-full w-10"></div>
-        </div>
-
-        <div className="suggested-videos mt-5 w-full h-auto">
-          {queue.map(suggestion => (
-            <button
-              key={suggestion.name}
-              onClick={() => handleSuggestionClick(suggestion)}
-              className="suggested-video flex flex-col lg:flex-row gap-3 w-screen lg:w-full text-left hover:bg-[rgba(240,240,240,0.2)] lg:p-2 rounded"
-              style={{
-                transition:
-                  'background-color 50ms cubic-bezier(0.65, 0, 0.35, 1)',
-              }}
-            >
-              <img
-                src={suggestion.thumbnail}
-                alt={suggestion.title}
-                className="w-screen h-auto lg:w-[12rem] lg:h-[8rem] object-cover rounded"
-              />
-              <div className="flex flex-col gap-1 text-xl lg:text-sm pl-5 lg:pl-0 pb-5 lg:pb-0">
-                <p className="font-custom text-slate-100 font-semibold line-clamp-2 mb-1">
-                  {suggestion.title}
-                </p>
-                <span className="font-custom text-[#8b8c8e] text-base font-semibold lg:text-xs">
-                  {suggestion.name}
-                </span>
-                <p className="font-custom text-[#8b8c8e] text-base font-semibold lg:text-xs">
-                  {suggestion.views}&nbsp;views • {suggestion.datePosted}
-                </p>
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-    </div>
+      <ProjectNavigation
+        navColour={navigationMap.YouTubers.navColour}
+        navPreviousTitle={navigationMap.YouTubers.previousTitle}
+        navPreviousSrc={navigationMap.YouTubers.previousSrc}
+        navNextTitle={navigationMap.YouTubers.nextTitle}
+        navNextSrc={navigationMap.YouTubers.nextSrc}
+      />
+    </>
   );
 };
 

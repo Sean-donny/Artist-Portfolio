@@ -4,7 +4,7 @@ import Hero from './Hero';
 import SEO from '../../components/SEO/SEO';
 
 // Image imports
-import SeanPortrait from '/optimised/sean_donny_portrait.jpg';
+import SeanPortrait from '/optimised/sean_donny_portrait.webp';
 import Prints from './Prints';
 
 const Home = () => {

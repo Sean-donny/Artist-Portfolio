@@ -7,11 +7,12 @@ import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 import { ModalContent } from '../../../interfaces/ModalContent';
 
 // Image imports
-import nuBanner from '/optimised/nuniverse_banner.jpg';
-import nuDraft from '/optimised/nuniverse_album_cover_draft.jpg';
-import nuReference1 from '/optimised/jan_matejko_warsaw_ascension_of_christ.jpg';
-import nuReference2 from '/optimised/nuniverse_album_cover_superman_reference.jpg';
-import nuReference3 from '/optimised/nuniverse_album_cover_hulk_inspo.jpg';
+import nuBanner from '/optimised/nuniverse_banner.webp';
+import nuDraft from '/optimised/nuniverse_album_cover_draft.webp';
+import nuReference1 from '/optimised/jan_matejko_warsaw_ascension_of_christ.webp';
+import nuReference2 from '/optimised/nuniverse_album_cover_superman_reference.webp';
+import nuReference3 from '/optimised/nuniverse_album_cover_hulk_inspo.webp';
+
 import SEO from '../../../components/SEO/SEO';
 import ScrollTooltip from '../../../components/ScrollTooltip';
 import embeddedAppleMusicStyle from '../../../utils/embeddedAppleMusicStyle';

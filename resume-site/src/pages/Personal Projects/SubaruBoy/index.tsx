@@ -4,8 +4,8 @@ import GalleryModal from '../../../components/GalleryModal';
 import { ModalContent } from '../../../interfaces/ModalContent';
 
 // image imports
-import sbBanner from '/optimised/cruel_santino_subaru_boy_wide.jpg';
-import sb3DModel from '/optimised/cruel_santino_subaru_boy_3d_model.jpg';
+import sbBanner from '/optimised/cruel_santino_subaru_boy_wide.webp';
+import sb3DModel from '/optimised/cruel_santino_subaru_boy_3d_model.webp';
 import subaruData from './data';
 import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import SEO from '../../../components/SEO/SEO';

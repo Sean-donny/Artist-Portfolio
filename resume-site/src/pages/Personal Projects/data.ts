@@ -1,9 +1,9 @@
 // Image imports
-import yt from '/optimised/personal_project_yt.jpg';
-import ani from '/optimised/personal_project_an.jpg';
-import sbrby from '/optimised/personal_project_sb.png';
-import ctmsc from '/optimised/personal_project_cm.jpg';
-import mwll from '/optimised/personal_project_mw.png';
+import yt from '/optimised/personal_project_yt.webp';
+import ani from '/optimised/personal_project_an.webp';
+import sbrby from '/optimised/personal_project_sb.webp';
+import ctmsc from '/optimised/personal_project_cm.webp';
+import mwll from '/optimised/personal_project_mw.webp';
 
 const personalProjectsData = {
   YouTubeProject: {

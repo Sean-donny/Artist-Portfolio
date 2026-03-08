@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 // image imports
-import headShot from '/optimised/sean_donny_portrait.jpg';
-import nameTag from '/optimised/sean_name_tag.png';
+import headShot from '/optimised/sean_donny_portrait.webp';
+import nameTag from '/optimised/sean_name_tag.webp';
 import SEO from '../../components/SEO/SEO';
 
 const About = () => {

@@ -1,6 +1,6 @@
 // Image imports
-import tmCoverDraft from '/optimised/txmmyily_cover_draft.jpg';
-import tmFinalCover from '/optimised/txmmyily_cover_final.jpg';
+import tmCoverDraft from '/optimised/txmmyily_cover_draft.webp';
+import tmFinalCover from '/optimised/txmmyily_cover_final.webp';
 
 const higherEducationData = {
   CoverDraft: {

@@ -2,25 +2,32 @@ import { motion } from 'framer-motion';
 import { MenuOverlayProps } from '../../interfaces/MenuOverlayProps';
 import { useLocation } from 'react-router-dom';
 import CartIcon from '../CartIcon';
+import { usePageTransition } from '../Transitions/TransitionLayout';
 
 const Navbar = ({ menuOverlayOpen, setMenuOverlayOpen }: MenuOverlayProps) => {
   const menuButtonText = { option1: 'Menu', option2: 'Close' };
   const location = useLocation();
 
   const isShopping = location.pathname.startsWith('/store');
+
+  const { navigateTo } = usePageTransition();
+
+  const handleNavigate = (path: string) => {
+    navigateTo(`/${path}`);
+    setMenuOverlayOpen(false);
+  };
   return (
     <nav className="w-full fixed px-5 py-2 z-50">
       <ul className="flex justify-between">
         <li>
-          <a href="/">
-            <motion.p
-              className="font-custom font-semibold text-aquatic tracking-tight text-lg"
-              whileHover={{ scale: 1.2618 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              Sean Donny
-            </motion.p>
-          </a>
+          <motion.p
+            className="home-button font-custom font-semibold text-aquatic tracking-tight text-lg cursor-pointer"
+            whileHover={{ scale: 1.2618 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => handleNavigate('')}
+          >
+            Sean Donny
+          </motion.p>
         </li>
         <li className="flex items-center gap-4">
           {isShopping && <CartIcon />}

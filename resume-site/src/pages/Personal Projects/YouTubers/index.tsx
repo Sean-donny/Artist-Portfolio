@@ -2,7 +2,7 @@ import { useState } from 'react';
 import YouTubersData from './data';
 import { YoutuberDataItem } from '../../../interfaces/YoutuberData';
 import SEO from '../../../components/SEO/SEO';
-import seoImage from '/optimised/youtuber_sean_donny.jpg';
+import seoImage from '/optimised/youtuber_sean_donny.webp';
 import ProjectNavigation from '../../../components/ProjectNavigationSection';
 import navigationMap from '../navigationMap';
 

@@ -1,17 +1,17 @@
 // Image imports
-import rwdyb from '/optimised/client_project_rb.jpg';
-import cshmnny from '/optimised/client_project_cm.jpg';
-import jddlr from '/optimised/client_project_jd.jpg';
-import txmmyly from '/optimised/client_project_tm.png';
-import psychyp from '/optimised/client_project_yp.jpg';
-import crwnbnc from '/optimised/client_project_cb.jpg';
-import mnctlk from '/optimised/client_project_mt.png';
-import yeanthm from '/optimised/client_project_ya.png';
-import nnvrs from '/optimised/client_project_nv.jpg';
-import fmly from '/optimised/client_project_fm.jpg';
-import pwv from '/optimised/client_project_pw.png';
-import mkswrld from '/optimised/client_project_mw.png';
-import sgbd from '/optimised/client_project_sg.jpg';
+import rwdyb from '/optimised/client_project_rb.webp';
+import cshmnny from '/optimised/client_project_cm.webp';
+import jddlr from '/optimised/client_project_jd.webp';
+import txmmyly from '/optimised/client_project_tm.webp';
+import psychyp from '/optimised/client_project_yp.webp';
+import crwnbnc from '/optimised/client_project_cb.webp';
+import mnctlk from '/optimised/client_project_mt.webp';
+import yeanthm from '/optimised/client_project_ya.webp';
+import nnvrs from '/optimised/client_project_nv.webp';
+import fmly from '/optimised/client_project_fm.webp';
+import pwv from '/optimised/client_project_pw.webp';
+import mkswrld from '/optimised/client_project_mw.webp';
+import sgbd from '/optimised/client_project_sg.webp';
 
 const clientProjectsData = {
   project13: {

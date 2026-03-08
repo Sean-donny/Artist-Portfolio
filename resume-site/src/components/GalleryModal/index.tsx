@@ -1,5 +1,6 @@
 import { anticipate, motion } from 'framer-motion';
 import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { FocusTrap } from 'focus-trap-react';
 
 import { ModalContent } from '../../interfaces/ModalContent';
@@ -29,7 +30,7 @@ const GalleryModal = ({ modalContent, onClose }: GalleryModalProps) => {
     };
   }, [onClose]);
 
-  return (
+  const modal = (
     <div
       className="component-modal w-full h-full fixed inset-0 z-30 block bg-zima overflow-hidden p-5"
       role="dialog"
@@ -101,6 +102,10 @@ const GalleryModal = ({ modalContent, onClose }: GalleryModalProps) => {
       </FocusTrap>
     </div>
   );
+
+  // Use a portal so the modal is mounted at document.body level.
+  // This prevents transformed ancestors from breaking fixed positioning.
+  return createPortal(modal, document.body);
 };
 
 export default GalleryModal;

@@ -7,8 +7,9 @@ import GalleryModal from '../../../components/GalleryModal';
 import { ModalContent } from '../../../interfaces/ModalContent';
 
 // Image imports
-import cbHeroBanner from '/optimised/odunsi_the_engine_crown_bounce_banner.jpg';
-import odunsiMecha from '/optimised/odunsi_mecha_illustration.png';
+import cbHeroBanner from '/optimised/odunsi_the_engine_crown_bounce_banner.webp';
+import odunsiMecha from '/optimised/odunsi_mecha_illustration.webp';
+
 import SEO from '../../../components/SEO/SEO';
 import ScrollTooltip from '../../../components/ScrollTooltip';
 import navigationMap from '../navigationMap';

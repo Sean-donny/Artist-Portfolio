@@ -47,6 +47,14 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
                 onClick={() => {
                   handleNavigate('store');
                 }}
+                initial={{ translateY: 500 }}
+                animate={{ translateY: 0 }}
+                transition={{
+                  type: 'spring',
+                  bounce: 0.3,
+                  duration: 0.6,
+                  delay: 0.3 * index * 0.2,
+                }}
               />
             </figure>
           ))}

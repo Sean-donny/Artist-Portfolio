@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 // Image imports
-import RulesTheWorld from '/optimised/crtz_spread.jpg';
-import SubaruBoy from '/optimised/cruel_santino_subaru_boy_wide.jpg';
-import MenaceTalk from '/optimised/trill_tega_menace_talk_video_still_1.jpg';
-import SeanDonny from '/optimised/sean_donny_animated_photo.jpg';
+import RulesTheWorld from '/optimised/crtz_spread.webp';
+import SubaruBoy from '/optimised/cruel_santino_subaru_boy_wide.webp';
+import MenaceTalk from '/optimised/trill_tega_menace_talk_video_still_1.webp';
+import SeanDonny from '/optimised/sean_donny_animated_photo.webp';
+
+import { usePageTransition } from '../../components/Transitions/TransitionLayout';
 
 const Works = () => {
   const [bgColorIndex, setBgColorIndex] = useState(0);
@@ -26,11 +27,10 @@ const Works = () => {
     setHighlightedIndex(index);
   };
 
-  const navigate = useNavigate();
+  const { navigateTo } = usePageTransition();
 
   const handleNavigate = (path: string) => {
-    window.scrollTo(0, 0);
-    navigate(`/${path}`);
+    navigateTo(`/${path}`);
   };
 
   return (

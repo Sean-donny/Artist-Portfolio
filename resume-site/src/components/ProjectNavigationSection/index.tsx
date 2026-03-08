@@ -38,7 +38,7 @@ const ProjectNavigation = ({
         ref={projectNavigateScope}
       >
         <li
-          className="client-project-navigate-previous h-full w-2/5 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
+          className="client-project-navigate-previous h-full w-[48%] sm:w-2/5 hd:w-1/4 flex flex-col items-start justify-center cursor-pointer"
           onClick={() => {
             handleNavigate(navPreviousSrc);
           }}
@@ -47,7 +47,7 @@ const ProjectNavigation = ({
             &larr;
           </p>
           <motion.p
-            className="client-project-navigate-previous-title font-custom text-2xl md:text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
+            className="client-project-navigate-previous-title font-custom text-xl sm:text-2xl md:text-3xl text-left text-black w-full font-semibold hover:underline underline-offset-2"
             whileTap={{ scaleY: 0.9 }}
             ref={projectNavigateRef}
           >
@@ -55,7 +55,7 @@ const ProjectNavigation = ({
           </motion.p>
         </li>
         <li
-          className="client-project-navigate-next h-full w-2/5 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
+          className="client-project-navigate-next h-full w-[48%] sm:w-2/5 hd:w-1/4 flex flex-col items-end justify-center cursor-pointer"
           onClick={() => {
             handleNavigate(navNextSrc);
           }}
@@ -64,7 +64,7 @@ const ProjectNavigation = ({
             &rarr;
           </p>
           <motion.p
-            className="client-project-navigate-next-title font-custom text-2xl md:text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
+            className="client-project-navigate-next-title font-custom text-xl sm:text-2xl md:text-3xl text-right text-black w-full font-semibold hover:underline underline-offset-2"
             whileTap={{ scaleY: 0.9 }}
           >
             {navNextTitle}

@@ -100,6 +100,7 @@ const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
         duration: 0.2,
       }}
       exit={{ scaleY: 0 }}
+      style={{ overflow: 'hidden' }}
     >
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">Your Cart</h2>
@@ -142,20 +143,11 @@ const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                       £{item.price.toFixed(2)}
                     </p>
                   </div>
-
-                  <button
-                    onClick={() => removeItem(item.title, item.size)}
-                    aria-label={`Remove ${item.title} from cart`}
-                    className=" text-white px-2 py-1 rounded text-sm hover:bg-red-600  transition"
-                  >
-                    ✕
-                  </button>
-                  <div className="flex items-center space-x-2 ml-3">
+                  <div className="flex items-center space-x-2 border">
                     <button
                       onClick={() => decrement(item)}
-                      disabled={item.quantity >= MAX_QUANTITY}
-                      aria-label={`Increase quantity of ${item.title}`}
-                      className=" text-white px-2 py-1 rounded text-sm hover:bg-white hover:text-black transition disabled:opacity-50"
+                      aria-label={`Decrease quantity of ${item.title}`}
+                      className=" text-white px-2 py-1 text-sm hover:bg-white hover:text-black transition disabled:opacity-50"
                     >
                       -
                     </button>
@@ -164,12 +156,20 @@ const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                     </span>
                     <button
                       onClick={() => increment(item)}
-                      aria-label={`Decrease quantity of ${item.title}`}
-                      className=" text-white px-2 py-1 rounded text-sm hover:bg-white hover:text-black transition disabled:opacity-50"
+                      disabled={item.quantity >= MAX_QUANTITY}
+                      aria-label={`Increase quantity of ${item.title}`}
+                      className=" text-white px-2 py-1 text-sm hover:bg-white hover:text-black transition disabled:opacity-50"
                     >
                       +
                     </button>
                   </div>
+                  <button
+                    onClick={() => removeItem(item.title, item.size)}
+                    aria-label={`Remove ${item.title} from cart`}
+                    className=" text-white px-2 py-1 text-sm hover:bg-red-600 ml-3 transition"
+                  >
+                    ✕
+                  </button>
                 </li>
               ))}
             </ul>
@@ -179,7 +179,7 @@ const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                 Total: £{total.toFixed(2)}
               </p>
               <button
-                className="w-full mt-3 bg-white text-black py-2 rounded hover:bg-gray-200 transition"
+                className="w-full mt-3 bg-white text-black py-2 hover:bg-gray-200 transition"
                 onClick={handleCheckout}
                 aria-label="Checkout"
                 disabled={cart.length === 0}

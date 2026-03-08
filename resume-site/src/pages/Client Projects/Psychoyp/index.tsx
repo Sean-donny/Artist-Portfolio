@@ -7,8 +7,8 @@ import GalleryModal from '../../../components/GalleryModal';
 import { ModalContent } from '../../../interfaces/ModalContent';
 
 // Image imports
-import ypHeroBanner from '/optimised/psychoyp_banner.jpg';
-import bigYP from '/optimised/psychoyp_purple_susano.png';
+import ypHeroBanner from '/optimised/psychoyp_banner.webp';
+import bigYP from '/optimised/psychoyp_purple_susano.webp';
 import SEO from '../../../components/SEO/SEO';
 import ScrollTooltip from '../../../components/ScrollTooltip';
 import ProjectNavigation from '../../../components/ProjectNavigationSection';

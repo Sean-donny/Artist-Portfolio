@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import toast from 'react-hot-toast';
 import SEO from '../../components/SEO/SEO';
-import seoImage from '/optimised/16x20_fashion_roadman.jpg';
+import seoImage from '/optimised/16x20_fashion_roadman.webp';
 
 const Store = () => {
   const navigate = useNavigate();

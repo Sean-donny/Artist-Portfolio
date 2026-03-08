@@ -3,8 +3,8 @@ import { motion, useInView } from 'framer-motion';
 
 // image imports
 import mowaSpinner from '/optimised/mowalola_360_logo.gif';
-import mowaLogo from '/optimised/mowalola_logo.jpg';
-import mowaRepost from '/optimised/mowalola_ig_repost.jpg';
+import mowaLogo from '/optimised/mowalola_logo.webp';
+import mowaRepost from '/optimised/mowalola_ig_repost.webp';
 
 import SEO from '../../../components/SEO/SEO';
 import ProjectNavigation from '../../../components/ProjectNavigationSection';

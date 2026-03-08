@@ -7,8 +7,8 @@ import GalleryModal from '../../../components/GalleryModal';
 import { ModalContent } from '../../../interfaces/ModalContent';
 
 // Image imports
-import sgHeroBanner from '/optimised/len_banner.jpg';
-import goldenboyLen from '/optimised/len_illustration.png';
+import sgHeroBanner from '/optimised/len_banner.webp';
+import goldenboyLen from '/optimised/len_illustration.webp';
 import SEO from '../../../components/SEO/SEO';
 import ScrollTooltip from '../../../components/ScrollTooltip';
 import ProjectNavigation from '../../../components/ProjectNavigationSection';

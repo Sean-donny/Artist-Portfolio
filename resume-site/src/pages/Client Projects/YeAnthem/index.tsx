@@ -6,12 +6,12 @@ import GalleryModal from '../../../components/GalleryModal';
 import { ModalContent } from '../../../interfaces/ModalContent';
 
 // Image imports
-import yaBanner from '/optimised/smada_ye_anthem_banner.jpg';
-import yaAddedEmotionSketch from '/optimised/smada_ye_anthem_sketch_extra_emotion.jpg';
-import yaReference1 from '/optimised/smada_ye_anthem_king_perry_reference.jpg';
-import yaReference2 from '/optimised/smada_ye_anthem_smada_main_reference.jpg';
-import yaReference3 from '/optimised/smada_ye_anthem_toye_reference.jpg';
-import yaNativeXDefJam from '/optimised/native_defjam.jpg';
+import yaBanner from '/optimised/smada_ye_anthem_banner.webp';
+import yaAddedEmotionSketch from '/optimised/smada_ye_anthem_sketch_extra_emotion.webp';
+import yaReference1 from '/optimised/smada_ye_anthem_king_perry_reference.webp';
+import yaReference2 from '/optimised/smada_ye_anthem_smada_main_reference.webp';
+import yaReference3 from '/optimised/smada_ye_anthem_toye_reference.webp';
+import yaNativeXDefJam from '/optimised/native_defjam.webp';
 
 import yeAnthemData from './data';
 import SEO from '../../../components/SEO/SEO';

@@ -1,13 +1,13 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import ProjectData from '../../interfaces/ProjectData';
 import personalProjectsData from './data';
 import SEO from '../../components/SEO/SEO';
 
 // Image imports
-import ani from '/optimised/personal_project_an.jpg';
+import ani from '/optimised/personal_project_an.webp';
+import { usePageTransition } from '../../components/Transitions/TransitionLayout';
 
 const PersonalProjects = () => {
   interface PersonalProjectsProps {
@@ -20,11 +20,10 @@ const PersonalProjects = () => {
   const bgColor = 'bg-black';
   const componentTitle = 'Personal Projects';
 
-  const navigate = useNavigate();
+  const { navigateTo } = usePageTransition();
 
   const handleNavigate = (path: string) => {
-    window.scrollTo(0, 0);
-    navigate(`/${path}`);
+    navigateTo(`/${path}`);
   };
 
   const Projects = ({ personalProjectsData }: PersonalProjectsProps) => (

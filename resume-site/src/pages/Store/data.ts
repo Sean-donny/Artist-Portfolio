@@ -1,30 +1,30 @@
 //image imports
 
 //A4
-import A4Tyla from '/optimised/a4_tyla.jpg';
-import A4Teenx from '/optimised/a4_teenx.jpg';
-import A4Santi from '/optimised/a4_santi.jpg';
-import A4Rocky from '/optimised/a4_rocky.jpg';
-import A4Rema from '/optimised/a4_rema.jpg';
-import A4Lauryn from '/optimised/a4_lauryn.jpg';
-import A4Igormaniac from '/optimised/a4_igormaniac.jpg';
-import A4Frank from '/optimised/a4_frank.jpg';
-import A4Doom from '/optimised/a4_doom.jpg';
-import A4Asake from '/optimised/a4_asake.jpg';
+import A4Tyla from '/optimised/a4_tyla.webp';
+import A4Teenx from '/optimised/a4_teenx.webp';
+import A4Santi from '/optimised/a4_santi.webp';
+import A4Rocky from '/optimised/a4_rocky.webp';
+import A4Rema from '/optimised/a4_rema.webp';
+import A4Lauryn from '/optimised/a4_lauryn.webp';
+import A4Igormaniac from '/optimised/a4_igormaniac.webp';
+import A4Frank from '/optimised/a4_frank.webp';
+import A4Doom from '/optimised/a4_doom.webp';
+import A4Asake from '/optimised/a4_asake.webp';
 
 //A2
-import A2Subaru from '/optimised/a2_subaru.jpg';
-import A2Rrrocky from '/optimised/a2_rrrocky.jpg';
-import A2Ashley from '/optimised/a2_ashley.jpg';
+import A2Subaru from '/optimised/a2_subaru.webp';
+import A2Rrrocky from '/optimised/a2_rrrocky.webp';
+import A2Ashley from '/optimised/a2_ashley.webp';
 
 //16x20
-import sixteenByTwentyTyler from '/optimised/16x20_tyler.jpg';
-import sixteenByTwentySubaruBoy from '/optimised/16x20_subaru_boy.jpg';
-import sixteenByTwentySpideryachty from '/optimised/16x20_spideryachty.jpg';
-import sixteenByTwentyHoodieGurl from '/optimised/16x20_hoodie_gurl.jpg';
-import sixteenByTwentyFashionRoadman from '/optimised/16x20_fashion_roadman.jpg';
-import sixteenByTwentyCenchBlack from '/optimised/16x20_cench_black.jpg';
-import sixteenByTwentyBoatBoy from '/optimised/16x20_boat_boy.jpg';
+import sixteenByTwentyTyler from '/optimised/16x20_tyler.webp';
+import sixteenByTwentySubaruBoy from '/optimised/16x20_subaru_boy.webp';
+import sixteenByTwentySpideryachty from '/optimised/16x20_spideryachty.webp';
+import sixteenByTwentyHoodieGurl from '/optimised/16x20_hoodie_gurl.webp';
+import sixteenByTwentyFashionRoadman from '/optimised/16x20_fashion_roadman.webp';
+import sixteenByTwentyCenchBlack from '/optimised/16x20_cench_black.webp';
+import sixteenByTwentyBoatBoy from '/optimised/16x20_boat_boy.webp';
 import { Poster } from '../../interfaces/Poster';
 
 const STRIPE_PRICE_IDS = {

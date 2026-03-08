@@ -5,8 +5,9 @@ import Titles from './HeroTitles';
 import { use3DTilt } from '../../Hooks/use3DTilt';
 
 // Image imports
-import SeanPortrait from '/optimised/sean_donny_hero_image.png';
+import SeanPortrait from '/optimised/sean_donny_hero_image.webp';
 import { motion } from 'framer-motion';
+import { useTextReveal } from '../../Hooks/useRevealText';
 
 const Hero = () => {
   const [bgColorIndex, setBgColorIndex] = useState(0);
@@ -25,6 +26,11 @@ const Hero = () => {
   };
 
   const { ref, style } = use3DTilt(10);
+  const headingRef = useTextReveal<HTMLHeadingElement>({
+    type: 'words',
+    triggerStart: 'top 92%',
+    delay: 0.65,
+  });
   return (
     <div className="box-border">
       <div
@@ -34,20 +40,20 @@ const Hero = () => {
           <div className="hero-carousel-and-bio flex flex-col h-auto md:h-full p-2">
             <motion.div
               className="hero-carousel w-full h-1/2 overflow-x-clip"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
+              initial={{ scaleY: 0 }}
+              animate={{ scaleY: 1 }}
               transition={{
                 type: 'spring',
-                bounce: 0.3,
-                duration: 0.6,
-                delay: 0.5,
+                bounce: 0.1,
+                duration: 0.05,
+                delay: 0.2,
               }}
             >
               <Slideshow images={Images} titles={Titles} />
             </motion.div>
             <div className="hero-bio w-full h-auto md:h-full">
               <article className="hero-bio-text-container h-full w-auto flex items-end overflow-clip">
-                <motion.h1
+                {/* <motion.div
                   className="hero-bio-text font-loud uppercase tracking-tight text-aquatic py-2 lg:pb-5 lg:pl-5 lg:text-massive2 text-4xl lg:leading-massive2"
                   initial={{ translateY: '300px' }}
                   animate={{ translateY: '0px' }}
@@ -57,11 +63,16 @@ const Hero = () => {
                     duration: 0.6,
                     delay: 0.5,
                   }}
+                > */}
+                <h1
+                  ref={headingRef}
+                  className="hero-bio-text font-loud uppercase tracking-tight text-aquatic py-2 lg:pb-5 lg:pl-5 lg:text-massive2 text-4xl lg:leading-massive2"
                 >
                   Sean Donny is a <br />
                   contemporary artist <br />
                   based in England, UK.
-                </motion.h1>
+                </h1>
+                {/* </motion.div> */}
               </article>
             </div>
           </div>

@@ -5,8 +5,45 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  /* Prevents the scrollbar from jumping the layout width */
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+/* Apply to anything you animate with GSAP */
+.gsap-reveal {
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+}
+
+.reveal-hidden {
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* The content starts invisible */
+.page-content {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* The loader sits on top of everything */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  background: #000; /* Use your brand color */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body.modal-open,
-body.menu-overlay-open {
+body.menu-overlay-open,
+body.boot-loading,
+body.transition-active {
   overflow: hidden;
 }
 
@@ -81,6 +118,22 @@ body {
 .youtube-video {
   aspect-ratio: 16 / 9;
   width: 100%;
+  /* max-width: 1200px; */
+  display: block;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.client-project-visualiser-video {
+  contain: layout paint style;
+  content-visibility: auto;
+  contain-intrinsic-size: 720px 405px;
+}
+
+.client-project-visualiser-video-interactive {
+  contain: none;
+  content-visibility: visible;
+  contain-intrinsic-size: auto;
 }
 
 .hero-image-container {
@@ -173,7 +226,7 @@ body {
   left: calc(50% - ((926px / 4) / 2));
   transform-style: preserve-3d;
   transform: perspective(2000px);
-  background-image: url('/optimised/sean_donny_skull_logo.png');
+  background-image: url('/optimised/sean_donny_skull_logo.webp');
   background-size: contain;
 }
 

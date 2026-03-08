@@ -6,12 +6,11 @@ import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 
 // Image imports
-// const mkWrldBanner = '/optimised/mikeswrld_banner.gif';
-const mkWrldBanner2 = '/optimised/mikeswrld_banner.jpg';
-const mkLogo = '/optimised/mikeswrld_title.png';
-const mkReference1 = '/optimised/mha_reference.jpg';
-const mkReference2 = '/optimised/mikeswrld_planet_reference.jpg';
-const mkReference3 = '/optimised/mikeswrld_reference.jpg';
+const mkWrldBanner = '/optimised/mikeswrld_banner.webp';
+const mkLogo = '/optimised/mikeswrld_title.webp';
+const mkReference1 = '/optimised/mha_reference.webp';
+const mkReference2 = '/optimised/mikeswrld_planet_reference.webp';
+const mkReference3 = '/optimised/mikeswrld_reference.webp';
 
 import mkWrldData from './data';
 import SEO from '../../../components/SEO/SEO';
@@ -19,7 +18,6 @@ import ScrollTooltip from '../../../components/ScrollTooltip';
 import embeddedAppleMusicStyle from '../../../utils/embeddedAppleMusicStyle';
 import ProjectNavigation from '../../../components/ProjectNavigationSection';
 import navigationMap from '../navigationMap';
-// import cld from '../../../utils/cloudinary';
 
 const MikesWrld = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -229,15 +227,6 @@ const MikesWrld = () => {
     position: mikeAlbumTracklistCoverParagraphPosition,
   } = useInViewAnimation();
 
-  // const {
-  //   ref: mikeAlbumPromoVideoRef,
-  //   inView: mikeAlbumPromoVideoInView,
-  //   opacity: mikeAlbumPromoVideoOpacity,
-  //   position: mikeAlbumPromoVideoPosition,
-  // } = useInViewAnimation();
-
-  // Declarations for reference board
-
   const [referenceBoardUnderline, setReferenceBoardUnderline] = useState(0);
 
   const referenceBoardItemsRef = useRef(null);
@@ -343,7 +332,7 @@ const MikesWrld = () => {
         description="Explore a client project for Mike's World by contemporary artist Sean Donny, showcasing his creative direction expertise."
         type="article"
         url="https://seandonny.com/client-projects/mikes-world"
-        image={mkWrldBanner2}
+        image={mkWrldBanner}
       />
       {modalOpen && (
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
@@ -360,7 +349,7 @@ const MikesWrld = () => {
             ref={myElementRef}
           >
             <motion.img
-              src={mkWrldBanner2}
+              src={mkWrldBanner}
               alt="Mike holding the earth"
               title="Mike's World"
               loading="eager"
@@ -703,36 +692,6 @@ const MikesWrld = () => {
                 style={embeddedAppleMusicStyle}
               ></iframe>
             </div>
-            {/* <div className="client-project-promo-video-container h-auto w-full hd:w-1/2 hd:py-5 flex flex-col items-center justify-center">
-              {mikeAlbumPromoVideoInView && (
-                <motion.div
-                  className="client-project-promo-video h-auto w-full flex flex-col items-center justify-center"
-                  ref={mikeAlbumPromoVideoRef}
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    translateY: mikeAlbumPromoVideoPosition,
-                    opacity: mikeAlbumPromoVideoOpacity,
-                  }}
-                >
-                  <iframe
-                    src={cld
-                      .video('resume-site/mikeswrld_album_out_now_video')
-                      .quality('auto')
-                      .toURL()}
-                    width="660"
-                    height="660"
-                    className="hd:p-20"
-                    style={{
-                      height: 'auto',
-                      width: '100%',
-                      aspectRatio: 660 / 660,
-                    }}
-                    allow="fullscreen; encrypted-media; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </motion.div>
-              )}
-            </div> */}
           </section>
           <section className="client-project-deliverables-container h-auto w-full bg-red-600 selection:bg-black selection:text-zinc-200 p-5">
             <div className="client-project-deliverables flex flex-col items-start justify-center">

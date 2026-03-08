@@ -1,9 +1,9 @@
 // Image imports
-import cbV1SingleConceptArt from '/optimised/odunsi_crown_bounce_draft_1.jpg';
-import cbV2SingleConceptArt from '/optimised/odunsi_crown_bounce_draft_2.jpg';
-import cbOGSingleArt from '/optimised/odunsi_crown_bounce_original.jpg';
-import cbRemixSingleArt from '/optimised/odunsi_crown_bounce_remix.jpg';
-import cbVisualiserEye from '/optimised/odunsi_crown_bounce_visualiser_eye.jpg';
+import cbV1SingleConceptArt from '/optimised/odunsi_crown_bounce_draft_1.webp';
+import cbV2SingleConceptArt from '/optimised/odunsi_crown_bounce_draft_2.webp';
+import cbOGSingleArt from '/optimised/odunsi_crown_bounce_original.webp';
+import cbRemixSingleArt from '/optimised/odunsi_crown_bounce_remix.webp';
+import cbVisualiserEye from '/optimised/odunsi_crown_bounce_visualiser_eye.webp';
 
 const splitProjectDetailData = {
   Draft1: {

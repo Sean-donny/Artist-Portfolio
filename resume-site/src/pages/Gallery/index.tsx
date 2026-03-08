@@ -9,7 +9,7 @@ import { ModalContent } from '../../interfaces/ModalContent';
 import SEO from '../../components/SEO/SEO';
 
 // Image imports
-import Wdylmh from '/optimised/ashley_okoli_portrait.jpg';
+import Wdylmh from '/optimised/ashley_okoli_portrait.webp';
 
 const Gallery = () => {
   const [modalOpen, setModalOpen] = useState(false);

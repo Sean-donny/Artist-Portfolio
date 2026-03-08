@@ -4,7 +4,7 @@ import GalleryModal from '../../../components/GalleryModal';
 import { ModalContent } from '../../../interfaces/ModalContent';
 
 // Image imports
-import cmBanner from '/optimised/carti_music_wide.jpg';
+import cmBanner from '/optimised/carti_music_wide.webp';
 import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import musicData from './data';
 import SEO from '../../../components/SEO/SEO';

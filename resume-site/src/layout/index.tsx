@@ -7,6 +7,11 @@ import MenuOverlay from '../components/MenuOverlay';
 import { CartProvider } from '../context/CartContext';
 import CartPanel from '../components/CartPanel';
 import { Toaster } from 'react-hot-toast';
+import {
+  TransitionLayout,
+  TransitionPage,
+} from '../components/Transitions/TransitionLayout';
+import { useLenis } from '../Hooks/useLenis';
 
 const AppLayout = () => {
   const [menuOverlayOpen, setMenuOverlayOpen] = useState(false);
@@ -14,6 +19,8 @@ const AppLayout = () => {
   // const navigate = useNavigate();
 
   const [cartOpen, setCartOpen] = useState(false);
+
+  useLenis();
 
   // Open cart if URL contains `?cart=open`
   useEffect(() => {
@@ -34,29 +41,33 @@ const AppLayout = () => {
 
   return (
     <>
-      <CartProvider>
-        <Toaster position="top-center" />
-        <Navbar
-          menuOverlayOpen={menuOverlayOpen}
-          setMenuOverlayOpen={setMenuOverlayOpen}
-          cartOpen={cartOpen}
-          setCartOpen={setCartOpen}
-        />
-        <AnimatePresence initial={false} mode="wait">
-          <CartPanel isOpen={cartOpen} onClose={() => setCartOpen(false)} />
+      <TransitionLayout>
+        <CartProvider>
+          <Toaster position="top-center" />
+          <Navbar
+            menuOverlayOpen={menuOverlayOpen}
+            setMenuOverlayOpen={setMenuOverlayOpen}
+            cartOpen={cartOpen}
+            setCartOpen={setCartOpen}
+          />
+          <AnimatePresence initial={false} mode="wait">
+            <CartPanel isOpen={cartOpen} onClose={() => setCartOpen(false)} />
 
-          {menuOverlayOpen && (
-            <MenuOverlay
-              menuOverlayOpen={menuOverlayOpen}
-              setMenuOverlayOpen={setMenuOverlayOpen}
-              cartOpen={cartOpen}
-              setCartOpen={setCartOpen}
-            />
-          )}
-        </AnimatePresence>
-        <Outlet />
-        <Footer />
-      </CartProvider>
+            {menuOverlayOpen && (
+              <MenuOverlay
+                menuOverlayOpen={menuOverlayOpen}
+                setMenuOverlayOpen={setMenuOverlayOpen}
+                cartOpen={cartOpen}
+                setCartOpen={setCartOpen}
+              />
+            )}
+          </AnimatePresence>
+          <TransitionPage>
+            <Outlet />
+          </TransitionPage>
+          <Footer />
+        </CartProvider>
+      </TransitionLayout>
     </>
   );
 };

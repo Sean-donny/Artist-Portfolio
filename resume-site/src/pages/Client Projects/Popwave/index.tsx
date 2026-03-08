@@ -7,13 +7,14 @@ import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 import popwaveData from './data';
 
 // Image imports
-import pwBanner from '/optimised/popwave_comic_panel_banner.jpg';
-import pwCharacter from '/optimised/popwave_character.png';
-import pwStar1 from '/optimised/popwave_star_logo_1.png';
-import pwStar2 from '/optimised/popwave_star_logo_2.png';
-import pwStar3 from '/optimised/popwave_star_logo_3.png';
-import pwTshirtLive from '/optimised/popwave_star_logo_shirt_design_on_model.jpg';
-import pwTshirtMockup from '/optimised/popwave_star_logo_shirt_design.jpg';
+import pwBanner from '/optimised/popwave_comic_panel_banner.webp';
+import pwCharacter from '/optimised/popwave_character.webp';
+import pwStar1 from '/optimised/popwave_star_logo_1.webp';
+import pwStar2 from '/optimised/popwave_star_logo_2.webp';
+import pwStar3 from '/optimised/popwave_star_logo_3.webp';
+import pwTshirtLive from '/optimised/popwave_star_logo_shirt_design_on_model.webp';
+import pwTshirtMockup from '/optimised/popwave_star_logo_shirt_design.webp';
+
 import SEO from '../../../components/SEO/SEO';
 import ScrollTooltip from '../../../components/ScrollTooltip';
 import ProjectNavigation from '../../../components/ProjectNavigationSection';

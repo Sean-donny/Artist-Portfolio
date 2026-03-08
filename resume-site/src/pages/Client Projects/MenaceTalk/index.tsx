@@ -7,8 +7,8 @@ import GalleryModal from '../../../components/GalleryModal';
 import { ModalContent } from '../../../interfaces/ModalContent';
 
 // Image imports
-import mtHeroBanner from '/optimised/trill_tega_menace_talk_skull_graphic.jpg';
-import hoodedTrill from '/optimised/trill_tega_menace_talk_hero.png';
+import mtHeroBanner from '/optimised/trill_tega_menace_talk_skull_graphic.webp';
+import hoodedTrill from '/optimised/trill_tega_menace_talk_hero.webp';
 
 import cld from '../../../utils/cloudinary';
 import SEO from '../../../components/SEO/SEO';

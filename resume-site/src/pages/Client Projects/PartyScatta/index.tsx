@@ -7,11 +7,12 @@ import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 import { ModalContent } from '../../../interfaces/ModalContent';
 
 // Image imports
-import tmBanner from '/optimised/txmmyily_banner.jpg';
-import tmDraft from '/optimised/txmmyily_draft_illustration.png';
-import tmReference1 from '/optimised/txmmyily_cover_reference.jpg';
-import tmReference2 from '/optimised/txmmyily_outfit_reference.jpg';
-import tmReference3 from '/optimised/txmmyily_visual_reference.jpg';
+import tmBanner from '/optimised/txmmyily_banner.webp';
+import tmDraft from '/optimised/txmmyily_draft_illustration.webp';
+import tmReference1 from '/optimised/txmmyily_cover_reference.webp';
+import tmReference2 from '/optimised/txmmyily_outfit_reference.webp';
+import tmReference3 from '/optimised/txmmyily_visual_reference.webp';
+
 import SEO from '../../../components/SEO/SEO';
 import ScrollTooltip from '../../../components/ScrollTooltip';
 import embeddedAppleMusicStyle from '../../../utils/embeddedAppleMusicStyle';

@@ -1,9 +1,9 @@
 // Image imports
-import sgInspoPhoto from '/optimised/len_inspo.jpg';
-import sgMBSAPoster from '/optimised/len_poster.jpg';
-import sgCoverDraft from '/optimised/len_cover_draft.jpg';
-import sgCover from '/optimised/len_cover.jpg';
-import sgVisualiserIllustration from '/optimised/len_goldenboy.png';
+import sgInspoPhoto from '/optimised/len_inspo.webp';
+import sgMBSAPoster from '/optimised/len_poster.webp';
+import sgCoverDraft from '/optimised/len_cover_draft.webp';
+import sgCover from '/optimised/len_cover.webp';
+import sgVisualiserIllustration from '/optimised/len_goldenboy.webp';
 
 const splitProjectDetailData = {
   Draft1: {

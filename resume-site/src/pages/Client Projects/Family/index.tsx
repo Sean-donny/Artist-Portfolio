@@ -7,8 +7,9 @@ import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 import familyData from './data';
 
 // Image imports
-import fmBanner from '/optimised/smada_family_banner.jpg';
-import fmSketch from '/optimised/smada_family_sketch.jpg';
+import fmBanner from '/optimised/smada_family_banner.webp';
+import fmSketch from '/optimised/smada_family_sketch.webp';
+
 import SEO from '../../../components/SEO/SEO';
 import ScrollTooltip from '../../../components/ScrollTooltip';
 import embeddedAppleMusicStyle from '../../../utils/embeddedAppleMusicStyle';

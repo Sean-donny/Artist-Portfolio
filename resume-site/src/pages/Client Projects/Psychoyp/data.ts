@@ -1,10 +1,10 @@
 // Image imports
-import ypFanArt from '/optimised/psychoyp_fanart.jpg';
-import ypFanPhoto from '/optimised/sean_donny_x_psychoyp.jpg';
-import ypHunnidBricks from '/optimised/psychoyp_100_bricks_cover.jpg';
-import ypRapRiddim from '/optimised/psychoyp_rap_riddim_cover.jpg';
-import ypNationalAnthem from '/optimised/psychoyp_national_anthem_cover.jpg';
-import ypIllustration from '/optimised/psychoyp_smoke.png';
+import ypFanArt from '/optimised/psychoyp_fanart.webp';
+import ypFanPhoto from '/optimised/sean_donny_x_psychoyp.webp';
+import ypHunnidBricks from '/optimised/psychoyp_100_bricks_cover.webp';
+import ypRapRiddim from '/optimised/psychoyp_rap_riddim_cover.webp';
+import ypNationalAnthem from '/optimised/psychoyp_national_anthem_cover.webp';
+import ypIllustration from '/optimised/psychoyp_smoke.webp';
 
 const splitProjectDetailData = {
   FanArt: {

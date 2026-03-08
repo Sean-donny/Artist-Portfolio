@@ -1,13 +1,13 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { usePageTransition } from '../../components/Transitions/TransitionLayout';
 
 import ProjectData from '../../interfaces/ProjectData';
 import clientProjectsData from './data';
 import SEO from '../../components/SEO/SEO';
 
 // Image imports
-import mnctlk from '/optimised/client_project_mt.png';
+import mnctlk from '/optimised/client_project_mt.webp';
 
 const ClientProjects = () => {
   interface ClientProjectsProps {
@@ -20,11 +20,10 @@ const ClientProjects = () => {
   const bgColor = 'bg-black';
   const componentTitle = 'Client Projects';
 
-  const navigate = useNavigate();
+  const { navigateTo } = usePageTransition();
 
   const handleNavigate = (path: string) => {
-    window.scrollTo(0, 0);
-    navigate(`/${path}`);
+    navigateTo(`/${path}`);
   };
 
   const Projects = ({ clientProjectsData }: ClientProjectsProps) => (

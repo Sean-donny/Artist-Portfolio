@@ -1,24 +1,45 @@
 //image import
-import { useNavigate } from 'react-router-dom';
-import printSpread from '/optimised/sean_donny_prints_image.png';
+import printSpread from '/optimised/sean_donny_prints_image.webp';
+import { usePageTransition } from '../../components/Transitions/TransitionLayout';
+import { useReveal } from '../../Hooks/useRevealItem';
+import { useRef } from 'react';
 
 const Prints = () => {
-  const navigate = useNavigate();
+  const { navigateTo } = usePageTransition();
 
   const handleNavigate = (path: string) => {
-    navigate(path);
+    navigateTo(`/${path}`);
   };
+
+  // 1. Create a ref for the parent container (the trigger)
+  const containerRef = useRef<HTMLElement>(null);
+
+  // 2. Pass that ref into our hook
+  const imageRef = useReveal<HTMLImageElement>({
+    variant: 'slideUp',
+    delay: 0.2,
+    triggerRef: containerRef,
+  });
+
+  const titleRef = useReveal<HTMLHeadingElement>({
+    variant: 'fade',
+    delay: 0.3,
+  });
+
   return (
     <div className="bg-zima">
       <div className="w-full h-auto lg:h-full px-7 flex flex-col-reverse md:flex-row">
-        <figure className="art-spread flex-grow md:w-2/5 md:flex-none flex justify-center">
+        <figure
+          ref={containerRef}
+          className="art-spread flex-grow md:w-2/5 md:flex-none flex justify-center overflow-hidden"
+        >
           <img
+            ref={imageRef}
             src={printSpread}
             alt="Sean Donny holding up art prints"
             loading="eager"
-            width={948 / 2}
-            height={1088 / 2}
-            className="h-full w-auto object-cover overflow-x-visible"
+            className="h-full w-auto object-cover gsap-reveal min-h-11"
+            style={{ willChange: 'transform' }} // Optimization for smooth animation
           />
         </figure>
         <div className="chameleon-skin h-auto flex-grow md:w-3/5 md:flex-none">
@@ -27,20 +48,21 @@ const Prints = () => {
               <div className="w-full h-auto bg-[#30fce3] border-2 p-3 lg:p-6 border-black">
                 <div className="w-full h-auto bg-[#fa0cb3] border-2 p-3 lg:p-6 border-black">
                   <h2
-                    className="font-loud uppercase text-slate-100 tracking-tight lg:text-massive2 text-7xl lg:text-8xl lg:leading-massive2"
+                    className="font-loud uppercase text-slate-100 tracking-tight lg:text-massive2 text-7xl lg:text-8xl lg:leading-massive2 reveal-hidden"
                     style={{
                       textShadow:
                         '3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
                     }}
+                    ref={titleRef}
                   >
                     PRINTS
                   </h2>
                   <p
                     className="font-custom text-slate-100 font-semibold pt-4 pb-10 text-xl"
-                    // style={{
-                    //   textShadow:
-                    //     '1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
-                    // }}
+                    style={{
+                      textShadow:
+                        '2px 2px 0 rgba(0, 0, 0, 0.7), -1px -1px 0 rgba(0, 0, 0, 0.7), 1px -1px 0 rgba(0, 0, 0, 0.7), -1px 1px 0 rgba(0, 0, 0, 0.7), 1px 1px 0 rgba(0, 0, 0, 0.7)',
+                    }}
                   >
                     Looking to add some new artwork in your space, or just
                     support me?
@@ -52,8 +74,8 @@ const Prints = () => {
                     for yourself, or someone special to you.
                   </p>
                   <button
-                    className="prints-button p-3 border-black border-2 bg-fuchsia-200 text-xl text-black font-custom font-semibold hover:text-slate-700 hover:bg-fuchsia-100"
-                    onClick={() => handleNavigate('/store')}
+                    className="prints-button p-3 border-black border-2 bg-fuchsia-200 text-xl text-black font-custom font-semibold hover:text-slate-900 hover:bg-fuchsia-100"
+                    onClick={() => handleNavigate('store')}
                   >
                     Shop Now
                   </button>

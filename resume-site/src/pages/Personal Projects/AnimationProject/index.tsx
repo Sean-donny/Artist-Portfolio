@@ -7,8 +7,8 @@ import GalleryModal from '../../../components/GalleryModal';
 import SEO from '../../../components/SEO/SEO';
 
 // image imports
-import sdCharacterSheet from '/optimised/sean_donny_animated_character_turnaround_sheet.jpg';
-import sdExpressionSheet from '/optimised/sean_donny_animated_character_expression_sheet.jpg';
+import sdCharacterSheet from '/optimised/sean_donny_animated_character_turnaround_sheet.webp';
+import sdExpressionSheet from '/optimised/sean_donny_animated_character_expression_sheet.webp';
 import ProjectNavigation from '../../../components/ProjectNavigationSection';
 import navigationMap from '../navigationMap';
 

@@ -12,6 +12,8 @@ const imageData = {
     title: 'Guitar Gurl',
     year: '(2022)',
     style: '',
+    width: 1080,
+    height: 1080,
   },
   illustration2: {
     src: ALoveStory,
@@ -19,6 +21,8 @@ const imageData = {
     title: 'A Love Story',
     year: '(2021)',
     style: '',
+    width: 818,
+    height: 1158,
   },
   illustration3: {
     src: RedHeadGirls,
@@ -26,6 +30,8 @@ const imageData = {
     title: 'Red Heads',
     year: '(2023)',
     style: '',
+    width: 1768,
+    height: 1250,
   },
   illustration4: {
     src: AmalaEwedu,
@@ -33,6 +39,8 @@ const imageData = {
     title: 'Amala+Ewedu',
     year: '(2023)',
     style: '',
+    width: 818,
+    height: 1158,
   },
   illustration5: {
     src: RulesTheWorld,
@@ -40,6 +48,8 @@ const imageData = {
     title: 'RulesTheWorld',
     year: '(2023)',
     style: '',
+    width: 1767,
+    height: 1240,
   },
 };
 

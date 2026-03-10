@@ -84,6 +84,10 @@ const AnimationProject = () => {
               title="Character Design Sheet"
               className="animation-project-character-sheet-image w-full h-auto"
               loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              width={1920}
+              height={1080}
             />
           </figure>
           <article className="personal-project-description-and-illustration-container w-full h-auto flex flex-col hd:flex-row items-start justify-center hd:py-20 selection:bg-pink-600">
@@ -121,7 +125,7 @@ const AnimationProject = () => {
                   alt={animationProjectData.TurnAround.alt}
                   title={animationProjectData.TurnAround.title}
                   loading="eager"
-                  className="personal-project-illustrations-2-image mb-2 p-5"
+                  className="personal-project-illustrations-2-image mb-2 p-5 w-full h-auto"
                   ref={sdTurnAroundRef}
                   initial={{ opacity: 0 }}
                   animate={{
@@ -131,6 +135,10 @@ const AnimationProject = () => {
                   onClick={handleImageFocus(animationProjectData.TurnAround)}
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.9 }}
+                  decoding="async"
+                  fetchPriority="high"
+                  width={600}
+                  height={1080}
                 />
               </figure>
               <motion.div className="illustration-images-description-2 w-full h-1/6">
@@ -150,7 +158,7 @@ const AnimationProject = () => {
                   alt={animationProjectData.Character.alt}
                   title={animationProjectData.Character.title}
                   loading="lazy"
-                  className="personal-project-illustrations-3-image mb-2 p-5"
+                  className="personal-project-illustrations-3-image mb-2 p-5 w-full h-auto"
                   ref={sdCharacterRef}
                   initial={{ opacity: 0 }}
                   animate={{
@@ -160,6 +168,9 @@ const AnimationProject = () => {
                   onClick={handleImageFocus(animationProjectData.Character)}
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.9 }}
+                  decoding="async"
+                  width={659}
+                  height={1000}
                 />
               </figure>
               <motion.div className="illustration-images-description-1 w-full h-1/6">
@@ -177,7 +188,7 @@ const AnimationProject = () => {
                   alt={animationProjectData.ExpressionSheet.alt}
                   title={animationProjectData.ExpressionSheet.title}
                   loading="lazy"
-                  className="personal-project-illustrations-4-image mb-2 p-5"
+                  className="personal-project-illustrations-4-image mb-2 p-5 w-full h-auto"
                   ref={sdExpressionSheetRef}
                   initial={{ opacity: 0 }}
                   animate={{
@@ -189,6 +200,9 @@ const AnimationProject = () => {
                   )}
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.9 }}
+                  decoding="async"
+                  width={1080}
+                  height={1080}
                 />
               </figure>
               <motion.div className="illustration-images-description-2 w-full h-1/6">

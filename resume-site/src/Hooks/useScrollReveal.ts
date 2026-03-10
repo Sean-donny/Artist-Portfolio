@@ -30,8 +30,19 @@ const useScrollReveal = <T extends HTMLElement = HTMLElement>(
     const element = ref.current;
     if (!element) return;
 
+    let initialized = false;
+    let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
+
     // Wait for pageReady event before enabling animations
     const handlePageReady = () => {
+      if (initialized) return;
+      initialized = true;
+
+      if (fallbackTimer) {
+        clearTimeout(fallbackTimer);
+        fallbackTimer = null;
+      }
+
       const {
         start = 'top 80%',
         end = 'top 20%',
@@ -68,17 +79,19 @@ const useScrollReveal = <T extends HTMLElement = HTMLElement>(
     };
 
     // Check if page is already ready
-    if (document.body.classList.contains('page-ready')) {
+    if (window.__pageReady) {
       handlePageReady();
     } else {
       window.addEventListener('pageReady', handlePageReady, { once: true });
 
       // Fallback timeout in case event doesn't fire
-      const fallbackTimer = setTimeout(handlePageReady, 3000);
+      fallbackTimer = setTimeout(handlePageReady, 3000);
 
       return () => {
         window.removeEventListener('pageReady', handlePageReady);
-        clearTimeout(fallbackTimer);
+        if (fallbackTimer) {
+          clearTimeout(fallbackTimer);
+        }
       };
     }
 

@@ -94,6 +94,10 @@ const YouTubers = () => {
                 src={current.thumbnail}
                 alt={current.name}
                 title={current.name}
+                decoding="async"
+                fetchPriority="high"
+                width={1920}
+                height={1080}
               />
             </div>
             <div className="flex flex-row items-start justify-start w-full h-auto pt-5 text-base sm:text-2xl font-custom tracking-tight font-bold antialiased text-slate-100">
@@ -227,6 +231,9 @@ const YouTubers = () => {
                   src={suggestion.thumbnail}
                   alt={suggestion.title}
                   className="w-screen h-auto lg:w-[12rem] lg:h-[8rem] object-cover rounded"
+                  decoding="async"
+                  width={1920}
+                  height={1080}
                 />
                 <div className="flex flex-col gap-1 text-xl lg:text-sm pl-5 lg:pl-0 pb-5 lg:pb-0">
                   <p className="font-custom text-slate-100 font-semibold line-clamp-2 mb-1">

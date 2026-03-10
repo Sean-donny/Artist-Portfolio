@@ -37,7 +37,7 @@ const CartIcon = () => {
       transition={{ type: 'spring', stiffness: 300, damping: 10 }}
     >
       <img
-        src="/optimised/sean_donny_skull_logo.png"
+        src="/optimised/sean_donny_skull_logo.webp"
         alt="Cart"
         className="w-6 h-6"
       />

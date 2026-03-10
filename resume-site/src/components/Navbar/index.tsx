@@ -3,12 +3,15 @@ import { MenuOverlayProps } from '../../interfaces/MenuOverlayProps';
 import { useLocation } from 'react-router-dom';
 import CartIcon from '../CartIcon';
 import { usePageTransition } from '../Transitions/TransitionLayout';
+import { useCart } from '../../context/useCart';
 
 const Navbar = ({ menuOverlayOpen, setMenuOverlayOpen }: MenuOverlayProps) => {
   const menuButtonText = { option1: 'Menu', option2: 'Close' };
   const location = useLocation();
+  const { cart } = useCart();
 
   const isShopping = location.pathname.startsWith('/store');
+  const hasCartItems = cart.length > 0;
 
   const { navigateTo } = usePageTransition();
 
@@ -30,7 +33,7 @@ const Navbar = ({ menuOverlayOpen, setMenuOverlayOpen }: MenuOverlayProps) => {
           </motion.p>
         </li>
         <li className="flex items-center gap-4">
-          {isShopping && <CartIcon />}
+          {(isShopping || hasCartItems) && <CartIcon />}
           <div onClick={() => setMenuOverlayOpen(!menuOverlayOpen)}>
             <motion.button
               className="font-custom font-semibold text-aquatic tracking-tight text-lg"

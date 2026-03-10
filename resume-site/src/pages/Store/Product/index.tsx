@@ -38,7 +38,7 @@ const Product = () => {
               <div className="flex-shrink-0 pt-0.5">
                 <img
                   className="h-10 w-10 rounded-full"
-                  src="/optimised/sean_donny_skull_logo.png"
+                  src="/optimised/sean_donny_skull_logo.webp"
                   alt=""
                 />
               </div>
@@ -130,6 +130,7 @@ const Product = () => {
 
     if (!foundMatch && selectedSizeData) {
       cart.push({
+        slug: poster.slug,
         title: poster.title,
         size,
         quantity: safeQuantity,
@@ -154,7 +155,7 @@ const Product = () => {
   return (
     <div className="product-page-container w-full h-auto bg-zima flex flex-col">
       <SEO
-        title={`Store | ${poster.title}`}
+        title={`${poster.title} | Store`}
         description={`Explore a painting of ${poster.title} by artist Sean Donny.`}
         type="article"
         url={`https://seandonny.com/store/${poster.slug}`}
@@ -296,7 +297,7 @@ const Product = () => {
         </div>
       </div>
       {/* You May Also Like */}
-      <div className="recommendations-section mt-24 mb-12 px-6 text-white font-custom">
+      <div className="recommendations-section lg:mt-24 mb-12 px-6 text-white font-custom">
         <h2 className="text-2xl mb-4">You May Also Like</h2>
         <div className="flex gap-4 flex-wrap items-baseline">
           {recommended.map(p => (

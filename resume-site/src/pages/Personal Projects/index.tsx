@@ -44,7 +44,10 @@ const PersonalProjects = () => {
               alt={data.alt}
               title={data.title}
               loading="eager"
-              className="personal-projects-image pointer-events-none"
+              className="personal-projects-image pointer-events-none w-auto h-auto"
+              fetchPriority="high"
+              width={1080}
+              height={1080}
             />
             <motion.div className="personal-projects-content-images-description w-full h-auto">
               <p className="font-custom text-base text-center text-zinc-200">

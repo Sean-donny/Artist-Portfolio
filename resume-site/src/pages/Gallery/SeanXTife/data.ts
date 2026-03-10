@@ -9,6 +9,8 @@ const imageData = {
     title: 'DOOM',
     year: '(2022)',
     style: 'hd:w-3/5',
+    width: 1694,
+    height: 1069,
   },
   illustration2: {
     src: Astroboy,
@@ -16,6 +18,8 @@ const imageData = {
     title: 'A Love Story',
     year: '(2021)',
     style: 'hd:w-2/5',
+    width: 1080,
+    height: 1080,
   },
 };
 

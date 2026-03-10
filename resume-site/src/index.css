@@ -33,7 +33,7 @@ html {
 .page-loader {
   position: fixed;
   inset: 0;
-  background: #000; /* Use your brand color */
+  background: #000;
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -124,7 +124,7 @@ body {
   backface-visibility: hidden;
 }
 
-.client-project-visualiser-video {
+/* .client-project-visualiser-video {
   contain: layout paint style;
   content-visibility: auto;
   contain-intrinsic-size: 720px 405px;
@@ -134,7 +134,7 @@ body {
   contain: none;
   content-visibility: visible;
   contain-intrinsic-size: auto;
-}
+} */
 
 .hero-image-container {
   perspective: 1000px;
@@ -366,4 +366,28 @@ body {
 
 .prints-button:hover {
   animation: subtle-flash 1.2s ease-in-out infinite;
+}
+
+/* Lenis Smooth Scrolling */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+  overflow-x: hidden;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }

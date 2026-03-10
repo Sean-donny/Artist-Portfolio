@@ -102,6 +102,10 @@ const Hero = () => {
                 duration: 0.6,
                 delay: 0.5,
               }}
+              fetchPriority="high"
+              decoding="async"
+              width={948}
+              height={1088}
             />
           </figure>
         </div>

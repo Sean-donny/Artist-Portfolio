@@ -9,6 +9,8 @@ const imageData = {
     title: 'IDLUAM',
     year: '(2021)',
     style: 'hd:w-1/2',
+    width: 1080,
+    height: 772,
   },
   illustration2: {
     src: EnterMars,
@@ -16,6 +18,8 @@ const imageData = {
     title: 'Enter Mars',
     year: '(2021)',
     style: 'hd:w-1/2',
+    width: 1080,
+    height: 738,
   },
 };
 

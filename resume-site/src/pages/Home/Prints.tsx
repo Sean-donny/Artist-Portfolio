@@ -40,6 +40,8 @@ const Prints = () => {
             loading="eager"
             className="h-full w-auto object-cover gsap-reveal min-h-11"
             style={{ willChange: 'transform' }} // Optimization for smooth animation
+            width={948}
+            height={1088}
           />
         </figure>
         <div className="chameleon-skin h-auto flex-grow md:w-3/5 md:flex-none">

@@ -324,7 +324,7 @@ const Store = () => {
               <div className="flex-shrink-0 pt-0.5">
                 <img
                   className="h-10 w-10 rounded-full"
-                  src="/optimised/sean_donny_skull_logo.png"
+                  src="/optimised/sean_donny_skull_logo.webp"
                   alt=""
                 />
               </div>
@@ -535,6 +535,9 @@ const Store = () => {
                     alt={poster.title}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
+                    width={poster.width}
+                    height={poster.height}
+                    decoding="async"
                   />
                 </div>
 

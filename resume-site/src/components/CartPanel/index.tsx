@@ -89,17 +89,23 @@ const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
     }
   };
 
+  const handleClickCartItem = (item: CartItem) => {
+    const fallbackSlug = item.title.trim().toLowerCase().replace(/\s+/g, '_');
+    const slug = item.slug ?? fallbackSlug;
+    navigate(`/store/${slug}?cart=open`);
+  };
+
   return (
     <motion.aside
       className="fixed top-0 right-0 w-80 h-full bg-black text-slate-100 shadow-lg z-[3000] p-4 overflow-y-auto flex flex-col font-custom"
-      initial={{ scaleY: 0.05 }}
-      animate={{ scaleY: 1 }}
+      initial={{ translateX: 400 }}
+      animate={{ translateX: 0 }}
       transition={{
         type: 'spring',
         bounce: 0.1,
         duration: 0.2,
       }}
-      exit={{ scaleY: 0 }}
+      exit={{ translateX: 400 }}
       style={{ overflow: 'hidden' }}
     >
       <div className="flex justify-between items-center mb-4">
@@ -126,15 +132,19 @@ const CartPanel = ({ isOpen, onClose }: CartPanelProps) => {
                 <li
                   key={`${item.title}-${item.size}`}
                   id={`${index}`}
-                  className="flex items-center border-b border-gray-800 pb-3"
+                  className="flex items-center border-b border-gray-800 pb-3 cursor-pointer"
                 >
                   <img
                     src={item.thumbnail}
                     alt={item.title}
                     className="w-16 h-16 object-cover mr-3 rounded"
                     loading="lazy"
+                    onClick={() => handleClickCartItem(item)}
                   />
-                  <div className="flex flex-col flex-grow">
+                  <div
+                    className="flex flex-col flex-grow"
+                    onClick={() => handleClickCartItem(item)}
+                  >
                     <p className="font-semibold text-white">{item.title}</p>
                     <p className="text-sm font-medium text-gray-400">
                       Size: {item.size}

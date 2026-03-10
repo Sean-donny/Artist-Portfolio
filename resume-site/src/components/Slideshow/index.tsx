@@ -39,7 +39,11 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
                 alt={titles[index]}
                 tabIndex={-1}
                 aria-hidden={true}
-                className="carousel-image"
+                className="carousel-image w-auto h-auto"
+                width={818}
+                height={1158}
+                fetchPriority="high"
+                decoding="async"
                 title={titles[index]}
                 loading="eager"
                 whileHover={{ scale: 1.05 }}
@@ -69,9 +73,11 @@ const Slideshow = ({ images, titles }: SlideshowProps) => {
                   alt={titles[index]}
                   tabIndex={-1}
                   aria-hidden={true}
-                  className="carousel-image"
+                  className="carousel-image w-auto h-auto"
+                  width={818}
+                  height={1158}
                   title={titles[index]}
-                  loading="eager"
+                  loading="lazy"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => {

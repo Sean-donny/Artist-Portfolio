@@ -331,13 +331,19 @@ const Nuniverse = () => {
               alt="A wide shot of Smada's NüNiverse"
               title="Smada's NüNiverse"
               loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="client-project-hero-image w-full h-full object-cover object-center"
+              width={1920}
+              height={1080}
               initial={{ scale: 1, opacity: 1 }}
               animate={controls}
             />
           </figure>
           {/* height of safe space is set to the same as parallaxValue */}
-          <div className={`client-project-hero-safe-space h-[400px] w-full`}>
+          <div
+            className={`client-project-hero-safe-space h-[${parallaxValue}px] w-full`}
+          >
             &nbsp;
           </div>
           <article className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-rose-500 selection:text-zinc-200">
@@ -504,7 +510,7 @@ const Nuniverse = () => {
               className="client-project-reference-description-container w-full h-auto flex flex-col items-center justify-center py-5"
               ref={referenceBoard2ItemsRef}
             >
-              <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left md:text-justify text-black font-normal leading-snug md:leading-relaxed">
+              <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left md:text-justify text-black font-normal leading-snug">
                 Building upon the galactic themes introduced in the Family
                 cover, I drew inspiration from the legendary{' '}
                 <a

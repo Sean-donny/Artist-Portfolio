@@ -294,13 +294,19 @@ const Family = () => {
               alt="A tight close up of Smada performing"
               title="Smada Performing"
               loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="client-project-hero-image w-full h-full object-cover object-center"
+              width={1920}
+              height={1080}
               initial={{ scale: 1, opacity: 1 }}
               animate={controls}
             />
           </figure>
           {/* height of safe space is set to the same as parallaxValue */}
-          <div className={`client-project-hero-safe-space h-[400px] w-full`}>
+          <div
+            className={`client-project-hero-safe-space h-[${parallaxValue}px] w-full`}
+          >
             &nbsp;
           </div>
           <article className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-lime-300 selection:text-black">

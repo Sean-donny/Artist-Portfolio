@@ -321,13 +321,19 @@ const PartyScatta = () => {
               alt="A party scene with TXMMYILY"
               title="Jaiye"
               loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="client-project-hero-image w-full h-full object-cover object-center"
+              width={1920}
+              height={1080}
               initial={{ scale: 1, opacity: 1 }}
               animate={controls}
             />
           </figure>
           {/* height of safe space is set to the same as parallaxValue */}
-          <div className={`client-project-hero-safe-space h-[400px] w-full`}>
+          <div
+            className={`client-project-hero-safe-space h-[${parallaxValue}px] w-full`}
+          >
             &nbsp;
           </div>
           <article className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-[#02e2c5] selection:text-black">
@@ -495,7 +501,7 @@ const PartyScatta = () => {
               className="client-project-reference-description-container w-full h-auto flex flex-col items-center justify-center py-5"
               ref={referenceBoard2ItemsRef}
             >
-              <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left md:text-justify text-black font-normal leading-snug md:leading-relaxed">
+              <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left md:text-justify text-black font-normal leading-snug">
                 For the original reference, TXMMYILY cited{' '}
                 <a
                   href="https://www.instagram.com/p/Cou3NsePkQzUxX21sLKNdu_3X0xoe7_HdbV9kA0/?hl=en"

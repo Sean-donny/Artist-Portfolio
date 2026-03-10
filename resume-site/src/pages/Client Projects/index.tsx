@@ -33,7 +33,7 @@ const ClientProjects = () => {
 
         return (
           <motion.div
-            className={`client-projects-image-container h-auto p-2 flex flex-col items-center justify-center ${data.style} mb-10 hd:mb-2`}
+            className={`client-projects-image-container h-auto p-2 flex flex-col items-center justify-center ${data.style} mb-10 hd:mb-2 cursor-pointer`}
             onClick={() => handleNavigate(`${data.navigate}`)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.9 }}

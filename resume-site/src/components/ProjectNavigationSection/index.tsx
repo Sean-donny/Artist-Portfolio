@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { useMenuAnimation } from '../../Hooks/useMenuAnimation';
-import { useNavigate } from 'react-router-dom';
+import { usePageTransition } from '../Transitions/TransitionLayout';
 
 interface ProjectNavigationProps {
   navColour: string;
@@ -23,11 +23,10 @@ const ProjectNavigation = ({
 
   const projectNavigateScope = useMenuAnimation(projectNavigateInView);
 
-  const navigate = useNavigate();
+  const { navigateTo } = usePageTransition();
 
   const handleNavigate = (path: string) => {
-    navigate(`/${path}`);
-    window.scrollTo(0, 0);
+    navigateTo(`/${path}`);
   };
   return (
     <nav

@@ -10,6 +10,7 @@ import musicData from './data';
 import SEO from '../../../components/SEO/SEO';
 import ProjectNavigation from '../../../components/ProjectNavigationSection';
 import navigationMap from '../navigationMap';
+import ScrollTooltip from '../../../components/ScrollTooltip';
 
 const Music = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -266,13 +267,19 @@ const Music = () => {
               alt="An illustration playboi carti engulfed in black flames against a red backdrop"
               title="Playboi Carti: Music Album Concept"
               loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="personal-project-hero-image w-full h-full object-cover object-center"
+              width={1920}
+              height={1080}
               initial={{ scale: 1, opacity: 1 }}
               animate={controls}
             />
           </figure>
           {/* height of safe space is set to the same as parallaxValue */}
-          <div className={`personal-project-hero-safe-space h-[400px] w-full`}>
+          <div
+            className={`personal-project-hero-safe-space h-[${parallaxValue}px] w-full`}
+          >
             &nbsp;
           </div>
           <div className="personal-project-concepts-1-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-rose-500 selection:text-zinc-200">
@@ -472,6 +479,8 @@ const Music = () => {
           navNextSrc={navigationMap.Music.nextSrc}
         />
       </div>
+
+      <ScrollTooltip />
     </div>
   );
 };

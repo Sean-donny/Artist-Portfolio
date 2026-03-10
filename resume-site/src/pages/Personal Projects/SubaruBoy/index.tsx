@@ -11,6 +11,7 @@ import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import SEO from '../../../components/SEO/SEO';
 import ProjectNavigation from '../../../components/ProjectNavigationSection';
 import navigationMap from '../navigationMap';
+import ScrollTooltip from '../../../components/ScrollTooltip';
 
 const SubaruBoy = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -231,13 +232,19 @@ const SubaruBoy = () => {
               alt="An illustation of Cruel Santino against an orange background with writing"
               title="Subaru Boy"
               loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="personal-project-hero-image w-full h-full object-cover object-center"
+              width={1920}
+              height={1080}
               initial={{ scale: 1, opacity: 1 }}
               animate={controls}
             />
           </figure>
           {/* height of safe space is set to the same as parallaxValue */}
-          <div className={`personal-project-hero-safe-space h-[400px] w-full`}>
+          <div
+            className={`personal-project-hero-safe-space h-[${parallaxValue}px] w-full`}
+          >
             &nbsp;
           </div>
           <article className="personal-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-orange-600 selection:text-zinc-200">
@@ -433,6 +440,8 @@ const SubaruBoy = () => {
           navNextSrc={navigationMap.SubaruBoy.nextSrc}
         />
       </div>
+
+      <ScrollTooltip />
     </div>
   );
 };

@@ -7,15 +7,14 @@ import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 import { ModalContent } from '../../../interfaces/ModalContent';
 
 // Image imports
-import tmBanner from '/optimised/txmmyily_banner.webp';
-import tmDraft from '/optimised/txmmyily_draft_illustration.webp';
-import tmReference1 from '/optimised/txmmyily_cover_reference.webp';
-import tmReference2 from '/optimised/txmmyily_outfit_reference.webp';
-import tmReference3 from '/optimised/txmmyily_visual_reference.webp';
+import jdBanner from '/optimised/dolore_banner.webp';
+import jdIllustration from '/optimised/dolore_illustration.webp';
+import jdReference1 from '/optimised/dolore_reference_1.webp';
+import jdReference2 from '/optimised/dolore_reference_2.webp';
+import jdReference3 from '/optimised/dolore_reference_3.webp';
 
 import SEO from '../../../components/SEO/SEO';
 import ScrollTooltip from '../../../components/ScrollTooltip';
-import embeddedAppleMusicStyle from '../../../utils/embeddedAppleMusicStyle';
 import navigationMap from '../navigationMap';
 import ProjectNavigation from '../../../components/ProjectNavigationSection';
 
@@ -195,39 +194,75 @@ const Dolore = () => {
   // Uses custom hook to generate ref, and states for opacity & position values
 
   const {
-    ref: txmmyilyCoverDraftRef,
-    opacity: txmmyilyCoverDraftOpacity,
-    position: txmmyilyCoverDraftPosition,
+    ref: doloreDraft1Ref,
+    opacity: doloreDraft1Opacity,
+    position: doloreDraft1Position,
   } = useInViewAnimation();
 
   const {
-    ref: txmmyilyCoverDraftHeaderRef,
-    opacity: txmmyilyCoverDraftHeaderOpacity,
-    position: txmmyilyCoverDraftHeaderPosition,
+    ref: doloreDraft1HeaderRef,
+    opacity: doloreDraft1HeaderOpacity,
+    position: doloreDraft1HeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: txmmyilyCoverDraftParagraphRef,
-    opacity: txmmyilyCoverDraftParagraphOpacity,
-    position: txmmyilyCoverDraftParagraphPosition,
+    ref: doloreDraft1ParagraphRef,
+    opacity: doloreDraft1ParagraphOpacity,
+    position: doloreDraft1ParagraphPosition,
   } = useInViewAnimation();
 
   const {
-    ref: txmmyilyFinalCoverRef,
-    opacity: txmmyilyFinalCoverOpacity,
-    position: txmmyilyFinalCoverPosition,
+    ref: doloreDraft2Ref,
+    opacity: doloreDraft2Opacity,
+    position: doloreDraft2Position,
   } = useInViewAnimation();
 
   const {
-    ref: txmmyilyFinalCoverHeaderRef,
-    opacity: txmmyilyFinalCoverHeaderOpacity,
-    position: txmmyilyFinalCoverHeaderPosition,
+    ref: doloreDraft2HeaderRef,
+    opacity: doloreDraft2HeaderOpacity,
+    position: doloreDraft2HeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: txmmyilyFinalCoverParagraphRef,
-    opacity: txmmyilyFinalCoverParagraphOpacity,
-    position: txmmyilyFinalCoverParagraphPosition,
+    ref: doloreDraft2ParagraphRef,
+    opacity: doloreDraft2ParagraphOpacity,
+    position: doloreDraft2ParagraphPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: doloreFinal1Ref,
+    opacity: doloreFinal1Opacity,
+    position: doloreFinal1Position,
+  } = useInViewAnimation();
+
+  const {
+    ref: doloreFinal1HeaderRef,
+    opacity: doloreFinal1HeaderOpacity,
+    position: doloreFinal1HeaderPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: doloreFinal1ParagraphRef,
+    opacity: doloreFinal1ParagraphOpacity,
+    position: doloreFinal1ParagraphPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: doloreFinal2Ref,
+    opacity: doloreFinal2Opacity,
+    position: doloreFinal2Position,
+  } = useInViewAnimation();
+
+  const {
+    ref: doloreFinal2HeaderRef,
+    opacity: doloreFinal2HeaderOpacity,
+    position: doloreFinal2HeaderPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: doloreFinal2ParagraphRef,
+    opacity: doloreFinal2ParagraphOpacity,
+    position: doloreFinal2ParagraphPosition,
   } = useInViewAnimation();
 
   // Declarations for reference board
@@ -287,7 +322,7 @@ const Dolore = () => {
     projectDeliverablesItemsInView,
   );
 
-  const projectDeliverables = ['Single Cover', 'Credits'];
+  const projectDeliverables = ['Streetsouk Poster', 'SS Mascot Poster'];
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -297,11 +332,11 @@ const Dolore = () => {
   return (
     <div className="client-project-container bg-black w-full h-auto">
       <SEO
-        title="Jaiye | Client Projects"
-        description="Explore a client project for TXMMYILY by contemporary artist Sean Donny, showcasing his creative direction expertise."
+        title="Dolore | Client Projects"
+        description="Explore a client project for Jude Dolore by contemporary artist Sean Donny, showcasing his creative direction expertise."
         type="article"
-        url="https://seandonny.com/client-projects/jaiye"
-        image={tmBanner}
+        url="https://seandonny.com/client-projects/dolore"
+        image={jdBanner}
       />
       {modalOpen && (
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
@@ -317,20 +352,26 @@ const Dolore = () => {
             }}
           >
             <motion.img
-              src={tmBanner}
-              alt="A party scene with TXMMYILY"
-              title="Jaiye"
+              src={jdBanner}
+              alt="A black and white close up of Jude Dolore and a woman wearing Dolore against a black backdrop, with Streetsouk written boldly in green above them"
+              title="Dolore"
               loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="client-project-hero-image w-full h-full object-cover object-center"
+              width={1920}
+              height={1080}
               initial={{ scale: 1, opacity: 1 }}
               animate={controls}
             />
           </figure>
           {/* height of safe space is set to the same as parallaxValue */}
-          <div className={`client-project-hero-safe-space h-[400px] w-full`}>
+          <div
+            className={`client-project-hero-safe-space h-[${parallaxValue}px] w-full`}
+          >
             &nbsp;
           </div>
-          <article className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-[#02e2c5] selection:text-black">
+          <article className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-[#4dfe00] selection:text-black">
             <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
               <motion.h1
                 ref={heroHeaderRef}
@@ -342,7 +383,7 @@ const Dolore = () => {
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                TXMMYILY hit me on Twitter: "Yo bro!!! Let's work"
+                Jude hit me on Instagram: "I&nbsp;hope you're good ski!"
               </motion.h1>
               <motion.p
                 className="client-project-design-goal-description-paragraph-1 text-zinc-400 font-custom font-medium italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
@@ -354,7 +395,7 @@ const Dolore = () => {
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                "I love your work man"...
+                "I'm trying to make a poster for my pop up"...
               </motion.p>
               <motion.p
                 className="client-project-design-goal-description-paragraph-2 text-zinc-400 font-custom font-normal italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
@@ -366,17 +407,17 @@ const Dolore = () => {
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                "I've got this new single called{' '}
-                <mark className="bg-[#02e2c5] text-black">
+                "I'm dropping these pieces exclusively at{' '}
+                <mark className="bg-[#4dfe00] text-black">
                   <a
-                    href="https://music.apple.com/gb/album/jaiye-single/1836378594"
+                    href="https://www.streetsouk.com/store/brands/dolore"
                     target="_blank"
                     className="hover:underline"
                   >
-                    Jaiye
+                    Street&nbsp;Souk
                   </a>
-                </mark>
-                , i'm tryna get you to do the cover for it"...
+                </mark>{' '}
+                on the 21st"...
               </motion.p>
               <motion.p
                 className="client-project-design-goal-description-paragraph-3 text-zinc-400 font-custom font-extralight italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
@@ -388,17 +429,16 @@ const Dolore = () => {
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                "I want to be in a party scene, a fun vibe—that's what the song
-                is about. There's people around me just having a great time,
-                that sort of thing"
+                "I want a guy and girl posted up side by side wearing the garms,
+                with the pop up details around them"
               </motion.p>
             </div>
             <figure className="client-project-client-illustration-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
               <motion.img
                 className="client-project-client-illustration-image"
-                src={tmDraft}
-                alt="A rough character illustration of TXMMYILY"
-                title="TXMMYILY"
+                src={jdIllustration}
+                alt="An illustration of Jude Dolore in a green-white-green sports set"
+                title="Jude Dolore"
                 loading="eager"
                 ref={heroRef}
                 initial={{ opacity: 0 }}
@@ -410,7 +450,7 @@ const Dolore = () => {
               />
             </figure>
           </article>
-          <article className="client-project-references-container bg-[#02e2c5] selection:bg-black selection:text-zinc-200 w-full h-auto flex flex-col items-center justify-center p-5 pt-10">
+          <article className="client-project-references-container bg-[#34ad00] selection:bg-black selection:text-zinc-200 w-full h-auto flex flex-col items-center justify-center p-5 pt-10">
             <h2
               className="client-project-reference-board-title font-custom text-5xl text-center text-black w-full font-semibold mb-5"
               ref={referenceBoardItemsRef}
@@ -448,9 +488,9 @@ const Dolore = () => {
                 transition={{ duration: 1, ease: anticipate }}
               >
                 <img
-                  src={tmReference1}
-                  alt="An illustrated cover art for Rema's Holiday + Reason You single where he stands at the centre of a party scene with a fish eye lens, from a birds eye view"
-                  title="Holiday + Reason You single cover by Audrey(@_puppuppup__)"
+                  src={jdReference1}
+                  alt="A photo of a female model in a Dolore navy top, Dolore camo crop shorts, and shin height camo boots, against a white brick background"
+                  title="Dolore Model"
                   loading="lazy"
                   className="client-project-reference-image-1"
                   style={{ zIndex: 1, border: 'solid black 1px' }}
@@ -458,9 +498,9 @@ const Dolore = () => {
               </motion.figure>
               <motion.figure className="client-project-reference-image-container-2 h-auto w-1/3 flex flex-col items-center justify-center">
                 <img
-                  src={tmReference2}
-                  alt="A photo of TXMMYILY with a red hoodie, a white graphic tee, brown plaid 3/4 shorts, white socks, and sandal style slides"
-                  title="TXMMYILY"
+                  src={jdReference2}
+                  alt="A poster for Street Souk"
+                  title="Street Souk Illustrated Poster"
                   loading="lazy"
                   className="client-project-referencei-image-2"
                   style={{ zIndex: 3, border: 'solid black 1px' }}
@@ -474,9 +514,9 @@ const Dolore = () => {
                 transition={{ duration: 1, ease: anticipate }}
               >
                 <img
-                  src={tmReference3}
-                  alt="A full houseparty scene illuminated by a camera flash, capturing an energetic scene of people having a good time"
-                  title="Party scene posted on Twitter/X by @VsapxD"
+                  src={jdReference3}
+                  alt="A photo of Jude Dolore wearing a blue sports set, holding a football, leaning against a football field"
+                  title="Jude Dolore"
                   loading="lazy"
                   className="client-project-reference-image-3"
                   style={{ zIndex: 2, border: 'solid black 1px' }}
@@ -495,169 +535,269 @@ const Dolore = () => {
               className="client-project-reference-description-container w-full h-auto flex flex-col items-center justify-center py-5"
               ref={referenceBoard2ItemsRef}
             >
-              <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left md:text-justify text-black font-normal leading-snug md:leading-relaxed">
-                For the original reference, TXMMYILY cited{' '}
+              <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left md:text-justify text-black font-normal leading-snug">
+                Jude sent over the amazing poster developed by some of my
+                colleagues, notably{' '}
                 <a
-                  href="https://www.instagram.com/p/Cou3NsePkQzUxX21sLKNdu_3X0xoe7_HdbV9kA0/?hl=en"
+                  href="https://www.instagram.com/franklyn.okoye"
                   target="_blank"
                   className="hover:underline font-semibold"
                 >
-                  Audrey's artwork
-                </a>{' '}
-                for Rema's Holiday + Reason You single release, highlighting his
-                appreciation for the colourful, vibrant scene it captured.
-                <br />
-                <br />
-                For styling, he provided a reference photo of himself in a red
-                hoodie and white graphic tee, emphasising his Chrome Hearts
-                glasses as a signature element of his look.
-                <br />
-                <br />
-                While working on drafts, I came across a photo on Twitter that
-                showed a lively, energetic party scene I really liked. The
-                single source of lighting, coming from the camera's point of
-                view, illuminated the space like a frozen moment in time — you
-                could almost feel how packed the room was.
-                <br />
-                <br />
-                The sharp shadows emphasised how close everyone was, while the
-                occlusion strengthened that POV effect, as if you were fixed in
-                one spot within the party. That photo also reminded me of{' '}
-                <a
-                  href="https://www.erniebarnes.com/"
-                  target="_blank"
-                  className="hover:underline font-semibold"
-                >
-                  Ernie&nbsp;Barnes'
-                </a>{' '}
-                incredible painting{' "'}
-                <a
-                  href="https://www.christies.com/en/lot/lot-6368793"
-                  target="_blank"
-                  className="hover:underline font-semibold"
-                >
-                  The&nbsp;Sugar&nbsp;Shack
+                  Franklyn Okoye
                 </a>
-                {'"'}, with its fluid motion and the sense that every figure in
-                the scene had their own story, contributing to the richness of
-                the whole composition. I first discovered Barnes' work after
-                watching the film{' '}
+                {', '}
                 <a
-                  href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0LCsvz81LSTI1YPRiL87My0stKgYAYBEH_Q&q=sinners&oq=sinners&gs_lcrp=EgZjaHJvbWUqCggBEC4YsQMYgAQyBwgAEAAYjwIyCggBEC4YsQMYgAQyCggCEAAYsQMYgAQyBggDEAAYAzIKCAQQABixAxiABDIKCAUQABixAxiABDIGCAYQABgDMgcIBxAAGIAEMgoICBAAGLEDGIAEMgcICRAAGIAE0gEIMzExMWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8"
+                  href="https://www.instagram.com/simissj"
                   target="_blank"
                   className="hover:underline font-semibold"
                 >
-                  Sinners
+                  Sinmi
                 </a>
-                , and learning how it influenced the juke joint scene.
+                {', '}
+                <a
+                  href="https://www.instagram.com/sotiboyarts"
+                  target="_blank"
+                  className="hover:underline font-semibold"
+                >
+                  Soti Boy
+                </a>
+                {', '}
+                <a
+                  href="https://www.instagram.com/_t051n"
+                  target="_blank"
+                  className="hover:underline font-semibold"
+                >
+                  Tosin
+                </a>
+                {', '}
+                <a
+                  href="https://www.instagram.com/p/DSsg0YfjHfv/?img_index=1"
+                  target="_blank"
+                  className="hover:underline font-semibold"
+                >
+                  and other talented artists and directors.
+                </a>
+                <br />
+                <br />
+                This served as excellent reference! I made note of the green
+                colour theme, the use of Lagos landmarks in the backdrop, and
+                how they balanced heavy imagery with the legibility of key
+                information.
+                <br />
+                <br />
+                For the two characters, he sent over some examples from
+                Instagram of some of the shoots he's done before for Dolore.
+                This again served as perfect references, I just had to feature
+                the new green white green set on them in a cool way.
+                <br />
+                <br />
+                In terms of art style, he liked the illustration I did of{' '}
+                <a
+                  href="https://www.instagram.com/p/DRJ0rRNiDG0/"
+                  target="_blank"
+                  className="hover:underline font-semibold"
+                >
+                  Rema
+                </a>{' '}
+                in bolapsd. In that one, I was experimenting with a gritty
+                textured shading style, with vivid colours, shadows, and bold
+                shapes.
+                <br />
+                <br />I upgraded the level of polish for this poster, because
+                that was an overnight drawing, this one required controlled
+                lights, and bold reflections.
               </p>
             </div>
           </article>
-          <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-[#02e2c5] selection:text-black">
-            <div className="client-project-final-sketch h-full w-full hd:w-1/2">
-              <article className="client-project-final-sketch-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-                <figure className="client-project-final-sketch-artwork h-3/5 w-full flex flex-col items-center justify-center">
+          <div className="client-project-draft-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-[#4dfe00] selection:text-black">
+            <div className="client-project-draft-sketch h-full w-full hd:w-1/2">
+              <article className="client-project-draft-sketch-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="client-project-draft-sketch-artwork h-3/5 w-full flex flex-col items-center justify-center">
                   <motion.img
-                    src={doloreData.CoverDraft.src}
-                    alt={doloreData.CoverDraft.alt}
-                    title={doloreData.CoverDraft.title}
+                    src={doloreData.Draft1.src}
+                    alt={doloreData.Draft1.alt}
+                    title={doloreData.Draft1.title}
                     loading="lazy"
                     className="mb-2"
-                    ref={txmmyilyCoverDraftRef}
+                    ref={doloreDraft1Ref}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: txmmyilyCoverDraftPosition,
-                      opacity: txmmyilyCoverDraftOpacity,
+                      translateY: doloreDraft1Position,
+                      opacity: doloreDraft1Opacity,
                     }}
-                    onClick={handleImageFocus(doloreData.CoverDraft)}
+                    onClick={handleImageFocus(doloreData.Draft1)}
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.9 }}
                   />
                 </figure>
-                <div className="client-project-final-sketch-description h-2/5 w-full flex flex-col items-center justify-center">
+                <div className="client-project-draft-sketch-description h-2/5 w-full flex flex-col items-center justify-center">
                   <motion.h2
                     className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                    ref={txmmyilyCoverDraftHeaderRef}
+                    ref={doloreDraft1HeaderRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: txmmyilyCoverDraftHeaderPosition,
-                      opacity: txmmyilyCoverDraftHeaderOpacity,
+                      translateY: doloreDraft1HeaderPosition,
+                      opacity: doloreDraft1HeaderOpacity,
                     }}
                   >
-                    {doloreData.CoverDraft.header}
+                    {doloreData.Draft1.header}
                   </motion.h2>
                   <motion.p
                     className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                    ref={txmmyilyCoverDraftParagraphRef}
+                    ref={doloreDraft1ParagraphRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: txmmyilyCoverDraftParagraphPosition,
-                      opacity: txmmyilyCoverDraftParagraphOpacity,
+                      translateY: doloreDraft1ParagraphPosition,
+                      opacity: doloreDraft1ParagraphOpacity,
                     }}
                   >
-                    {doloreData.CoverDraft.paragraph}
+                    {doloreData.Draft1.paragraph}
                   </motion.p>
                 </div>
               </article>
             </div>
-            <div className="client-project-final-single-cover h-full w-full hd:w-1/2">
-              <article className="client-project-final-single-cover-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
-                <figure className="client-project-final-single-cover-artwork h-3/5 w-full flex flex-col items-center justify-center">
+            <div className="client-project-draft-wip h-full w-full hd:w-1/2">
+              <article className="client-project-draft-wip-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="client-project-draft-wip-artwork h-3/5 w-full flex flex-col items-center justify-center">
                   <motion.img
-                    src={doloreData.FinalCover.src}
-                    alt={doloreData.FinalCover.alt}
-                    title={doloreData.FinalCover.title}
+                    src={doloreData.Draft2.src}
+                    alt={doloreData.Draft2.alt}
+                    title={doloreData.Draft2.title}
                     loading="lazy"
                     className="mb-2"
-                    ref={txmmyilyFinalCoverRef}
+                    ref={doloreDraft2Ref}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: txmmyilyFinalCoverPosition,
-                      opacity: txmmyilyFinalCoverOpacity,
+                      translateY: doloreDraft2Position,
+                      opacity: doloreDraft2Opacity,
                     }}
-                    onClick={handleImageFocus(doloreData.FinalCover)}
+                    onClick={handleImageFocus(doloreData.Draft2)}
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.9 }}
                   />
                 </figure>
-                <div className="client-project-final-single-cover-description h-2/5 w-full flex flex-col items-center justify-center">
+                <div className="client-project-draft-wip-description h-2/5 w-full flex flex-col items-center justify-center">
                   <motion.h2
                     className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                    ref={txmmyilyFinalCoverHeaderRef}
+                    ref={doloreDraft2HeaderRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: txmmyilyFinalCoverHeaderPosition,
-                      opacity: txmmyilyFinalCoverHeaderOpacity,
+                      translateY: doloreDraft2HeaderPosition,
+                      opacity: doloreDraft2HeaderOpacity,
                     }}
                   >
-                    {doloreData.FinalCover.header}
+                    {doloreData.Draft2.header}
                   </motion.h2>
                   <motion.p
                     className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                    ref={txmmyilyFinalCoverParagraphRef}
+                    ref={doloreDraft2ParagraphRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: txmmyilyFinalCoverParagraphPosition,
-                      opacity: txmmyilyFinalCoverParagraphOpacity,
+                      translateY: doloreDraft2ParagraphPosition,
+                      opacity: doloreDraft2ParagraphOpacity,
                     }}
                   >
-                    {doloreData.FinalCover.paragraph}
+                    {doloreData.Draft2.paragraph}
                   </motion.p>
                 </div>
               </article>
             </div>
           </div>
-          <section className="client-project-streaming-preview w-full h-auto p-5 hd:py-20 hd:px-0 flex flex-col items-center justify-center bg-zinc-900 selection:bg-[#02e2c5]">
-            <iframe
-              id="embedPlayer"
-              src="https://embed.music.apple.com/us/album/jaiye-single/1836378594?app=music&amp;itsct=music_box_player&amp;itscg=30200&amp;ls=1&amp;theme=auto"
-              height="450px"
-              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-              allow="autoplay *; encrypted-media *; clipboard-write"
-              style={embeddedAppleMusicStyle}
-            ></iframe>
-          </section>
-          <section className="client-project-deliverables-container h-auto w-full bg-[#02e2c5] selection:bg-black selection:text-zinc-200 p-5">
+          <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-[#4dfe00] selection:text-black">
+            <div className="client-project-final h-full w-full hd:w-1/2">
+              <article className="client-project-final-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="client-project-final-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                  <motion.img
+                    src={doloreData.Final1.src}
+                    alt={doloreData.Final1.alt}
+                    title={doloreData.Final1.title}
+                    loading="lazy"
+                    className="mb-2"
+                    ref={doloreFinal1Ref}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: doloreFinal1Position,
+                      opacity: doloreFinal1Opacity,
+                    }}
+                    onClick={handleImageFocus(doloreData.Final1)}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                </figure>
+                <div className="client-project-final-description h-2/5 w-full flex flex-col items-center justify-center">
+                  <motion.h2
+                    className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                    ref={doloreFinal1HeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: doloreFinal1HeaderPosition,
+                      opacity: doloreFinal1HeaderOpacity,
+                    }}
+                  >
+                    {doloreData.Final1.header}
+                  </motion.h2>
+                  <motion.p
+                    className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                    ref={doloreFinal1ParagraphRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: doloreFinal1ParagraphPosition,
+                      opacity: doloreFinal1ParagraphOpacity,
+                    }}
+                  >
+                    {doloreData.Final1.paragraph}
+                  </motion.p>
+                </div>
+              </article>
+            </div>
+            <div className="client-project-final-bonus h-full w-full hd:w-1/2">
+              <article className="client-project-final-bonus-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="client-project-final-bonus-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                  <motion.img
+                    src={doloreData.Final2.src}
+                    alt={doloreData.Final2.alt}
+                    title={doloreData.Final2.title}
+                    loading="lazy"
+                    className="mb-2"
+                    ref={doloreFinal2Ref}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: doloreFinal2Position,
+                      opacity: doloreFinal2Opacity,
+                    }}
+                    onClick={handleImageFocus(doloreData.Final2)}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                </figure>
+                <div className="client-project-final-bonus-description h-2/5 w-full flex flex-col items-center justify-center">
+                  <motion.h2
+                    className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                    ref={doloreFinal2HeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: doloreFinal2HeaderPosition,
+                      opacity: doloreFinal2HeaderOpacity,
+                    }}
+                  >
+                    {doloreData.Final2.header}
+                  </motion.h2>
+                  <motion.p
+                    className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                    ref={doloreFinal2ParagraphRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: doloreFinal2ParagraphPosition,
+                      opacity: doloreFinal2ParagraphOpacity,
+                    }}
+                  >
+                    {doloreData.Final2.paragraph}
+                  </motion.p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <section className="client-project-deliverables-container h-auto w-full bg-[#34ad00] selection:bg-black selection:text-zinc-200 p-5">
             <div className="client-project-deliverables flex flex-col items-start justify-center">
               <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
                 <motion.h2

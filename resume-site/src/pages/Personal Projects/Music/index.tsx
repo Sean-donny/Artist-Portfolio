@@ -278,7 +278,8 @@ const Music = () => {
           </figure>
           {/* height of safe space is set to the same as parallaxValue */}
           <div
-            className={`personal-project-hero-safe-space h-[${parallaxValue}px] w-full`}
+            className="personal-project-hero-safe-space w-full"
+            style={{ height: `${parallaxValue}px` }}
           >
             &nbsp;
           </div>

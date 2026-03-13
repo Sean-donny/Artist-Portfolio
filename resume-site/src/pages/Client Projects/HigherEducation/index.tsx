@@ -7,17 +7,26 @@ import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 import { ModalContent } from '../../../interfaces/ModalContent';
 
 // Image imports
-import tmBanner from '/optimised/txmmyily_banner.webp';
-import tmDraft from '/optimised/txmmyily_draft_illustration.webp';
-import tmReference1 from '/optimised/txmmyily_cover_reference.webp';
-import tmReference2 from '/optimised/txmmyily_outfit_reference.webp';
-import tmReference3 from '/optimised/txmmyily_visual_reference.webp';
+import cashmannyBanner from '/optimised/cashmanny_banner.webp';
+import cmIllustration from '/optimised/cashmanny_illustration.webp';
+import cmReference1 from '/optimised/cashmanny_cover_reference_2.webp';
+import cmReference2 from '/optimised/cashmanny_cover_reference_3.webp';
+import cmReference3 from '/optimised/cashmanny_cover_reference_1.webp';
+import cmBlenderGeoNodes from '/optimised/cashmanny_matrix_code_rain_geometry_nodes_setup.webp';
 
 import SEO from '../../../components/SEO/SEO';
 import ScrollTooltip from '../../../components/ScrollTooltip';
 import embeddedAppleMusicStyle from '../../../utils/embeddedAppleMusicStyle';
 import ProjectNavigation from '../../../components/ProjectNavigationSection';
 import navigationMap from '../navigationMap';
+import CardStack from '../../../components/ModularImageStack';
+import ParallaxImageSection from '../../../components/ParallaxImageSection';
+import CenteredImageStack from '../../../components/CenteredImageStack';
+import ThreeModelViewer from './ThreeDModelViewer.tsx';
+import { modelsData, moodBoardData, sketchesData } from './imageStackData';
+import { oysterCardModel } from './threeJsModelData';
+import { greenGraphPaper } from './styles';
+import { higherEducationAsciiArt } from './asciiArt.ts';
 
 const HigherEducation = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -93,12 +102,10 @@ const HigherEducation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const windowWidth = window.innerWidth;
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const [viewportSize, setViewportSize] = useState(() => ({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  }));
 
   // Declarations required for page section effects
   const heroRef = useRef(null);
@@ -195,39 +202,111 @@ const HigherEducation = () => {
   // Uses custom hook to generate ref, and states for opacity & position values
 
   const {
-    ref: txmmyilyCoverDraftRef,
-    opacity: txmmyilyCoverDraftOpacity,
-    position: txmmyilyCoverDraftPosition,
+    ref: cashmannyCoverSketchesRef,
+    opacity: cashmannyCoverSketchesOpacity,
+    position: cashmannyCoverSketchesPosition,
   } = useInViewAnimation();
 
   const {
-    ref: txmmyilyCoverDraftHeaderRef,
-    opacity: txmmyilyCoverDraftHeaderOpacity,
-    position: txmmyilyCoverDraftHeaderPosition,
+    ref: cashmannyCoverSketchesHeaderRef,
+    opacity: cashmannyCoverSketchesHeaderOpacity,
+    position: cashmannyCoverSketchesHeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: txmmyilyCoverDraftParagraphRef,
-    opacity: txmmyilyCoverDraftParagraphOpacity,
-    position: txmmyilyCoverDraftParagraphPosition,
+    ref: cashmannyCoverSketchesParagraphRef,
+    opacity: cashmannyCoverSketchesParagraphOpacity,
+    position: cashmannyCoverSketchesParagraphPosition,
   } = useInViewAnimation();
 
   const {
-    ref: txmmyilyFinalCoverRef,
-    opacity: txmmyilyFinalCoverOpacity,
-    position: txmmyilyFinalCoverPosition,
+    ref: cashmannyCoverDraftRef,
+    opacity: cashmannyCoverDraftOpacity,
+    position: cashmannyCoverDraftPosition,
   } = useInViewAnimation();
 
   const {
-    ref: txmmyilyFinalCoverHeaderRef,
-    opacity: txmmyilyFinalCoverHeaderOpacity,
-    position: txmmyilyFinalCoverHeaderPosition,
+    ref: cashmannyCoverDraftHeaderRef,
+    opacity: cashmannyCoverDraftHeaderOpacity,
+    position: cashmannyCoverDraftHeaderPosition,
   } = useInViewAnimation();
 
   const {
-    ref: txmmyilyFinalCoverParagraphRef,
-    opacity: txmmyilyFinalCoverParagraphOpacity,
-    position: txmmyilyFinalCoverParagraphPosition,
+    ref: cashmannyCoverDraftParagraphRef,
+    opacity: cashmannyCoverDraftParagraphOpacity,
+    position: cashmannyCoverDraftParagraphPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: cashmannyFinalCoverRef,
+    opacity: cashmannyFinalCoverOpacity,
+    position: cashmannyFinalCoverPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: cashmannyFinalCoverHeaderRef,
+    opacity: cashmannyFinalCoverHeaderOpacity,
+    position: cashmannyFinalCoverHeaderPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: cashmannyFinalCoverParagraphRef,
+    opacity: cashmannyFinalCoverParagraphOpacity,
+    position: cashmannyFinalCoverParagraphPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: cashmannyMoodBoardRef,
+    opacity: cashmannyMoodBoardOpacity,
+    position: cashmannyMoodBoardPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: cashmannyMoodBoardHeaderRef,
+    opacity: cashmannyMoodBoardHeaderOpacity,
+    position: cashmannyMoodBoardHeaderPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: cashmannyMoodBoardParagraphRef,
+    opacity: cashmannyMoodBoardParagraphOpacity,
+    position: cashmannyMoodBoardParagraphPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: cashmannyFocusriteRef,
+    opacity: cashmannyFocusriteOpacity,
+    position: cashmannyFocusritePosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: cashmannyFocusriteHeaderRef,
+    opacity: cashmannyFocusriteHeaderOpacity,
+    position: cashmannyFocusriteHeaderPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: cashmannyFocusriteParagraphRef,
+    opacity: cashmannyFocusriteParagraphOpacity,
+    position: cashmannyFocusriteParagraphPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: cashmannyCodeRainRef,
+    opacity: cashmannyCodeRainOpacity,
+    position: cashmannyCodeRainPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: cashmannyCodeRainHeaderRef,
+    opacity: cashmannyCodeRainHeaderOpacity,
+    position: cashmannyCodeRainHeaderPosition,
+  } = useInViewAnimation();
+
+  const {
+    ref: cashmannyCodeRainParagraphRef,
+    opacity: cashmannyCodeRainParagraphOpacity,
+    position: cashmannyCodeRainParagraphPosition,
   } = useInViewAnimation();
 
   // Declarations for reference board
@@ -260,7 +339,21 @@ const HigherEducation = () => {
 
   // Translate values for reference images
 
-  const [translateReference, setTranslateReference] = useState(windowWidth / 7);
+  const [translateReference, setTranslateReference] = useState(
+    viewportSize.width / 7,
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setViewportSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Declarations for Project Deliverables section
   const {
@@ -287,21 +380,20 @@ const HigherEducation = () => {
     projectDeliverablesItemsInView,
   );
 
-  const projectDeliverables = ['Single Cover', 'Credits'];
+  const projectDeliverables = ['Album Cover', 'Promotional Video'];
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    console.log(higherEducationAsciiArt);
   }, []);
 
   return (
     <div className="client-project-container bg-black w-full h-auto">
       <SEO
-        title="Jaiye | Client Projects"
-        description="Explore a client project for TXMMYILY by contemporary artist Sean Donny, showcasing his creative direction expertise."
+        title="High Education | Client Projects"
+        description="Explore a client project for Cashmanny by contemporary artist Sean Donny, showcasing his creative direction expertise."
         type="article"
-        url="https://seandonny.com/client-projects/jaiye"
-        image={tmBanner}
+        url="https://seandonny.com/client-projects/higher_education"
+        image={cashmannyBanner}
       />
       {modalOpen && (
         <GalleryModal modalContent={modalContent} onClose={handleImageExit} />
@@ -317,9 +409,9 @@ const HigherEducation = () => {
             }}
           >
             <motion.img
-              src={tmBanner}
-              alt="A party scene with TXMMYILY"
-              title="Jaiye"
+              src={cashmannyBanner}
+              alt="A matrix sequence of code rain"
+              title="Matrix Code Rain"
               loading="eager"
               fetchPriority="high"
               decoding="async"
@@ -332,11 +424,12 @@ const HigherEducation = () => {
           </figure>
           {/* height of safe space is set to the same as parallaxValue */}
           <div
-            className={`client-project-hero-safe-space h-[${parallaxValue}px] w-full`}
+            className="client-project-hero-safe-space w-full"
+            style={{ height: `${parallaxValue}px` }}
           >
             &nbsp;
           </div>
-          <article className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-[#02e2c5] selection:text-black">
+          <article className="client-project-design-goal-container h-auto w-full flex flex-col hd:flex-row p-5 hd:py-20 hd:px-5 selection:bg-[#39ff85] selection:text-black">
             <div className="client-project-design-goal-description-container h-auto w-full hd:w-3/5 hd:max-h-[1500px] xl:pl-20">
               <motion.h1
                 ref={heroHeaderRef}
@@ -348,7 +441,7 @@ const HigherEducation = () => {
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                TXMMYILY hit me on Twitter: "Yo bro!!! Let's work"
+                Cashmanny hit me on Instagram: "Yo bro! I really love your work"
               </motion.h1>
               <motion.p
                 className="client-project-design-goal-description-paragraph-1 text-zinc-400 font-custom font-medium italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
@@ -360,7 +453,7 @@ const HigherEducation = () => {
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                "I love your work man"...
+                "I'm tryna drop a tape called Higher Education"...
               </motion.p>
               <motion.p
                 className="client-project-design-goal-description-paragraph-2 text-zinc-400 font-custom font-normal italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
@@ -372,17 +465,18 @@ const HigherEducation = () => {
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                "I've got this new single called{' '}
-                <mark className="bg-[#02e2c5] text-black">
+                "I'ts a play on words, because I just finished uni, but I'm also
+                speaking from the perspective where it's like I'm giving{' '}
+                <mark className="bg-[#39ff85] text-black">
                   <a
-                    href="https://music.apple.com/gb/album/jaiye-single/1836378594"
+                    href="https://www.musixmatch.com/lyrics/Cashmanny/Need-2#:~:text=That%27s%20cause%20nothing,care%20of%20itself"
                     target="_blank"
                     className="hover:underline"
                   >
-                    Jaiye
+                    advice
                   </a>
                 </mark>
-                , i'm tryna get you to do the cover for it"...
+                {'"...'}
               </motion.p>
               <motion.p
                 className="client-project-design-goal-description-paragraph-3 text-zinc-400 font-custom font-extralight italic tracking-tight p-2 lg:pb-5 lg:pl-5 lg:text-massive1 text-2xl lg:leading-massive1 mt-5"
@@ -394,17 +488,16 @@ const HigherEducation = () => {
                 }}
                 transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
               >
-                "I want to be in a party scene, a fun vibe—that's what the song
-                is about. There's people around me just having a great time,
-                that sort of thing"
+                "I want to be at a very high place to reflect that, and also
+                reference my journey so far, and where I am heading to"
               </motion.p>
             </div>
             <figure className="client-project-client-illustration-image-container h-auto w-full p-5 hd:w-2/5 hd:max-h-[1500px] flex flex-col items-center justify-center overflow-visible">
               <motion.img
                 className="client-project-client-illustration-image"
-                src={tmDraft}
-                alt="A rough character illustration of TXMMYILY"
-                title="TXMMYILY"
+                src={cmIllustration}
+                alt="An illustration of Cashmanny reaching into a portal without personal items coming out of it"
+                title="Cashmanny"
                 loading="eager"
                 ref={heroRef}
                 initial={{ opacity: 0 }}
@@ -416,7 +509,7 @@ const HigherEducation = () => {
               />
             </figure>
           </article>
-          <article className="client-project-references-container bg-[#02e2c5] selection:bg-black selection:text-zinc-200 w-full h-auto flex flex-col items-center justify-center p-5 pt-10">
+          <article className="client-project-references-container bg-[#00c049] selection:bg-black selection:text-zinc-200 w-full h-auto flex flex-col items-center justify-center p-5 pt-10">
             <h2
               className="client-project-reference-board-title font-custom text-5xl text-center text-black w-full font-semibold mb-5"
               ref={referenceBoardItemsRef}
@@ -440,10 +533,10 @@ const HigherEducation = () => {
                 setTranslateReference(0);
               }}
               onMouseLeave={() => {
-                setTranslateReference(windowWidth / 7);
+                setTranslateReference(viewportSize.width / 7);
               }}
               onTouchEnd={() => {
-                setTranslateReference(windowWidth / 7);
+                setTranslateReference(viewportSize.width / 7);
               }}
             >
               <motion.figure
@@ -454,9 +547,9 @@ const HigherEducation = () => {
                 transition={{ duration: 1, ease: anticipate }}
               >
                 <img
-                  src={tmReference1}
-                  alt="An illustrated cover art for Rema's Holiday + Reason You single where he stands at the centre of a party scene with a fish eye lens, from a birds eye view"
-                  title="Holiday + Reason You single cover by Audrey(@_puppuppup__)"
+                  src={cmReference1}
+                  alt="Matrix Code Rain"
+                  title="Matrix Code Rain"
                   loading="lazy"
                   className="client-project-reference-image-1"
                   style={{ zIndex: 1, border: 'solid black 1px' }}
@@ -464,9 +557,9 @@ const HigherEducation = () => {
               </motion.figure>
               <motion.figure className="client-project-reference-image-container-2 h-auto w-1/3 flex flex-col items-center justify-center">
                 <img
-                  src={tmReference2}
-                  alt="A photo of TXMMYILY with a red hoodie, a white graphic tee, brown plaid 3/4 shorts, white socks, and sandal style slides"
-                  title="TXMMYILY"
+                  src={cmReference2}
+                  alt="Naruto at the top af a high rise building"
+                  title="Naruto"
                   loading="lazy"
                   className="client-project-referencei-image-2"
                   style={{ zIndex: 3, border: 'solid black 1px' }}
@@ -480,9 +573,9 @@ const HigherEducation = () => {
                 transition={{ duration: 1, ease: anticipate }}
               >
                 <img
-                  src={tmReference3}
-                  alt="A full houseparty scene illuminated by a camera flash, capturing an energetic scene of people having a good time"
-                  title="Party scene posted on Twitter/X by @VsapxD"
+                  src={cmReference3}
+                  alt="A shot from the show Pantheon where they are observing multiple simulated universes"
+                  title="Pantheon"
                   loading="lazy"
                   className="client-project-reference-image-3"
                   style={{ zIndex: 2, border: 'solid black 1px' }}
@@ -502,64 +595,111 @@ const HigherEducation = () => {
               ref={referenceBoard2ItemsRef}
             >
               <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left md:text-justify text-black font-normal leading-snug">
-                For the original reference, TXMMYILY cited{' '}
+                Manny sent over a lot of references, which is always a great
+                thing, it helped shape the vision he was tryna build. Among
+                those were a lot of{' '}
                 <a
-                  href="https://www.instagram.com/p/Cou3NsePkQzUxX21sLKNdu_3X0xoe7_HdbV9kA0/?hl=en"
+                  href="https://en.wikipedia.org/wiki/The_Matrix"
                   target="_blank"
                   className="hover:underline font-semibold"
                 >
-                  Audrey's artwork
+                  Matrix
                 </a>{' '}
-                for Rema's Holiday + Reason You single release, highlighting his
-                appreciation for the colourful, vibrant scene it captured.
-                <br />
-                <br />
-                For styling, he provided a reference photo of himself in a red
-                hoodie and white graphic tee, emphasising his Chrome Hearts
-                glasses as a signature element of his look.
-                <br />
-                <br />
-                While working on drafts, I came across a photo on Twitter that
-                showed a lively, energetic party scene I really liked. The
-                single source of lighting, coming from the camera's point of
-                view, illuminated the space like a frozen moment in time — you
-                could almost feel how packed the room was.
-                <br />
-                <br />
-                The sharp shadows emphasised how close everyone was, while the
-                occlusion strengthened that POV effect, as if you were fixed in
-                one spot within the party. That photo also reminded me of{' '}
+                references, a theme seen across his{' '}
                 <a
-                  href="https://www.erniebarnes.com/"
+                  href="https://music.apple.com/gb/album/life-is-a-game/1626193090"
                   target="_blank"
                   className="hover:underline font-semibold"
                 >
-                  Ernie&nbsp;Barnes'
-                </a>{' '}
-                incredible painting{' "'}
-                <a
-                  href="https://www.christies.com/en/lot/lot-6368793"
-                  target="_blank"
-                  className="hover:underline font-semibold"
-                >
-                  The&nbsp;Sugar&nbsp;Shack
+                  other projects
                 </a>
-                {'"'}, with its fluid motion and the sense that every figure in
-                the scene had their own story, contributing to the richness of
-                the whole composition. I first discovered Barnes' work after
-                watching the film{' '}
+                . I studied the Wachowskis' work and developed a procedural
+                system in Blender for this project.
+                <br />
+                <br />
+                The Naruto reference stood out to me, not only because I grew up
+                watching him, but because the artist did a great job of placing
+                him within the context of his environment. Manny emphasized the
+                high vantage point of the reference, so it was integral for me
+                to translate that concept to the cover.
+                <br />
+                <br />
+                The third was an idea I borrowed from{' '}
                 <a
-                  href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0LCsvz81LSTI1YPRiL87My0stKgYAYBEH_Q&q=sinners&oq=sinners&gs_lcrp=EgZjaHJvbWUqCggBEC4YsQMYgAQyBwgAEAAYjwIyCggBEC4YsQMYgAQyCggCEAAYsQMYgAQyBggDEAAYAzIKCAQQABixAxiABDIKCAUQABixAxiABDIGCAYQABgDMgcIBxAAGIAEMgoICBAAGLEDGIAEMgcICRAAGIAE0gEIMzExMWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8"
+                  href="https://en.wikipedia.org/wiki/Pantheon_(TV_series)"
                   target="_blank"
                   className="hover:underline font-semibold"
                 >
-                  Sinners
+                  Pantheon
                 </a>
-                , and learning how it influenced the juke joint scene.
+                , a show I had just watched around the time. It talked about a
+                lot of interesting concepts, one that stood out to me was their
+                take on the Universe. I snuck this concept into the project's{' '}
+                <a
+                  href="https://www.instagram.com/p/DScd-BNjQhu/"
+                  target="_blank"
+                  className="hover:underline font-semibold"
+                >
+                  promotional video
+                </a>
+                .
               </p>
             </div>
           </article>
-          <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-[#02e2c5] selection:text-black">
+          <article
+            className="client-project-sketch-choices-container h-auto w-full flex flex-col pb-24 pt-40 px-5 overflow-x-clip selection:bg-[#39ff85] selection:text-black"
+            // Graph paper background
+            style={greenGraphPaper}
+          >
+            <div className="client-project-sketch-choices-heading text-center">
+              <motion.h1
+                ref={cashmannyCoverSketchesHeaderRef}
+                className="client-project-sketch-choices-heading-header text-zinc-200 font-custom font-semibold tracking-tight lg:text-massive2 text-6xl lg:leading-massive1 drop-shadow-lg"
+                style={{
+                  textShadow: '2px 2px 0 rgba(0, 0, 0, 0.7)',
+                }}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: cashmannyCoverSketchesHeaderPosition,
+                  opacity: cashmannyCoverSketchesHeaderOpacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              >
+                Sketches
+              </motion.h1>
+            </div>
+            <div className="client-project-sketch-choices-description px-5 py-1">
+              <motion.p
+                className="client-project-sketch-choices-description-paragraph text-center font-custom text-xl text-zinc-400 mt-5 w-full font-semibold xl:px-80 drop-shadow-md"
+                style={{
+                  textShadow: '1px 1px 0 rgba(0, 0, 0, 0.7)',
+                }}
+                ref={cashmannyCoverSketchesParagraphRef}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: cashmannyCoverSketchesParagraphPosition,
+                  opacity: cashmannyCoverSketchesParagraphOpacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              >
+                I sent over a few sketches to work out which composition he
+                wanted.
+              </motion.p>
+            </div>
+            <motion.div
+              className="client-project-sketch-choices-image-stack-container h-auto w-full flex flex-col"
+              ref={cashmannyCoverSketchesRef}
+              initial={{ opacity: 0 }}
+              animate={{
+                translateY: cashmannyCoverSketchesPosition,
+                opacity: cashmannyCoverSketchesOpacity,
+              }}
+              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+            >
+              <CardStack items={sketchesData} />
+            </motion.div>
+          </article>
+          <div className="client-project-final-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-[#39ff85] selection:text-black">
             <div className="client-project-final-sketch h-full w-full hd:w-1/2">
               <article className="client-project-final-sketch-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
                 <figure className="client-project-final-sketch-artwork h-3/5 w-full flex flex-col items-center justify-center">
@@ -569,11 +709,11 @@ const HigherEducation = () => {
                     title={higherEducationData.CoverDraft.title}
                     loading="lazy"
                     className="mb-2"
-                    ref={txmmyilyCoverDraftRef}
+                    ref={cashmannyCoverDraftRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: txmmyilyCoverDraftPosition,
-                      opacity: txmmyilyCoverDraftOpacity,
+                      translateY: cashmannyCoverDraftPosition,
+                      opacity: cashmannyCoverDraftOpacity,
                     }}
                     onClick={handleImageFocus(higherEducationData.CoverDraft)}
                     whileHover={{ scale: 1.01 }}
@@ -583,22 +723,22 @@ const HigherEducation = () => {
                 <div className="client-project-final-sketch-description h-2/5 w-full flex flex-col items-center justify-center">
                   <motion.h2
                     className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                    ref={txmmyilyCoverDraftHeaderRef}
+                    ref={cashmannyCoverDraftHeaderRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: txmmyilyCoverDraftHeaderPosition,
-                      opacity: txmmyilyCoverDraftHeaderOpacity,
+                      translateY: cashmannyCoverDraftHeaderPosition,
+                      opacity: cashmannyCoverDraftHeaderOpacity,
                     }}
                   >
                     {higherEducationData.CoverDraft.header}
                   </motion.h2>
                   <motion.p
                     className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                    ref={txmmyilyCoverDraftParagraphRef}
+                    ref={cashmannyCoverDraftParagraphRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: txmmyilyCoverDraftParagraphPosition,
-                      opacity: txmmyilyCoverDraftParagraphOpacity,
+                      translateY: cashmannyCoverDraftParagraphPosition,
+                      opacity: cashmannyCoverDraftParagraphOpacity,
                     }}
                   >
                     {higherEducationData.CoverDraft.paragraph}
@@ -615,11 +755,11 @@ const HigherEducation = () => {
                     title={higherEducationData.FinalCover.title}
                     loading="lazy"
                     className="mb-2"
-                    ref={txmmyilyFinalCoverRef}
+                    ref={cashmannyFinalCoverRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: txmmyilyFinalCoverPosition,
-                      opacity: txmmyilyFinalCoverOpacity,
+                      translateY: cashmannyFinalCoverPosition,
+                      opacity: cashmannyFinalCoverOpacity,
                     }}
                     onClick={handleImageFocus(higherEducationData.FinalCover)}
                     whileHover={{ scale: 1.01 }}
@@ -629,22 +769,22 @@ const HigherEducation = () => {
                 <div className="client-project-final-single-cover-description h-2/5 w-full flex flex-col items-center justify-center">
                   <motion.h2
                     className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
-                    ref={txmmyilyFinalCoverHeaderRef}
+                    ref={cashmannyFinalCoverHeaderRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: txmmyilyFinalCoverHeaderPosition,
-                      opacity: txmmyilyFinalCoverHeaderOpacity,
+                      translateY: cashmannyFinalCoverHeaderPosition,
+                      opacity: cashmannyFinalCoverHeaderOpacity,
                     }}
                   >
                     {higherEducationData.FinalCover.header}
                   </motion.h2>
                   <motion.p
                     className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
-                    ref={txmmyilyFinalCoverParagraphRef}
+                    ref={cashmannyFinalCoverParagraphRef}
                     initial={{ opacity: 0 }}
                     animate={{
-                      translateY: txmmyilyFinalCoverParagraphPosition,
-                      opacity: txmmyilyFinalCoverParagraphOpacity,
+                      translateY: cashmannyFinalCoverParagraphPosition,
+                      opacity: cashmannyFinalCoverParagraphOpacity,
                     }}
                   >
                     {higherEducationData.FinalCover.paragraph}
@@ -653,17 +793,201 @@ const HigherEducation = () => {
               </article>
             </div>
           </div>
-          <section className="client-project-streaming-preview w-full h-auto p-5 hd:py-20 hd:px-0 flex flex-col items-center justify-center bg-zinc-900 selection:bg-[#02e2c5]">
+          <article
+            className="client-project-mood-board-container h-auto w-full flex flex-col pb-24 pt-40 px-5 overflow-x-clip selection:bg-[#39ff85] selection:text-black"
+            // Graph paper background
+            style={greenGraphPaper}
+          >
+            <div className="client-project-mood-board-heading text-center">
+              <motion.h1
+                ref={cashmannyMoodBoardHeaderRef}
+                className="client-project-mood-board-heading-header text-zinc-200 font-custom font-semibold tracking-tight lg:text-massive2 text-6xl lg:leading-massive1 drop-shadow-lg"
+                style={{
+                  textShadow: '2px 2px 0 rgba(0, 0, 0, 0.7)',
+                }}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: cashmannyMoodBoardHeaderPosition,
+                  opacity: cashmannyMoodBoardHeaderOpacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              >
+                Mood Board
+              </motion.h1>
+            </div>
+            <div className="client-project-mood-board-description px-5 py-1">
+              <motion.p
+                className="client-project-mood-board-description-paragraph text-center font-custom text-xl text-zinc-400 mt-5 w-full font-semibold xl:px-80 drop-shadow-md"
+                style={{
+                  textShadow: '1px 1px 0 rgba(0, 0, 0, 0.7)',
+                }}
+                ref={cashmannyMoodBoardParagraphRef}
+                initial={{ opacity: 0 }}
+                animate={{
+                  translateY: cashmannyMoodBoardParagraphPosition,
+                  opacity: cashmannyMoodBoardParagraphOpacity,
+                }}
+                transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+              >
+                I took inspo from a lot of places, notably Akira, Alberto
+                Mielgo, Alien, Blade Runner: 2049, & Mary Had A Little Lamb.
+              </motion.p>
+            </div>
+            <motion.div
+              className="client-project-mood-board-image-stack-container h-auto w-full flex flex-col"
+              ref={cashmannyMoodBoardRef}
+              initial={{ opacity: 0 }}
+              animate={{
+                translateY: cashmannyMoodBoardPosition,
+                opacity: cashmannyMoodBoardOpacity,
+              }}
+              transition={{ delay: 0.3, ease: 'anticipate', duration: 1 }}
+            >
+              <CardStack items={moodBoardData} />
+            </motion.div>
+          </article>
+          <div className="client-project-3D-technical-achievements-container h-auto w-full flex flex-col hd:flex-row p-5 selection:bg-[#39ff85] selection:text-black">
+            <div className="client-project-focusrite-model h-full w-full hd:w-1/2">
+              <article className="client-project-focusrite-model-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="client-project-focusrite-model-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                  <motion.img
+                    src={higherEducationData.Focusrite.src}
+                    alt={higherEducationData.Focusrite.alt}
+                    title={higherEducationData.Focusrite.title}
+                    loading="lazy"
+                    className="mb-2"
+                    ref={cashmannyFocusriteRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cashmannyFocusritePosition,
+                      opacity: cashmannyFocusriteOpacity,
+                    }}
+                    onClick={handleImageFocus(higherEducationData.Focusrite)}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                </figure>
+                <div className="client-project-focusrite-model-description h-2/5 w-full flex flex-col items-center justify-center">
+                  <motion.h2
+                    className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                    ref={cashmannyFocusriteHeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cashmannyFocusriteHeaderPosition,
+                      opacity: cashmannyFocusriteHeaderOpacity,
+                    }}
+                  >
+                    {higherEducationData.Focusrite.header}
+                  </motion.h2>
+                  <motion.p
+                    className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                    ref={cashmannyFocusriteParagraphRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cashmannyFocusriteParagraphPosition,
+                      opacity: cashmannyFocusriteParagraphOpacity,
+                    }}
+                  >
+                    {higherEducationData.Focusrite.paragraph}
+                  </motion.p>
+                </div>
+              </article>
+            </div>
+            <div className="client-project-matrix-code-rain h-full w-full hd:w-1/2">
+              <article className="client-project-matrix-code-rain-container flex flex-col items-center justify-center h-auto w-full p-5 hd:p-20 my-5 hd:my-0">
+                <figure className="client-project-matrix-code-rain-artwork h-3/5 w-full flex flex-col items-center justify-center">
+                  <motion.img
+                    src={higherEducationData.CodeRain.src}
+                    alt={higherEducationData.CodeRain.alt}
+                    title={higherEducationData.CodeRain.title}
+                    loading="lazy"
+                    className="mb-2"
+                    ref={cashmannyCodeRainRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cashmannyCodeRainPosition,
+                      opacity: cashmannyCodeRainOpacity,
+                    }}
+                    onClick={handleImageFocus(higherEducationData.CodeRain)}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
+                </figure>
+                <div className="client-project-matrix-code-rain-description h-2/5 w-full flex flex-col items-center justify-center">
+                  <motion.h2
+                    className="font-custom text-3xl text-left text-zinc-200 mt-5 w-full font-semibold xl:px-80"
+                    ref={cashmannyCodeRainHeaderRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cashmannyCodeRainHeaderPosition,
+                      opacity: cashmannyCodeRainHeaderOpacity,
+                    }}
+                  >
+                    {higherEducationData.CodeRain.header}
+                  </motion.h2>
+                  <motion.p
+                    className="font-custom text-xl text-zinc-400 mt-5 w-full font-medium xl:px-80"
+                    ref={cashmannyCodeRainParagraphRef}
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      translateY: cashmannyCodeRainParagraphPosition,
+                      opacity: cashmannyCodeRainParagraphOpacity,
+                    }}
+                  >
+                    {higherEducationData.CodeRain.paragraph}
+                  </motion.p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div>
+            <ParallaxImageSection
+              image={{
+                src: cmBlenderGeoNodes,
+                alt: 'Blender Geometry Nodes used to make custom procedural Matrix Code Rain for this project',
+                width: 1920,
+                height: 1080,
+              }}
+              stickyMode="short"
+              mobileAnchoring="left"
+              largeAnchoring="center"
+              captionHeader="Procedural Setup"
+              caption="Matrix code rain generated with custom Geometry Nodes."
+              captionPlacement="bottom-left"
+            />
+          </div>
+          <div className="w-full h-auto" style={greenGraphPaper}>
+            <CenteredImageStack items={modelsData} />
+          </div>
+          <section className="w-full bg-black px-5 py-16 selection:bg-[#39ff85] selection:text-black md:px-10 md:py-24">
+            <div className="m-auto flex w-full max-w-7xl flex-col gap-8 hd:flex-row hd:items-center hd:gap-16">
+              <div className="w-full hd:w-2/5">
+                <h2 className="font-custom text-4xl font-semibold tracking-tight text-zinc-100 md:text-5xl">
+                  {oysterCardModel.title}
+                </h2>
+                <p className="mt-5 font-custom text-lg leading-relaxed text-zinc-400 md:text-xl">
+                  {oysterCardModel.description}
+                </p>
+              </div>
+              <div className="w-full hd:w-3/5">
+                <ThreeModelViewer
+                  modelUrl={oysterCardModel.model}
+                  title={oysterCardModel.title}
+                />
+              </div>
+            </div>
+          </section>
+          <section className="client-project-streaming-preview w-full h-auto p-5 hd:py-20 hd:px-0 flex flex-col items-center justify-center bg-zinc-900 selection:bg-[#39ff85]">
             <iframe
               id="embedPlayer"
-              src="https://embed.music.apple.com/us/album/jaiye-single/1836378594?app=music&amp;itsct=music_box_player&amp;itscg=30200&amp;ls=1&amp;theme=auto"
+              src="https://embed.music.apple.com/gb/album/higher-education/1860190677?app=music&amp;itsct=music_box_player&amp;itscg=30200&amp;ls=1&amp;theme=auto"
               height="450px"
               sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
               allow="autoplay *; encrypted-media *; clipboard-write"
               style={embeddedAppleMusicStyle}
             ></iframe>
           </section>
-          <section className="client-project-deliverables-container h-auto w-full bg-[#02e2c5] selection:bg-black selection:text-zinc-200 p-5">
+          <section className="client-project-deliverables-container h-auto w-full bg-[#00c049] selection:bg-black selection:text-zinc-200 p-5">
             <div className="client-project-deliverables flex flex-col items-start justify-center">
               <div className="client-project-deliverables-container w-full hd:w-3/5 m-auto h-auto flex flex-col items-center justify-center my-10 p-5 overflow-hidden">
                 <motion.h2

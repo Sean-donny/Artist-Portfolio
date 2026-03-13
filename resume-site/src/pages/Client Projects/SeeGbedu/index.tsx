@@ -358,7 +358,8 @@ const SeeGbedu = () => {
           </figure>
           {/* height of safe space is set to the same as parallaxValue */}
           <div
-            className={`client-project-hero-safe-space h-[${parallaxValue}px] w-full`}
+            className="client-project-hero-safe-space w-full"
+            style={{ height: `${parallaxValue}px` }}
           >
             &nbsp;
           </div>

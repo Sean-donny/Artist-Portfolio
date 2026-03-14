@@ -1,47 +1,58 @@
 import { createBrowserRouter } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import type { ComponentType, LazyExoticComponent } from 'react';
 import AppLayout from './layout';
-// pages
 import Home from './pages/Home';
+import Loader from './components/Loader';
 
-import Gallery from './pages/Gallery';
+const Gallery = lazy(() => import('./pages/Gallery'));
 
-import Store from './pages/Store';
-import Product from './pages/Store/Product';
+const Store = lazy(() => import('./pages/Store'));
+const Product = lazy(() => import('./pages/Store/Product'));
 
-import PersonalProjects from './pages/Personal Projects';
-// Personal Projects sub pages
-import YouTubers from './pages/Personal Projects/YouTubers';
-import AnimationProject from './pages/Personal Projects/AnimationProject';
-import SubaruBoy from './pages/Personal Projects/SubaruBoy';
-import Music from './pages/Personal Projects/Music';
-import Mowalola from './pages/Personal Projects/Mowalola';
+const PersonalProjects = lazy(() => import('./pages/Personal Projects'));
+const YouTubers = lazy(() => import('./pages/Personal Projects/YouTubers'));
+const AnimationProject = lazy(
+  () => import('./pages/Personal Projects/AnimationProject'),
+);
+const SubaruBoy = lazy(() => import('./pages/Personal Projects/SubaruBoy'));
+const Music = lazy(() => import('./pages/Personal Projects/Music'));
+const Mowalola = lazy(() => import('./pages/Personal Projects/Mowalola'));
 
-import ClientProjects from './pages/Client Projects';
-// Client Projects sub pages
-import PartyScatta from './pages/Client Projects/PartyScatta';
-import HigherEducation from './pages/Client Projects/HigherEducation';
-import Dolore from './pages/Client Projects/Dolore';
-import Jaiye from './pages/Client Projects/Txmmyily';
-import PsychoYP from './pages/Client Projects/Psychoyp';
-import SeeGbedu from './pages/Client Projects/SeeGbedu';
-import CrownBounce from './pages/Client Projects/CrownBounce';
-import MenaceTalk from './pages/Client Projects/MenaceTalk';
-import YeAnthem from './pages/Client Projects/YeAnthem';
-import Nuniverse from './pages/Client Projects/Nuniverse';
-import Family from './pages/Client Projects/Family';
-import Popwave from './pages/Client Projects/Popwave';
-import MikesWrld from './pages/Client Projects/MikesWorld';
+const ClientProjects = lazy(() => import('./pages/Client Projects'));
+const PartyScatta = lazy(() => import('./pages/Client Projects/PartyScatta'));
+const HigherEducation = lazy(
+  () => import('./pages/Client Projects/HigherEducation'),
+);
+const Dolore = lazy(() => import('./pages/Client Projects/Dolore'));
+const Jaiye = lazy(() => import('./pages/Client Projects/Txmmyily'));
+const PsychoYP = lazy(() => import('./pages/Client Projects/Psychoyp'));
+const SeeGbedu = lazy(() => import('./pages/Client Projects/SeeGbedu'));
+const CrownBounce = lazy(() => import('./pages/Client Projects/CrownBounce'));
+const MenaceTalk = lazy(() => import('./pages/Client Projects/MenaceTalk'));
+const YeAnthem = lazy(() => import('./pages/Client Projects/YeAnthem'));
+const Nuniverse = lazy(() => import('./pages/Client Projects/Nuniverse'));
+const Family = lazy(() => import('./pages/Client Projects/Family'));
+const Popwave = lazy(() => import('./pages/Client Projects/Popwave'));
+const MikesWrld = lazy(() => import('./pages/Client Projects/MikesWorld'));
 
-import About from './pages/About';
+const About = lazy(() => import('./pages/About'));
 
-import Error404 from './pages/Error 404';
-// import ProtectedRoute from './components/ProtectedRoute';
+const Error404 = lazy(() => import('./pages/Error 404'));
+
+const lazyElement = (
+  LazyComponent: LazyExoticComponent<ComponentType<object>>,
+) => (
+  <Suspense fallback={<Loader />}>
+    <LazyComponent />
+  </Suspense>
+);
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <AppLayout />,
-    errorElement: <Error404 />,
+    errorElement: lazyElement(Error404),
     children: [
       {
         path: '/',
@@ -49,99 +60,99 @@ const router = createBrowserRouter([
       },
       {
         path: '/gallery',
-        element: <Gallery />,
+        element: lazyElement(Gallery),
       },
       {
         path: '/store',
-        element: <Store />,
+        element: lazyElement(Store),
       },
       {
         path: '/store/:slug',
-        element: <Product />,
+        element: lazyElement(Product),
       },
       {
         path: '/personal-projects',
-        element: <PersonalProjects />,
+        element: lazyElement(PersonalProjects),
       },
       {
         path: '/personal-projects/youtubers',
-        element: <YouTubers />,
+        element: lazyElement(YouTubers),
       },
       {
         path: '/personal-projects/animation-project',
-        element: <AnimationProject />,
+        element: lazyElement(AnimationProject),
       },
       {
         path: '/personal-projects/subaru-boy',
-        element: <SubaruBoy />,
+        element: lazyElement(SubaruBoy),
       },
       {
         path: '/personal-projects/music',
-        element: <Music />,
+        element: lazyElement(Music),
       },
       {
         path: '/personal-projects/mowalola',
-        element: <Mowalola />,
+        element: lazyElement(Mowalola),
       },
       {
         path: '/client-projects',
-        element: <ClientProjects />,
+        element: lazyElement(ClientProjects),
       },
       {
         path: '/client-projects/partyscatta',
-        element: <PartyScatta />,
+        element: lazyElement(PartyScatta),
       },
       {
         path: '/client-projects/higher-education',
-        element: <HigherEducation />,
+        element: lazyElement(HigherEducation),
       },
       {
         path: '/client-projects/dolore',
-        element: <Dolore />,
+        element: lazyElement(Dolore),
       },
       {
         path: '/client-projects/jaiye',
-        element: <Jaiye />,
+        element: lazyElement(Jaiye),
       },
       {
         path: '/client-projects/psychoyp',
-        element: <PsychoYP />,
+        element: lazyElement(PsychoYP),
       },
       {
         path: '/client-projects/see-gbedu',
-        element: <SeeGbedu />,
+        element: lazyElement(SeeGbedu),
       },
       {
         path: '/client-projects/crown-bounce',
-        element: <CrownBounce />,
+        element: lazyElement(CrownBounce),
       },
       {
         path: '/client-projects/menace-talk',
-        element: <MenaceTalk />,
+        element: lazyElement(MenaceTalk),
       },
       {
         path: '/client-projects/ye-anthem',
-        element: <YeAnthem />,
+        element: lazyElement(YeAnthem),
       },
       {
         path: '/client-projects/nuniverse',
-        element: <Nuniverse />,
+        element: lazyElement(Nuniverse),
       },
       {
         path: '/client-projects/family',
-        element: <Family />,
+        element: lazyElement(Family),
       },
       {
         path: '/client-projects/popwave',
-        element: <Popwave />,
+        element: lazyElement(Popwave),
       },
       {
         path: '/client-projects/mikes-world',
-        element: <MikesWrld />,
+        element: lazyElement(MikesWrld),
       },
       {
         path: '/about',
-        element: <About />,
+        element: lazyElement(About),
       },
     ],
   },

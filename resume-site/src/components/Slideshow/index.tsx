@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { usePageTransition } from '../Transitions/TransitionLayout';
 
 interface SlideshowProps {
   images: string[];
@@ -9,11 +9,10 @@ interface SlideshowProps {
 const Slideshow = ({ images, titles }: SlideshowProps) => {
   const repeatCount = 2;
 
-  const navigate = useNavigate();
+  const { navigateTo } = usePageTransition();
 
   const handleNavigate = (path: string) => {
-    window.scrollTo(0, 0);
-    navigate(`/${path}`);
+    navigateTo(`/${path}`);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {

@@ -2,7 +2,7 @@ import { anticipate, motion, useAnimation, useInView } from 'framer-motion';
 import higherEducationData from './data';
 import useInViewAnimation from '../../../Hooks/useInViewAnimation';
 import GalleryModal from '../../../components/GalleryModal';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { useMenuAnimation } from '../../../Hooks/useMenuAnimation';
 import { ModalContent } from '../../../interfaces/ModalContent';
 
@@ -22,11 +22,12 @@ import navigationMap from '../navigationMap';
 import CardStack from '../../../components/ModularImageStack';
 import ParallaxImageSection from '../../../components/ParallaxImageSection';
 import CenteredImageStack from '../../../components/CenteredImageStack';
-import ThreeModelViewer from './ThreeDModelViewer.tsx';
 import { modelsData, moodBoardData, sketchesData } from './imageStackData';
 import { oysterCardModel } from './threeJsModelData';
 import { greenGraphPaper } from './styles';
 import { higherEducationAsciiArt } from './asciiArt.ts';
+
+const ThreeModelViewer = lazy(() => import('./ThreeDModelViewer'));
 
 const HigherEducation = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -106,6 +107,12 @@ const HigherEducation = () => {
     width: window.innerWidth,
     height: window.innerHeight,
   }));
+
+  const threeViewerSectionRef = useRef(null);
+  const shouldLoadThreeViewer = useInView(threeViewerSectionRef, {
+    margin: '300px 0px',
+    once: true,
+  });
 
   // Declarations required for page section effects
   const heroRef = useRef(null);
@@ -389,7 +396,7 @@ const HigherEducation = () => {
   return (
     <div className="client-project-container bg-black w-full h-auto">
       <SEO
-        title="High Education | Client Projects"
+        title="Higher Education | Client Projects"
         description="Explore a client project for Cashmanny by contemporary artist Sean Donny, showcasing his creative direction expertise."
         type="article"
         url="https://seandonny.com/client-projects/higher_education"
@@ -594,7 +601,7 @@ const HigherEducation = () => {
               className="client-project-reference-description-container w-full h-auto flex flex-col items-center justify-center py-5"
               ref={referenceBoard2ItemsRef}
             >
-              <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left md:text-justify text-black font-normal leading-snug">
+              <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left text-black font-normal leading-snug">
                 Manny sent over a lot of references, which is always a great
                 thing, it helped shape the vision he was tryna build. Among
                 those were a lot of{' '}
@@ -940,7 +947,7 @@ const HigherEducation = () => {
               </article>
             </div>
           </div>
-          <div>
+          <div className="w-full h-auto selection:bg-[#39ff85] selection:text-black">
             <ParallaxImageSection
               image={{
                 src: cmBlenderGeoNodes,
@@ -956,10 +963,16 @@ const HigherEducation = () => {
               captionPlacement="bottom-left"
             />
           </div>
-          <div className="w-full h-auto" style={greenGraphPaper}>
+          <div
+            className="w-full h-auto selection:bg-[#39ff85] selection:text-black"
+            style={greenGraphPaper}
+          >
             <CenteredImageStack items={modelsData} />
           </div>
-          <section className="w-full bg-black px-5 py-16 selection:bg-[#39ff85] selection:text-black md:px-10 md:py-24">
+          <section
+            ref={threeViewerSectionRef}
+            className="w-full bg-black px-5 py-16 selection:bg-[#39ff85] selection:text-black md:px-10 md:py-24"
+          >
             <div className="m-auto flex w-full max-w-7xl flex-col gap-8 hd:flex-row hd:items-center hd:gap-16">
               <div className="w-full hd:w-2/5">
                 <h2 className="font-custom text-4xl font-semibold tracking-tight text-zinc-100 md:text-5xl">
@@ -970,10 +983,24 @@ const HigherEducation = () => {
                 </p>
               </div>
               <div className="w-full hd:w-3/5">
-                <ThreeModelViewer
-                  modelUrl={oysterCardModel.model}
-                  title={oysterCardModel.title}
-                />
+                {shouldLoadThreeViewer ? (
+                  <Suspense
+                    fallback={
+                      <div className="flex min-h-[300px] w-full items-center justify-center rounded-2xl border border-[#39ff85]/40 bg-black/80 px-6 py-12 font-custom text-sm uppercase tracking-[0.2em] text-[#39ff85] md:text-base">
+                        Loading 3D viewer...
+                      </div>
+                    }
+                  >
+                    <ThreeModelViewer
+                      modelUrl={oysterCardModel.model}
+                      title={oysterCardModel.title}
+                    />
+                  </Suspense>
+                ) : (
+                  <div className="flex min-h-[300px] w-full items-center justify-center rounded-2xl border border-[#39ff85]/40 bg-black/80 px-6 py-12 font-custom text-sm uppercase tracking-[0.2em] text-[#39ff85] md:text-base">
+                    3D viewer loads on approach
+                  </div>
+                )}
               </div>
             </div>
           </section>

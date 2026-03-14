@@ -620,7 +620,7 @@ const YeAnthem = () => {
               className="client-project-reference-description-container w-full h-auto flex flex-col items-center justify-center py-5"
               ref={referenceBoard2ItemsRef}
             >
-              <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left md:text-justify text-black font-normal leading-snug">
+              <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left text-black font-normal leading-snug">
                 Smada dropped the news: "It's gonna be an anthem, a Ye Anthem!"
                 So, I set the scene poolside, keeping the focus on the artists
                 and what's blowing their minds. Managing projects like this

@@ -376,7 +376,7 @@ const Txmmyily = () => {
                 "I've got this new single called{' '}
                 <mark className="bg-[#02e2c5] text-black">
                   <a
-                    href="https://music.apple.com/gb/album/jaiye-single/1836378594"
+                    href="https://music.apple.com/gb/album/jaiye/1836378594?i=1836378597"
                     target="_blank"
                     className="hover:underline"
                   >
@@ -502,7 +502,7 @@ const Txmmyily = () => {
               className="client-project-reference-description-container w-full h-auto flex flex-col items-center justify-center py-5"
               ref={referenceBoard2ItemsRef}
             >
-              <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left md:text-justify text-black font-normal leading-snug">
+              <p className="client-project-reference-description-text w-full hd:w-4/5 m-auto font-custom text-lg md:text-xl hd:text-3xl text-left text-black font-normal leading-snug">
                 For the original reference, TXMMYILY cited{' '}
                 <a
                   href="https://www.instagram.com/p/Cou3NsePkQzUxX21sLKNdu_3X0xoe7_HdbV9kA0/?hl=en"

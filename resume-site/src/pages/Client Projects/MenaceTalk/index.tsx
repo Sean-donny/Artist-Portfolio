@@ -700,7 +700,7 @@ const MenaceTalk = () => {
               </article>
             </div>
           </div>
-          <section className="client-project-promo-video-container h-auto w-full py-5">
+          <section className="client-project-promo-video-container h-auto w-full py-5 selection:bg-fuchsia-600">
             {trillAlbumPromoVideoInView && (
               <motion.div
                 className="client-project-promo-video h-auto w-full flex flex-col items-center justify-center"

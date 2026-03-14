@@ -147,7 +147,7 @@ body {
   overflow: visible;
 }
 .hero-image:hover {
-  cursor: url('optimised/sean-donny-skull.cur'), auto;
+  cursor: url('/optimised/sean-donny-skull.cur'), auto;
   /* background: linear-gradient(
     to bottom,
     rgba(1, 2, 3, 1) 30%,

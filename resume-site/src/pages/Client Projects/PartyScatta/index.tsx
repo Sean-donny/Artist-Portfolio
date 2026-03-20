@@ -594,40 +594,32 @@ const PartyScatta = () => {
                 />
                 <map name="image-map-1">
                   <area
-                    target=""
                     alt="Meji Meji Blue Dress"
                     title="Meji Meji Blue Dress"
-                    href=""
                     coords={coordsToString(
                       reference1ImageMapDimensions.coords1,
                     )}
                     shape="rect"
                   ></area>
                   <area
-                    target=""
                     alt="Vibe by Blacboyy"
                     title="Vibe by Blacboyy"
-                    href=""
                     coords={coordsToString(
                       reference1ImageMapDimensions.coords2,
                     )}
                     shape="rect"
                   ></area>
                   <area
-                    target=""
                     alt="Kimberly Gayle in bolapsd dress"
                     title="Kimberly Gayle in bolapsd dress"
-                    href=""
                     coords={coordsToString(
                       reference1ImageMapDimensions.coords3,
                     )}
                     shape="rect"
                   ></area>
                   <area
-                    target=""
                     alt="Ona in Blvckfire"
                     title="Ona in Blvckfire"
-                    href=""
                     coords={coordsToString(
                       reference1ImageMapDimensions.coords4,
                     )}
@@ -664,40 +656,32 @@ const PartyScatta = () => {
                 />
                 <map name="image-map-3">
                   <area
-                    target=""
                     alt="NO11"
                     title="NO11"
-                    href=""
                     coords={coordsToString(
                       reference3ImageMapDimensions.coords1,
                     )}
                     shape="rect"
                   ></area>
                   <area
-                    target=""
                     alt="Gayle Heel Covers"
                     title="Gayle Heel Covers"
-                    href=""
                     coords={coordsToString(
                       reference3ImageMapDimensions.coords2,
                     )}
                     shape="rect"
                   ></area>
                   <area
-                    target=""
                     alt="Swirl hairstyle inspo"
                     title="Swirl hairstyle inspo"
-                    href=""
                     coords={coordsToString(
                       reference3ImageMapDimensions.coords3,
                     )}
                     shape="rect"
                   ></area>
                   <area
-                    target=""
                     alt="CYK Baddie"
                     title="CYK Baddie"
-                    href=""
                     coords={coordsToString(
                       reference3ImageMapDimensions.coords4,
                     )}

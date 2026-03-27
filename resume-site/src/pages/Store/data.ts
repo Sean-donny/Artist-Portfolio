@@ -25,6 +25,25 @@ import sixteenByTwentyHoodieGurl from '/optimised/16x20_hoodie_gurl.webp';
 import sixteenByTwentyFashionRoadman from '/optimised/16x20_fashion_roadman.webp';
 import sixteenByTwentyCenchBlack from '/optimised/16x20_cench_black.webp';
 import sixteenByTwentyBoatBoy from '/optimised/16x20_boat_boy.webp';
+
+import sixteenByTwentyAyraStarr from '/optimised/16x20_ayra_starr.webp';
+import sixteenByTwentyBolaBaddie from '/optimised/16x20_bola_baddie.webp';
+import sixteenByTwentyBxks from '/optimised/16x20_bxks.webp';
+import sixteenByTwentyHobie from '/optimised/16x20_hobie_brown.webp';
+import sixteenByTwentyLucki from '/optimised/16x20_lucki.webp';
+import sixteenByTwentyOlandria from '/optimised/16x20_olandria.webp';
+import sixteenByTwentyOrthodontistVisit from '/optimised/16x20_orthodontist_visit.webp';
+import sixteenByTwentyFancyThat from '/optimised/16x20_pinkpantheress_fancy_that.webp';
+import sixteenByTwentyStateside from '/optimised/16x20_pinkpantheress_stateside.webp';
+import sixteenByTwentyPurpleHeart from '/optimised/16x20_purple_heart.webp';
+import sixteenByTwentyOyoOyo from '/optimised/16x20_rema_oyo_oyo.webp';
+import sixteenByTwentyRemaPsd from '/optimised/16x20_rema_psd.webp';
+import sixteenByTwentySayCheese from '/optimised/16x20_say_cheese.webp';
+import sixteenByTwentyShocked from '/optimised/16x20_shocked.webp';
+import sixteenByTwentySkepta from '/optimised/16x20_skepta.webp';
+import sixteenByTwentyTems from '/optimised/16x20_tems.webp';
+import sixteenByTwentyTheGrinch from '/optimised/16x20_the_grinch.webp';
+
 import { Poster } from '../../interfaces/Poster';
 
 const STRIPE_PRICE_IDS = {
@@ -525,6 +544,466 @@ const richPosterData: Record<string, Poster> = {
     description:
       'A portrait of Central Cee crowned in Union Jack braids, against a dark backdrop embellished in chrome graffiti.',
     year: 2025,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  boat_boy: {
+    slug: 'boat_boy',
+    title: 'Boat Boy',
+    src: sixteenByTwentyBoatBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+
+  // Adding New posters to store
+  ayra_starr: {
+    slug: 'ayra_starr',
+    title: 'Sabi Girl',
+    src: sixteenByTwentyAyraStarr,
+    width: 926,
+    height: 1158,
+    description: 'A portrait of Ayra Starr.',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  boat_boy: {
+    slug: 'boat_boy',
+    title: 'Boat Boy',
+    src: sixteenByTwentyBoatBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  boat_boy: {
+    slug: 'boat_boy',
+    title: 'Boat Boy',
+    src: sixteenByTwentyBoatBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  boat_boy: {
+    slug: 'boat_boy',
+    title: 'Boat Boy',
+    src: sixteenByTwentyBoatBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  boat_boy: {
+    slug: 'boat_boy',
+    title: 'Boat Boy',
+    src: sixteenByTwentyBoatBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  boat_boy: {
+    slug: 'boat_boy',
+    title: 'Boat Boy',
+    src: sixteenByTwentyBoatBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  boat_boy: {
+    slug: 'boat_boy',
+    title: 'Boat Boy',
+    src: sixteenByTwentyBoatBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  boat_boy: {
+    slug: 'boat_boy',
+    title: 'Boat Boy',
+    src: sixteenByTwentyBoatBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  boat_boy: {
+    slug: 'boat_boy',
+    title: 'Boat Boy',
+    src: sixteenByTwentyBoatBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  boat_boy: {
+    slug: 'boat_boy',
+    title: 'Boat Boy',
+    src: sixteenByTwentyBoatBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  boat_boy: {
+    slug: 'boat_boy',
+    title: 'Boat Boy',
+    src: sixteenByTwentyBoatBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  boat_boy: {
+    slug: 'boat_boy',
+    title: 'Boat Boy',
+    src: sixteenByTwentyBoatBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  boat_boy: {
+    slug: 'boat_boy',
+    title: 'Boat Boy',
+    src: sixteenByTwentyBoatBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  boat_boy: {
+    slug: 'boat_boy',
+    title: 'Boat Boy',
+    src: sixteenByTwentyBoatBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  boat_boy: {
+    slug: 'boat_boy',
+    title: 'Boat Boy',
+    src: sixteenByTwentyBoatBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  boat_boy: {
+    slug: 'boat_boy',
+    title: 'Boat Boy',
+    src: sixteenByTwentyBoatBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    year: 2023,
     sizes: {
       A4: {
         price: 14.99,

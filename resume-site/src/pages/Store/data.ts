@@ -597,8 +597,8 @@ const richPosterData: Record<string, Poster> = {
     src: sixteenByTwentyAyraStarr,
     width: 926,
     height: 1158,
-    description: 'A portrait of Ayra Starr.',
-    year: 2023,
+    description: 'A portrait of Ayra Starr against a pink backdrop.',
+    year: 2025,
     sizes: {
       A4: {
         price: 14.99,
@@ -617,8 +617,114 @@ const richPosterData: Record<string, Poster> = {
       },
     },
   },
-  boat_boy: {
-    slug: 'boat_boy',
+  bola_baddie: {
+    slug: 'bola_baddie',
+    title: 'Bola Baddie',
+    src: sixteenByTwentyBolaBaddie,
+    width: 926,
+    height: 1158,
+    description: 'A painting of a woman in a bolapsd dress',
+    year: 2026,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  bxks: {
+    slug: 'bxks',
+    title: 'BXKSINTOKYO',
+    src: sixteenByTwentyBxks,
+    width: 926,
+    height: 1158,
+    description: 'A portrait of Bxks.',
+    year: 2025,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  hobie_brown: {
+    slug: 'hobie_brown',
+    title: 'Hobie',
+    src: sixteenByTwentyHobie,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Hobie Brown from "SpiderMan: Across The Spiderverse".',
+    year: 2025,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  lucki: {
+    slug: 'lucki',
+    title: 'Lucki',
+    src: sixteenByTwentyLucki,
+    width: 926,
+    height: 1158,
+    description:
+      'A painting of Lucki inspired by the cover of his Freewave three tape.',
+    year: 2026,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  olandria: {
+    slug: 'olandria',
     title: 'Boat Boy',
     src: sixteenByTwentyBoatBoy,
     width: 926,
@@ -644,8 +750,8 @@ const richPosterData: Record<string, Poster> = {
       },
     },
   },
-  boat_boy: {
-    slug: 'boat_boy',
+  orthodontist_visit: {
+    slug: 'orthodontist_visit',
     title: 'Boat Boy',
     src: sixteenByTwentyBoatBoy,
     width: 926,
@@ -671,8 +777,8 @@ const richPosterData: Record<string, Poster> = {
       },
     },
   },
-  boat_boy: {
-    slug: 'boat_boy',
+  pinkpantheress_fancy_that: {
+    slug: 'pinkpantheress_fancy_that',
     title: 'Boat Boy',
     src: sixteenByTwentyBoatBoy,
     width: 926,
@@ -698,8 +804,8 @@ const richPosterData: Record<string, Poster> = {
       },
     },
   },
-  boat_boy: {
-    slug: 'boat_boy',
+  pinkpantheress_stateside: {
+    slug: 'pinkpantheress_stateside',
     title: 'Boat Boy',
     src: sixteenByTwentyBoatBoy,
     width: 926,
@@ -725,8 +831,8 @@ const richPosterData: Record<string, Poster> = {
       },
     },
   },
-  boat_boy: {
-    slug: 'boat_boy',
+  purple_heart: {
+    slug: 'purple_heart',
     title: 'Boat Boy',
     src: sixteenByTwentyBoatBoy,
     width: 926,
@@ -752,8 +858,8 @@ const richPosterData: Record<string, Poster> = {
       },
     },
   },
-  boat_boy: {
-    slug: 'boat_boy',
+  rema_oyo_oyo: {
+    slug: 'rema_oyo_oyo',
     title: 'Boat Boy',
     src: sixteenByTwentyBoatBoy,
     width: 926,
@@ -779,8 +885,8 @@ const richPosterData: Record<string, Poster> = {
       },
     },
   },
-  boat_boy: {
-    slug: 'boat_boy',
+  rema_psd: {
+    slug: 'rema_psd',
     title: 'Boat Boy',
     src: sixteenByTwentyBoatBoy,
     width: 926,
@@ -806,8 +912,8 @@ const richPosterData: Record<string, Poster> = {
       },
     },
   },
-  boat_boy: {
-    slug: 'boat_boy',
+  say_cheese: {
+    slug: 'say_cheese',
     title: 'Boat Boy',
     src: sixteenByTwentyBoatBoy,
     width: 926,
@@ -833,8 +939,8 @@ const richPosterData: Record<string, Poster> = {
       },
     },
   },
-  boat_boy: {
-    slug: 'boat_boy',
+  shocked: {
+    slug: 'shocked',
     title: 'Boat Boy',
     src: sixteenByTwentyBoatBoy,
     width: 926,
@@ -860,8 +966,8 @@ const richPosterData: Record<string, Poster> = {
       },
     },
   },
-  boat_boy: {
-    slug: 'boat_boy',
+  skepta: {
+    slug: 'skepta',
     title: 'Boat Boy',
     src: sixteenByTwentyBoatBoy,
     width: 926,
@@ -887,8 +993,8 @@ const richPosterData: Record<string, Poster> = {
       },
     },
   },
-  boat_boy: {
-    slug: 'boat_boy',
+  tems: {
+    slug: 'tems',
     title: 'Boat Boy',
     src: sixteenByTwentyBoatBoy,
     width: 926,
@@ -914,116 +1020,8 @@ const richPosterData: Record<string, Poster> = {
       },
     },
   },
-  boat_boy: {
-    slug: 'boat_boy',
-    title: 'Boat Boy',
-    src: sixteenByTwentyBoatBoy,
-    width: 926,
-    height: 1158,
-    description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
-    year: 2023,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  boat_boy: {
-    slug: 'boat_boy',
-    title: 'Boat Boy',
-    src: sixteenByTwentyBoatBoy,
-    width: 926,
-    height: 1158,
-    description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
-    year: 2023,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  boat_boy: {
-    slug: 'boat_boy',
-    title: 'Boat Boy',
-    src: sixteenByTwentyBoatBoy,
-    width: 926,
-    height: 1158,
-    description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
-    year: 2023,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  boat_boy: {
-    slug: 'boat_boy',
-    title: 'Boat Boy',
-    src: sixteenByTwentyBoatBoy,
-    width: 926,
-    height: 1158,
-    description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
-    year: 2023,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  boat_boy: {
-    slug: 'boat_boy',
+  the_grinch: {
+    slug: 'the_grinch',
     title: 'Boat Boy',
     src: sixteenByTwentyBoatBoy,
     width: 926,

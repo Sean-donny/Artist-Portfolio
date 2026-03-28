@@ -3,7 +3,7 @@
 //A4
 import A4Tyla from '/optimised/a4_tyla.webp';
 import A4Teenx from '/optimised/a4_teenx.webp';
-import A4Santi from '/optimised/a4_santi.webp';
+// import A4Santi from '/optimised/a4_santi.webp';
 import A4Rocky from '/optimised/a4_rocky.webp';
 import A4Rema from '/optimised/a4_rema.webp';
 import A4Lauryn from '/optimised/a4_lauryn.webp';
@@ -53,199 +53,15 @@ const STRIPE_PRICE_IDS = {
 };
 
 const richPosterData: Record<string, Poster> = {
-  //A4
-  tyla: {
-    slug: 'tyla',
-    title: 'Tyla',
-    src: A4Tyla,
-    width: 818,
-    height: 1158,
-    description: 'A beautiful portrait of Tyla against a pink bouquet.',
-    year: 2024,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  teenx: {
-    slug: 'teenx',
-    title: 'Teenx',
-    src: A4Teenx,
-    width: 818,
-    height: 1158,
-    description: 'An illustration of Ken Carson, fitted up with his xman belt.',
-    year: 2023,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  santi: {
-    slug: 'santi',
-    title: 'Santi',
-    src: A4Santi,
-    width: 818,
-    height: 1158,
-    description: 'An illustration of Cruel Santino with Kuromi.',
-    year: 2021,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  rocky: {
-    slug: 'rocky',
-    title: 'Rocky',
-    src: A4Rocky,
-    width: 818,
-    height: 1158,
-    description: 'An illustration of A$AP Rocky showing all smiles :)',
-    year: 2022,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  rema: {
-    slug: 'rema',
-    title: 'Rema',
-    src: A4Rema,
-    width: 818,
-    height: 1158,
-    description: 'An illustration of Rema the Raver, with punching gloves.',
-    year: 2023,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  lauryn: {
-    slug: 'lauryn',
-    title: 'Lauryn',
-    src: A4Lauryn,
-    width: 818,
-    height: 1158,
-    description: 'A radiant portrait of Ms. Lauryn Hill smiling gleefully.',
-    year: 2024,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  igormaniac: {
-    slug: 'igormaniac',
-    title: 'Igormaniac',
-    src: A4Igormaniac,
-    width: 818,
+  rrrocky: {
+    slug: 'rrrocky',
+    title: 'RRRocky',
+    src: A2Rrrocky,
+    width: 816,
     height: 1158,
     description:
-      'A portrait of IGOR against a pink backdrop, referencing Tyler, The Creator’s 2019 LP.',
-    year: 2022,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  frank: {
-    slug: 'frank',
-    title: 'Frank',
-    src: A4Frank,
-    width: 818,
-    height: 1158,
-    description:
-      'A portrait of Frank Ocean, looking seemingly jaded with his right eye obscured—referencing the 1964 René Magritte painting "The Son of Man".',
-    year: 2022,
+      'An anatomy lesson of a portrait of the "DON’T BE DUMB" rapper—A$AP Rocky—showing of his grillz',
+    year: 2025,
     sizes: {
       A4: {
         price: 14.99,
@@ -271,334 +87,8 @@ const richPosterData: Record<string, Poster> = {
     width: 818,
     height: 1158,
     description:
-      'A manacing portrait of MFDOOM, referencing his Madvillainy era.',
+      'A manacing portrait of MFDOOM, referencing his Madvillainy era',
     year: 2021,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  asake: {
-    slug: 'asake',
-    title: 'Asake',
-    src: A4Asake,
-    width: 818,
-    height: 1158,
-    description:
-      'An illustration of Asake—Mr.Money—walking down the runway in full S/S 23 Mowalola.',
-    year: 2022,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  //A2
-  subaru: {
-    slug: 'subaru',
-    title: 'Subaru',
-    src: A2Subaru,
-    width: 816,
-    height: 1158,
-    description:
-      'An illustration of the Subaru Boy, surrounded with graffiti referencing tracks and themes surrounding the Final Heaven album.',
-    year: 2022,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  rrrocky: {
-    slug: 'rrrocky',
-    title: 'RRRocky',
-    src: A2Rrrocky,
-    width: 816,
-    height: 1158,
-    description:
-      'An anatomy lesson of a portrait of the "DON’T BE DUMB" rapper—A$AP Rocky—showing of his grillz.',
-    year: 2025,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  ashley: {
-    slug: 'ashley',
-    title: 'Ashley',
-    src: A2Ashley,
-    width: 816,
-    height: 1158,
-    description:
-      'A portrait of Ashley Okoli embracing the ever calling warmth of the light.',
-    year: 2022,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  //16x20
-  tyler: {
-    slug: 'tyler',
-    title: 'Tyler',
-    src: sixteenByTwentyTyler,
-    width: 926,
-    height: 1158,
-    description:
-      'A portrait of Tyler Baudelaire, remember to call me if you get lost.',
-    year: 2022,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  subaru_boy: {
-    slug: 'subaru_boy',
-    title: 'Subaru Boy',
-    src: sixteenByTwentySubaruBoy,
-    width: 926,
-    height: 1158,
-    description:
-      'An illustration of Cruel Santino sporting a camo jacket in true Subaru Boy fashion.',
-    year: 2022,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  spideryachty: {
-    slug: 'spideryachty',
-    title: 'Spideryachty',
-    src: sixteenByTwentySpideryachty,
-    width: 926,
-    height: 1158,
-    description:
-      'A portrait of Lil Yachty inspired by Miles from Spider-Man: Across The Spiderverse.',
-    year: 2023,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  hoodie_gurl: {
-    slug: 'hoodie_gurl',
-    title: 'Hoodie Gurl',
-    src: sixteenByTwentyHoodieGurl,
-    width: 926,
-    height: 1158,
-    description: 'A beautiful portrait of a girl in a hoodie.',
-    year: 2024,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  fashion_roadman: {
-    slug: 'fashion_roadman',
-    title: 'Fashion Roadman',
-    src: sixteenByTwentyFashionRoadman,
-    width: 1158,
-    height: 926,
-    description:
-      'A hyper-abstracted portrait of Ọdúnayọ̀ (Ayọ̀) Òjó experimenting with new style themes, drawing inspiration from Jean-Michel Basquiat.',
-    year: 2024,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  cench: {
-    slug: 'cench',
-    title: 'Cench',
-    src: sixteenByTwentyCenchBlack,
-    width: 926,
-    height: 1158,
-    description:
-      'A portrait of Central Cee crowned in Union Jack braids, against a dark backdrop embellished in chrome graffiti.',
-    year: 2025,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  boat_boy: {
-    slug: 'boat_boy',
-    title: 'Boat Boy',
-    src: sixteenByTwentyBoatBoy,
-    width: 926,
-    height: 1158,
-    description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
-    year: 2023,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-
-  // Adding New posters to store
-  ayra_starr: {
-    slug: 'ayra_starr',
-    title: 'Sabi Girl',
-    src: sixteenByTwentyAyraStarr,
-    width: 926,
-    height: 1158,
-    description: 'A portrait of Ayra Starr against a pink backdrop.',
-    year: 2025,
     sizes: {
       A4: {
         price: 14.99,
@@ -643,14 +133,66 @@ const richPosterData: Record<string, Poster> = {
       },
     },
   },
-  bxks: {
-    slug: 'bxks',
-    title: 'BXKSINTOKYO',
-    src: sixteenByTwentyBxks,
+  tyla: {
+    slug: 'tyla',
+    title: 'Tyla',
+    src: A4Tyla,
+    width: 818,
+    height: 1158,
+    description: 'A beautiful portrait of Tyla against a pink bouquet',
+    year: 2024,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  skepta: {
+    slug: 'skepta',
+    title: 'Big Smoke',
+    src: sixteenByTwentySkepta,
     width: 926,
     height: 1158,
-    description: 'A portrait of Bxks.',
-    year: 2025,
+    description: 'A portrait of Skepta referencing his different albums',
+    year: 2026,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  teenx: {
+    slug: 'teenx',
+    title: 'Teenx',
+    src: A4Teenx,
+    width: 818,
+    height: 1158,
+    description: 'An illustration of Ken Carson, fitted up with his xman belt',
+    year: 2023,
     sizes: {
       A4: {
         price: 14.99,
@@ -676,7 +218,7 @@ const richPosterData: Record<string, Poster> = {
     width: 926,
     height: 1158,
     description:
-      'A portrait of Hobie Brown from "SpiderMan: Across The Spiderverse".',
+      'A portrait of Hobie Brown from Spider-Man: Across the Spider-Verse',
     year: 2025,
     sizes: {
       A4: {
@@ -703,7 +245,7 @@ const richPosterData: Record<string, Poster> = {
     width: 926,
     height: 1158,
     description:
-      'A painting of Lucki inspired by the cover of his Freewave three tape.',
+      'A painting of Lucki inspired by the cover of his Freewave three tape',
     year: 2026,
     sizes: {
       A4: {
@@ -725,13 +267,38 @@ const richPosterData: Record<string, Poster> = {
   },
   olandria: {
     slug: 'olandria',
-    title: 'Boat Boy',
-    src: sixteenByTwentyBoatBoy,
+    title: 'Olandria',
+    src: sixteenByTwentyOlandria,
     width: 926,
     height: 1158,
-    description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
-    year: 2023,
+    description: 'A portrait of Olandria in makeup painted by Esther',
+    year: 2026,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  ayra_starr: {
+    slug: 'ayra_starr',
+    title: 'Sabi Girl',
+    src: sixteenByTwentyAyraStarr,
+    width: 1158,
+    height: 926,
+    description: 'A portrait of Ayra Starr against a pink backdrop',
+    year: 2025,
     sizes: {
       A4: {
         price: 14.99,
@@ -752,40 +319,12 @@ const richPosterData: Record<string, Poster> = {
   },
   orthodontist_visit: {
     slug: 'orthodontist_visit',
-    title: 'Boat Boy',
-    src: sixteenByTwentyBoatBoy,
+    title: 'Orthodontist Visit',
+    src: sixteenByTwentyOrthodontistVisit,
     width: 926,
     height: 1158,
-    description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
-    year: 2023,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  pinkpantheress_fancy_that: {
-    slug: 'pinkpantheress_fancy_that',
-    title: 'Boat Boy',
-    src: sixteenByTwentyBoatBoy,
-    width: 926,
-    height: 1158,
-    description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
-    year: 2023,
+    description: 'A portrait of Mike Tyson',
+    year: 2025,
     sizes: {
       A4: {
         price: 14.99,
@@ -806,13 +345,38 @@ const richPosterData: Record<string, Poster> = {
   },
   pinkpantheress_stateside: {
     slug: 'pinkpantheress_stateside',
-    title: 'Boat Boy',
-    src: sixteenByTwentyBoatBoy,
+    title: 'Stateside',
+    src: sixteenByTwentyStateside,
     width: 926,
     height: 1158,
-    description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+    description: 'A painting of PinkPantheress from the Stateside music video',
     year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  lauryn: {
+    slug: 'lauryn',
+    title: 'Lauryn',
+    src: A4Lauryn,
+    width: 818,
+    height: 1158,
+    description: 'A radiant portrait of Ms. Lauryn Hill smiling gleefully',
+    year: 2024,
     sizes: {
       A4: {
         price: 14.99,
@@ -833,40 +397,12 @@ const richPosterData: Record<string, Poster> = {
   },
   purple_heart: {
     slug: 'purple_heart',
-    title: 'Boat Boy',
-    src: sixteenByTwentyBoatBoy,
+    title: 'Purple Heart',
+    src: sixteenByTwentyPurpleHeart,
     width: 926,
     height: 1158,
-    description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
-    year: 2023,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  rema_oyo_oyo: {
-    slug: 'rema_oyo_oyo',
-    title: 'Boat Boy',
-    src: sixteenByTwentyBoatBoy,
-    width: 926,
-    height: 1158,
-    description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
-    year: 2023,
+    description: 'A portrait of a young girl',
+    year: 2025,
     sizes: {
       A4: {
         price: 14.99,
@@ -887,13 +423,13 @@ const richPosterData: Record<string, Poster> = {
   },
   rema_psd: {
     slug: 'rema_psd',
-    title: 'Boat Boy',
-    src: sixteenByTwentyBoatBoy,
+    title: 'Rema PSD',
+    src: sixteenByTwentyRemaPsd,
     width: 926,
     height: 1158,
     description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
-    year: 2023,
+      'A painting of Rema wearing a bolapsd white polo from the FUN music video, with bats, and his old mask',
+    year: 2025,
     sizes: {
       A4: {
         price: 14.99,
@@ -914,13 +450,12 @@ const richPosterData: Record<string, Poster> = {
   },
   say_cheese: {
     slug: 'say_cheese',
-    title: 'Boat Boy',
-    src: sixteenByTwentyBoatBoy,
+    title: 'Say Cheese',
+    src: sixteenByTwentySayCheese,
     width: 926,
     height: 1158,
-    description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
-    year: 2023,
+    description: 'A painting of a cool girl showing off her grillz',
+    year: 2024,
     sizes: {
       A4: {
         price: 14.99,
@@ -941,40 +476,12 @@ const richPosterData: Record<string, Poster> = {
   },
   shocked: {
     slug: 'shocked',
-    title: 'Boat Boy',
-    src: sixteenByTwentyBoatBoy,
+    title: 'Shocked',
+    src: sixteenByTwentyShocked,
     width: 926,
     height: 1158,
-    description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
-    year: 2023,
-    sizes: {
-      A4: {
-        price: 14.99,
-        stripePriceId: STRIPE_PRICE_IDS.A4,
-        packaging: 'hard mailer',
-      },
-      '16x20': {
-        price: 24.99,
-        stripePriceId: STRIPE_PRICE_IDS['16x20'],
-        packaging: 'mailing tube',
-      },
-      A2: {
-        price: 29.99,
-        stripePriceId: STRIPE_PRICE_IDS.A2,
-        packaging: 'mailing tube',
-      },
-    },
-  },
-  skepta: {
-    slug: 'skepta',
-    title: 'Boat Boy',
-    src: sixteenByTwentyBoatBoy,
-    width: 926,
-    height: 1158,
-    description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
-    year: 2023,
+    description: 'A painting of a shocked nollybabe',
+    year: 2025,
     sizes: {
       A4: {
         price: 14.99,
@@ -995,13 +502,491 @@ const richPosterData: Record<string, Poster> = {
   },
   tems: {
     slug: 'tems',
+    title: 'Tems',
+    src: sixteenByTwentyTems,
+    width: 926,
+    height: 1158,
+    description: 'A portrait of Tems',
+    year: 2026,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  rocky: {
+    slug: 'rocky',
+    title: 'Rocky',
+    src: A4Rocky,
+    width: 818,
+    height: 1158,
+    description: 'An illustration of A$AP Rocky showing all smiles :)',
+    year: 2022,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  rema_oyo_oyo: {
+    slug: 'rema_oyo_oyo',
+    title: 'Oyo Oyo',
+    src: sixteenByTwentyOyoOyo,
+    width: 926,
+    height: 1158,
+    description: 'A painting of Rema from the FUN music video',
+    year: 2025,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  igormaniac: {
+    slug: 'igormaniac',
+    title: 'Igormaniac',
+    src: A4Igormaniac,
+    width: 818,
+    height: 1158,
+    description:
+      'A portrait of IGOR against a pink backdrop, referencing Tyler, The Creator’s 2019 LP',
+    year: 2022,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  frank: {
+    slug: 'frank',
+    title: 'Frank',
+    src: A4Frank,
+    width: 818,
+    height: 1158,
+    description:
+      'A portrait of Frank Ocean, looking seemingly jaded with his right eye obscured—referencing the 1964 René Magritte painting "The Son of Man"',
+    year: 2022,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  asake: {
+    slug: 'asake',
+    title: 'Asake',
+    src: A4Asake,
+    width: 818,
+    height: 1158,
+    description:
+      'An illustration of Asake—Mr.Money—walking down the runway in full S/S 23 Mowalola',
+    year: 2022,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  pinkpantheress_fancy_that: {
+    slug: 'pinkpantheress_fancy_that',
+    title: 'Fancy That',
+    src: sixteenByTwentyFancyThat,
+    width: 926,
+    height: 1158,
+    description: 'A painting of PinkPantheress from the Tonight music video',
+    year: 2025,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  subaru: {
+    slug: 'subaru',
+    title: 'Subaru',
+    src: A2Subaru,
+    width: 816,
+    height: 1158,
+    description:
+      'An illustration of the Subaru Boy, surrounded with graffiti referencing tracks and themes surrounding the Final Heaven album',
+    year: 2022,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  ashley: {
+    slug: 'ashley',
+    title: 'Ashley',
+    src: A2Ashley,
+    width: 816,
+    height: 1158,
+    description:
+      'A portrait of Ashley Okoli embracing the ever calling warmth of the light',
+    year: 2022,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  tyler: {
+    slug: 'tyler',
+    title: 'Tyler',
+    src: sixteenByTwentyTyler,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Tyler Baudelaire, remember to call me if you get lost',
+    year: 2022,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  subaru_boy: {
+    slug: 'subaru_boy',
+    title: 'Subaru Boy',
+    src: sixteenByTwentySubaruBoy,
+    width: 926,
+    height: 1158,
+    description:
+      'An illustration of Cruel Santino sporting a camo jacket in true Subaru Boy fashion',
+    year: 2022,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  spideryachty: {
+    slug: 'spideryachty',
+    title: 'Spideryachty',
+    src: sixteenByTwentySpideryachty,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Lil Yachty inspired by Miles from Spider-Man: Across The Spiderverse',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  hoodie_gurl: {
+    slug: 'hoodie_gurl',
+    title: 'Hoodie Gurl',
+    src: sixteenByTwentyHoodieGurl,
+    width: 926,
+    height: 1158,
+    description: 'A beautiful portrait of a girl in a hoodie',
+    year: 2024,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  rema: {
+    slug: 'rema',
+    title: 'Rema',
+    src: A4Rema,
+    width: 818,
+    height: 1158,
+    description: 'An illustration of Rema the Raver, with punching gloves',
+    year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  fashion_roadman: {
+    slug: 'fashion_roadman',
+    title: 'Fashion Roadman',
+    src: sixteenByTwentyFashionRoadman,
+    width: 1158,
+    height: 926,
+    description:
+      'A hyper-abstracted portrait of Ọdúnayọ̀ (Ayọ̀) Òjó experimenting with new style themes, drawing inspiration from Jean-Michel Basquiat',
+    year: 2024,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  cench: {
+    slug: 'cench',
+    title: 'Cench',
+    src: sixteenByTwentyCenchBlack,
+    width: 926,
+    height: 1158,
+    description:
+      'A portrait of Central Cee crowned in Union Jack braids, against a dark backdrop embellished in chrome graffiti',
+    year: 2025,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  // santi: {
+  //   slug: 'santi',
+  //   title: 'Santi',
+  //   src: A4Santi,
+  //   width: 818,
+  //   height: 1158,
+  //   description: 'An illustration of Cruel Santino with Kuromi',
+  //   year: 2021,
+  //   sizes: {
+  //     A4: {
+  //       price: 14.99,
+  //       stripePriceId: STRIPE_PRICE_IDS.A4,
+  //       packaging: 'hard mailer',
+  //     },
+  //     '16x20': {
+  //       price: 24.99,
+  //       stripePriceId: STRIPE_PRICE_IDS['16x20'],
+  //       packaging: 'mailing tube',
+  //     },
+  //     A2: {
+  //       price: 29.99,
+  //       stripePriceId: STRIPE_PRICE_IDS.A2,
+  //       packaging: 'mailing tube',
+  //     },
+  //   },
+  // },
+  boat_boy: {
+    slug: 'boat_boy',
     title: 'Boat Boy',
     src: sixteenByTwentyBoatBoy,
     width: 926,
     height: 1158,
     description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
+      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection',
     year: 2023,
+    sizes: {
+      A4: {
+        price: 14.99,
+        stripePriceId: STRIPE_PRICE_IDS.A4,
+        packaging: 'hard mailer',
+      },
+      '16x20': {
+        price: 24.99,
+        stripePriceId: STRIPE_PRICE_IDS['16x20'],
+        packaging: 'mailing tube',
+      },
+      A2: {
+        price: 29.99,
+        stripePriceId: STRIPE_PRICE_IDS.A2,
+        packaging: 'mailing tube',
+      },
+    },
+  },
+  bxks: {
+    slug: 'bxks',
+    title: 'BXKS',
+    src: sixteenByTwentyBxks,
+    width: 926,
+    height: 1158,
+    description: 'A portrait of Bxks',
+    year: 2025,
     sizes: {
       A4: {
         price: 14.99,
@@ -1022,13 +1007,13 @@ const richPosterData: Record<string, Poster> = {
   },
   the_grinch: {
     slug: 'the_grinch',
-    title: 'Boat Boy',
-    src: sixteenByTwentyBoatBoy,
+    title: 'The Grinch',
+    src: sixteenByTwentyTheGrinch,
     width: 926,
     height: 1158,
     description:
-      'A portrait of Lil Yachty set in a forest, referencing the "Virginia Creeper" title to Raf Simmons’ 2002 Fall collection.',
-    year: 2023,
+      'A portrait of The Grinch in Rick Owens from the Different Day music video',
+    year: 2025,
     sizes: {
       A4: {
         price: 14.99,
